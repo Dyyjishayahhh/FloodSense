@@ -1,0 +1,138 @@
+Create a new Microsoft Word document containing the fully revised Theoretical Framework and System Architecture for our thesis:
+
+FLOODSENSE: AN ANDROID-BASED EXPERT SYSTEM FOR FLOOD SUSCEPTIBILITY ASSESSMENT AND PRE-EVENT PREPAREDNESS IN BACOOR CITY
+
+Use the revised Chapter One, Revised Feature Specifications, and Revised Concept Checklist as the authoritative sources. The existing Theoretical Framework and previous System Architecture are outdated and should be used only to understand their former placement and general presentation. Do not retain obsolete concepts such as Augmented Reality, machine learning, Firebase, or the previous combined decision-support architecture.
+
+The new document must contain the following:
+
+1. Revised Theoretical Framework
+
+Write a complete but concise replacement for the current Theoretical Framework. Explain the theories, concepts, and technologies supporting the revised FloodSense system, including:
+
+- Rule-Based Expert System
+- Knowledge base containing approved facts, decision tables, and IF-THEN rules
+- Forward-chaining inference process
+- Explainable flood-susceptibility results
+- Low, Moderate, High, and Very High susceptibility classifications
+- Uncertain, Insufficient Data, and Outside Supported Area limitation states
+- Separate deterministic Decision Support System for pre-event preparedness guidance
+- Geographic Information System concepts
+- GeoDjango and PostGIS for spatial processing
+- Dynamic flood-susceptibility map
+- Manual Check My Area pin and geographic zone resolution
+- Verified evacuation center information
+- Straight-line distance ranking with appropriate safety limitations
+- Flutter and Dart Android application
+- Django and Django REST Framework backend
+- PostgreSQL and PostGIS database
+- Django web administration workspace
+- Draft, review, approval, publication, versioning, rollback, validation, and audit processes
+- Email-and-password authentication, account recovery, privacy, and access control
+
+Clearly distinguish the Rule-Based Expert System from the Decision Support System. Explain that FloodSense supports flood-susceptibility assessment and pre-event preparedness but does not provide live flood forecasting, guarantee road safety, or issue official evacuation orders.
+
+Write the framework in formal academic language suitable for direct insertion into Chapter One. Keep it focused, logically organized, and free from unnecessary repetition.
+
+2. Revised System Architecture
+
+Create a complete, fully editable System Architecture diagram using native Microsoft Word shapes, text boxes, arrows, and connectors. Do not insert the architecture as a flattened image. Every module, label, arrow, and connector must remain editable and movable in Microsoft Word.
+
+The architecture must show the complete system flow from initial access and data administration to user results and database storage. Include all major actors, modules, technologies, processes, and data flows.
+
+At minimum, show:
+
+External and institutional sources:
+
+- BDRRMO
+- CPCDO or other authorized geographic-data custodians
+- PAGASA rainfall references or approved rainfall information
+- Verified preparedness and evacuation-center information sources
+
+Administrator side:
+
+- Authorized administrator authentication
+- Django web administration workspace
+- Geographic zone and map-point management
+- Rainfall parameter and source management
+- Expert System knowledge-base management
+- Decision Support System content management
+- Evacuation-center management
+- Validation and test workspace
+- Draft, review, approval, publication, rollback, and version-control workflow
+- Audit history and security controls
+
+Backend and processing layer:
+
+- Django
+- Django REST Framework
+- GeoDjango
+- Rule-Based Expert System
+- Forward-chaining inference engine
+- Decision-table and rule evaluation
+- Explainability module
+- Separate deterministic Decision Support System
+- Geographic point-in-polygon or zone-resolution processing
+- Evacuation-center distance calculation
+- Input validation, error handling, and limitation-state processing
+- API communication between the mobile application, administration workspace, and database
+
+Database layer:
+
+- PostgreSQL
+- PostGIS
+- User accounts and preferences
+- Geographic zones and spatial features
+- Rainfall parameters and approved sources
+- Expert System facts, decision tables, and rules
+- Decision Support System questions, branches, and preparedness actions
+- Evacuation-center records
+- Published versions, audit records, and update history
+
+Resident mobile application:
+
+- Registration, login, account recovery, and logout
+- First-use instructions and safety disclaimer
+- Rainfall intensity and duration selection
+- Supported-area selection
+- Manual Check My Area pin
+- Dynamic map with pan, zoom, tap, layers, and legend
+- Flood-susceptibility assessment request
+- Low, Moderate, High, Very High, Uncertain, Insufficient Data, and Outside Supported Area results
+- Plain-language explanation, source, update date, and version information
+- Results summary
+- Preparedness Decision Support System
+- Searchable preparedness topics
+- Verified evacuation-center map and ranked list
+- External navigation option with safety warnings
+- Account and privacy preferences
+- Approved cached information and appropriate offline limitations
+
+The diagram must clearly show:
+
+- How authorized institutional information enters the administration workspace
+- How administrators validate, approve, and publish information
+- How approved information is stored and versioned in PostgreSQL/PostGIS
+- How the Android application sends user-selected rainfall and location inputs through the API
+- How GeoDjango resolves the selected location
+- How the Rule-Based Expert System evaluates approved facts and rules
+- How the separate Decision Support System provides preparedness guidance
+- How results, explanations, sources, limitations, and evacuation-center information return to the user
+- How corrections or updates return through the administrative review and publication cycle
+
+Use clear directional arrows and label important data flows. Organize the architecture into understandable layers or boundaries, such as External Sources, Resident Mobile Application, Backend and Processing Services, Web Administration, and Database.
+
+3. Document and Formatting Requirements
+
+- Produce one new DOCX file only.
+- Do not edit or overwrite the revised Chapter One or any source document.
+- Preserve the general academic formatting of the revised Chapter One so I can manually copy and replace the old Theoretical Framework and System Architecture.
+- Include a suitable figure title and caption for the System Architecture.
+- Place the revised theoretical discussion and editable architecture in a logical insertion-ready order.
+- Use professional academic formatting, consistent fonts, headings, spacing, margins, and alignment.
+- Keep the architecture readable when printed.
+- Ensure all diagram elements remain editable in Microsoft Word.
+- Check that arrows connect to the correct modules and do not overlap labels or shapes.
+- Render and inspect every page before delivering the document.
+- Verify that no obsolete references to AR, machine learning, Vuforia, or Firebase remain.
+- Use the official thesis title exactly as written above.
