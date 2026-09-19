@@ -1,0 +1,39 @@
+# Python / Django
+__pycache__/
+*.py[cod]
+*.sqlite3
+.pytest_cache/
+.ruff_cache/
+server/.venv/
+server/.env
+server/staticfiles/
+server/media/
+
+# Flutter / Dart
+mobile/.dart_tool/
+mobile/.flutter-plugins
+mobile/.flutter-plugins-dependencies
+mobile/.packages
+mobile/build/
+mobile/android/.gradle/
+mobile/android/local.properties
+
+# Editors and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local review and generated temporary files
+tmp/
+
+# Large national-scale GIS source files (preserve locally; do not commit)
+research_data/administrative_boundaries/phl_admin*.geojson
+
+# MGB flood-susceptibility extracts (publicly queryable, but reuse terms are unverified)
+research_data/provisional/mgb_flood_susceptibility/raw/
+research_data/provisional/mgb_flood_susceptibility/processed/
+
+# Secrets and local configuration
+.env
+*.local
