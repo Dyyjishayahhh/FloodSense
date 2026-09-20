@@ -1,0 +1,565 @@
+
+===== PAGE 1 =====
+Thesis Initial Interview Transcript
+BACOOR DISASTER RISK
+REDUCTION AND
+MANAGEMENT OFFICE
+City of Bacoor Legislative and
+Disaster Resilience Bldg.
+Bacoor Government Center
+Brgy. Bayanan, Bacoor,
+Philippines
+Staff
+Johnny P.
+Date of Interview: May 12,
+2026 Time Started: 12:54 PM
+Time Ended: 2:00 PM
+This interview aims to understand the current workflows, processes, and systems
+used within the organization. The information gathered will help identify possible
+areas where digital solutions such as software systems or websites could improve
+efficiency.
+Interviewee: So itong title niyo, pinalitan niyo yung “Awareness” and ginawa
+niyong “Sense” kaya naging FloodSense.
+Researcher: Opo sir
+Interviewee: Kaalaman, may malay, yun yung meaning nito?
+Researcher: Yes po sir, ganun na nga po meaning niya.
+Interviewee: May hardware ba ito?
+Researcher: Wala po sir, ano po siya, application po siya.
+Interviewee: So walang sensor?
+Researcher: Yes po sir wala rin po, application lang po talaga siya for flood
+awareness po.
+Interviewee: May mobile na gagamitin?
+Researcher: Yes po, mobile-based po yung application. Magdedevelop po kami
+ng isang app.
+Interviewee: Ano namang purpose nung app?
+
+===== PAGE 2 =====
+Researcher: Ayun nga po, flood susceptibility po via Augmented Reality.
+Interviewee: Ano yung magiging functions niya? Highlight niyo lang.
+Researcher: Basically po, yung user po magi-input sila kung gano kalakas yung
+ulan and gaano katagal yung ulan.
+Interviewee: Gaano katagal yung ulan, and gaano kalakas yung ulan? So ano
+susukatin niya?
+Researcher: Yung ayun nga po yung dalawa pong yun?
+Interviewee: Anong gagamitin?
+Researcher: Right now po wala pa po kaming information po about sa mga tool
+po na iyan.
+Interviewee: Okay, ang ginagamit kung gaano kalakas ang ulan - kase ang ulan,
+ang sinusukat niyan yung dami ng rainfall, yung millimeter, so dapat aware kayo.
+So pano niyo malalaman kung malakas o mahina yung ulan?
+Researcher: Through ano po, nasa questionnaire po namin yan eh ito po
+(Question no.4)
+Interviewee: Ang pinaguusapan palang natin yung title ninyo, inaalam ko lang
+kung paano niyo dedepensahan yung title ninyo sa akin, kase may naiisip na ako.
+Pag tinawag na mobile, ito yung cellphone tama?
+Researcher: Yes po, mobile app po sya
+Interviewee: Bakit reality?
+Researcher: Ano po siya eh, augmented reality, kung baga po sa camera po, ang
+teknolohiya kung saan ang mga digital na impormasyon—tulad ng mga imahe, 3D
+models, o teksto—ay ipinapatong sa totoong mundo. Sa madaling salita,
+pinagsasama nito ang nakikita mo sa paligid mo at ang mga virtual na bagay
+gamit ang screen ng iyong gadget. For ano po siya, visualization po, doon po
+ipapakita sa mapa via camera. So makikita niyo po doon sa mapa na iyon yung
+Bacoor map, then makikita niyo po doon yung mga different baranggays, pero di
+po siya naka street view, kung baga satellite view lang siya.
+Interviewee: So anong mangyayari sa app niyo, kunwari lumabas ka, then you
+capture the place, then ano na nga mangyayari?
+Researcher: Ayun po, i-input ni user yung lakas ng ulan, tsaka yung tagal ng
+ulan/
+Interviewer: So anong ibig sabihin mo sa camera gagamitin?
+
+===== PAGE 3 =====
+Researcher: Ito po yung process, i-input ni user yung dalawa po iyon (kalakas at
+katagal), tapos base po don sa in-input niya/
+Interviewee: User ang mag i-input yung lakas ng ulan?
+Reseacher: Yes po
+Interviewee: San mang-gagaling yung data na i-input niya?
+Researcher: Nasa questionnaire din po namin kung ano pong available data po
+ninyo/
+Interviewee: Kalimutan mo muna yung questionnaire, gusto ko malaman yung
+overview ng iyong project, ano yung navivision mo,ano yung gusto mong
+mangyari sa project mo. Kase dapat dito, dapat alam niyo na yung gusto niyong
+output. So ano yung output niya?
+Researcher: Yung rendered po na map.
+Interviewee: Ano pa?
+Researcher: Yun lang po yun
+Interviewee: What kind of map ang irerender niya? Specific. Dapat alam mo kung
+anong klaseng map ang gagamitin niyo na magbabangga dito sa app na gagawin
+niyo. Isama niyo yan sa defense niyo, anong output ang maibibigay niyo sa amin
+as your users diba. Kase maraming output ito eh, kaya pipili kayo anong gusto
+niyong output ipakita sa mga users ninyo. Gaya ng binanggit mo maps, anong
+klaseng map, ano yung laman nung maps.
+Researcher: Yung concept ko po kase map meron po siyang layouted na map,
+augmented reality. Tapos doon po sa map nayon, meron po siyang areas na flood
+prone po. Kung saan po yung possible na baha, pero di po namin ipapakita yung
+baha, red zone lang po siya.
+Interviewee: Nalilito ka sa explanation mo kaya ieexplain ko sainyo, kase di niyo
+alam yung magiging output ninyo eh. Ang map kase eto (yung nasa yellow pad ni
+goc), meron yang “STANDL”, pag ka marunong tumungin ng map, dapat visible
+toh (STANDL), visible sa loob ng mapa.
+S stand for Scale, T for Title, siyempre may title yan dapat, yun yung inaantay ko
+na output, ano yung title. Kung anong klase, ano yung pangalan nung maps. Kase
+kapag ako, gumagawa kase ako ng map, kunyari “Exposure map”, saan naka
+expose – population, Population Exposure map. Bukod diyan, meron ding “Hazard
+map”, Flood Hazard map. Kung Flood Hazard map ito, anong mga criticial area
+and facilities yung mga naka expose sa flood, ano yung mga naka expose doon,
+mga risk, gaano kataas yung level ng risk, yan yung ginagawa kong mapa,
+marami yan, ano ngayon yung tutukuyin mo jan. Population? Facilities? Area
+lang? Pipili ka ng output don, hindi pwedeng lahat kase mahihirapan lang kayo
+kase anlawak ng scope non, oh alam niyo na yung output, dapat may A for
+Author, ibig sabihin kung sino yung gumawa. Ano yung N? North Arrow, yung
+
+===== PAGE 4 =====
+nakikita na sa map na may north and arrow, compas mga ganyan. Yung scale
+naka ganun yon (Asa yellow pad, nasa horizontal), one is to ten thousandths,
+yung yung scale. D for Date, kung kelan ginawa. At L, for Legend, kung anong
+information meron jan dapat nandon sa Legend, so anong output map ang
+kailangan mo? Dapat yun yung magrereflect doon o dito sa title ninyo. Kase kung
+susceptibility ito, ang lalabas jan ay low, moderate, high, and very high yan ang
+lalabas. Ang LGB (Local Government Boundery) gumawa ng specific color yan,
+pero kayo, bahala kayo. Kase siyempre for study purposes lang.
+Ang naiisip ko kase, nag-capture ka ng image, ito yung picture, so lalabas may
+input siyempre, may mga drop-down na lalabas para don sa users, wag na wag
+kayo gagawa ng magiisip pa si user kung ano yung i-input nila. Sablay kayo don.
+Hindi yun magmamatch kapag kumuha na kayo ng data, kase ang tao iba-iba
+yung perspective. Kaya make sure na kapag gumawa kayo ng drop-down, nandon
+dapat lahat ng kailangan ninyo kapag gumawa kayo ng statistics. Kase
+halimbawa, male, anong lugar, ipagpalagay natin, flooded area, sasabihin doon sa
+isa binabaha lugar, tagalog nayon, hindi na babangga yun sa kailangan ninyo. So
+dapat sa drop-down ilalagay niyo don, pag pinicture, ilalagay ng user don tama
+ba?
+Researcher: Input po muna before po yung map
+Interviewee: Ano yung mauuna?
+Researcher: Input po, base po sa input niya, doon na po magrerender yung map,
+tapos doon na po lalabas yung flood susceptibility. Kung what level po, low or
+green, moderate or yellow, ganun po. So walang picture na mangyayari, more on
+rendering, producing the map po.
+Interviewee: So kungwari user ako, bilang user anong pakielam jan, bakit ko
+kailangan maginput. Bat ko kailangan idownload yung apps, ano yung dahilan mo
+para gamitin ko siya?
+Researcher: Ano po siya, Decision support system po, para rin po sa awareness
+ni user, para alam po ng user kung anong mga lugar sa byacoor yung flooded.
+Interviewee: Okay sige paano mo ako kukumbinsihin? Sinabi mo yung purpose
+mo diba
+Researcher: Pwede po bang own opinion ko po? Since lumaki po ako sa Zapote.
+Danas ko po yung frequent flooding, minsan nga kahit ambon lang eh. Halimbawa
+wala kang idea sa bacoor kung ano specific location sa bacoor, with that pwede
+ka magkaroon ng maling desisyon, halimabawa dumaan ka don sa area nayon
+tapos baha pala.
+Interviewee: Maraming butas yang sinasabi mo saakin ah. Pano yan nakita ako
+sa Molino, di naman binabaha dito. Di ko kailangan niyan. Bat ako dadaan don eh
+may daan naman sa ibang lugar.
+Ganito isagot mo, “Sir, sa panahon ngayon, climate change is real, predictable na
+
+===== PAGE 5 =====
+ang pagbaha sa isang location, so ikaw kung maliit ang understanding mo sa
+flooding, possibleng baka mapahamak ka, dapat aware ka kung saan yung
+binabaha saan ka pwedeng mag re-routing, pero dapat aware ka pa din kung
+saan ka pwedeng dumaan, atleast alam mo, so this is how the apps work. Pag
+nagdownload ka nito, halimbawa businessman ka at lagi kang pagala-gala, pag
+dinowload mo yung app, alam mo kung saan ka mare-route kase binabahayung
+lugar, so may mga nagiinputs doon na mga taga-roon. Pag-in-input yon ng mga
+tao sa lugar nayon na baha, makikita yon ng mga user, tama ba? So ako bilang
+ako, di ko kailangan naginput, malalaman ko kung saan binabaha. Eh malay mo
+may kaibigan ako don, mabibigyan ko siya ng balita para aware din siya at
+makapagbigay ako ng warning, yung yung essence bakit kailangan mo idownload
+yung app”. Gaya nga ng sabi mo konting ambon lang baha na tapos di pa okay
+yung ating mga drainage or canal eh, madalas high-tide, so dapat lalabas sa
+output niyo kung high-tide ba or hindi, binabaha yung Bacoor pag high-tide. Nagka
+Flashflood, kahit walang ulan sa Bacoor, pero binabaha kase galing sa ibang lugar
+na mataas. So climate change, kahit di ka binabaha, alam mo kung saan ka
+dadaan at maiwasan sa pamamagitan ng pag download ng apps na toh. Natrap
+ka nasa manila ka, nakita mo maraming user gumamit, nag input ng mga data,
+diba, wag ka dumaan don, hanapin mo yung low na naginput mababa yung baha,
+doon ka dadaan, wag kana magpaikot ikot pa, doon kana magfocus sa output
+niyo, wag na kayo lalayo.
+Interviewee: Okay…Sunod tayo, edi na-download ko na ‘yung app, paano ko masusustain
+yung app.
+Researcher: Sustainability
+Interviewee: Oo, pinag-aaralan nyo yan sainyo, sustainability bago yung efficient niyan,
+paano nagging effective yan, oh may monitoring evaluation kayong gagawin jan diba?
+Researcher: Yes po sir, siyempre po sir
+Interviewee: Oh halimbawa na download ko na, anong susunod? Anong gagawin ng user?
+na-download na e.
+Researcher: Ang nakikita po naming jan is to gather feedback po ng user
+Interviewee: Okay, ang sabi mo kanina makikita ko, halimbawa user ako, di naman ako
+mag iinput ng data, ano yung makikita ko sa screen, yun na yung ouput nyo dapat, ano yung
+makikita ko, di nyo pako nasassagot dito e – kung ano yung makikita ko sa screen e. Ano
+yung navivision ko sa screen, dapat navivision ko na yan, kasi bago kayo mag come
+up sa title na to, alam nyo na kung ano yung output nyo dapat,
+Researcher: Opo sir.
+Interviewee: Oh sige, may example ka jan? picture.
+Researcher: Opo sir, wait lang.
+Interviewee: Okay, baka hindi mo lang kaya ipaliwanag pero nasa isip mo.
+Researcher: Kinakabahan.
+Interviewee: Wag ka kabahan lalo na pag nasa na panel kayo, yan din ang topic ko
+assessment nga naman, siyempre, ginawa ko lang comprehensive tsaka malawak yung
+
+===== PAGE 6 =====
+scope, malawak yung scope nyo ah, Bacoor yung tinukoy nyu hindi barangay, kung niliitan
+mo lang sana – kung barangay ang tinukoy mo ‘di maliit lang yung gagawan nyo ng data,
+maraming indicator yan.
+Researcher: Di pumapayag po yung panelist naming kung barangay lang.
+Interviewee: Ah ganon.
+Researcher: Ayaw po nila ng barangay lang.
+Interviewee: Okay, so sunod nyan manghihingi kayo sakin ng maps.
+Researcher: Yun nga po yung purpose namin.
+Interviewee: Alam ko na, oo alam ko na yan, exposure map manghihingi na yan kayo sakin
+– per barangay, meron din ako nyan, pero kailangan nyo humingi ng ano – panibagong
+request yan, yun lang naman yung kailangan nyo, exposure – pero ibabangga nyo yon sa
+actual na – kaya lang paano kayo mag mamapping, paano yung comparison nyo, kasi
+yung sakin galling national yung data na yon, e kayo actual kayo e, kumbaga sabi nyo reality
+e, e sakin galling siyensya yon, projected lang yon, hindi yon actual – kayo actual, pano nyo
+ibabangga ngayon yon, andaming butas ng project nyo e, kailangan (maayos) nyo yung gap
+ah. Ano ba yung mga questions mo jan, yung nasagot ko wag mo na itanong, sige habang
+hinahanap mo pa yung picture diba, kasi hindi nyo pa na dedepensahan sakin yung title e, di
+pako satisfied e.
+Researcher: So yung interview na po ito is to understand the current work flow –
+Interviewee: Basahin ko nalang: Can you briefly describe your office’s role in flood
+monitoring and disaster response in Bacoor City? – so ang opisina namin, ang role naming
+dito – siyempre bago dumating ang baha meron kaming Contingency Plan, meron kaming
+sinunod na Protocols, meron din kaming binubuksan na City Ordinance, ang role naming –
+dun muna kami tumitingin tapos monitoring: ano ba yung tatami, malakas ba o mahina – so
+dun yon papasok. Ina-identify muna naming kung yung papasok na bagyo magiging disaster
+o hindi – then kung magiging critical dun kami mag reresponse. Marami kaming pwedeng
+monitoring jan: social media, facebook, email, tapos face to face, coordination sa barangay –
+yan yung ginagawa ng office, coordinate naming sa barangay. Kasi kami tatawagan lang ng
+provincial tapos dissemination, then tatawag kami sa barangay to disseminate yung
+information para magka-roon sila ng dissemination ng paparating na baha, so monitoring
+lang thru social media and other network agency.
+Researcher: What flood-related data does your office currently collect (e.g., rainfall,
+flood levels, affected areas)?
+Interviewee: Meron kami na-cocollect na rainfall sa niog pero indigenous lang yon. Flood
+level markets meron tayo, at affected areas during flooding occur.
+Researcher: In what format are these data stored? (e.g., Excel, GIS, paper records,
+databases or etc…).
+Interviewee: Database kami, kasi pag nilagay mo si database may excel yan, may GIS, ako
+si GIS (eto yung forte ko).
+Researcher: Eto po sya sir (*shifts the discussion to show the picture of example of
+Augmented reality in map he ask earlier), so basically ganto lang po sya, eto po yung
+camera nyo tapos ipapakita sa flat surface (demonstrates the AR).
+
+===== PAGE 7 =====
+Interviewee: San yung camera
+Researcher: Eto na po yung pinaka camera mo, kumbaga ano – ayan nga po yung
+augmented reality, eto yung camera mot apos itututok mo lang sya sa flat surface
+tapos nakalatag na sya jan.
+Interviewee: Asan ang camera ko, anong camera – naguguluhan ako.
+Researcher: Halimbawa po nakatutok yung camera yung flat surface (shows the the
+example) yan po yung lalabas.
+Interviewee: Ah eto yung background display ng camera.
+Researcher: Hindi, ayan po yung lalabas na output pag tinutok mo sya sa flat surface,
+that’s how augmented reality works po.
+Interviewee: Pag binuksan mo yung camera dun sa app – eto yung pinaka background
+nya? Kapag clinick mo ano lalabas?
+Researcher: Eto lang po yung pinaka concept namin, tapos lalagyan lang po ng
+sinasabi nyong marker (low, average high, etc..).
+Interviewee: Oh halimbawa dito ako nag pumunta (points into one location in the example
+shown), pumunta ako jan ginamit ko yung app, pinicturan ko, anong mangyayare sa display?
+Researcher: Eto po yung lalabas (shows the example) tas ayun nga po kaya po
+sinasabi ko na kailangan ng user input para makapag render ng flood prone area.
+Interviewee: Pero mag pipicture ka parin?
+Researcher: Hindi po picture, itututok mo lang yung camera – ganon po sya
+gumagana.
+Interviewee: Eh paano sya gumagana? Walang triggering? Pag ka tutok mo gumagana na?
+Researcher: Opo.
+Interviewee: So display lang yung camera mo? Tapos ina-analyze nya na thru app?
+Researcher: Opo.
+Interviewee: Pano mag lalagay ng input? Meron jan isang portion na sasagutan sila?
+Researcher: Hindi po, (shows the process on the paper) yung resident po ay mag
+seset po ng parameters nya – yun nga po, how much rain is expected and how long it
+will fall.
+Interviewee: Okay, may problema ka jan, paano sila mag lalagay ng input? Di naman sila
+marunong mag sukat ng rainfall e
+Researcher: dun po papasok yung suggest nyo kanina, na instead na sila yung mag
+iinput, pipili nalang sila sa dropdown.
+Interviewee: ah dropdown dipende yan sa area, san sila kukuha ng basehan na ganon
+karami yung tubig, gaano katagal, pano sila mag iinput, kung naka dropdown yan,
+halimbawa (10 mm, 20 mm, 15mm) san sila pipili don, di naman nila alam yung millimeter,
+ano yung basehan mo, unless eto yung nilagay mo (10, 20, 30) titignan ko yon,
+masasagot ko sya, eh nasaan yon? Kailangan kasi ng basehan na mag iinput – ano yung
+
+===== PAGE 8 =====
+gaano kadami katagal yung ulan at gano kalakas yung buhos ng ulan, di naman natin ma
+oobliga silang orasan yung ulan
+Researcher: more on ano lang po sya e, simulation.
+Interviewee: Oonga, halimbawa user ako, dinownload ko to, kung kanina pinag uusapan
+natin di ako binabaha – ngayon binabaha ako. Pagpagalay natin na walang exact answer
+jan, kasi yung ambon, macoconsider mo ba na ulan, san ka mag i-istart ng ulan. So dapat
+bago ka gumawa ng app meron syang disclaimer jan, meron syang instruction jan kung
+paano ka mag bibigay ng input. Ngayon biglang ikaw user, parang ayaw mo gamitin to,
+matrabaho to – ano obligasyon ko yan? Diba hindi. Sinong gagamit nyan? Sinong targer
+user nyo dito?
+Researcher: General po, any user na nasa Bacoor
+Interviewee: Kung community kakayanin yan?
+Researcher: Malalaman po pag nag conduct kami ng testing
+Interviewee: Pero ako, 100% - sa sampung iinterviewhin nyo (for app testing) bakaw ala
+pang isa ang pumayag jan, una dapat nag kalat ang device nyo pansukat. O ngayon
+tatanongin kita nag download ka ng app, pano ka mag iinput ng data? Anong basehan
+mo na tama ang input mo? Yung accuracy ng data papaano magiging tama yon?
+Researcher: Thru, datas po na –
+Interviewee: San nga nila kukunin yon
+Researcher: yung mga user po ba sir?
+Interviewee: Oo, kasi don ka naka asa para ma formulate mo yung ginagawa mong app e,
+diba may camera, may map jan, kailangan mo mag input - alam ko na yang sinasabi mo,
+halimbawa nag input ako ng 1 hour rain yung tagal naka dropdown, naka dropdown din yun
+millimeter, don palang masusukat mo na gano karami per square meter e, may sukatan yan.
+Oh halimbawa tignan nyo yung PAG-ASA, sa isang square meter ilan dapat ang tubig bah
+ana kayang mapuno ito, nasa internet yan ha. Halimbawa kapag umulan ng isang oras, kaya
+nyang punuin yan, gano karami yung kayang ibabagsak ng tubig. Kung 30mm rain tapos
+bumagsak sya ng isang oras – dapat alam mo na ilang galong tubig ang mapupuno sa isang
+square meter, meron yang formulation na makikita sa internet. So meron kang basehan na
+pag ka – ang isang oras mo at 30mm mo possible don yung ibang map mo baha na, at yung
+lugar mo baha na sya ngayon, i-iidentify nalang nya kung yung baha na yon ay low,
+moderate, high at very high, dun mo lang sya malalaman. Yun yung magiging role mo, diba
+pag na input ko na yung mm at tagal ng ulan at yung dami ng ulan don mo gegenerate yung
+low, moderate, high, very high. Tama? Dun sha mag cocolor red. Ganon yon ah, yun yung
+gusto nyong palabasin? Tama ba?
+Researcher: Ang ano po naming is, meron na po ba kayong existing data tungkol sa
+ganyan dito sa Bacoor?
+Interviewee: Ang existing data naming ay historical data lang, mga binabahang lugar. Yun
+lang yung meron kami.
+Researcher: Yun po ba yung mga datas na mga nakaraang baha?
+Interviewee: Oo, pero yun yung magiging comparison mo lang, basehan mo lang pero iba
+parin yung actual e. ang tanong – pano sila mag lalagay ng input at paano sila magiging
+
+===== PAGE 9 =====
+accurate kasi pag naging accurate yon pano nagging effective yung inputs nila? Yari ka
+jan. Pag nag ka-mali pa, halimbawa ako si user, naka app yan siyempre may disclaimer yan
+at meron yang rules and regulation doon, mag lalagay ka ng pangalan mo. Ilalagay mo don
+yung user, ididisclose mo ngayon yung information – kawawa naman yung user kung mali
+sya ng input and mali ka rin ng magegenerate ng data.
+Researcher: Hindi po kasi sya ganon e, kumabaga yung pagkakaintindi nyo po ba is
+pag ininput ni user yung data is mag rereflect yun sa lahat?
+Interviewee: Depende sainyo kung re-reflect mo sa lahat, diba hindi?
+Interviewee: Yun nga sabi nyu mag iinput si user, ang point ko duon pa-paano magiging
+tama at accurate ang inputs nya. Kailngan makagawa kayo ng way para yung inputs nya ay
+tama.
+Interviewee: Bakit? Una, hindi marunong yan eh. Malay ba nila yan, diba ordinaryong
+mamamayan ka lang. Dapat meron kang picture na pipilian nila. Ganito ba itsura nung ulan?
+Pinong pin oba? Ganito ba kalakas yung ulan sa picture, parang pwedeng selection or
+pwede video tapos selection mo. Pag select mo dito Video 1: Ambon-ambon lang, ikaw na
+magcompute wag na silang pagcomputin mo. Video 2: Medyo lumalakas yung ulan, ay yung
+ambon so ulan na yun. Kasi makikita mo naman kukuha ka naman ng video na alam mo
+naman yung torrential diba? Pag torrential rain yan talagang pinong pino yung ulan tapos
+powerful diba? May video ka ng ganun, yun ang panunuoren nila pagsinabi na “hindi ganito
+lang yung ulan samin” eh syempre yung nakikita nilang ulan ema-match nila sa video na
+ipi-present mo so alam mo na ang dapat pag sinelect mo yung Video 2 alam mo na dapat
+kung ilang millimeter per hour yun.
+Yun ang magiging accurate mo dun, o formula. Ngayun, yung oras at tagal pwede nilang
+ma-estimate yun eh so kailangan may buffer kayo meron kayong negative (-) positive (+)
+kasi bakit? Kukunin nyu lang yung average eh. Diba may computation yun sa qualitative at
+quantitative yun na yun eh. Sa Methodology pasok na dun, qualitative at quantitative. Yung
+quality na tinatanong ko ano yung accuracy ng inputs ito na yun ginagawa mo na. Quantity,
+ano yung mga data na ini-inputs. Oh nagawa ko na yung methodology mo ah, ayun yung
+inaantay ko na isasagot mo sakin kasi hindi mo talaga sila mabibigyan ng .. High tech na
+ngayun eh, ang AI isalpak mo lang sa program ng AI yun pag ganitong ulan co-computin nya
+kung 30mm, 20mm, 10mm yun ang papasok sa data nyu. Mako-compute nyu na ngayun
+then matik yun magpu-pula kung pula, pag orange kung orange yun na yung pinaka-output
+ng ano nyu.
+May kulang yun, kasi output palang yun.
+Researcher: Ah yung result
+Interviewee: Ano yung outcome nun, activities lang yung ginawa natin para makuha mo
+yung gusto mo. Ano naman yung essence nun.
+Researcher: Andun na nga po yung Mapa.
+Interviewee: Yung mapa para?
+Researcher: Para makita po nila kung high and low flood
+Interviewee: Paano masu-sustain, kaya ba yun? Pang matagalan ba ito?
+Researcher: Pag may data-set naman na po kaming na kolekta madali na po syang
+ma-intindihan
+
+===== PAGE 10 =====
+Interviewee: Kung may data-set kayong kopya pero hindi nyu magagamit yung data namin
+sa sinasabi ko sa kuwari ko, ang makukuha nyu lang samin boundary ng Bacoor, Barangay
+boundary kasi mapa yan eh boundary name, pwede kang kumuha ng historical data at kunin
+mo rin yung data ng flood kung saan yun binabaha, ayun lang yun.
+Researcher: Ayun lang po yung makukuha namin?
+Interviewee: Then, ko-compare mo yun sa actual mo ano yung difference yun yung pinaka
+output or outcome mo. So nakita mo na yung difference ng projected at actual. Kung dito
+dati ay maraming tubig, dito ay kukonte ang baha so dito palang makakakuha kana ng
+perspective. Magkakaron ka ng intervention, anong gagawin mo ngayun. Base sa data na
+nakuha mo, base sa data history na nakuha mo ren pwede mo syang ibigay kung kaninong
+agency para e-formulate at makakuha ng intervention. Yun yung pinaka outcome nakuha
+mo? Ayan sinagot ko na yung 1 to 3 mo
+Researcher: Magkakaron po pala ng collaboration
+Interviewee: Yes dapat. Kasi para saan yan? Dyan lang matatapos yan? Sa pagkuha ng
+data kasi kinuha mo lang yung data, aanhin mo yung data kung kinuha mo lang saan mo
+sya gagamitin? So kung eko-collab nyu yan dapat hahanap kayo ng agency pwe-pwedeng
+sa amin (BDRRMO) "sir ito yung app" Ngayun ibabangga ko yang data nyu.
+Interviewee: Ano yung area naman ang binabaha kasi area yung pinag-uusapan dyan
+gaano kalawak yun, ano yung area ang sinusukat mo. Ayung elevation susukatin mo ren,
+gaano ka taas so marami kang e-consider dyan eh buong Bacoor yan.
+Interviewee: Madami kayong gagawin, ibig sabihen sa elevation nyu malalaman kung saan
+talaga yung pinaka high. Kung mababa ang elevation dun malamang sila yung pinaka high
+at sila yung mataas ang risk so alam mo na ang ilalagay mo. Kahit pa masukat ng
+community na ang ulan ay low ambon-ambon lang pwedeng bahain dun, yun ang difference
+pero sa taas. Sample, bibigyan kita ng idea ha APP gumamit ako Molino 3 ka hindi kayo
+binabaha diba pero nag input ka "isang oras ho sir ganito ang ulan" pinakita nya Video 1 ibig
+sabihen ito ang torrential reflected sa mind mo naka memory na yan na ang District 1 na
+pinakamababang elevation mo yun ang possible na babahain after 1 hour pagtuloy tuloy pa
+rin ng 2hours madagdagan yung scope ng babahain dapat nakalatag yun dito sa app. Based
+on elevation and historical data.
+Researcher: Kunwari po sa Molino hindi po bahain diba tapos ang elevation nya sabihen
+natin mataas po. Bale yung pag input nung user sa ibang lugar po na bahain ay
+mapre-predict po nya.
+Interviewee: Mapre-predict nyo, isang oras ng bumabaha tapos ganito kalakas edi baha na
+sa baba, sa nasukat nyung elevation baha na dun. Dapat alam nyu na dapat identify nyu na
+yung law elevation barangay
+Researcher: So mapre-predict po sa low barangay kahit wala pa pong inputs.
+Interviewee: Yes, yun ang purpose ng nasa high elevation. Yun yung mga outcome na
+pwedeng mangyari.
+Interviewee: Flooding kasi gumagamit kami ng GIS, risk assessment CDRA Climate and
+Disaster Risk Assessment meron kaming field assessment yun yung tools. Maraming
+barangay, mostly District 1, Zapote, Talaba ma-identify mo yan duon lang sa area na yan.
+
+===== PAGE 11 =====
+Interviewee: (Based on your experience, how effective are these methods?) Very effective,
+yung ginagawa namin kasi nalaman namin yung historical data na alam namin kung alin
+yung re-respondihan namin saan kami magta-tayo ng strategic area for preperation ng baha.
+Interviewee: (What are the biggest challenges residents face in understanding or
+responding to flood warnings?) Eto yung mga pinapaalis mo pero ayaw umalis dahil target
+natin ay zero casualty. Tapos yung mga ayaw iwan ang bahay kasi baka nakawan daw.
+Pangalawa, mga matatandang kaugalian pinauuna ang mga anak at asawa tapos sya ang
+maiiwan challenge samin yun. Pero nami-meet namin yan dahil merong ginawa si Mayor na
+city ordinance 246-2022 na nagkakaroon preempted evacuation, wala pang baha, wala pa
+yung bagyo naka likas na sila. May silbe pa rin to (app) sa mga commuters na nasa malayo.
+Researcher: Para po awareness
+Interviewee: Yes, so kailangan pa rin mag download (app). Duon mo-e encourage lahat
+bakit kailangan nila mag download (app).
+(From your perspective, what is the biggest gap in how flood information is delivered to
+residents?) Pag ayaw nila magpa-interview, tapos yung weather minsan nalilimitahan lang
+pagkuha namin ng data. Poverty, yung commonly gap lang naman dito yung mga busy sa
+trabaho pag may orientation kami hindi makaka-attend dahil may trabaho. Pangawala,
+mahirap syempre mas gusto nilang maghanap ng makakain kesa umattend ng orientation
+yung ang problema namin dito, may uma-attend naman pero pagkain lang ang gusto tapos
+hindi naman nakikinig.
+Researcher: Dyan naman po sa number 11 (Our survey found that 92% of respondents
+experience flooding, 64% have made wrong decisions due to lack of flood information, and
+the top problems cited were late warnings and unclear risk information. Do these findings
+align with what your office observes on the ground?) for validation lang po ng survey namin
+dahil ng conduct po kami ng survey.
+Interviewee: Tansya lang ito, walang specific na measure kaya tansya-meter.
+Researcher: Kasi po ito ay based on experience ng respondent's
+Interviewee: Dito palang na experience na nila pero hindi nila alam kung ilang inches yun,
+so yun pa kayang ulan ipapasukat mo. Paano kung knee yan ng unano
+Researcher: Depende po sa height
+Interviewee: Depende sa height, knee ng ano to? Ng bata o matanda? May problema kana
+dito. Sa nakausap mo matangkad na hanggang knee nya eh yung nakausap mo maliit
+hanggang hips nya yan. Consider mo yun ah, tatanungin ka dyan meron kana dito. Kasi
+knee-deep nilagay mo dito, waist-deep sabi nya depende sa height. May problema ka pa rin
+dyan dapat more or less, mag average ka ng measure more or less 20 feet, 10 feet ganun.
+Para alam mo diba specific yung hinihingi dito eh, katulad nyan knee paano kung
+paniniwalaan ito?
+Interviewee: Bakit mayroon kana nitong summary of findings?
+Researcher: Overall ng survey interview.
+Interviewee: Okay. Output lang naman titignan ko dito, okay naman na yan eh.
+Interviewee: Kasi pag sa title palang na discuss mo na yung kabuohang Chapter 1 to 3 mo
+lusot kana sa banga dito, ayan ang panel ibig sabihen alam mo talaga. Ngayun lalagyan mo
+
+===== PAGE 12 =====
+nalang ng laman yung Chapter 1 to 3 mo, alam mo na paano lagyan ng laman kasi title mo
+palang nandun na yun pero kung title palang hindi mo na ma-depensahan papaano mo na
+lalagyan ng laman to kanina lang ang daming kong tanong hindi nyu masagot kanina pero
+ngayun alam mo na. E-formulate nyu nalang yun, itama nyu nalang tapos aralin nyu pa rin
+kasi baka lahat ng sinasabi ko hindi umakma sa gusto ng panel nyu kailangan e-analyze nyu
+pa rin kung tama ba yung pinagsasabi ko. High tech na ngayun may internet na gamitin nyu
+sya pero huwag nyu lang kokopyahen as reference, hindi ko kayo tino-tolerate gumamit ng
+AI pero ang AI kasi is reference, inaalam nyu lang kung ano yung function yun yung
+maganda kay AI pero hindi lahat ng sinasabi ni AI ay tama, may research pa rin.
+Interviewee: Okay, (SURVEY QUESTION: Wrong Decisions Due to Lack of Flood Info
+(Q13)) YES — made a wrong decision 64%. Working Title: FloodSense: An Augmented
+Reality Mobile Application with Machine Learning-Based Flood Susceptibility Mapping for
+Bacoor City. Based on the identified gaps, this study proposes developing a mobile
+application that provides residents with location-specific flood susceptibility information for
+Bacoor City. Using a machine learning model, anong machine?
+Researcher: Machine learning model po, yun po yung branch po sya ng AI kung saan
+instead na manual yung pag input ng data, e-feed nalang po sya ng isang bagsakan tapos
+yung machine learning na yung mag analyze at magpo-provide ng answer
+Interviewee: So si machine learning analyzer to na e-input mo duon tapos ipa-process ng
+machine learning
+Researcher: Opo, based sa data set na pinakain mo sa kanya
+Interviewee: Okay, ginawa mong makina
+Researcher: Yun po yung purpose nya
+Interviewee: Sya yung mind, sya yung gumagawa ng output. A learning model trained on
+rainfall data.
+Researcher: Opo, yun nga po
+Interviewee: Soil type? Dapat to may basihan ka ren. Sinama mo yung soil type eh, kung
+nag a-absorb ba sya ng tubig o hindi. Paano kung nakatungtong sa bato(road/concrete
+surface)? Kalimitan sa atin may lupa pa ba? Puro kalye na eh.
+Researcher: Opo
+Interviewee: Pero dapat na identify mo pa rin, anong klaseng lupa yung behind dun sa
+place na yun. Ikaw na mag-identify per maps. Sample, para wag mo nang pasagutan yung
+community dito, ito mapa mo diba, mga bloke bloke yan may panga-pangalan yan eh diba
+ma-identify mo naman yan kung anong klase lupa yung nandito kahit pa nakabato yan at
+least alam mo kung anong lupa yung andyan, ikaw na mag-identify dyan. Halimbawa dito
+sila nakatayo, matik yun sa soil type nun base sa ininput mo. Wag mo nang pasagutan sa
+kanila ha (survey respondents) kasi the more na marami kang pinapasagutan, the more na
+ayaw nilang sumagot. Ikaw na rin humanap dyan (drainage proximity) Engineering yan eh,
+hindi nila alam yan itong drainage proximity. Ito lang ang makukuha mo sa community
+(rainfall data) makakagawa ka ng rainfall data base dun sa input sa oras at yung dami ng
+ulan, dun kana makaka generate. Ngayun ang elevation naman malalaman mo naman kung
+Low, Moderate, High, and Very High sa pamamagitan ng elevation, soil type dun mo
+malalaman kung madaling magsubside ang tubig o hindi. Drainage kung mabilis yung
+current kasabay ng soil type yan kung okay ba yung drainage o hindi. Historical flood
+
+===== PAGE 13 =====
+records mapro-provide mo ito so ilagay mo na sya kasi pag nag-input sa app o naka default,
+tapos yung mga blangko nalang yung sasagutan nila, tatanungin ka dyan ng panel.
+Interviewee: The app classifies flood risk into four clear levels: Low, Moderate, High, and
+Very High - for each zone/ barangay in the city. Tama itong nilagay nyu kahit hindi ko pa
+nababasa yung paper nyu. Ito yung inaantay kong paliwanag mo kanina.
+Researcher: Hindi ko lang po na formulate yung tanong
+Interviewee: Output eh.
+Researcher: Akala ko po kasi mismong mapa,
+Interviewee: Hindi
+Researcher: Results po pala
+Interviewee: Pagtinawag, yung ginagawa mong pagkuha kuha, pag map activities yun eh.
+Pagresult immediate result output. Yung outcome naman ano yung magiging halaga in a
+long term.
+Interviewee: Residents open the app, set their own parameters, so dapat specific itong
+parameters mo. What kind of parameters, baka tanungin kayo dapat alam nyu ang sagot
+dyan. Then point their phone camera at any flat surface, sigurado kang flat lang? Baka
+maghanap ng flat surface yung kukuha sa camera, baka sa loob ng bahay nakakuha ng
+flood baka duon ilagay.
+Researcher: Kahit ganto lang po yung flat surface kahit dyan lang po itutok (flat surface
+table)
+Interviewee: Bakit pagkahindi ka hindi flat, hindi nya ba made-detect?
+Researcher: May bumb po kasi
+Interviewee: Dapat dun ilagay nyu sa instruction kung bakit, kasi mga pilosopo yung tao eh,
+kung sa damo ilagay asan ang flat?
+Researcher: Dapat po may instructions
+Interviewee: Oo, kasi may gap kana dun papaano ka makakakuha ng data nag-input nga
+duon pala nilagay sa damuhan. Dapat yung app nyu malalagyan ng warning na pagsa
+damuhan hindi pwede at pag itinapat sa flat surface maggre-green yun so duon lalabas yung
+inputs. Pagka naka red ibig sabihen walang inputs na pwedeng sagutan pero pag green dun
+lang lalabas yung mga e-input para hindi kayo magkamali so ma-address na itong flat
+surface mo.
+Interviewee: ("Is my area at risk right now?") Yung risk ay, ano bang ibig sabihen nyu ng
+risk? May formulation to ng risk. Anong ibig sabihen nyu ng risk?
+Researcher: Umm, predictive?
+Interviewee: Kasi may categories yan, pwede kasi nasa risk ka pero low, moderate, high
+tatlong lang yun so dapat na identify kung anong klase ng risk, diba na detect nya red eh
+kung nakuha nya ba red high risk na ba yun? Hindi. Oo mataas ang tubig eh ilog yun asan
+ang risk dun? Wala, pero kung binabaha duon tapos ang tao walang alam walang
+
+===== PAGE 14 =====
+knowledge base sa interview nyu dito kung sila ay mataas ang capacity kahit pa binabaha
+sila pwede maging low pwedeng e-moderate ang risk depende yun sa interview nyu duon
+lalabas yun dun sa area nyu, halimbawa ito yung Sitio Pogi duon sa feedback form na
+ginawa nyu kinompute nyu umaverage sya ng 84% capacity capacitated yung Sitio so
+meaning kahti naka red yan pwede mong sabihen yan na moderate risk, moderate lang sya
+kasi mataas yung capacity nya eh pero naka red sya tapos mababa ang capicity nya nagrate
+lang sya ng 50% below high risk sya. Example, Sitio Pangit nag yellow, pwede mong
+tawaging high risk yan kung vulnerable tong lahat mga bata, matanda kasi any moment na
+tumaas itong ano critical na yan magju-jump off yan sa red so dapat alam mo ren yung kung
+paano magkuha ng risk level kung gaano kataas. Alamin nyu red yun kasama sa research
+nyu, halimbawa, ito binaha yan (Open Area) anong risk, kanino, nasaan ang risk, sa
+population? Hindi, wala namang nakatira dyan eh ano kung bahain yan. Pero mayroong risk
+in terms of natural resources nandun ang risk nya in population wala so anong kinukuha nyo
+dyan population lang diba?
+Researcher: Opo
+Interviewee: Given? Nakuha? Para pagdefense nyu lahat ng anggulo kaya nyung
+depensehan. Okay.
+
+===== PAGE 15 =====
+

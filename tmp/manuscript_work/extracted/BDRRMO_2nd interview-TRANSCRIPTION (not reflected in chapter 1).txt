@@ -1,0 +1,486 @@
+
+===== PAGE 1 =====
+Thesis Initial Interview Transcript
+BACOOR DISASTER RISK
+REDUCTION AND
+MANAGEMENT OFFICE
+City of Bacoor Legislative and
+Disaster Resilience Bldg.
+Bacoor Government Center
+Brgy. Bayanan, Bacoor,
+Philippines
+Staff
+Johnny P. Garcia
+Date of Interview: May 24,
+2026 Time Started: 2:45 PM
+Time Ended: 3:30 PM
+This interview aims to understand the current workflows, processes, and systems
+used within the organization. The information gathered will help identify possible
+areas where digital solutions such as software systems or websites could improve
+efficiency.
+Interviewee: Okay so ang kailangan niyo sa akin na data, para ma-identify para
+maturo kung yung lugar nila ay low, moderate, high, and very high.
+Researcher: Opo
+Interviewee: Halimbawa, nung itinuro ko itong area na ito, magrereflect doon sa
+system ninyo kung yung itinuturo niya ay low.
+Researcher: Depende po yun sa rainfall intensity and rainfall duration po.
+Interviewee: Edi computation yun.
+Researcher: Opo
+Interviewee: Wala sa amin yun, sa PAG-ASA yun, tsaka gagawa kayo ng formula
+non. So ano lang yung kailangan ko maibigay?
+Researcher: Yung eto lang po (Question no.1), pag nabasa niyo po ito, masasabi
+niyo po kung ano po yung kaya niyo pong maibigay.
+Interviewee: Ahhh, flood hazard map. Puro maps pala ito. Bibigyan kita, pero may
+request kaba nito? Meron ako nento, flood hazard map, kakapakita ko nga lang sa
+kanila eh. Tsaka barangay boundary map. Oho, mabibigay ko yan sainyo. Pero
+
+===== PAGE 2 =====
+GIS sya? Shapefile? Kase kung maps toh, output na toh, jpeg. (Pinakita sa
+cellphone niya yung example ng mga maps). May picture ito ng flood, pero luma
+na ito. Luma na tong nasa libro, pero kung kulay violet, bago payon. Yung mga
+lumang map di ako gumawa non, so mapa pala kailangan niyo, okay request
+kayo. (Binasa ang question), “If shapefile cannot be released….”, ilalatag niyo ba
+ito sa GIS yung ginagawa ninyo? Ano ba yung gusto niyo rito? Baka shapefile
+itong hinihingi ninyo? Kase ang nakalagay dito maps eh, ang output niyan, jpeg,
+picture. Bakit dito, may shapefile.
+Researcher: If available mo yung shapefile.
+Interviewee: Wala kayong nirerequest na shapefile. Ang nirequest niyo,
+barangay map, boundary map.
+Researcher: Nasa question po sya, kase po yung shapefile po, para po sa
+machine learning namin.
+Interviewee: Bukod tong hazard maps? O yung nilalaman nentong shapefile nung
+dalawa.
+Researcher: Bale po yung GIS file po, nandito na po yung mga files, flood hazard
+maps, mga boundary maps, mga elevation data. Kaya niyo po ba siyang maibigay
+or maibibigay niyo po ba sya?
+Interviewee: Yung elevation kase hindi pa tapos yun, pinagaaralan pa. Walang
+elevation. Pero yung dataset nung shapefile, ng hazard, pag in-input mo sa GIS
+toh, lalabas lang yung low, moderate, high, very high. Pero ano, walang details
+yon. Gagawan niyo. Tapos yung barangay boundary na shapefile, boundary lang
+talaga yon. Yun yung kailangan niyo? Shapefiles?
+Researcher: Opo sir.
+Interviewee: Na makakagenerate ka ng hazard maps.
+Researcher: Opo, i-fefeed po namin yung datasets sa system namin. Tas aaralin
+po ng system namin yung dataset nayon, tas doon po sya mag-o-output nung
+mga susceptibilty levels.
+Interviewee: Mukhang madugo ito ah, kase shapefile, may mga attribute ito.
+Researcher: Ayun nga po, para po pag na-input na namin po yung mga dataset
+nayon, mas mapadali po.
+Interviewee: Kaya nga eh, yung attribute nayon, hindi kayo ang maglalagay non.
+Pero ang malalagay lang don, is yung level ng flood susceptibility lang. Pag
+nilatag mo nayon sa GIS, malalaman mo na doon kung anong barangay yung
+binabaha. Pero di nakasulat don kung ilang area ng barangay yung binaha. Ibang
+shapefile naman iyon. Kase yon, may nag overlay kana don, meron ng processing
+ng GIS yon.
+
+===== PAGE 3 =====
+Researcher: Okay lang po yun sir, ang purpose po kase nito is aralin po yung
+data sir and irereflect po namin to each other.
+Interviewee: Kase ano, eto yung GIS, eto naman yung mapa. Eto yung shapefile.
+Ang laman ng shapefile, laman niyan attributes, kapag binuksan mo iyan, lalabas
+niyan eto, level 1, level 2, level 3, tapos may column yan dito diba. Empty yan, eto
+yung mga low, moderate, high, very high. Kapag nilatag mo yan dito, pupunta
+nayan dito, pag pumunta nayan dito, ito yung barangay. Dapat kapag inopen mo
+si barangay, yung level one, yellow, ilang barangay yung tinamaan. Gaano
+kalawak. May process nayon. Kala ko kayo gagawa ng data. Ano ba gusto niyo
+gawa na agad?
+Researcher: Yung datasets po kase ninyo, para validation po na kinuha po namin
+mismo sainyo yung data at hindi po assumed namin.
+Interviewee: So ibig sabihin, yung ilalagay niyo sa system ninyo, is gawa namen,
+hindi niyo na ifoformulate?
+Researcher: Hindi po, ifoformulate po namin. Bale po irereflect po namin yung
+mga data to each other para maka form po ng i-isang output.
+Interviewee: Dito kase sa shapefile, nandito na yung mga area, kung gaano
+kalawak, level one, level two. Yun lang ba kailangan ninyo?
+Researcher: Ito po, mga historical flood records, mga elevation data, tapos yung
+mga sinasabi po ninyo.
+Interviewee: Sure kayo na eto yung kailangan niyo? Pag maps kase, output na
+ng shapefile.
+Researcher: yung shapefile po, maibibigay po ba ito kapag nirequest po namin?
+Interviewee: Tatanong ko pa sa boss ko, kase data na toh eh, di ako sigurado
+kung maibibigay ito. Kase ito, kapag maibibigay ito, irprprocess ko pa ito depende
+sa pangangailangan niyo. Kase may data ako nento, kaso kasama yung
+population dito. Lahat, as in lahat. Kase kung sinabi niyo, “Sir gawan niyo kami
+GIS, yung attribute ganito laman”, ganon nalang sana tinanong niyo mas
+naintindihan ko pa. Pero for approval yan ng bossing naten. Pag padala kayo ng
+letter, yung letter nayon, ipapabasa ko sa boss ko, pag pinirmahan niya nayon, edi
+yon na gagawan ko. i-Gegenerate ko lang yung shapefile depende sa
+pangangailangan niyo. Shapefile parin sya, pero kailangan niyo mag-aral ng
+Quantum. Kase mao-open niyo yung shapefile na maibibigay ko kapag nag aral
+kayo ng Quantum. Maaral niyo ba ito? Iyak kayo dito. 30 thousand ang binabayad
+dito kapag nagtrtraining, isang linggo. Pinakamababa, 10,000 pesos. Kase may
+digitalizing toh, may hazard analization yan. Tapos sa attribute mo lalaruin yung
+formula. Tapos meron kayong overlaying hazard dito, intercept mo pa data.
+Papaano ito macoconnect sa apps ninyo.
+Researcher: Dataset lang po kase talaga kailangan namin.
+
+===== PAGE 4 =====
+Interviewee: Shapefile talaga? Kase kung yung shapefile dataset, di niyo na
+kailangan toh, kase tutulungan kona kayong gumawa. Kase kung hindi kayo yung
+gagawa, kailangan niyo toh. kase magagawa itong map, dahil dito sa files na
+maibibigay ko. Pero kung shapefile kailangan inyo, kaialngan niyo ng quantum,
+pero kung yung system niyo kapag kaya magopen, di niyo na kailangan ng
+quantum. Yun yon? kaya makapag-open ng shapefile?
+Researcher: Yung data set po na ito, ililink lang or iinterpret po namin dito sa
+system na balak po namin gawin.
+Interviewee: Kaya basahin ng system niyo yung shapefile?
+Researcher: Malalaman po, hahaha. Naka excel po ba format niyan?
+Interviewee: Oo, excel, csb. Gusto niyo ba csb ko nalang? Kase yung shapefile,
+QUATUM lang may kaya niyan, pero kung kaya naman ng system niyo magbasa
+ng CSB, yun nalang.
+Researcher: Malalaman po namin kapag in-progress na po yung system namin
+Interviewee: Parang sinabi niyo, “sir gawan niyo po kami ng shapefile or csb”,
+ayaw niyo kase ako deretsuhin. Ano ba kailangan niyo dito sa shapefile. Kung
+anong barangay yung susceptible, tsaka boundary. Kase yung boundary, kaya ka
+humingi ng boundary para ma overlay niyo yung hazard nayon. Ang maibibigay ko
+sainyo, Area, area ng barangay kung saan doon may low, moderate, high at very
+high, at anong barangay siya, nakalagay don. Then pwede ko siyang i-csb.
+Researcher: Sa elevation kaya sir?
+Interviewee: Wala pa kaseng final eh, kase ginagawa pa yung elevation eh. Wala
+ba sa internet?
+Researcher: Yun nga po yung tanong namin, halimbawa kumuha po kami ng
+ibang data source not from you po, magiging valid po kaya yon? For example po
+Namria
+Interviewee: Ayon, dun rin kami nakuha eh, so data palang pala kailangan niyo,
+di pala output map
+Researcher: Yes po, kase yung output map po kami po yung gagawa non.
+Interviewee: Halimbawa, eto bahay ko, igegenerate ng apps niyo kung low,
+moderate o high ba, ganun ba?
+Researcher: Pero yung saamin po kami, hindi po sya specific, kungwari bahay
+niyo po, per barangay po sya.
+
+===== PAGE 5 =====
+Interviewee: Eh sa isang barangay kasi may Low, Moderate, tsaka High
+Researcher: Out of scope na po namin, yung ganun po
+Interviewee: Hindi dapat isama nyu yun, hindi ba kayo mahihirapan? Pagka
+marami scope diba maganda?
+Researcher: Kapag hindi po namin nagawa yun, ligwak na po yung research title.
+Kaya nili-liitan po namin yung scope
+Interviewee: Example, ito barangay, ito ang bahay ko, pinicturan ko yung
+barangay. Ang lalabas sa result dito, halimbawa Barangay 1 ito, ang lalabas sa
+result dyan kasi mayroong mga barangay ito lang yung high, mayron dyan
+moderate, mayron dyang low sa iisang barangay lang iyun. May lalabas dyan
+base sa assessment na gagawin ko may lalabas na ganun tapos susukatin nya sa
+kabilang column naman yung area, ano yung affected area
+Researcher: Out of scope na kasi namin
+Interviewee: So per barangay lang? Hindi malalatag dito yan kung per barangay
+Researcher: Ea-assess po namin sya, e-analyze po namin sya ng mano-mano
+Interviewee: Paanong analyze? Baka hindi maging accurate yan? Pagnakita ng
+tao yan bakit dito hindi baha
+Researcher: Ang gagawin po namin magka-conduct po ule kami ng follow-up
+interview for validation
+Interviewee: Hindi magiging accurate yan, halimbawa sa Barangay Niog yung
+kalahati dyan high, kalahati dyan low papaano yung assessment na gagawin nyu
+duon. Ang kalahati nito hindi binabaha, ang kalahati dun binabaha. Eh kung
+nagpicture dito yung nasa low
+Researcher: So much more mare-recommend nyu po yung ganyan?
+Interviewee: Oo, halimbawa kasi may coordinates yan diba, pagka pinicturan yan
+ng community na kapag ang coordinates mo na punta dito sa subdivision ng
+Barangay Niog na hindi naman binabaha magre-reflect yan sainyo kung hindi
+naman sya binabaha, magtataka yung tao. Nage-get nyu yung point.
+Researcher: Pwede kong ilagay sa result and summary na dito sa area na ito
+may low and high pero kapag generalized pwede natin ilagay na kung itong
+barangay na ito low susceptible pero kung gusto nila ng specific nasa result and
+summary na kaya eko-consider po namin yung sinabi ninyo
+Interviewee: Oo, pwede naman result and summary nalang pwede nyu naman
+ilagay at ilatag ito lahat sa summary ito
+Researcher: Hindi na po sa mismong AR (AUGMENTED REALITY)?
+
+===== PAGE 6 =====
+Interviewee: Oo. Consider nyu rin yung drinawing ko.
+Researcher: Ano po sya pre-event awareness yung purpose po ng app namin
+hindi po sya real-time
+Interviewee: Mas maganda nga kasi mas ma-identify nila kung yung lugaw nila
+nasa high, yung lugar nila nasa low or moderate para nandun yung level of
+preparedness nila and level of response depende sa level of hazard na meron
+sila. Tapos kung kaya nyung lagyan kung red dapat ilalagay nyu narin dun kung
+anong level of response na gagawin nila
+Researcher: So may map naman po kayo nung ganun sir na sa isang barangay
+Interviewee: Sa mapa na yun, per barangay na gusto mo. Malaki yan Bacoor yan.
+Mapa ng barangay gagawa ako ng mapa ng barangay pero ang dami nyan.
+Lalawak yang scope nyu, bakit? Kasi hihinge kayo sa akin ng hazard maps na
+maps na ilalatag ninyo, ang problema hindi kayang e-identify kailangan shapefile
+pa rin ang ilalagay mo. Maganda sana yang naiisip nyu pero matagal na trabaho
+yan lalo na sa part ko matagal yan, bakit? Gagawa ako ng flood hazard per
+barangay tapos shapefile tapos identified yun kung low then kapag in-input o
+nagpin ako lalabas yung mapa ng barangay kung nasa ako nandun, tama? Ganun
+ba? Kung nasaan ang coordinates ko.
+Researcher: Tama po, nasa new features yun
+Interviewee: Kung nandun ako, tapos lalabas duon sa mapa kung namumula
+yung pinned location ko pero naka specific lang kung anong barangay yun at kung
+anong sitio dapat buong barangay na kung Bacoor lang sana kasi coordinates
+naman yun e. Example nakalagay dyan Barangay, Sitio, Area Affected of
+Barangay so halimbawa yung level 1 ay red, area nya ay 40 hectare, sitio nya ay
+pogi. Nagpicture ako dito nag appear sa sitio Pogi, kung naka high ka lalabas
+duon high 40 hectare or moderate. Kung mag-orange yung picture mo duon
+meaning moderate ka so meron dyang 40 hectare nandito ako sa sitio Pogi
+lalabas dito. So sa loob ng maps mo mayron dung boundary, bibigyan na rin kita
+ng boundary ng Bacoor o yung mga sitio para pagtama dun naka indicate dun
+yung boundary
+Interviewee: Kung nandun ako, tapos lalabas duon sa mapa kung namumula
+yung pinned location ko pero naka specific lang kung anong barangay yun at kung
+anong sitio dapat buong barangay na kung Bacoor lang sana kasi coordinates
+naman yun e. Example nakalagay dyan Barangay, Sitio, Area Affected of
+Barangay so halimbawa yung level 1 ay red, area nya ay 40 hectare, sitio nya ay
+pogi. Nagpicture ako dito nag appear sa sitio Pogi, kung naka high ka lalabas
+duon high 40 hectare or moderate. Kung mag-orange yung picture mo duon
+meaning moderate ka so meron dyang 40 hectare nandito ako sa sitio Pogi
+lalabas dito. So sa loob ng maps mo mayron dung boundary, bibigyan na rin kita
+ng boundary ng Bacoor o yung mga sitio para pagtama dun naka indicate dun
+yung boundary lalabas mo na duon pero hindi nya ilalabas bale epo-focus nya
+lang kung nasaan kang barangay kasi kung eka-crop mo yan matagal yan. Kasi
+halimbawa ito yung buong maps pag dito ka nag pin ng location dito lang lalaki or
+
+===== PAGE 7 =====
+mag zoom
+Researcher: Zoomable lang po sya or pin my location
+Interviewee: Mas magaan ang trabaho mo duon, kasi shape file lang ang ibibigay
+ko. Naka sitio at naka barangay
+Researcher: Tapos kapag nagpress "okay" ka duo or nagpin ka ng location lalabas
+yung susceptibility levels, ano yung mga kailangan ng user, checklist, action
+checklist ay lalabas. Diba po sinabi ninyo na nagmi-maintain kayo ng mga digital
+records ng past flood events po sa Bacoor pati po yung mga dates kung kailan
+naganap yung bagyo
+Interviewee: Oo, pati level ng flood at ano yung pangalan nung bagyo, history
+natural dapat kumpleto
+Researcher: So yung format po nun pwede sa
+Interviewee: Naka CSV naman yun e, ah naka excel pala madali lang naman
+e-convert sa CSV yun
+Researcher: Sa isang taon po, nag-update po ba yun every year? Or every 5 years?
+Yung mga flood records or every flood record ina-update nyu po kaagad?
+Interviewee: Every year yan, yearly yung mga record ng bagyo at depende sa
+makukuha naming probation, historical data namin ng bagyo mula pa 2022 yung
+nagpabaha sa 2022 mula 2026 meron kaming records
+Researcher: So yung office nyu, yung mga records nyu, kakasabi nyu lang po galing
+ren po ba sa NAMRIA
+Interviewee: Yung paggawa ng data shapefile NAMRIA
+Researcher: Kapag po ba kayo ang gagawa mino-modify nyu nalang galing po sa
+data nila?
+Interviewee: Hindi ilalatag mo lang talaga yun kailangan alam mo lang kung paano
+gamitin
+Researcher: Kasi kapag binago nyu sya hindi na sya magiging valid?
+Interviewee: Hindi na kasi binago mo na yung ginawa nila eh, halimbawa binigay
+sayo ng buo bahala ka maghimay basta ito yung buo. Halimbawa ito yung buong
+data tapos hinati mo, bawal yun. Pwede mo syang hati hatiin base sa shapefile pero
+kung babaguhin mo yung area na maapektuhan, hindi pwede kasi parang binago mo
+na yung data na binigay nila
+Researcher: Kaya po ba ng CPDCO magbigay ng elevation level per barangay
+Interviewee: Hindi ko alam
+Researcher: Yung office nyu po ba (BDRRMO) kayang magbigay ng location ng
+mga evacuation centers dito sa Bacoor
+Interviewee: Yes naman
+Researcher: How frequently nyu po ito nababago kasi kada taon may iba iba o
+bagong evacuation centers
+
+===== PAGE 8 =====
+Interviewee: Hindi naman nababago yun
+Researcher: Papaano po kung mayroong bagong nadagdag na evacuation center,
+like bagong court na pwedeng maging evacuation center
+Interviewee: Depende, kasi kung taon-taon hindi pwede, every 5 years siguro kasi
+matagal gumawa ng court
+Researcher: Accessible po ba sila tuwing flood
+Interviewee: Dapat, syempre kasi hindi mo pwedeng tawaging evacuation center
+yun
+Researcher: Pwede ren po ba sila sa CSV sheet sa mga file na po yun para
+ma-locate of evacuation centers. Mai-shi share nyu po ba sya?
+Interviewee: Kaya lang luma na yun eh, marami na kasing bago ngayun hindi pa
+nakakagawa ng bago. Hinge ka muna ng data sa City Engineering Office ng
+evacuation area, alam nila yan. Hinge ka ng data tapos coordinates kapag naibigay
+mo yung coordinates at csv ako ang maglalatag syempre kailangan dun yung area
+ng evacuation center kung gaano kalaki at location. Meron ako dyan luma, kung
+gagamitin nyu yun 2022 pa yun eh marami ng bago ngayun.
+Researcher: Accessible naman po silang lahat
+Interviewee: Oo accessible yun
+Researcher: Yung mga evacuation center po ba nila may mga limit po ba kung ilang
+tao ang kasha
+Interviewee: Oo, sa dati kong ginawa meron pero sa kanila ngayun hindi ko alam
+depende kung maibibigay nila. Sakin kasi alam ko kung ilang kwarto, ilan yung CR.
+Meron ako nun pero kapag binigay nila yan yung coordinates na yan kailangan
+nyung puntahan
+Researcher: For manual checking?
+Interviewee: Oo naman, bakit? Base sa binigay ng CEO (City Engineering Office)
+kung wala silang nakalagay na kung ilan ang CR kayo na ang pupunta dun, ilalagay
+nyu sa record yun pagnatapos nyu yun ibigay nyu sa akin ilalatag ko sa shapefile at
+least kaya nyung panindigan na yung data ninyo ay tama kasi nag manual checking
+kayo eh na binigay ng CEO na iprinocess ko. Halimbawa limang evacuation
+pupuntahan nyu yun kukuha kayo ng permit sa CEO pagbinigyan kayo ng letter kasi
+sila yung nagco-coordinate ng facilities eh.
+Researcher: So maganda po ba syang feature kapag nai-add namin sa app yung
+ega-guide po kayo ng app papuntang evacuation center
+Interviewee: Syempre dapat, halimbawa umorder ka ng pagkain may way point
+papuntang evacuation center para alam nila kung saan sila dadaan. Kaso kailangan
+ang gagamit dito may internet
+Researcher: Ayun po yung limitation namin, na dapat may load po si user
+Researcher: Yung BDRRMO po ba may office na Go Bag checklist
+Interviewee: Meron, may checklist kaming ginagamit ang Go Bag kasi pwede nyung
+
+===== PAGE 9 =====
+gayahin total nasa internet naman yun nagbabago lang yan depende duon sa
+nakatira
+Researcher: Kung may aso or may PWD
+Interviewee: Oo, kung may PWD kailangan mo ba ng ganito? Kung may bata ka
+kailangan mo ba ng maintenance? Ayun yun, kaya ilalagay nyu yung features na
+ganun. Ito yung Basic Go Bag tapos if may PWD. Ano ba yung Basic Go Bag,
+flashlight, first aid, and etc dapat lahat meron
+Researcher: Tsaka po yung mga action na kailangan nilang gawin or action check
+list
+Interviewee: Oo action, before, during, and after dapat
+Researcher: Nakafocus po kasi kami sa pre-event awareness
+Interviewee: Ah pre-event awareness so bago dumating yung bagyo so Go Bag
+tapos evacuation plan to evacuation area, ano yung gagawin nila yung epre-prepare
+nila during Go Back tapos after mage-evacuation ano yung protocol nila pag nag
+evacuate
+Researcher: Maganda po syang feature at ilagay sa app
+Interviewee: Oo, kasi preemptive-awareness yan, na para kapag dumating ang
+baha alam mo na kung saan pupunta ano yung gagawin mo nakalagay duon before
+baha ano pa yung kailangan mong gawin at kapag nasa evacuation ka ano yung
+kailangan mong gawin
+Researcher: Yung BDRRMO po ano po yung basehan po nila para sabihan yung
+mga tao to evacuate na sa area
+Interviewee: Yung klase ng event, kritikal ba? malaki ba ang bagyo? depende sa
+forecast ng PAGASA kung tatamaan ba tayo ng bagyo. Common sense lang yan,
+eto ang Bacoor nandito ang bagyo kung tutumbukin, anong perception nyu?
+Researcher: Prepare na talaga
+Interviewee: Bago pa dumating si bagyo nandito palang nandun kana sa evacuation
+dapat. Kung nanduon ang bagyo at nandito ang Bacoor, malayo
+Researcher: Papaano sir kung ayaw umalis o lumikas, pipilitin nyu po ba yun?
+Interviewee: Hindi meron tayong batas dyan preemptive 246-2022 forced
+evacuation
+Researcher: Papaano kung ayaw talaga
+Interviewee: May pulis yan, sila na ang bahala duon at hindi pwedeng ayaw kasi
+masasalanta sila duon. So halimbawa ito sabi mo immediate diba, dito malayo ano
+ang level of response ang gagawin nila pagdating sa evacuation, mababa o mahina
+lang in preparation lang ito hindi nya kailangan lumikas pero dito kailangan mo ng
+lumikas prior pa dumating ito pero ito kahit dumating yan stay put ka lang
+Researcher: Mayron po ba kayong mga specific barangay na kahit low po sya or
+moderate pero binabaha pa rin po like umaabot sa tuhod kasi po iba ibang rason like
+nag stock po yung mga drainage nila . May list po ba kayo nun?
+
+===== PAGE 10 =====
+Interviewee: Ito na, nandito na yun. Kapag nakita mo ito, ito na yung lalabas high,
+low, tsaka moderate pati level ng tubig
+Researcher: So okay po na idagdag namin sa app kasi, yung bdrrmo po. Pwede
+po ba namin sabihin sa user na i-direct parin sainyo yung pag momonitor nila
+imbes na solely mag rely sa app namin
+Interviewee: Panong ano? E ‘diba yung app nyo nga connected sa samin diba,
+so dapat may contact kami sa app at connected kami sa app.
+Researcher: Ilalagay din po namin yung mga contact numbers nyo.
+Interviewee: Wala bang main (admin) yung app?
+Researcher: Wala po po, out of scope pa po namin yan.
+Interviewee: Papano mo aauyin yung maps, pano kung may babaguhin ka don.
+Ah, kaya gusto mo dumeretso samin for any concern kung wala don, kasi wala
+kayong admin. Kasi kung may admin, ang admin ay samin.
+Researcher: Ayun nga po yung tinanong ng isang panel samin, bakit wala daw
+pong admin, pano daw mag uupdate ng mga datasets. Ang sinagot lang po namin
+mano-mano nalang po, dipende sa datasets na ibibigay samin.
+Interviewee: Eh pano yung sustainability ng app nyo ay bababa.
+Researcher: Yun din po yung binubutas samin ng Panelists namin
+Interviewee: Malamang bubutasin talaga kayo no, kasi kasama yon sa SDLC
+diba na kailangan pag gagawa ka - sustainability at efficiency, Asan?
+Researcher: Icoconsider din po namin yon.
+Interviewee: Bubutasin talaga kayo don, e paano kung ano - nagkaroon ng
+evacuation tas nag bago na. Butasin talaga kayo don. Pero nasagot nyo, ano
+pumayag yung panelists?
+Researcher: Di naman po tinanong, naisip lang po namin na pwede syang
+maging butas.
+Interviewee: Malamang, Pano yung editing features non, sainyo lang. Kung gusto
+nyong maabala wala naman problema don e. Dapat ang sagot mo priority muna
+yung app/system kung mag wowork tong app, saka namin gagawa ng Admin.
+Researcher: Yun din po yung naisip namin e, Nasa future recommendation po
+sya para sa mga future researchers.
+Interviewee: Oo, Eto (the system) for practice concern lang, kung eto ay mag
+i-improve, saka gagawan ng admin para iba na mag mamanage hindi na kami(us
+
+===== PAGE 11 =====
+the researcher). Pwede yon.
+Researcher: So every, kunware po balak namin i-update yung mga datasets,
+pupunta parin po talaga kami dito.
+Interviewee: Oo.
+Researcher: Kayo lang po ba sir yung person in contact dito sir, pag kukuha kami
+ng datas.
+Interviewee: Kahit sino sa’amin jan (staff), basta may letter lang. Basta dial ka
+lang 161 kahit sino jan.
+Researcher: So eto pong last pong last feature namin, kung a-agree po kayo na
+makakatulong sya. Sharable report data attribution po, andon na po naka list,
+kunware po pinindot ng user yung barangay nya then yung rainfall scenario nya
+and gano katagal tapos lalabas na po don lahat ng sinabi ko (yung lahat ng
+feature: yung evacuation center, go-bag checklist, contact infor ng bdrrmo).
+Kunware po ako ay tiga zapote, shashare po sa taga tiga talaba, tapos shashare
+ko po don yung mga flood susceptability nya, kung ano po yung mga kailangan
+nya.
+Interviewee: Kasi wala syang app nyo? Shareable? Gusto mo I-share?
+Researcher: Opo pag gusto i-share. Makakatulong po ba yon sa app?
+Interviewee: Makakatulong pero, konti yung gagamit sa app mo. I-share mo
+nalang sakin bakit pa ako mag dodownload ng app mo. ayan ang disadvantage
+non, kasi mababawasan ang mag do-download ng app mo. Ini-encourage mo nga
+sila mag download e, tapos pwede naman pala i-share - edi hindi na ako mag
+do-download at ishare mo nalang sakin diba.
+Researcher: So, Ayun po yung recommendation nyo?
+Interviewee: Hindi, wag nyo na isama tong shareable. Pwede yon kung
+isha-share mo don, yung summary nalang yon ng location mo tapos it’s up to you
+kung gusto mong i-share yung location mo, halimbawa nasa Molino 3 ako tapos
+gusto ko ishare yung location ko sa tiga talaba pwede naman e.
+Researcher: Bali sa dulo po non, para syang magiging marketing?
+Interviewee: Oo, pwede mo syang i-ano, halimbawa: molino 3 ang binabaha at
+andito ako, ganto yung level of susceptibility samin, yung evacuation samin, tapos
+sinend ko sa kanya yon.
+Researcher: Bali yung result and summary namin, pwede po syang ma-ishare?
+Interviewee: Yung saakin (my barangay) lang mismo. Kasi kung kukuha ka sa
+talaba, e kailangan pumunta ng talaba. Kaya hindi pwede yung shareable e,
+kailangan mo ng coordinate e, nasa app mo yung coordinate. Kapag clinick mo
+
+===== PAGE 12 =====
+yung coordinate - kung saan ka nakatayo, dun yung mag rereflect sa mapa,
+Tama? Pwede mo i-share yung summary ng resulta mo, kung gusto mo i-share sa
+kanya (ibang tao) - “bat meron ka niyan” - edi mag download ka ng app para ma
+download.
+Researcher: pang marketing din.
+Interviewee: Oo.
+Researcher: Edi nasagot namin sir yung tanong nyo last interview na, “Pano ko
+i-dodownload yung app nyo ano ang gusto nyong gawin”
+Interviewee: yann.
+Researcher: Atsaka sir yung ano mo samin na, “Paano kung aware na, anong
+gagawin na sa susunod” at tinanong rin kami sir ng panelist sir, “ano yan map lang
+yung output nyo?” yung concept pasado sir pero nakukulangan sila sa
+output/solution.
+Interviewee: Sino nag tanong, yung panel?
+Researcher: Opo, nakukulangan sila, kaya ayan yung mga inadd naming
+features.
+Interviewee: ‘Diba sabi ko nga sainyo, kulang talaga - andaming kulang, kasi ano
+gusto nyo lang alamin ang baha? Edi ano ang gagawin ko jan pagkatapos, anong
+action taken, edi naramdaman nyo na kung ano ang kulang. Kailangan dapat
+alam ang gagawin, halimbawa may binigay kaming prevention, communication,
+plano ayun ang gagawin nila. Ganon ang output nya, kaya nakulangan talaga kasi
+bitin, andon lang kayo sa paghahanda, anong pinaghahandaan nyo, para saan
+ang pinag hahandaan nyo. So ang pinaka dulo nyan, yung nasa evacuation area
+na sila, so mula sa information ng bagyo, level of exposure nila, tapos yung flood,
+then ano yung kailangan nilang action taken don, then ano yung route papuntang
+evacuation, lalabas kasi don pag click mo jan, pwede kasi jan mag sabi ng red:
+you need to evacuate immediately, so ituturo na sa kanya yung evacuation area,
+dito yung daan (routing), ano yung dadalhin mo, dapat nakalagay don.
+Researcher: May gusto pa po ba kayong i-dagdag na feature po?
+Interviewee: Nakukulangan pa kayo jan?
+Researcher: hindi naman po. Pero kung may pwede pa po kayong i suggest po.
+Interviewee: Ayun nga, sa level of exposure nya or flood level nya, dun nyo
+ilalagay yung level of response nila, halimbawa pag nag low - dapat nakalagay na
+don kung ano yung gagawin ng community kung low, kung orange diba, or kung
+red
+Researcher: Bali, dipende po sya sa susceptibility level, kung ano gagawin nila
+
+===== PAGE 13 =====
+Interviewee: Oo, tapos nag babago din yon - dipende ren sa announcement ng
+city, pero siyempre - preparedness yan e, wala pa yung bagyo jan, so dapat
+nakalagay din don yung level of yellow nyo, ano ba yung mga level of water na
+kailangan nyo i-prepare. Halimbawa yung yellow nyo ay nasa range ng 6 inches to
+1 foot water yung range ba ng ano nyo ganyan ganito. So ano yung gagawin nila
+sa level na yon (yellow), indicate nyo don, ngayon ano dapat meron don kung ano
+gagawin ano gagawin nyo bago bumaha at habang bumabaha at pagkatapos ng
+baha - pwede nyo naman ma search yon kasi basic na tanong yon. Tapos
+Summary, pinaka last na yon - pag ka tinatamad sya mag basa lahat, andon yung
+summary. Halimbawa eto yung buong cellphone, kalahati nyan yung map then
+kalahati yung summary.
+Researcher: Thank you po sir.
+Signature over printed
+
+===== PAGE 14 =====
+

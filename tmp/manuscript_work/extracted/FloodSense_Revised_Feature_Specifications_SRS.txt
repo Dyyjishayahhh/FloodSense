@@ -1,0 +1,327 @@
+FLOODSENSE
+FloodSense: An Android Application for Flood Susceptibility Assessment and Pre-Event Preparedness in Bacoor City
+Software Requirements Specification
+Planning Baseline v0.1
+Prepared by:
+Goc-ong, R. | Juanites, M.L. | Pulao, R.
+Department of Computer Studies
+CvSU - Bacoor City Campus | August 2026
+STATUS: PLANNING DRAFT - NO IMPLEMENTATION HAS STARTED
+1. Document Overview
+1.1 Purpose
+This Software Requirements Specification (SRS) defines the proposed functional, data, technical, safety, and validation requirements for FloodSense before software development begins. It replaces implementation claims in the earlier feature specification with a planning baseline that can be reviewed by the research team, technical adviser, thesis adviser, and prospective institutional data providers.
+1.2 Proposed Product Scope
+FloodSense will be a scenario-based Android application intended to help Bacoor City residents understand generalized flood susceptibility and prepare before a flood event. The proposed core will use a rule-based Expert System, a PostgreSQL/PostGIS database, a backend application programming interface (API), and a Flutter mobile client. The system will not function as an official forecast, live warning service, risk model, or independent evacuation authority.
+1.3 Planning Status
+1.4 Governing Assumptions
+The project will prioritize a working, explainable Expert System before optional conversational AI.
+Results will be described as scenario-based susceptibility estimates rather than real-time safety declarations.
+Geographic precision will not exceed the precision of the approved spatial and historical data.
+Institutional collaboration, data release, expert validation, and evacuation-center accuracy will be treated as pending until documented.
+Provisional demonstration data may be used during development only when clearly labelled and excluded from final accuracy claims.
+1.5 Key Terms
+2. System Context and Boundaries
+2.1 Intended Users
+Bacoor City residents seeking pre-event flood-susceptibility and preparedness information.
+Research-team members responsible for data preparation, rule encoding, and testing.
+Designated subject-matter experts who will review geographic profiles, classification rules, explanations, and preparedness content.
+Authorized maintainers who may update approved datasets and rule versions after an update process is defined.
+2.2 Operating Environment
+2.3 In-Scope Core Capabilities
+Onboarding, scope explanation, and safety disclaimer.
+Rainfall intensity and duration scenario selection.
+Map or list-based selection of an approved geographic unit.
+Rule-based susceptibility classification with an explanation and source metadata.
+Results map and summary list.
+Check My Area using a user-positioned map pin without claiming street-level precision.
+Expert-approved pre-event preparedness guidance.
+Verified evacuation-center lookup when current data become available.
+Offline display of approved core data where technically feasible.
+2.4 Out-of-Scope or Deferred Capabilities
+Machine-learning classification, augmented reality, Unity, and Vuforia.
+Real-time forecasting, live sensor monitoring, and official warning issuance.
+Automated evacuation orders or statements that a road is safe at the present moment.
+Open-ended AI assistant in the core MVP.
+Crowdsourced reports, social sharing, and predictive analytics until separately approved.
+User accounts unless a documented requirement justifies their privacy and maintenance cost.
+3. Proposed End-to-End System Flow
+4. Data Requirements
+4.1 Required Data Sources
+4.2 DOST-ASTI Rainfall Data Planning Note
+DOST-ASTI has stated that most stations were installed around 2012 and that data may be provided from station installation until the last transmission. The provider stated that records before 2023 are generally transmitted at 15-minute intervals and records from 2023 onward at 10-minute intervals. Rainfall and water-level variables may be available depending on station type and location. Exact Bacoor or nearest-station coverage, file structure, units, missing periods, quality flags, and licensing remain to be confirmed.
+The raw 10-minute and 15-minute observations will be preserved unchanged.
+Processing will calculate comparable accumulations such as 1-hour, 3-hour, 6-hour, 12-hour, and 24-hour totals after units and accumulation behavior are verified.
+Station observations will not be treated as representative of all Bacoor areas without geographic and expert justification.
+Rainfall records will not independently determine susceptibility; they must be paired with flood-event evidence and expert review.
+4.3 Data Quality and Provenance Requirements
+Every dataset shall record its provider, request/reference number, date received, license, permitted use, geographic coverage, temporal coverage, units, and update date.
+Original source files shall be preserved separately from cleaned or derived data.
+Missing, estimated, corrected, or rejected values shall be explicitly flagged.
+No provisional or unverified dataset shall be presented to users as official or current.
+Every rule shall link to its evidence sources and expert review record.
+5. Expert System Requirements
+5.1 Selected Expert System Type
+FloodSense will use a rule-based production system represented through decision tables and evaluated using forward chaining. The engine will begin with facts obtained from the user scenario, geographic lookup, and the approved zone profile. It will then identify matching rules, resolve applicable conflicts, and return an explainable conclusion. This approach is proposed because it is transparent, reviewable by subject-matter experts, and does not depend on a large labelled training dataset.
+5.2 Expert System Components
+5.3 Proposed Fact Model
+Resolved geographic zone and parent barangay.
+Rainfall intensity category and applicable official threshold version.
+Rainfall duration or verified accumulation interval.
+Static baseline susceptibility or approved zone profile attributes.
+Historical flood-frequency/depth category where supported.
+Rule-set version and evaluation timestamp.
+5.4 Knowledge Acquisition and Rule Construction
+Define the geographic units supported by available evidence.
+Create historical cases linking rainfall observations to dated and located flood records.
+Present the cleaned cases and maps to designated experts through a structured elicitation form or workshop.
+Record proposed conditions, classifications, exceptions, uncertainty, and preparedness implications.
+Convert the accepted combinations into a decision table.
+Assign a rule identifier, source links, reviewer, approval status, priority, confidence, version, and effective date.
+Test the proposed rules against historical or expert-labelled cases not used during construction.
+Activate only rules that meet the approved validation and sign-off criteria.
+5.5 Forward-Chaining Inference Procedure
+5.6 Conflict Resolution and Uncertainty
+A sub-zone rule shall take precedence over a barangay-wide fallback rule when both are approved and applicable.
+A rule with all required conditions satisfied shall take precedence over a more general rule.
+Only approved and active rules may produce public-facing classifications.
+The current effective version shall take precedence over superseded versions.
+An expert-assigned priority may be used only when its rationale is recorded.
+If equally applicable rules disagree, the system shall return Uncertain and shall not silently choose the more severe or more convenient output.
+If no rule applies, the system shall return Insufficient Data and display the limitation.
+5.7 Illustrative Decision Rule
+The following is a structural example only. It is not an approved Bacoor rule and shall not be used for public classification.
+5.8 Rule Data Model
+6. Functional Requirements
+7. Non-Functional and Safety Requirements
+8. Proposed Technical Architecture
+The proposed architecture separates the Android client from data storage and inference. The Flutter application will communicate with a secured backend API. The API will validate requests, resolve spatial locations, invoke the Expert System service, retrieve approved preparedness content, and access PostgreSQL/PostGIS. The mobile application will not connect directly to the database.
+8.1 Initial PostgreSQL/PostGIS Entities
+data_sources and dataset_versions
+rainfall_stations and rainfall_observations
+flood_events and flood_observations
+barangays and susceptibility_zones
+zone_profiles
+susceptibility_rules and rule_versions
+preparedness_actions
+evacuation_centers
+expert_reviews
+audit_logs
+users only if accounts are later approved
+9. User Interface Requirements
+10. Verification and Validation Plan
+10.1 Requirements Verification
+Maintain a requirements traceability matrix linking each requirement to design elements and tests.
+Conduct unit tests for rainfall normalization, spatial lookup, rule matching, conflict resolution, and explanations.
+Conduct integration tests across Flutter, API, Expert System service, PostgreSQL/PostGIS, and offline cache.
+Conduct failure tests for missing data, unsupported locations, stale caches, network loss, and server errors.
+10.2 Expert System Validation
+Have designated experts independently review the proposed facts, conditions, classifications, exceptions, and explanations.
+Reserve historical or expert-labelled cases that were not used to construct the rules.
+Run the system against the reserved cases and compare its classifications with the reference assessment.
+Report rule coverage, agreement, confusion matrix, and accuracy/precision/recall/F1 where the number and quality of labelled cases permit.
+Use an appropriate agreement statistic when multiple independent experts label the same cases.
+Test exact thresholds, zone boundaries, conflicting rules, missing facts, and unsupported scenarios.
+Activate only rules that satisfy the approved acceptance criteria and recorded sign-off process.
+10.3 User and Safety Evaluation
+Evaluate whether users correctly understand susceptibility, uncertainty, and the non-forecast disclaimer.
+Measure task completion, errors, time on task, usability, and selected ISO 25010 characteristics.
+Verify that no output independently declares a road safe, issues an evacuation order, or presents stale information as current.
+Review preparedness content and evacuation wording with authorized experts before public-facing testing.
+11. Planned Development Milestones
+12. Risks and Open Decisions
+13. Deferred AI Assistant
+The AI assistant is not part of the core SRS baseline. It may be considered only after the Expert System produces stable, explainable, expert-validated outputs. If later approved, the assistant will function only as a constrained explanation layer over approved knowledge; it will not classify susceptibility, modify Expert System results, issue evacuation orders, or answer real-time road-safety questions.
+13.1 Minimum Prerequisites for Future AI Work
+Approved and versioned Expert System rules.
+Approved preparedness corpus and source register.
+Defined grounding method and privacy controls.
+Refusal and escalation rules for unsupported or real-time questions.
+Evaluation set covering accuracy, grounding, safety, and hallucination.
+Separate adviser approval for scope, cost, and implementation.
+14. SRS Approval and Change Control
+This document is a planning baseline. Requirements shall be revised when authoritative data, expert decisions, or adviser guidance materially change the system. Each revision shall record the date, change, reason, affected requirements, reviewer, and approval status. No document shall describe a planned capability as implemented until working evidence exists.
+
+[TABLE 1]
+Aspect | Proposed requirement
+Development status | No application code, database, API, or prototype has been started.
+Requirements status | The final feature set and geographic resolution remain subject to adviser and expert review.
+Data status | Potential sources have been identified, but the core institutional datasets and approvals have not yet been received.
+Expert System status | The inference approach is proposed; the knowledge base, rules, thresholds, and expert approvals do not yet exist.
+AI assistant status | Deferred. It is not a core requirement and will not be specified for implementation until the Expert System is stable and validated.
+
+[TABLE 2]
+Aspect | Proposed requirement
+Expert System | A knowledge-based system that applies approved rules to known facts and returns an explainable conclusion.
+Knowledge base | The versioned collection of zone profiles, expert rules, preparedness actions, sources, and approvals.
+Forward chaining | An inference procedure that begins with known facts and evaluates rules whose conditions match those facts.
+Decision table | A structured representation of condition combinations and corresponding conclusions.
+Flood susceptibility | The tendency of an area to experience flooding under defined conditions; it is not equivalent to flood risk or a forecast.
+Scenario | A user-selected rainfall intensity and duration combination used for planning and awareness.
+PostGIS | The spatial extension of PostgreSQL used for geographic boundaries, points, and location queries.
+
+[TABLE 3]
+Aspect | Proposed requirement
+Mobile platform | Android application developed with Flutter; minimum supported Android version is TO BE CONFIRMED.
+Backend | A secured REST API will mediate all mobile access to PostgreSQL/PostGIS. The app will not contain database credentials.
+Database | PostgreSQL with PostGIS for relational, rule, provenance, and spatial records.
+Offline storage | A local SQLite/Drift cache may store the latest approved static rules, map data, actions, and metadata.
+External navigation | A maps deep link may be used only for verified evacuation-center coordinates. Routing accuracy will remain the external provider's responsibility.
+
+[TABLE 4]
+Step | Process | Proposed behavior
+1 | Launch and disclaimer | The user opens the proposed Android app and reviews its purpose, limitations, data date, and non-forecast disclaimer.
+2 | Select rainfall scenario | The user selects an approved rainfall intensity category and duration. The interface presents plain-language and visual guidance.
+3 | Select location | The user selects an area from a map/list or positions a pin. PostGIS resolves the coordinates to the most specific approved geographic zone.
+4 | Build facts | The backend combines the scenario, resolved zone, approved static zone profile, and active rule version into a working set of facts.
+5 | Evaluate rules | The inference engine uses forward chaining to identify all active approved rules whose conditions match the facts.
+6 | Resolve conflicts | Rules are ranked by geographic specificity, condition specificity, approval status, priority, and version. Unresolved disagreement produces an uncertain result.
+7 | Return result | The system returns Low, Moderate, High, Very High, Uncertain, or Insufficient Data with the matched rule and limitations.
+8 | Display explanation | The user sees why the result was produced, which source/rule was used, the applicable area, and when the data were last updated.
+9 | Show preparedness guidance | A separate approved action table returns pre-event guidance. It does not independently order evacuation.
+10 | Evacuation resources | If current verified records exist, the app lists nearby centers and may open external navigation.
+11 | Degraded operation | If the API or network is unavailable, the app uses only the latest approved local cache and visibly displays its date and limitations.
+
+[TABLE 5]
+Dataset | Minimum fields | Possible source | Planning status
+Historical rainfall | Timestamp, station ID, coordinates, interval, amount, units, quality flags, missing periods | DOST-ASTI or another authorized provider | Pending
+Water level | Timestamp, station ID, coordinates, value, units, quality flags | DOST-ASTI where available | Pending
+Historical flood events | Date/time, location, depth, duration, event name, affected area, evidence source | BDRRMO and/or barangays | Pending
+Spatial boundaries | Barangay/sub-barangay polygons, projection, version, custodian | BDRRMO/CPDO or approved public source | Pending
+Susceptibility/hazard maps | Class, method, scale/resolution, date, geographic coverage | BDRRMO/CPDO or approved source | Pending
+Environmental context | Elevation, drainage, waterways, land use where relevant and permitted | CPDO/City Engineering/approved sources | Pending
+Evacuation centers | Name, coordinates, status, capacity, contact, opening conditions, validation date | Responsible city office | Pending/current list required
+Expert knowledge | Zone assessment, rules, exceptions, priority, confidence, preparedness actions, approval | Designated authorized experts | Not yet elicited
+
+[TABLE 6]
+Aspect | Proposed requirement
+Knowledge base | Versioned geographic profiles, decision rules, sources, expert approvals, preparedness actions, and rule metadata stored in PostgreSQL/PostGIS.
+Working memory | The temporary facts for the current scenario: location/zone, rainfall category, duration/accumulation range, active zone profile, and active rule version.
+Inference engine | A backend service that performs rule matching, forward chaining, conflict resolution, and result generation.
+Explanation facility | Returns the matched rule, conditions, source, version, update date, uncertainty, and plain-language meaning.
+Knowledge acquisition | A documented process for transforming historical evidence and authorized expert judgments into reviewed rules.
+Rule maintenance | A controlled review, approval, activation, supersession, and rollback process.
+
+[TABLE 7]
+Order | Operation | Requirement
+1 | Accept inputs | Receive the selected location, rainfall intensity, and duration.
+2 | Resolve geography | Use PostGIS to determine the most specific approved zone containing the selected point.
+3 | Load facts | Load the zone profile and active approved rule-set version.
+4 | Find candidates | Retrieve active rules whose geographic scope and required facts apply.
+5 | Evaluate conditions | Check every required condition; partial matches do not fire a rule.
+6 | Rank matches | Order matches by geographic specificity, condition specificity, approval status, assigned priority, and version.
+7 | Resolve result | Return the agreed classification; return Uncertain if equally applicable rules disagree.
+8 | Handle no match | Return Insufficient Data when no active approved rule covers the scenario.
+9 | Explain | Return the matched rule, conditions, source, version, limitation, and update date.
+10 | Retrieve actions | Use a separate approved preparedness-action table for guidance.
+
+[TABLE 8]
+Rule field | Illustrative value
+Rule ID | FS-Z-EXAMPLE-001
+IF conditions | Zone = Z; baseline = Moderate; rainfall category = Heavy; duration >= 6 hours; historical evidence category = Frequent
+THEN conclusion | High susceptibility
+Explanation | The scenario matches an approved prolonged-heavy-rain condition for the zone.
+Approval | NOT APPROVED - EXAMPLE ONLY
+
+[TABLE 9]
+Field | Purpose
+rule_id | Unique identifier
+zone_id | Geographic scope
+rainfall_category | Approved input category
+accumulation_period | Applicable time window
+minimum_duration | Lower duration boundary
+maximum_duration | Upper duration boundary, when applicable
+baseline_condition | Required zone-profile state
+additional_conditions | Structured approved conditions
+output_class | Low, Moderate, High, or Very High
+priority | Documented conflict-resolution priority
+confidence | Expert-assigned confidence or limitation
+source_id | Link to evidence provenance
+reviewer | Authorized reviewer
+approval_status | Draft, reviewed, approved, superseded, rejected
+version | Rule version
+effective_date | Activation date
+
+[TABLE 10]
+ID | Requirement | Priority | Verification
+FR-001 | The system shall show the purpose, limitations, data date, and non-forecast disclaimer before the first classification. | Must | UI and acceptance test
+FR-002 | The system shall allow selection of an approved rainfall intensity category and duration. | Must | Functional test
+FR-003 | The system shall present plain-language and visual rainfall guidance after the official category thresholds are verified. | Must | Expert/UI review
+FR-004 | The system shall allow location selection through an approved map, list, or draggable pin. | Must | Functional test
+FR-005 | The backend shall use PostGIS to resolve a point to the most specific approved geographic zone. | Must | Spatial test
+FR-006 | The application shall communicate the actual resolution of the output and shall not imply street-level precision when only barangay rules exist. | Must | Content/safety review
+FR-007 | The inference engine shall evaluate only active approved rules. | Must | Unit/integration test
+FR-008 | The inference engine shall implement the forward-chaining and conflict-resolution procedure defined in Section 5. | Must | Rule-engine test
+FR-009 | The system shall return Low, Moderate, High, Very High, Uncertain, or Insufficient Data. | Must | Boundary test
+FR-010 | Every result shall identify the geographic scope, scenario, matched rule, rule version, source, update date, and limitation. | Must | Traceability test
+FR-011 | The map and results summary shall display consistent classifications and legends. | Must | Integration/UI test
+FR-012 | Changing the scenario shall trigger a new evaluation and shall not reuse a stale result without notice. | Must | State-management test
+FR-013 | Preparedness guidance shall be retrieved from a separate approved action table. | Must | Rule/content test
+FR-014 | The system shall direct users to official BDRRMO, barangay, or PAGASA instructions and shall not issue an independent evacuation order. | Must | Safety review
+FR-015 | Evacuation centers shall be displayed only from a current verified dataset with a visible validation date. | Should | Data and UI test
+FR-016 | The application may open external navigation for a verified center while stating that route conditions are not assessed by FloodSense. | Could | Integration test
+FR-017 | When offline, the app shall label cached data with its version/date and shall not imply that it is current. | Should | Offline test
+FR-018 | The backend shall expose a controlled import and approval workflow for datasets and rules; direct mobile database access is prohibited. | Must | Security/integration test
+FR-019 | The system shall retain an audit record for rule creation, review, activation, supersession, and rollback. | Must | Database test
+FR-020 | The system shall gracefully handle missing fields, unavailable services, invalid locations, and unsupported scenarios. | Must | Failure test
+
+[TABLE 11]
+ID | Requirement | Category
+NFR-001 | A local or server rule evaluation should return within 2 seconds under the agreed test environment; the final threshold is subject to prototype benchmarking. | Performance
+NFR-002 | The mobile application shall never embed PostgreSQL credentials or unrestricted administrative API credentials. | Security
+NFR-003 | All server communication shall use authenticated encrypted transport in deployed environments. | Security
+NFR-004 | Passwords, if accounts are later approved, shall be salted and hashed by the backend; account necessity remains an open decision. | Privacy
+NFR-005 | The system shall collect the minimum user data required for the approved features and shall document retention and deletion rules. | Privacy
+NFR-006 | Database migrations, rules, and source transformations shall be version controlled and reproducible. | Maintainability
+NFR-007 | The interface shall use readable plain language, consistent legends, sufficient contrast, and accessible touch targets. | Usability
+NFR-008 | Susceptibility shall not be labelled as risk, forecast, live flood status, or present road safety. | Safety
+NFR-009 | Uncertain, unsupported, stale, and missing-data states shall be visibly different from normal classifications. | Reliability
+NFR-010 | The system shall preserve source provenance and expert approval for every public-facing rule and action. | Integrity
+
+[TABLE 12]
+Layer | Proposed technology/responsibility | Planning status
+Android client | Flutter/Dart; screens, local state, map interaction, cache, accessibility | Selected
+Backend API | REST API; framework TO BE CONFIRMED after team skills review | Decision pending
+Expert System service | Deterministic decision-table and forward-chaining rule engine | Procedure specified; not built
+Primary database | PostgreSQL with PostGIS | Selected on TA advice; not set up
+Local cache | SQLite/Drift or equivalent for approved offline data | To be confirmed
+Spatial map | Approved GeoJSON/vector tiles or map layer | Source pending
+External navigation | Maps deep link for verified centers | Optional
+AI assistant | No core implementation; future constrained explanatory layer only | Deferred
+
+[TABLE 13]
+ID | Screen/module | Minimum content
+UI-01 | Onboarding and disclaimer | Purpose, limits, terminology, data date, and confirmation.
+UI-02 | Main dashboard | Access to rainfall scenario, map/results, Check My Area, preparedness guidance, and data information.
+UI-03 | Rainfall scenario | Intensity and duration controls with plain-language/visual descriptions.
+UI-04 | Susceptibility map | Approved geographic units, consistent legend, data date, and map-information panel.
+UI-05 | Check My Area | Draggable pin, resolved area, actual geographic resolution, and correction option.
+UI-06 | Result explanation | Classification, scenario, matched rule, source, uncertainty, and limitation.
+UI-07 | Preparedness guidance | Approved pre-event actions and official-source reminder.
+UI-08 | Evacuation resources | Verified centers, validation date, distance, and optional external directions.
+UI-09 | Data and methodology | Accessible description of sources, update dates, Expert System method, and contact/feedback path.
+
+[TABLE 14]
+Milestone | Required evidence | Interpretation
+Planning baseline | Approve title, scope, MVP, geographic resolution, data plan, and this SRS. | No code required
+Project scaffold | Create repository, Flutter project, backend project, PostgreSQL/PostGIS environment, migrations, and test structure. | Development starts
+Approximately 50% working | One end-to-end path using clearly labelled provisional data: scenario input, location resolution, rule evaluation, map/result, explanation, disclaimer, and basic preparedness guidance. | Core integration demonstration
+Approximately 70% working | Ingest first real datasets, encode first expert-reviewed rule set, implement Check My Area, offline cache, verified evacuation resources if available, failure handling, and initial tests. | Research prototype
+Validation candidate | Complete rule validation, data provenance, safety review, usability testing, fixes, and documentation. | Ready for formal evaluation
+
+[TABLE 15]
+Decision/risk | Required resolution | Owner/authority
+Geographic resolution | Barangay, sub-barangay, or polygon-level output must be chosen based on obtained evidence. | Research team + experts
+DOST-ASTI coverage | Exact stations, locations, years, variables, units, missing periods, and quality flags remain pending. | Data lead
+Flood-event labels | Rainfall data require corresponding dated/location-specific flood outcomes. | BDRRMO/barangays
+Expert authority | Authorized rule reviewers and approval procedure must be identified. | Research adviser/institution
+Evacuation dataset | The current responsible-office list and validation date are required. | Data lead
+Backend framework | Select a backend framework after reviewing team skills; PostgreSQL/PostGIS remains the database baseline. | Technical team
+Accounts | Retain only if a documented user requirement justifies privacy and maintenance costs. | Research team
+AI assistant | Remain deferred until the Expert System, source corpus, safety policy, and evaluation method are stable. | Future decision
+
+[TABLE 16]
+Role | Name | Review status/date
+Research team representative | TO BE COMPLETED | Pending
+Technical adviser | TO BE COMPLETED | Pending
+Thesis adviser | TO BE COMPLETED | Pending
+Designated subject-matter expert | TO BE IDENTIFIED | Pending

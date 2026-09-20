@@ -1,0 +1,186 @@
+
+===== PAGE 1 =====
+Thesis Initial Interview Transcript
+City Planning and Development
+Office
+City Planning and Development
+Coordinating Office - Bacoor 2nd
+Floor, Bacoor Government Center,
+Bacoor Boulevard, Barangay
+Bayanan, City of Bacoor, 4102
+Cavite, Philippines
+Officer In-Charge,
+Rhowena D. Alcantara
+Date of Interview: May 18, 2026
+Time Started: 1:09 PM
+Time Ended: 1:23 PM
+Purpose: To understand what geospatial, land use, and topographic data the City
+Planning and Development Office maintains, and to identify gaps in how this data is used
+for flood risk analysis. This interview is for problem identification only, not to evaluate any
+proposed solution.
+Researcher: So, Can you briefly describe your office's role in urban planning and
+development in Bacoor City, particularly in relation to land use and spatial data?
+Interviewee: Kase yung planning – dati before, magkasama yung zoning at planning
+ngayon kasi mag kahiwalay na sila, so ang planning nalang is coordinating office – nalang
+kami, so si zoning sya na yung implementing office ng land use and spatial data, so
+dalawa yun. Kase kung kailangan nyo ang land use, yung mag i-implement – si zoning
+yon, implementation, kami ay coordination lang kumbaga ifo-formulate namin sila,
+kumabaga kukuha kami sa offices kung ano yung mga programs, projects and activities
+nila then ico-consolidate namin yon para magawa syang isang libro – pero pag dating ng
+implementation, lalo na yung mga sa development dito (Bacoor) ang implementory ay si
+zoning, kase karamihan sa mga LGUs talaga ay mag kasama ang zoning at planning,
+kase dito sa city (Bacoor) pinaghiwalay sya ng department; isang zoning at isang
+planning.
+Researcher: Since mag ka-iba po kayo, do you still po ba, nag mamaintain pa rin po ba
+kayo ng data with regards sa geospatial and land.
+Interviewee: Actually, oo. Sa amin siyempre lahat ng mga datas since eto yung planning
+office, pero meron din siyempreng data si zoning – pero kunwari yung mga ecological
+
+===== PAGE 2 =====
+profile, sa amin yon; yung CBMS, basta with regards sa mga data, pero ayon ay
+collaboration effort from different agencies at different offices.
+Researcher: Pwede po ba matanong, with those datas; meron din po ba kayong
+elevation map or topographic map ng Bacoor.
+Interviewee: With regards don sa mga mapping, meron kami naming mga maps, yang
+mga elevation, makikita nyo yon. Sabi ko nga kanina kung nabasa nyo or Nakita nyo na
+yung ecological profile namin, makikita nyo na don yung mga maps na andon. Pero yung
+talagang gumagawa ng mapa naming, although meron kaming GIS dito pero meron kami
+talagang tiga-gawa, nasa BDRRMO – sila kasi yung GIS expert – pero samin, meron din
+naman kami pero sila talaga at lahat yung data.
+Researcher: Bali po galing sa BDRRMO yung data nyo?
+Interviewee: Oo, sila yung gumagawa. Kunwari yung mga hazard map, yung mga
+boundaries – yung boundaries although nagagawa namin, pero lahat yon para maging
+official sya, nanggagaling yon sa BDRRMO.
+Researcher: So, kung kukuha po ng datasets or mga maps po, sa kanila po kami
+mag-aask?
+Interviewee: Pwede kayo mag ask samin, mabibigyan ko naman kayo. Andito sa CLUP
+(comprehensive land use plan), pero ano bang klaseng klaseng data? Kase kung
+shapefile yan, hindi naming kayo mabibigyan ng shapefile, ano lang – picture lang, hard
+copy lang
+Researcher: In what format are these spatial data stored, and how accessible are they?
+Interviewee: Yun nga yung sabi ko sainyo, pag yung data naming – kunwari yung
+ecological profile yung CLUP, ma-access nyo sya online sa government/ official website
+naming. Pero kung kailangan nyo ng GIS or Shapefile, hindi nyo yon ma-access siyempre
+kasi confidential yon. Yung mga hard copy non (shapefiles/gis) pwede naming kayo
+mabigyan, kumabaga print out – pwede naming kayo mabigyan, makakakuha kayo.
+Interviewee: Kase ganito lang talaga mabibigay namin sainyo, kunwari eto, print-out na
+sya. Pero para yung ma-process mo yung map, di namin kayo mabibigyan non, so
+print-out, mga ganyan (pinapakita yung mga different kinds of map), mga kunwari hazard
+map ang kailangan niyo, meron naman kami, yung mga flood, yung mga storm surge,
+meron kami, ayan. Mabibigyan namin kayo ng kopya.
+Researcher: Kailangan pa po ba mag request sainyo?
+Interviewee: Kahit na magrequest kayo kay Mayor, or letter kay Mayor, ibabato rin
+naman kayo non dito sa planning, so ito rin talaga yung ibibigay namin sainyo, hindi yung
+shape file.
+Researcher: Yung process po
+
+===== PAGE 3 =====
+Interviewee: Yung Hardcopy, mabibigyan namin kayo ng hardcopy, pero yung
+i-proprocess, yung naka shape file, hindi naman pwede maibigay.
+Researcher: Based on your office's land use and spatial records, are there specific areas
+or barangays in Bacoor that you consider particularly vulnerable to flooding? What spatial
+factors contribute to this?
+Interviewee: Yung district one, yan vulnerable talaga yan sa flood. Kagaya ng mga
+Sinbanali, Aniban, Zapote, Talaba, yun talaga yung vulnerable sa flooding. Pero nung
+recently flooding, last year, yung 44 na barangay, nagkaroon ng baha na before hindi
+naman.
+Researcher: May historical record po ba kayo?
+Interviewee: Meron naman, nasa BDRRMO, kase sila yung nagrerecord.
+Researcher: Ano po yung mga factor na nagcocontribute sa baha katulad nga po ng
+sinabi niyo?
+Interviewee: Syempre andiyan yung mga drainage system, kailangan ng rehabilitation.
+Yung mga dredging, desilting ng mga Molino Dam, yung Bacoor River, Zapote rive kase
+nagkakaroon na sya ng mga burak, imbes na malalim, bumababaw na sya, kaya yun
+yung mga ginagawa, rehabilitation, dredging, desilting, yon yung drainage system natin.
+Plus yung mga basura na tinatapon doon napupunta. Plus kase ang Bacoor, siya yung
+catch basin, kung baga pinamababang, low-lying area, kaya yung mga galing na baha sa
+taas, sa Tagaytay, Imus, Dasma, bumabagsak dito sa Bacoor. So kahit meron kaming
+mga activities/program na pang-reduce ng flood ay hindi parin kinakaya, ayon.
+Researcher: From your perspective as a planning office, what is the biggest gap in how
+spatial or land use data is currently used — or not used — to understand and
+communicate flood risk in Bacoor?
+Interviewee: Actually naman kase, before kase yung CLUP natin, hindi siya naiimplent,
+ngayon strictly naiimplement na. So kung ano man y ung nasa CLUP natin, kung sya man
+ay residential, commercial, naiimplement na natin ngayon, so yun siguro yung gap before
+at ngayon. So yung ngayon, lahat yon ay nagagawa at naiimplement. Pero syempre yung
+mga before na naitayo, halimbawa, for the reclassification ng residential tsaka
+commercial, yung yung ipanapatupad ngayon.
+Interviewee: Kase ganito lang talaga mabibigay namin sainyo, kunwari eto, print-out na
+sya. Pero para yung ma-process mo yung map, di namin kayo mabibigyan non, so
+print-out, mga ganyan (pinapakita yung mga different kinds of map), mga kunwari hazard
+map ang kailangan niyo, meron naman kami, yung mga flood, yung mga storm surge,
+meron kami, ayan. Mabibigyan namin kayo ng kopya.
+Researcher: Kailangan pa po ba mag request sainyo?
+
+===== PAGE 4 =====
+Interviewee: Kahit na magrequest kayo kay Mayor, or letter kay Mayor, ibabato rin naman
+kayo non dito sa planning, so ito rin talaga yung ibibigay namin sainyo, hindi yung shape file.
+Researcher: Yung process po
+Interviewee: Yung Hardcopy, mabibigyan namin kayo ng hardcopy, pero yung i-proprocess,
+yung naka shape file, hindi naman pwede maibigay.
+Researcher: Based on your office's land use and spatial records, are there specific areas or
+barangays in Bacoor that you consider particularly vulnerable to flooding? What spatial
+factors contribute to this?
+Interviewee: Yung district one, yan vulnerable talaga yan sa flood. Kagaya ng mga
+Sinbanali, Aniban, Zapote, Talaba, yun talaga yung vulnerable sa flooding. Pero nung
+recently flooding, last year, yung 44 na barangay, nagkaroon ng baha na before hindi
+naman.
+Researcher: May historical record po ba kayo?
+Interviewee: Meron naman, nasa BDRRMO, kase sila yung nagrerecord.
+Researcher: Ano po yung mga factor na nagcocontribute sa baha katulad nga po ng sinabi
+niyo?
+Interviewee: Syempre andiyan yung mga drainage system, kailangan ng rehabilitation.
+Yung mga dredging, desilting ng mga Molino Dam, yung Bacoor River, Zapote rive kase
+nagkakaroon na sya ng mga burak, imbes na malalim, bumababaw na sya, kaya yun yung
+mga ginagawa, rehabilitation, dredging, desilting, yon yung drainage system natin. Plus yung
+mga basura na tinatapon doon napupunta. Plus kase ang Bacoor, siya yung catch basin,
+kung baga pinamababang, low-lying area, kaya yung mga galing na baha sa taas, sa
+Tagaytay, Imus, Dasma, bumabagsak dito sa Bacoor. So kahit meron kaming mga
+activities/program na pang-reduce ng flood ay hindi parin kinakaya, ayon.
+Researcher: From your perspective as a planning office, what is the biggest gap in how
+spatial or land use data is currently used — or not used — to understand and communicate
+flood risk in Bacoor?
+Interviewee: Actually naman kase, before kase yung CLUP natin, hindi siya naiimplent,
+ngayon strictly naiimplement na. So kung ano man y ung nasa CLUP natin, kung sya man
+ay residential, commercial, naiimplement na natin ngayon, so yun siguro yung gap before at
+ngayon. So yung ngayon, lahat yon ay nagagawa at naiimplement. Pero syempre yung mga
+before na naitayo, halimbawa, for the reclassification ng residential tsaka commercial, yung
+yung ipanapatupad ngayon.
+Researcher: Do you think residents or local officials have sufficient access to land use or
+flood risk maps?
+Interviewee: Kasi lahat naman sa paggawa ng plan meron talagang basihan na mga data.
+Kunwari ngayun puro flood ngayun ang topic kumabaga yun ang problem yun ang
+sinusolusyunan namin kaya ngayun lahat kami lahat ng mga project namin puro sa flood yun
+
+===== PAGE 5 =====
+mga drainage system lahat yan so I think yun yung concern ng LGU ng Bacoor
+Researcher: What would it take to make your office's spatial data more useful for flood risk
+communication?
+Interviewee: Kasi yun office naman namin hindi lang naman talaga sa amin nanggagaling
+yung data meron talagang would regards sa mga hazard maps ay ang BDRRMO ang nag-i
+implement so pagdating naman dun kukuha sila ng data syempre may basihan para kung
+ano yung mga programa na ipapatupad ni Mayor Strike Revilla para ma-ibsan or ma-reduce
+or lessen yung flood dito sa City ng Bacoor although hindi lang naman flood yung nagiging
+problema so lahat naman ng aspeto ay nagiging problema dito sa Bacoor since marami na
+ngang tao andyan yung mga pabahay, yung pabahay andyan yung project ni Mayor yung
+4PH Housing pero kung makikita nyu naman si Mayor kung naka subscribe kayo andyan
+naman lahat ng ginagawa nya lahat po, araw araw talaga yung live na pinupuntahan nya
+para maayos, para maayos yung land fuse spatial data.
+Researcher: Kung kukuha po kami ng mga data set like Mapping, Elevation Map, Flood
+Hazard Map, saan po much better kukunin dito po or sa BDRRMO
+Interviewee: Eto meron na dito samin (CPDO - City Planning & Designing Coordinator
+Office Bacoor)
+Researcher: So pwede na po kaming directly kumuha sainyo
+Interviewee: Oo pwede
+Researcher: Hindi na po kami dadaan sa BDRRMO
+Rhowena: Oo pwede na, kasi kung ano naman yung nasa Comprehensive Land Use Plan
+(CLUP) yun din naman ang ibibigay nila sainyo.
+Researcher: Ano po yung process like magpo-provide pa rin po ba kami ng letter or dito na
+po kami lalapit sainyo (CPDO - City Planning & Designing Coordinator Office Bacoor) or kay
+Mayor po
+Interviewee: Hindi, diba may ano na kayo kay Mayor (ENDORSEMENT LETTER), pwede
+na ito nalang okay na ito. Kung kailangan nyu ng mga data deretcho nalang kayo dito
+bibigyan namin kayo pero ito nada-download ito (Comprehensive Land Use Plan - CLUP)
+sa Bacoor Website, para kung kailangan nyo mada-download nyu ito tsaka yung Amended
+Zoning Ordinance andun na yung mga maps na siguro kailangan nyu mga flood risk map,
+iba ibang hazard map, boundaries, elevation s

@@ -1,0 +1,599 @@
+
+===== PAGE 1 =====
+FloodSense User Survey
+Comprehensive Analysis Report
+Bacoor City Stakeholder Survey | n = 40 Respondents
+Prepared by: Senior Data Analytics Expert & Research Consultant
+Specialization: Geospatial Analysis | DRRM | Mobile UX/UI
+May 2026
+FloodSense Survey Analysis | Bacoor City | n=40 | May 2026 | Page 1 of 19
+
+===== PAGE 2 =====
+CATEGORICAL SURVEY ANALYSIS
+SECTION A: Respondent Profile (Q1 to Q3)
+Q1: Which barangay in Bacoor City do you currently reside in?
+Data Summary:
+Barangay Count %
+Soldiers 4 10 25.0%
+Talaba 1 5 12.5%
+Molino 3 5 12.5%
+Niog 1 4 10.0%
+Zapote 1 3 7.5%
+Molino 2 2 5.0%
+Niog 2 2 5.0%
+Molino 4 2 5.0%
+Mambog 2 2 5.0%
+Mambog 1 2.5%
+Magdiwang 1 2.5%
+Soldiers Hills 1 2.5%
+Habay 1 1 2.5%
+Mambog 1 1 2.5%
+Total 40 100%
+Key Finding:
+The respondent pool is geographically diverse, spanning 14 barangays across Bacoor City, though
+heavily weighted toward Soldiers 4 (25%), which alone accounts for one quarter of responses. The
+Molino cluster (Molino 2, 3, 4) collectively represents 22.5% of respondents, and the Talaba-Niog
+corridor contributes another 27.5%. This geographic spread is analytically valuable — it samples
+multiple flood-risk zones across the city rather than a single locality — and confirms that the survey
+captures a cross-barangay perspective. However, the disproportionate representation of Soldiers 4
+means its residents' experiences carry greater statistical weight in aggregate findings.
+Q2: How often does your area experience flooding?
+Data Summary:
+FloodSense Survey Analysis | Bacoor City | n=40 | May 2026 | Page 2 of 19
+
+===== PAGE 3 =====
+Frequency Count %
+Almost every rainy season 31 77.5%
+Occasionally (once every few years) 4 10.0%
+Rarely 4 10.0%
+Never 1 2.5%
+Total 40 100%
+Key Finding:
+An overwhelming 77.5% of respondents report that their areas flood "almost every rainy season,"
+establishing that the survey population is predominantly high-frequency flood-affected residents. Only
+1 respondent (2.5%) reported never experiencing flooding. This is not a community speculating about
+an abstract hazard — these are people living in recurrent, seasonal flood exposure. This level of
+chronic flood exposure renders the community acutely vulnerable and underscores an urgent, non-
+hypothetical need for flood information tools.
+Q3: How would you describe your current level of awareness about which areas
+in Bacoor City are flood-prone?
+Data Summary:
+Awareness Level Count %
+Somewhat aware 16 40.0%
+Not sure 10 25.0%
+Well-informed 9 22.5%
+Not aware at all 5 12.5%
+Total 40 100%
+Key Finding:
+Only 22.5% of respondents consider themselves "well-informed" about flood-prone areas in the city.
+A combined 77.5% range from "somewhat aware" to "not aware at all," with 25% in an explicitly
+uncertain state of "not sure." This paradox — intimate familiarity with flooding as a recurring
+experience, yet lacking spatial literacy to identify which areas are at risk — directly validates the core
+premise of FloodSense.
+SECTION B: Current Flood Information Experience (Q4 to Q5)
+Q4: How satisfied are you with the flood-related information currently available to
+you?
+Data Summary (1 = Very Dissatisfied, 4 = Very Satisfied):
+FloodSense Survey Analysis | Bacoor City | n=40 | May 2026 | Page 3 of 19
+
+===== PAGE 4 =====
+Rating Count %
+1 – Very Dissatisfied 8 20.0%
+2 – Dissatisfied 18 45.0%
+3 – Somewhat Satisfied 9 22.5%
+4 – Very Satisfied 5 12.5%
+Total 40 100%
+Mean 2.28 / 4 —
+Key Finding:
+65.0% of respondents (26 of 40) rate their satisfaction with existing flood information sources as low
+(ratings 1 or 2), with 45.0% selecting "Dissatisfied." The mean score of 2.28 out of 4 falls below the
+midpoint, indicating community-wide structural dissatisfaction with current channels. This widespread
+dissatisfaction is the foundational demand signal that justifies a purpose-built flood information
+platform for Bacoor City.
+Q5: Have you ever made a wrong or unsafe decision during a flood event due to a
+lack of accurate information?
+Data Summary:
+Response Count %
+Yes 29 72.5%
+I am not sure 9 22.5%
+No 2 5.0%
+Total 40 100%
+Key Finding:
+72.5% of respondents confirm they have made a wrong or unsafe decision during a flood event as a
+direct result of information gaps. An additional 22.5% were "not sure," suggesting the actual figure
+may approach or exceed 90%. Only 2 respondents (5.0%) definitively reported making no wrong
+decision. Information failure in this community is not merely inconvenient — it is physically dangerous
+and has already resulted in known unsafe behaviors for nearly three-quarters of the sample
+population.
+SECTION C: Flood Risk Awareness (Q6 to Q8)
+Q6: How difficult is it to find which specific areas in Bacoor City are at risk under
+different rainfall conditions?
+Data Summary (1 = Very Easy, 5 = Very Difficult):
+FloodSense Survey Analysis | Bacoor City | n=40 | May 2026 | Page 4 of 19
+
+===== PAGE 5 =====
+Rating Count %
+1 – Very Easy 3 7.5%
+2 – Easy 12 30.0%
+3 – Moderate 11 27.5%
+4 – Difficult 11 27.5%
+5 – Very Difficult 3 7.5%
+Total 40 100%
+Mean 2.98 / 5 —
+Key Finding:
+The mean of 2.98 positions this question nearly at the midpoint of the difficulty scale, reflecting a
+deeply divided community: 35.0% find accessing barangay-specific flood risk information difficult or
+very difficult, while 37.5% find it easy or very easy. This polarization suggests that information
+accessibility in Bacoor City is inconsistent — likely tied to barangay-level variation in official
+communication. A standardized, app-based platform would eliminate this informational inequality.
+Q7: How confident are you in knowing what PAGASA reports mean for flood risk
+in your specific barangay?
+Data Summary (1 = Not at All Confident, 5 = Extremely Confident):
+Rating Count %
+1 – Not at All Confident 8 20.0%
+2 – Slightly Confident 11 27.5%
+3 – Somewhat Confident 14 35.0%
+4 – Mostly Confident 6 15.0%
+5 – Extremely Confident 1 2.5%
+Total 40 100%
+Mean 2.52 / 5 —
+Key Finding:
+47.5% of respondents (19 of 40) have low confidence (ratings 1 or 2) in translating PAGASA regional
+weather advisories into actionable, barangay-specific flood risk understanding. Only 17.5% express
+high confidence (ratings 4 or 5). The mean of 2.52 signals a significant translation gap — this is
+precisely the gap that FloodSense's ML-based susceptibility mapping is designed to bridge.
+Q8: How useful would it be to visually see which barangays in Bacoor City are at
+low, moderate, high, or very high flood risk — all in one place?
+Data Summary (1 = Not at All Useful, 5 = Extremely Useful):
+FloodSense Survey Analysis | Bacoor City | n=40 | May 2026 | Page 5 of 19
+
+===== PAGE 6 =====
+Rating Count %
+1 – Not at All Useful 1 2.5%
+2 – Slightly Useful 6 15.0%
+3 – Somewhat Useful 7 17.5%
+4 – Mostly Useful 7 17.5%
+5 – Extremely Useful 19 47.5%
+Total 40 100%
+Mean 3.93 / 5 —
+Key Finding:
+65.0% of respondents (26 of 40) rate this feature as highly useful (ratings 4 or 5), with nearly half the
+entire sample (47.5%) selecting "Extremely Useful" — the single most concentrated response across
+all quantitative questions. The mean of 3.93 is the second-highest utility score in the survey. This is
+strong market validation for a unified, visual flood risk dashboard.
+SECTION D: Personal Safety & Location Awareness (Q9 to Q11)
+Q9: How difficult is it to find out whether your specific barangay is at risk during a
+flood event or heavy rainfall?
+Data Summary (1 = Very Easy, 5 = Very Difficult):
+Rating Count %
+1 – Very Easy 2 5.0%
+2 – Easy 6 15.0%
+3 – Moderate 9 22.5%
+4 – Difficult 13 32.5%
+5 – Very Difficult 10 25.0%
+Total 40 100%
+Mean 3.58 / 5 —
+Key Finding:
+57.5% of respondents (23 of 40) report difficulty (ratings 4 or 5) in determining whether their own
+specific barangay is at risk during an active flood or rainfall event. The mean of 3.58 tilts decisively
+toward the difficult end. The inability to answer the simple question "Is my barangay at risk right
+now?" in real time is a foundational gap that directly endangers lives.
+Q10: When flood risk information is available, how clear and easy to understand
+is it for you?
+FloodSense Survey Analysis | Bacoor City | n=40 | May 2026 | Page 6 of 19
+
+===== PAGE 7 =====
+Data Summary (1 = Very Unclear, 5 = Very Clear):
+Rating Count %
+1 – Very Unclear 6 15.0%
+2 – Somewhat Unclear 10 25.0%
+3 – Neutral 10 25.0%
+4 – Somewhat Clear 8 20.0%
+5 – Very Clear 6 15.0%
+Total 40 100%
+Mean 2.95 / 5 —
+Key Finding:
+40.0% of respondents (16 of 40) find available flood risk information unclear or very unclear (ratings 1
+or 2). An additional 25% are neutral — meaning only 35.0% find information positively clear. The
+clarity gap amplifies the availability gap: not only is information hard to find, but when it arrives, it
+often fails to communicate actionably. This finding directly justifies FloodSense's plain-language, ML-
+translated risk messaging feature.
+Q11: How helpful would it be to receive a plain-language message telling you the
+exact flood risk level and what to expect under a specific rainfall condition?
+Data Summary (1 = Not at All Helpful, 5 = Extremely Helpful):
+Rating Count %
+2 – Slightly Helpful 3 7.5%
+3 – Somewhat Helpful 15 37.5%
+4 – Mostly Helpful 5 12.5%
+5 – Extremely Helpful 17 42.5%
+Total 40 100%
+Mean 3.90 / 5 —
+Note: No respondents selected Rating 1 for this item.
+Key Finding:
+55.0% of respondents (22 of 40) rate this feature as highly helpful (ratings 4 or 5), with 42.5%
+selecting "Extremely Helpful." Crucially, zero respondents selected "Not at All Helpful" — a
+unanimous signal that even the most skeptical respondents see some value in plain-language risk
+translation. The mean of 3.90 is among the highest utility scores in the survey.
+FloodSense Survey Analysis | Bacoor City | n=40 | May 2026 | Page 7 of 19
+
+===== PAGE 8 =====
+SECTION E: Preparedness & Knowing What to Do (Q12 to Q13)
+Q12: When flooding is expected, how confident are you in knowing exactly what
+steps to take to protect yourself and your family?
+Data Summary (1 = Not at All Confident, 5 = Extremely Confident):
+Rating Count %
+1 – Not at All Confident 7 17.5%
+2 – Slightly Confident 9 22.5%
+3 – Somewhat Confident 16 40.0%
+4 – Mostly Confident 5 12.5%
+5 – Extremely Confident 3 7.5%
+Total 40 100%
+Mean 2.70 / 5 —
+Key Finding:
+40.0% of respondents (16 of 40) report low confidence (ratings 1 or 2) in knowing what protective
+steps to take when flooding is expected. Only 20.0% express high confidence (ratings 4 or 5). The
+dominant response is "Somewhat Confident" (40.0%), which — in a genuine emergency —
+represents a dangerous gap. A community that is only partially sure of its protective protocols is one
+that hesitates, and hesitation during a rapid-onset flood event can be fatal.
+Q13: How helpful would it be to have a clear, step-by-step list of actions based on
+how severe the flood risk is in your area?
+Data Summary (1 = Not at All Helpful, 5 = Extremely Helpful):
+Rating Count %
+1 – Not at All Helpful 1 2.5%
+2 – Slightly Helpful 3 7.5%
+3 – Somewhat Helpful 6 15.0%
+4 – Mostly Helpful 7 17.5%
+5 – Extremely Helpful 23 57.5%
+Total 40 100%
+Mean 4.20 / 5 —
+Key Finding:
+With a mean of 4.20 — the highest utility score in the entire survey — and 75.0% of respondents (30
+of 40) selecting ratings 4 or 5, this feature concept achieved near-consensus endorsement. The
+single most desired FloodSense feature, by statistical weight, is a tiered, risk-severity-calibrated
+FloodSense Survey Analysis | Bacoor City | n=40 | May 2026 | Page 8 of 19
+
+===== PAGE 9 =====
+action checklist. The demand is for prescribed, escalating action protocols that remove guesswork
+from the emergency response chain.
+SECTION F: Evacuation (Q14 to Q15)
+Q14: How difficult is it to find out where the nearest evacuation center is from
+your current location during a flood threat?
+Data Summary (1 = Very Easy, 5 = Very Difficult):
+Rating Count %
+1 – Very Easy 3 7.5%
+2 – Easy 6 15.0%
+3 – Moderate 10 25.0%
+4 – Difficult 10 25.0%
+5 – Very Difficult 11 27.5%
+Total 40 100%
+Mean 3.50 / 5 —
+Key Finding:
+52.5% of respondents (21 of 40) find locating the nearest BDRRMO-designated evacuation center
+difficult or very difficult during an active flood threat. Only 22.5% find it easy or very easy. Evacuation
+center inaccessibility is not an abstract planning problem — it is a real-time navigational failure that
+directly prevents people from reaching safety.
+Q15: How helpful would it be to automatically know the nearest BDRRMO-
+designated evacuation centers ranked by distance, with directions?
+Data Summary (1 = Not at All Helpful, 5 = Extremely Helpful):
+Rating Count %
+1 – Not at All Helpful 1 2.5%
+2 – Slightly Helpful 1 2.5%
+3 – Somewhat Helpful 8 20.0%
+4 – Mostly Helpful 11 27.5%
+5 – Extremely Helpful 19 47.5%
+Total 40 100%
+Mean 4.15 / 5 —
+Key Finding:
+FloodSense Survey Analysis | Bacoor City | n=40 | May 2026 | Page 9 of 19
+
+===== PAGE 10 =====
+75.0% of respondents (30 of 40) rate proximity-ranked evacuation center navigation as highly helpful
+(ratings 4 or 5), with a mean of 4.15 and 47.5% selecting "Extremely Helpful." Combined with Q14's
+difficulty data, this forms a clear demand-supply gap: residents urgently need evacuation center
+proximity information, cannot currently access it, and will strongly value an app that provides it
+automatically.
+SECTION G: Sharing Flood Information (Q16 to Q17)
+Q16: How often do you share flood-related warnings or updates with family
+members or neighbors when you receive them?
+Data Summary:
+Frequency Count %
+Most of the time 18 45.0%
+Sometimes 13 32.5%
+Always 5 12.5%
+Rarely 4 10.0%
+Total 40 100%
+Key Finding:
+57.5% of respondents (23 of 40) share flood warnings "Most of the time" or "Always," and an
+additional 32.5% share "Sometimes." Only 10.0% rarely share warnings. Bacoor City residents are
+instinctively prosocial information relayers. A sharing feature built into FloodSense will not need to
+teach new behavior — it will digitize and amplify an existing social practice.
+Q17: How helpful would it be to quickly send a flood risk report for any barangay
+to a family member or neighbor through Viber, WhatsApp, or SMS?
+Data Summary (1 = Not at All Helpful, 5 = Extremely Helpful):
+Rating Count %
+1 – Not at All Helpful 1 2.5%
+2 – Slightly Helpful 3 7.5%
+3 – Somewhat Helpful 10 25.0%
+4 – Mostly Helpful 7 17.5%
+5 – Extremely Helpful 19 47.5%
+Total 40 100%
+Mean 4.00 / 5 —
+Key Finding:
+FloodSense Survey Analysis | Bacoor City | n=40 | May 2026 | Page 10 of 19
+
+===== PAGE 11 =====
+65.0% of respondents (26 of 40) rate one-tap sharing of barangay flood risk reports as highly helpful
+(ratings 4 or 5), with a mean of 4.00. Combined with Q16's finding that most residents already share
+warnings actively, this represents a compound demand: residents who already share would do so
+more frequently, more accurately, and more usefully if given a purpose-built, one-tap sharing
+mechanism.
+FloodSense Survey Analysis | Bacoor City | n=40 | May 2026 | Page 11 of 19
+
+===== PAGE 12 =====
+SECTION H: Open-Ended Feedback (Q18 to Q19)
+1. Thematic Coding Matrix
+THEME 1: Real-Time, Hyperlocal Flood Status (Dominant Theme)
+Frequency: ~22 mentions across Q18 & Q19
+Residents across multiple barangays describe the same core frustration: flood information,
+when it exists, is too broad, too delayed, or too general to be actionable at the street level. They
+need to know which specific roads are already flooded, how deep the water is, and whether
+passage remains safe — in real time.
+Representative responses:
+"Real-time updates on which specific streets are already flooded and how deep the water is.
+(Q18)"
+"Live, street-level flood maps showing exactly which specific roads are still passable in real
+time. (Q19)"
+THEME 2: Advance Warning Failure — No Predictive Foresight
+Frequency: ~18 mentions across Q18 & Q19
+Multiple respondents express that they are never informed in advance about when or where
+flooding will occur. They describe situations where they had no warning before water rose
+rapidly around their homes.
+Representative responses:
+"Hindi kami nabibigyan ng malinaw na babala bago dumating ang baha — walang eksaktong
+oras o lugar na ibinibigay. (Q18)"
+"By informing before the heavy rain. (Q19)"
+THEME 3: Evacuation Center & Emergency Hotline Inaccessibility
+Frequency: ~14 mentions across Q18 & Q19
+Residents report that during active flood events, they cannot find the locations of operational
+evacuation centers or the contact numbers of local emergency response units. Several
+respondents explicitly call for a single, consolidated resource containing evacuation center
+locations, directions, and hotlines.
+Representative responses:
+"During the flood, wala kaming mahanap na listahan ng evacuation centers o hotlines na
+malapit sa amin. (Q18)"
+"Finding evacuation area. (Q18)"
+THEME 4: Mismatch Between Official Signals and Ground Reality
+Frequency: ~5 mentions across Q18 & Q19
+FloodSense Survey Analysis | Bacoor City | n=40 | May 2026 | Page 12 of 19
+
+===== PAGE 13 =====
+A notable subset of respondents articulate a specific credibility gap: official weather signals and
+news reports do not match what they actually experience on the ground. This disconnect erodes
+institutional trust and leads residents to discount official warnings.
+Representative responses:
+"The news says there's a light rain but in reality it's the opposite. (Q18)"
+"The news announces that the storm is only under signal no. 1, but what I experience feels
+more like signal no. 3 or 4 because the flooding is too high. (Q18)"
+THEME 5: Demand for a Unified, Consolidated Flood Information Platform
+Frequency: ~12 mentions in Q19
+Across both English and Filipino responses, residents consistently converge on the same
+solution concept: a single, authoritative, always-current resource where all flood-related
+information is available in one place.
+Representative responses:
+"A dedicated text blast system or mobile app that sends immediate water level alerts for our
+specific barangay. (Q19)"
+"Makakatulong talaga kung may isang sistema o app na nagbibigay ng kumpletong flood-
+related na impormasyon. (Q19)"
+2. Solid Narrative Summary
+The open-ended responses from Bacoor City residents paint a consistent and urgent portrait of
+a community that has normalized living with flood risk — yet remains critically under-informed at
+every stage of the flood cycle. The dominant emotional register across both Filipino and English
+responses is one of resigned familiarity combined with barely suppressed anxiety.
+The most pervasive and deeply felt gap is the absence of hyperlocal, real-time information.
+Residents do not need to be told that "heavy rainfall is expected" — they can feel it. What they
+desperately lack is the translation of that meteorological reality into ground-truth street-level
+data: which roads are impassable, how quickly the water is rising, and which direction safety
+lies.
+A striking pattern emerges in the Tagalog-language responses: a culture of sudden onset.
+Respondents describe scenarios where water rises around them before any warning reaches
+them. The phrase "bigla na lang" (suddenly/without warning) appears repeatedly, suggesting
+that rapid-onset flooding without advance notification is not an exceptional event but a routine
+one. This reveals a structural latency problem in the existing warning chain.
+The second major theme — evacuation center inaccessibility — reveals that even when
+residents decide to evacuate, they face a navigational information vacuum. They do not know
+where the nearest operational center is, whether it is accessible given current flood conditions,
+or who to call for guidance.
+Finally, the institutional trust deficit exposed in Theme 4 has significant implications for any
+FloodSense deployment strategy. Residents who have repeatedly found official warnings
+inconsistent with ground reality will be predisposed to distrust new information systems unless
+they demonstrably outperform existing channels.
+FloodSense Survey Analysis | Bacoor City | n=40 | May 2026 | Page 13 of 19
+
+===== PAGE 14 =====
+3. Critical Qualitative Findings
+Gap 1 — The Latency Crisis: The word "real-time" appears in multiple independent responses,
+confirming that delayed information is operationally useless. By the time announcements reach
+residents, conditions have already changed. Any viable solution must deliver information in sub-
+minute intervals during active events.
+Gap 2 — The Specificity Vacuum: Existing systems communicate at the city or region level;
+residents need block-by-block intelligence. The scale mismatch between available information
+and decision-making needs is a fundamental design failure in current systems.
+Gap 3 — The Evacuation Navigation Void: "Wala kaming mahanap na tamang hotline o
+evacuation site." During the worst moments of a flood, residents are left without a lifeline to
+reach safety. The absence of a single, authoritative, real-time evacuation directory is not a gap
+— it is a crisis.
+Gap 4 — The Credibility Collapse: When the gap between official communication and lived
+experience is large, residents begin to discount all official warnings — including legitimate ones.
+Rebuilding credibility requires a system that consistently validates ground truth.
+Gap 5 — Fatalistic Adaptation: "Wala. Sanay na mga tao dito na bahain e." [Nothing. The
+people here are used to flooding.] This single response encapsulates a dangerous cognitive
+adaptation. Any FloodSense deployment must actively re-engage these fatalistic users by
+demonstrating tangible, early protective value.
+FloodSense Survey Analysis | Bacoor City | n=40 | May 2026 | Page 14 of 19
+
+===== PAGE 15 =====
+PART 2: PROPOSED SOLUTION CONCEPT &
+INTEGRATION
+Working Title: FloodSense — An Augmented Reality Mobile Application with Machine Learning-
+Based Flood Susceptibility Mapping for Bacoor City
+Pillar 1: Data-Driven Justification
+The FloodSense concept is not a solution searching for a problem — it is a direct, evidence-
+grounded response to a documented, quantified crisis in Bacoor City's flood information
+ecosystem.
+• The Scale of Exposure is Non-Negotiable. Q2 establishes that 77.5% of surveyed residents
+experience flooding almost every rainy season. FloodSense must be designed as a year-round
+tool that residents habituate to — not a one-time crisis app.
+• The Information Infrastructure Has Already Failed, Repeatedly. Q5 reveals that 72.5% of
+respondents have made dangerous decisions due to information failure. The urgency of
+FloodSense is not anticipatory; it is remedial.
+• Dissatisfaction with Existing Channels is Overwhelming. Q4's 65.0% dissatisfaction rate across
+all current sources signals that incremental improvements are insufficient. A fundamentally new
+platform is warranted.
+• Spatial Knowledge Gaps Are Dangerous. Q3 shows that 77.5% of residents cannot confidently
+identify which areas are flood-prone. Q9 confirms that 57.5% cannot determine their own
+barangay's risk status during an active event.
+• PAGASA Advisories are Being Lost in Translation. Q7's finding that 47.5% cannot translate
+national weather warnings into local flood risk meaning confirms that the problem is not only
+information availability but interpretation.
+• Evacuation Infrastructure is Functionally Inaccessible. Q14's 52.5% difficulty rate reveals that the
+BDRRMO's physical infrastructure exists but is informationally invisible to half the population
+during the critical window when it is needed most.
+• The Community Demand Signal is Extraordinary. Q13 (mean 4.20), Q15 (mean 4.15), Q17 (mean
+4.00), Q11 (mean 3.90), and Q8 (mean 3.93) all exceed 3.90 on 5-point utility scales — strong,
+consistent expressions of urgent need.
+Pillar 2: Feature-to-Data Mapping
+Survey Finding Data Point Recommended FloodSense
+Feature
+Q9: 57.5% cannot determine Mean 3.58 Real-time AR Flood Risk Overlay
+their barangay's risk during difficulty — Camera feed overlaid with
+active events live, color-coded risk level for the
+user's GPS-pinpointed barangay
+FloodSense Survey Analysis | Bacoor City | n=40 | May 2026 | Page 15 of 19
+
+===== PAGE 16 =====
+Survey Finding Data Point Recommended FloodSense
+Feature
+Q8: 65.0% strongly want Mean 3.93; ML-Powered Flood Susceptibility
+unified visual flood risk 47.5% = Map — City-wide, color-coded
+dashboard Extremely Useful barangay risk map
+(Low/Moderate/High/Very High)
+Q7: 47.5% cannot translate Mean 2.52 PAGASA-to-FloodSense Signal
+PAGASA advisories into confidence Translator — ML model
+local risk converting raw PAGASA rainfall
+forecasts into barangay-specific,
+plain-language levels
+Q10: 40.0% find available Mean 2.95 clarity Plain-Language Risk Bulletin
+information unclear Generator — Auto-generated,
+jargon-free push notification with
+specific risk level and expected
+conditions
+Q11: 55.0% rate plain- Mean 3.90 utility Location-Aware Push Notification
+language risk messages as System — GPS-triggered alerts
+highly helpful specific to the user's current
+barangay
+Q13: 75.0% want tiered 57.5% = Tiered DRRM Action Protocol
+action checklists (highest Extremely Module — Risk-severity-indexed
+mean: 4.20) Helpful action guides from LOW to
+VERY HIGH risk
+Q14: 52.5% cannot find Mean 3.50 Proximity-Ranked Evacuation
+nearest evacuation center difficulty Center Navigator — GPS-based
+during emergencies auto-ranking with walking/driving
+routes
+Q15: 75.0% rate automated Mean 4.15 utility AR Evacuation Pathfinding —
+evacuation routing as highly Camera overlay displaying
+helpful directional arrows to nearest
+open evacuation center
+Q16: 57.5% already share Active prosocial One-Tap Risk Report Sharing
+warnings most of the time or sharing behavior Module — Pre-formatted
+always barangay risk snapshot
+shareable to Viber, WhatsApp, or
+SMS
+Q17: 65.0% want Mean 4.00 utility Deep-Link Sharing API
+messaging-app integration Integration — Native
+for sharing Viber/WhatsApp/SMS integration
+with auto-generated flood risk
+messages
+Q5: 72.5% made unsafe Documented Hazardous Route Warning
+decisions due to information harm event System — Real-time alert when
+gaps user attempts navigation through
+a high-risk or flooded barangay
+FloodSense Survey Analysis | Bacoor City | n=40 | May 2026 | Page 16 of 19
+
+===== PAGE 17 =====
+Survey Finding Data Point Recommended FloodSense
+Feature
+Q18/Q19 Themes: Demand Recurrent Community Flood Report
+for hyperlocal, real-time qualitative Feature — Crowdsourced, GPS-
+street flood status demand tagged flood condition reports
+verified by ML backend
+Q18/Q19 Theme 4: Institutional trust Ground-Truth Calibration Engine
+Mismatch between official deficit — ML model ingesting
+signals and ground reality crowdsourced reports to adjust
+susceptibility ratings
+FloodSense Survey Analysis | Bacoor City | n=40 | May 2026 | Page 17 of 19
+
+===== PAGE 18 =====
+Pillar 3: Sociotechnical Implementation Challenges & UX/UI
+Recommendations
+Challenge 1: Varying Digital Literacy Across Barangays
+The survey's geographic diversity (14 barangays, multiple socioeconomic contexts) implies
+significant variation in smartphone literacy, data plan availability, and comfort with app-based
+systems. Older residents and those in lower-income barangays may struggle with feature-dense
+interfaces.
+Recommendations:
+• Design FloodSense with a "Crisis Mode" interface — a single-screen, large-text, high-contrast
+view activated during active flood events showing only 3 things: current risk level, nearest
+evacuation center, and one emergency action.
+• Conduct co-design workshops with residents from Soldiers 4, Talaba 1, and Molino 3 before
+finalizing UX flows, ensuring the interface reflects actual user mental models.
+• Support SMS-based fallback functionality for users without smartphones or data access — critical
+for reaching the most vulnerable residents.
+Challenge 2: Connectivity Constraints During Peak Flood Events
+Internet connectivity is frequently degraded or unavailable during heavy rainfall events in
+Philippine urban areas. An app that requires constant internet connectivity will fail precisely
+when it is most needed.
+Recommendations:
+• Implement offline caching of the most recent barangay risk map, evacuation center locations, and
+protocol guides, refreshed every 15 minutes when connectivity is available.
+• Use lightweight data protocols (compressed GeoJSON, not heavy map tiles) to minimize data
+consumption and maintain functionality on 2G/3G connections.
+• Enable SMS push alert integration via LGU partnership so critical risk level changes are delivered
+even without app connectivity.
+Challenge 3: Institutional Trust Deficit (Q18 Theme 4)
+Residents who have experienced the PAGASA-vs-ground-reality credibility gap will approach
+any officially-endorsed app with skepticism.
+Recommendations:
+• Integrate the community crowdsourced reporting feature from day one so residents see that the
+app incorporates their real-world observations — not just government data.
+• Display a model confidence indicator alongside risk levels to demonstrate data provenance and
+transparency.
+• Launch with a 30-day pre-flood-season calibration period (barangay awareness campaigns, test
+alerts, community reporter recruitment) before the first operational rainy season.
+Challenge 4: Fatalistic Non-Adoption (Q18 Gap 5)
+FloodSense Survey Analysis | Bacoor City | n=40 | May 2026 | Page 18 of 19
+
+===== PAGE 19 =====
+The "Sanay na kami" (we're used to it) response signals that a subset of residents may not
+perceive sufficient personal benefit to download and learn a new app.
+Recommendations:
+• Deploy the app through barangay captain endorsement and BDRRMO co-branding, giving it
+institutional legitimacy that overcomes individual skepticism.
+• Run pre-season community demonstrations in each barangay's public assembly, showing real-
+time AR overlays using existing flood scenario data.
+• Offer household incentive programs for early adopters who complete the onboarding tutorial and
+submit their first community flood report.
+Challenge 5: Barangay-Level Data Gaps for ML Model Training
+FloodSense's ML flood susceptibility model requires historical flood data, elevation data (DEM),
+drainage network data, and rainfall records at the barangay level. Data quality across all 14+
+barangays may be inconsistent.
+Recommendations:
+• Partner with PAGASA, PHIVOLCS, and the Bacoor City BDRRMO for official data access under
+a formal research MOU, establishing the app as an academic-government co-development
+project.
+• Use Sentinel-1 SAR imagery (free, cloud-penetrating) for historical flood inundation mapping
+across barangays where ground truth data is absent.
+• Implement a tiered confidence display system: barangays with sufficient training data display ML-
+generated risk levels; data-sparse barangays display a "Limited Data" flag, setting honest user
+expectations.
+End of Report — FloodSense Survey Analysis | Bacoor City | n=40 | May 2026
+FloodSense Survey Analysis | Bacoor City | n=40 | May 2026 | Page 19 of 19

@@ -1,0 +1,90 @@
+
+===== PAGE 1 =====
+Republic of the Philippines
+CAVITE STATE UNIVERSITY
+CvSU Bacoor City Campus
+City of Bacoor, Cavite
+(046) 476-5029
+www.cvsu.edu.ph
+DEPARTMENT OF COMPUTER STUDIES
+SURVEY FINDINGS SUMMARY
+Flood Susceptibility and Awareness Survey
+Total Respondents: 50 | Data Gathering Period: May 05–12, 2026
+Sampling: Purposive-Convenience | 12 Barangays across Bacoor City
+1. Flood Experience and Hazard Exposure
+Key Finding Detail
+92% of respondents experience Occasionally + Frequently + Very Frequently combined
+flooding
+54% experience flooding almost "Very Frequently" — highest frequency category
+every rainy season
+82% report moderate to severe Knee-deep or higher (Moderate 24% + Severe 58%)
+flooding
+58% report severe flooding Waist-deep or higher — highest severity category
+
+===== PAGE 2 =====
+Top flood effects reported by respondents (Q8 — select all that apply):
+Effect Count % of
+Respondents
+Disruption to daily activities (work, school) 48 96.0%
+Health risks 42 84.0%
+Property damage 39 78.0%
+Displacement or evacuation 19 38.0%
+Loss of livelihood 18 36.0%
+2. Flood Risk Awareness and Warning Channels
+Flood area awareness (Q7):
+Awareness Level Count %
+Well-informed 10 20.0%
+Somewhat aware 30 60.0%
+Not sure 4 8.0%
+Not aware at all 6 12.0%
+Key Finding: Most respondents (80%) reported being only somewhat aware, unsure, or not aware at
+all regarding flood-prone areas, while only 20% considered themselves well-informed. This suggests
+that many respondents may have limited knowledge about flood susceptibility within their area.
+Primary warning channels (Q6 — select all that apply):
+Channel Count % of
+Respondents
+Social media 33 66.0%
+Text/SMS alerts 32 64.0%
+Neighbors / word of mouth 22 44.0%
+News/TV 21 42.0%
+Barangay PA system 15 30.0%
+I receive no warning 2 4.0%
+Key Finding: Official digital channels such as social media posts from government agencies (66%)
+and SMS alerts (64%) are the primary warning sources among respondents. Meanwhile, only 30%
+receive alerts through the Barangay PA system, suggesting stronger dependence on digital
+dissemination methods than traditional on-site warning mechanisms.
+3. Flood Information Quality (Likert Scale, Q9–Q11)
+Scale: 1 = Very Dissatisfied / Never | 3 = Neutral / Sometimes | 5 = Very Satisfied / Always
+Question Mean Score Interpretation
+Q9. Satisfaction with flood information 2.62 Neutral / Sometimes
+Q10. Timeliness of flood warnings 2.70 Neutral / Sometimes
+
+===== PAGE 3 =====
+Question Mean Score Interpretation
+Q11. Clarity of flood risk communication 2.72 Neutral / Sometimes
+Key Finding: All three Likert items yielded mean scores of 2.62–2.72, indicating that respondents are
+generally dissatisfied with the current quality, timeliness, and clarity of flood information.
+4. Decision-Making Due to Lack of Flood Information (Q12–13)
+Top Problems in Getting Flood Info (Q12) Frequency % (n=50)
+Late / Delayed Information 13 26%
+Lack of Information / No Warnings 10 20%
+Unclear or Inaccurate Information 6 12%
+Sudden / Unpredictable Flooding 4 8%
+Lack of Location-Specific Risk Info 3 6%
+Wrong Decisions Due to Lack of Flood Info (Q13) Count %
+YES — made a wrong decision 32 64%
+No 18 36%
+Key Finding: 64% of respondents (32 of 50) have made a wrong decision due to insufficient flood
+information — providing strong empirical support for the need for a reliable, accessible flood risk
+information tool.
+5. Proposed Solution Concept (Working Title)
+Working Title: FloodSense: An Augmented Reality Mobile Application with Machine Learning-Based
+Flood Susceptibility Mapping for Bacoor City
+Based on the identified gaps, this study proposes developing a mobile application that provides
+residents with location-specific flood susceptibility information for Bacoor City. Using a machine
+learning model trained on rainfall data, elevation, and historical flood records, the app classifies flood
+risk into four clear levels: Low, Moderate, High, and Very High - for each zone/ barangay in the city.
+Residents open the app, set their own parameters — how much rain is expected and how long it will
+fall — then point their phone camera at any flat surface. The app renders a color-coded flood
+susceptibility map anchored to the ground through augmented reality, giving them an intuitive, visual
+answer to the question: "Is my area at risk right now?"

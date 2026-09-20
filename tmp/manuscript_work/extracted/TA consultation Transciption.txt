@@ -1,0 +1,194 @@
+
+===== PAGE 1 =====
+TA consultation Transciption, TA (thesis adviser), R1 (researcher 1), R2 (Researcher 2)
+SYSTEM DISCUSSION:
+TA: punta muna tayo sa Mobile app muna, nalagay nyo na dito? (put the emulator to my
+android device instead of running in the laptop).
+R1: nalagay na po sir.
+R2: Naconnect na po Sir.
+TA: Sabi nyo di niyo nacoconnect kanina.
+R1: Na Run na po sir, Madali lang pala yung process. USB debugging lang.
+(proceed to show the admin side)
+R1: So dito sir, eto yung backend ng admin side, eto yung mga laman ng each section
+(shows each category admin side) dito rin yung expert rule naming at rule set etc…
+TA: alam ko to ah, python to no?
+R1: yes po sir, Django backend po
+TA: sabi ko na nga ba e, parehong pareho yung framework e. Oh next.
+R1: So each rule set sir, expert rule meron syang supposed value for demonstration (shows
+the code in the vscode) so eto yung laman ng each rule sir.
+TA: ah rule based lang tong ginawa nyo dito muna.
+R1: opo sir.
+TA: pano sya mag lelearn (system) pag rulebase sya. Pano sya mag lelearn ng bagong data
+pag ano siya.
+R1: meron kaming rule dito sir e (shows a code block), dito kasi sir pwede sya mag dagdag
+ng bagong rule, or scenario. Then mag iinterchange sya don base sa input mo. And down
+side lang non sir, is kailangan yung i-input mong rule is align to other data or other category,
+kase either di mo sya ma sasave or mag error sya.
+TA: basta tama based don sa parameter na pinakita nyo kanina (admin side).
+R1: okay
+TA: ok, sige nga patingin nga ako ng sample scenario sa flutter interface.
+
+===== PAGE 2 =====
+R1: (proceed to show the interface in flutter) eto sir.
+TA: eto simulation pa lang to?
+R1: opo sir.
+TA: pero ang kailangan ko ay automatic ah, kase eto ay simulation pa lang diba? Kasi hindi
+naman ganito talaga (talking about the system).
+R1: initial pa lang po ito sir.
+TA: oonga, pero ang kailangan ko is automatic sya na lalabas, para wala masyadong
+pipindutin si user, kasi nga yung rainfall intensity naka based sya sa ibibigay ng code nyo.
+For example. Ang rainfall intensity ngayon sa bacoor ay light or wala, zero. Kasi zero naman
+talaga ngayon diba. So ganon ibigsabihin, wala masyadong problema. Pero eto automatic
+dapat to. Pano yung rainfall duration pag gusto nyo automated, for example every 1 hour ba
+ay namomonitor, kasi automated to e, and running in the background sya actually. Para
+syang timer, na pag nag open ka ng timer, may timer tayo sa clock (points the top of the
+android where it shows the clock, battery, notif. Hes talking about putting a timer at the
+top). Running sya saa background pero ganito lang (timer), gusto ganito talaga, yung
+sample ng inyong app, naka open sya pero running in the background siya, running sya for
+the for example, past 15 minutes ganito yung rainfall intensity, tapos mag a-automate sya,
+for rainfall duration, 3 hours na. Pero eto (Map) automated na nagbabago-bago based dito
+sa dalawa, bat dalawa lang ang parameters nyo?
+R2: actually sir tatlo kasama yung sa map.
+TA: ah yung basis ng location?
+R2: opo sir.
+TA: ah yung basis ng location? Pero diba based don sa letter nyo may tandem pa kayong
+nakalagay? Yung waterlevel at automated rainfall gauge? Ano yon, gagamitin nyo ba yung
+dalawang yon?
+R1: ah, di po pa po kasi naming nakikita yung datasets, pero pwede naming magamit.
+TA: edi mababago to (system)
+R1: dipende po sa datas na ibibigay nila.
+TA: kasi ano yung magiging algorithm nyo dito? Kase eto napaka simple lang ng algorithm
+nyo dito e (the rainfall and intensity algorithm and map), siyempre pag ang intensity ng
+malakas tapos umabot ng 3 hours na duration edi siyempre may mababaha talaga diba.
+
+===== PAGE 3 =====
+Pero naka dipende sya sa location, so pag dinagdag yun (datasets from tandem) anong
+madadagdag don? Wala pa kayong formula para don?
+R1: di pa po kasi naming nakikita yung pinaka data.
+TA: kung pano nila nagagamit yung data?
+R2: opo sir, then ipopropose din po naming yun sa bddrmo.
+TA: sige nga pag ganito (proceed on testing the app) pag torrential tapos 24 hours.
+(the map shows each polygons susceptibility)
+R2: yan po yung demography.
+TA: and if ever asan ako (in the map)?
+R2: ganito po sir, pipili ka sir then itatapmo yung each polygon.
+TA: hindi ba-
+R1: pero sir lalagyan naming yan ng currently nasan ka,
+TA: ah okay, wala pa yon?
+R1: opo sir
+TA: so if ever na currently na ako ay nandito anong output.
+R1: so yung output po ng map sir is magrereflect based don sa parameter ng ininput ni
+user.
+TA: bakit inaasses pa yung susceptibility? Hindi ba dapat ay automatic na rin sya? Bakit
+pinipindot pa (the assess susceptibility button), kase yun lang naman yung option nya diba
+na automated na mag cacalculate ng susceptibility, wala naman ibang gagawin diba. Tapos
+wag pa ganito ah (one page scroll down interface).
+R1: opo sir, gagawin po naming parang pager yan.
+TA: ah, basta pa ganito, next next next na sya. Yung mga ano preffered na guide lines tapos
+yung evacuation. Tapos, for example alam nyo namang nangyayare na sa previous data,
+alam nyo na pag torrential yung intensity ng ulan tapos naka 1 hour dapat atleast automatic
+na nag bibigay na sya ng alert, tapos may button or ano pag nasa background process sya.
+Tapos etong app nyo dapat ano to pag open, makikita yung data privacy act, yung-.
+R1: terms of use po sir.
+
+===== PAGE 4 =====
+TA: oo, pag open bago mo sya na magamit sasabihin mo na were using your data, or were
+using your geolocation.
+R1: noted po sir, btw sir about po sa admin side. Wala na po ba kaming idadagdag or kulang
+don?
+TA: eto kasi hindi dapat yan nakikita, (the expert rule). Kasi eto ay hindi dapat nakikita ng
+admin, bakit sya makikita ng admin? So pwede nya pala baguhin yung rules, na hindi
+naman sya yung nag create ng algorithm, kayo nag create ng algorithm non based sa
+research nyo diba. Kase kayo ang gumawa.
+R1: hindi ba sya sir ano, parang gap kasi yung maintainability po ng app.
+TA: Dapat export CSV, mag eexport ng excel file or csv. Ano bam ga ineexport don, diba mga
+new parameters, para mabago yung mga scenario, pag nag lagay ng bagong parameters,
+mag o-ouput ng bagong scenario, or ma-iimprove yung mga dating scenario. Hindi dapat
+mababago yung algorithm, pag nag lagay lang ng new data dun lang mababago. Ganon
+naman yung ginagawa nyo diba, nababago yung output dahil sa mga parameters nya, so
+pag may new value yung mga parameters saka mababago yung scenario.
+R1: mag eexport nalang sya sir.
+TA: oo mag eexport nalang dapat sya, so ibigsabihin si admin mag eexport nalang ng
+bagong data, para pag nag improve diba yung isang lugar, so ano yung value na ilalagay nyo
+para nagbabago sya, nagegets po ba?
+R1: opo sir.
+TA: pero wala po syang mababago sa mga rule. (then points out to the guidance section in
+admin) siguro eto lang guidance item under DSS, siguro ang guidance den-.
+R1: makukuha po sa bddrmo.
+TA: oo, tapos pwedeng ma edit to (guidance item). So yung guidance lang po yung pwede
+nilang ma-edit, pero more on dun sa iba, hinde. Pero yung sa expert system, dapat wala to.
+Fixed sya, bibigyan nyo lang sila ng parang expected nag ganito yung mangyayare or ganito
+yung output, or para syang datasets na eto yung mangyayare. Maliwanag po ba.
+R1: opo sir
+MANUSCRIPT DISCUSSION -
+
+===== PAGE 5 =====
+TA: Pag natapos yung to, etong mga pinapagawa ko sainyo. I think ma-eendorse ko kayo.
+Pero gusto ko makita manuscript siyempre. Kelan ko makikita yung manuscript.
+R1: sisimulan pa namin yung data gathering sir.
+TA: so hopefully by next, meron nakong makikitang manuscript na matino. Kase yan ang
+pinakamahirap. Eto kasi ang mangyayare, parang ikukwento nyo. Kase pag nag c-create po
+tayo ng thesis, nag kukwento tayo-yung statement of the problem, nag kukwento tayo ng
+problema ng bacoor and habang kinukwento natin siyempre background of the study,
+example, bahain sa bacoor etc. ano yung nafoformulate nyong problems na meron jan and
+bakit sya yung nag cecreate ng problem. From that, gagawa kayo ng fishbone diagram. Yung
+fishbone diagram yan yung cause and effect. Ano yung mga causes bakit nag kakaroon ng
+ganitong effect, yung effect ifoformulate nyo as problem. For example ang isang effect is:
+antagal tagal mag evacuate ng mga tao, so ano ang causes non, hindi sila mga aware, flood
+prone talaga ang area nila, wala silang alam na guidelines, etc. basta kung ano pa yung ma
+create nyo na problem, gets po ba?
+R1: opo sir.
+TA: so ikukwento nyo yun, mag foformulate kayo ng problem, pero that problem is
+formulated from that fishbone diagram because of the causes and effect. San nyo kukunin
+yung causes and effect?
+R1: thru data gathering po sir
+TA: tama, sino ba ang mga sinurvey nyo? Mga bacoor residence or baka nakakuha rin kayo
+ng problem from the bddrmo, okay? Gusto ko makita yon ah.
+R1: okay po sir
+TA: tignan nyo yung 5M’s ng fishbone diagram. Measurement, manpower, machinery,
+material, method. Siyempre yung manpower, dipende yan sa tao then yung material, ano
+yung mga tools na ginagamit , method: processes. Ganyan. Tapos yung objective, ihehelp
+ko nalang kayo sa pag create ng objective.
+R1: sa diagrams sir, ano po ba yung mga need namin gawin.
+TA: sa diagrams naman, diba mag ce-create kayo ng methodology, ano po ba yung
+methodology nyo. Yung SDLC model.
+R1: wala pa po sir.
+
+===== PAGE 6 =====
+TA: ano ba gusto nyong SDLC model, ano ba ang ginagawa nyo ngayon, ano ba ang process
+ng pag dadata gather nyo? Ikwento nyo sakin, pano kayo nag dedevelop, pano kayo nag
+dadata gather and kanino nyo binibigay yung dinedata gather nyo.
+R1: actually sir last time na, nag pa consult kami sainyo then binigyan nyo kami ng
+deadline. Nag set po kami ng 7 day timeline and each day meron kaming objectives na
+need matapos and kasama na po don yung data gather and researching. And natapos
+naman po namin sya sir.
+TA: so mag search kayo, based jan sa methodology nyo, or gumamit kayo ng ai. Tanungin
+nyo si chatgpt, what kind of SDLC model can i adapt with these our method, so we are
+interviewing etc. tapos ikukwento nyo lang yung mga ginagawa nyo, then mag bibigay sila
+ng examples tapos yung yung i-adapt nyo. Tapos pag binigyan kayo ng sdlc model saka
+natin gagawin yung methodology nyo. Hopefully by Wednesday gusto ko na makita yung
+sdlc model. Tapos yung mga diagrams na yan, kase tinatanong nyo ko about jan, for
+example yung fishbone diagram, ginagawa nyo para makatulong sya sa formulation ng
+inyong statement of the problems, so ibigsabihin we formulate the statement of the
+problem, ikukwento nyo sa methodology: we created our problems by interview gathering
+and we formulate it using fishbone diagram. Tapos with consultation with out TA or TC, we
+created usecase diagram for the creating the user profiles of the user and they are based
+on your data gathering still, kase nga kailangan nyo ng admin etc. kung mag cecreate kayo
+ng class diagram or hipo diagram pero ikukwento nyo yon base sa methodology nyo. ang
+lahat ng diagram po na ilalagay nyo sa appendices ay ikukwento nyo bakit nyo sya
+nagagamit, di sya palamuti lang. they are your references. So bakit kayo nakapagcreate ng
+for example ng ganitong algorithm (system) so anong ginamit nyo, nag create ba kayo ng
+diagram, and ano ba yung pinagkopyahan nyo. tapos yung algorithm na yon, it came from
+interviews or another relate literature or study. Yung related literature and study, hindi rin
+sya palamuti lang, okay?
+R1: yes po sir.
+TA: dapat po makukwento nyo rin bakit sila ginagamit don. So kailangan ko ng atleast ng
+scratch ng chapter 1-3 kailan?
+R1: siguro po sir sa next Monday pwede po ba?
+TA: sige sa Monday, pero dapat tapos na lahat.
+R1: noted po sir.
+TA: sa Monday, eto (our system) gusto ko makita at yung manuscript.
+R1: thank you po sir
+
+===== PAGE 7 =====
+---- END ----
