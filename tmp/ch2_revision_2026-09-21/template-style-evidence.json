@@ -1,0 +1,168 @@
+{
+  "input": "E:\\School Downloads-Jiraah\\00 FILES IN SCHOOL\\3RD YEAR 2ND SEM\\DCIT 60\\FLOODSENSE\\1.FLOODSENSE-200A\\FloodSense\\1. FLOODSENSE-MAIN\\MAIN FILESS\\FloodSense_Chapters_1_to_3_Development_Aligned_2026-09-20.docx",
+  "fonts_by_char_count": {},
+  "direct_run_formatting_runs": 374,
+  "direct_paragraph_formatting_paragraphs": 189,
+  "heading_like_paragraphs_not_heading_style": [
+    {
+      "para_index": 50,
+      "text": "REYMART V. GOC-ONG",
+      "style": "Normal"
+    },
+    {
+      "para_index": 51,
+      "text": "MARTIN LORENZ D. JUANITES",
+      "style": "Normal"
+    },
+    {
+      "para_index": 52,
+      "text": "ROMAR T. PULAO",
+      "style": "Normal"
+    },
+    {
+      "para_index": 58,
+      "text": "Reymart V. Goc-ong",
+      "style": "Normal"
+    },
+    {
+      "para_index": 59,
+      "text": "Martin Lorenz D. Juanites",
+      "style": "Normal"
+    },
+    {
+      "para_index": 60,
+      "text": "Romar T. Pulao",
+      "style": "Normal"
+    },
+    {
+      "para_index": 67,
+      "text": "INTRODUCTION",
+      "style": "Normal"
+    },
+    {
+      "para_index": 72,
+      "text": "Statement of the Problem",
+      "style": "Normal"
+    },
+    {
+      "para_index": 77,
+      "text": "Objectives of the Study",
+      "style": "Normal"
+    },
+    {
+      "para_index": 85,
+      "text": "Theoretical Framework",
+      "style": "Normal"
+    },
+    {
+      "para_index": 100,
+      "text": "System Architecture",
+      "style": "Normal"
+    },
+    {
+      "para_index": 117,
+      "text": "Significance of the Study",
+      "style": "Normal"
+    },
+    {
+      "para_index": 123,
+      "text": "Time and Place of the Study",
+      "style": "Normal"
+    },
+    {
+      "para_index": 127,
+      "text": "Scope and Limitation of the Study",
+      "style": "Normal"
+    },
+    {
+      "para_index": 138,
+      "text": "Definition of Terms",
+      "style": "Normal"
+    },
+    {
+      "para_index": 160,
+      "text": "REVIEW OF RELATED LITERATURE",
+      "style": "Normal"
+    },
+    {
+      "para_index": 162,
+      "text": "Related Foreign Literature",
+      "style": "Normal"
+    },
+    {
+      "para_index": 163,
+      "text": "Flood Susceptibility and Scenario-Based Assessment",
+      "style": "Normal"
+    },
+    {
+      "para_index": 166,
+      "text": "Explainable Rule-Based Reasoning",
+      "style": "Normal"
+    },
+    {
+      "para_index": 169,
+      "text": "Decision Support for Preparedness",
+      "style": "Normal"
+    }
+  ],
+  "examples": {
+    "direct_paragraph_formatting": [
+      {
+        "para_index": 1,
+        "text": "FLOODSENSE: AN ANDROID-BASED EXPERT SYSTEM FOR FLOOD SUSCEPTIBILITY ASSESSMENT AND PRE-EVENT PREPAREDNESS IN BACOOR CITY",
+        "style": "Normal"
+      },
+      {
+        "para_index": 2,
+        "text": "",
+        "style": "Normal"
+      },
+      {
+        "para_index": 3,
+        "text": "",
+        "style": "Normal"
+      },
+      {
+        "para_index": 4,
+        "text": "",
+        "style": "Normal"
+      },
+      {
+        "para_index": 5,
+        "text": "",
+        "style": "Normal"
+      }
+    ],
+    "direct_run_formatting": [
+      {
+        "para_index": 1,
+        "run_text": "FLOODSENSE: AN ANDROID",
+        "style": "Normal"
+      },
+      {
+        "para_index": 1,
+        "run_text": "-BASED ",
+        "style": "Normal"
+      },
+      {
+        "para_index": 1,
+        "run_text": "EXPERT SYSTEM FOR FLOOD SUSCEPTIBILITY ASSESSMENT AND PRE-EVENT PREPAREDNESS IN ",
+        "style": "Normal"
+      },
+      {
+        "para_index": 15,
+        "run_text": "Undergraduate Thesis",
+        "style": "Normal"
+      },
+      {
+        "para_index": 16,
+        "run_text": "Submitted to the Faculty of the",
+        "style": "Normal"
+      }
+    ]
+  },
+  "notes": [
+    "Direct formatting is not always wrong, but it often causes inconsistent output when templates change.",
+    "Heading-like paragraphs not using Heading styles can break TOC and accessibility."
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "source": "E:\\School Downloads-Jiraah\\00 FILES IN SCHOOL\\3RD YEAR 2ND SEM\\DCIT 60\\FLOODSENSE\\1.FLOODSENSE-200A\\FloodSense\\1. FLOODSENSE-MAIN\\MAIN FILESS\\FloodSense_Chapters_1_to_3_Chapter_2_Enhanced_2026-09-21.docx",
+  "source_sha256": "81AE98E2A51DCA50613A3D0E03D7FA20AB67EA933D901B2F7AA5BE5EEC648AAD",
+  "output": "E:\\School Downloads-Jiraah\\00 FILES IN SCHOOL\\3RD YEAR 2ND SEM\\DCIT 60\\FLOODSENSE\\1.FLOODSENSE-200A\\FloodSense\\1. FLOODSENSE-MAIN\\MAIN FILESS\\FloodSense_Chapters_1_to_3_Chapter_2_Applications_and_Narrative_Citations_2026-09-21.docx",
+  "output_sha256": "027451D96E84517C2BE83DB459EAC7B4D6FDA869CDDE0082DF31304DDE38F558",
+  "chapter1_xml_hash_before": "A63D9DA74D828486F2AC4FDC7B1B6CD84772ACBCBEAEFABB06557E38E3F82FC1",
+  "chapter1_xml_hash_after": "A63D9DA74D828486F2AC4FDC7B1B6CD84772ACBCBEAEFABB06557E38E3F82FC1",
+  "chapter1_unchanged": true,
+  "chapter3_xml_hash_before": "2AB757233EBCE1402FCD69C19C1CD04FF614304E2EAA12245572ADC5CA5A5985",
+  "chapter3_xml_hash_after": "2AB757233EBCE1402FCD69C19C1CD04FF614304E2EAA12245572ADC5CA5A5985",
+  "chapter3_unchanged": true,
+  "sections_before": 4,
+  "sections_after": 4,
+  "tables_before": 5,
+  "tables_after": 4,
+  "inline_shapes_before": 0,
+  "inline_shapes_after": 0,
+  "chapter2_paragraph_count": 106
+}

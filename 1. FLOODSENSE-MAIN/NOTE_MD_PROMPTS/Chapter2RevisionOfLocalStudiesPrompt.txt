@@ -1,0 +1,567 @@
+
+
+Your task is to carefully review the complete Chapter 2 of the SURECUT manuscript and use it as the structural, organizational, depth, writing, citation, and formatting model for improving only Chapter 2 of the FloodSense manuscript.
+
+SURECUT controls only the structure, depth, organization, presentation, writing pattern, and formatting. Do not copy SURECUT’s research facts, wording, citations, findings, transportation-related content, or system features into FloodSense.
+
+# Strict Chapter 2 editing boundary
+
+This task is strictly limited to Chapter 2 of the FloodSense manuscript.
+
+Do not edit, rewrite, reorganize, shorten, expand, correct, or reformat:
+
+- Chapter 1;
+- Chapter 3;
+- the Statement of the Problem;
+- the objectives;
+- the significance;
+- the scope and limitations;
+- the definitions of terms;
+- the Theoretical Framework;
+- the System Architecture;
+- the methodology;
+- survey sections;
+- evaluation plans;
+- preliminary pages;
+- appendices;
+- diagrams;
+- source code;
+- datasets;
+- development documents;
+- approved school documents; or
+- the original `FloodSense_Chapter_1_MAIN`.
+
+The only permitted changes outside Chapter 2 are corresponding entries in the final reference list required by sources actually cited in the revised Chapter 2.
+
+Preserve unrelated reference entries unless an entry is an exact duplicate, contains a verified bibliographic error that affects Chapter 2, or I explicitly authorize its removal.
+
+Create the revised Chapter 2 in a new manuscript file. Do not overwrite the latest manuscript or the original Chapter 1 baseline.
+
+# Current development-status basis
+
+Use the latest completed repository audit, development–manuscript alignment tracker, and decisions supplied by me as the documentation lead as the current development-status basis for this Chapter 2 task.
+
+Use development evidence only to ensure that Chapter 2 remains consistent with the real FloodSense system. It does not authorize changes to any other chapter.
+
+Do not assume that every document, model, diagram, mockup, screenshot, script, dataset, or interface design in the repository represents a current operational function.
+
+Continue to distinguish:
+
+- `IMPLEMENTED AND CURRENTLY VERIFIED`;
+- `IMPLEMENTED — HISTORICAL TEST EVIDENCE ONLY`;
+- `IMPLEMENTED BUT NOT EXPOSED TO THE INTENDED USER`;
+- `ACTIVE WORK IN PROGRESS`;
+- `CONFIRMED REQUIREMENT — NOT YET IMPLEMENTED`;
+- `PLANNED`;
+- `PROPOSED — AWAITING APPROVAL`;
+- `BLOCKED OR AWAITING DATA`;
+- `NOT IMPLEMENTED`; and
+- `OUTSIDE THE CURRENT SCOPE`.
+
+Do not reinterpret, exaggerate, or expand the documented system status. If a statement cannot be supported by the latest audit, the current manuscript, or a verified source, omit it or identify it as unsupported.
+
+# Files and evidence to review
+
+Locate and inspect:
+
+1. the complete SURECUT manuscript, particularly every page of Chapter 2;
+2. the latest FloodSense Chapters 1–3 manuscript;
+3. the original `FloodSense_Chapter_1_MAIN`, only for established concepts, objectives, terminology, scope, and system boundaries;
+4. the latest FloodSense development–manuscript alignment tracker;
+5. the latest completed repository audit;
+6. relevant approved school documents;
+7. available interview and research records;
+8. the existing FloodSense reference list; and
+9. the development repository only when verification is necessary for a Chapter 2 statement.
+
+Do not modify any inspected file before I explicitly say `Proceed`.
+
+# Analyze the complete SURECUT Chapter 2
+
+Before editing FloodSense, read every page of SURECUT Chapter 2 and report:
+
+1. its complete heading hierarchy;
+2. how it separates literature from studies;
+3. how it separates foreign and local sources;
+4. how many foreign literature sources it discusses;
+5. how many local literature sources it discusses;
+6. how many foreign studies it discusses;
+7. how many local studies, applications, or systems it discusses;
+8. how long and detailed each discussion is;
+9. how SURECUT presents the title of each application or system;
+10. whether the application or system title is formatted as a heading, introductory phrase, or bold lead;
+11. how the description follows the application or system title;
+12. where the author-and-year citation appears;
+13. how the source is connected to SURECUT;
+14. how similarities and differences are discussed;
+15. how limitations are identified;
+16. how the synthesis is organized;
+17. how the research gap is established;
+18. whether comparison tables are used;
+19. how citations and references are formatted; and
+20. which elements should be mirrored in FloodSense Chapter 2.
+
+Do not provide only a general summary. Pay special attention to the writing pattern used in SURECUT’s Related Local Studies section.
+
+# Required Local Studies presentation pattern
+
+Mirror SURECUT’s application-or-system-centered presentation in the FloodSense Related Local Studies section.
+
+Each legitimate local study involving an application, platform, information system, decision-support tool, expert system, GIS platform, warning system, preparedness system, or flood-related technology should be presented using this pattern:
+
+**Verified Title of the Application or System.** The succeeding paragraph or paragraphs must describe the application or system, its purpose, location, target users, method, technology, major functions, findings or evaluation evidence, limitations, relevance to FloodSense, and differences from FloodSense. The discussion must include the verified author-and-year citation.
+
+Use a structure similar to:
+
+**[Exact verified title of the application or system].** [Description of the system, its authors or developers, purpose, location, users, technologies, method, findings, limitations, relevance to FloodSense, and differences from FloodSense] ([Verified author or organization], [verified year]).
+
+This is a structural pattern only. Do not use the bracketed example as manuscript content.
+
+Requirements for every application or system title:
+
+- Use the exact official title from the original source.
+- Do not shorten, rewrite, translate, or improve the title unless the source provides an official English title.
+- Do not invent an application name.
+- Do not create a system title from a study’s topic.
+- Do not describe a conceptual paper as a completed application.
+- Do not describe a proposed system as implemented.
+- Do not describe a prototype as operational or deployed.
+- Do not treat a diagram, mockup, project proposal, or source-code repository as a published local study.
+- Confirm whether the item is an application, prototype, platform, framework, model, or general research study.
+- Use the correct classification in the discussion.
+- Include a verified citation in the descriptive paragraph.
+- Include the complete corresponding reference in the final reference list.
+
+If a local study does not have a named application or system, use the study’s exact published title as the bold lead or study heading. Do not invent a system name merely to follow the SURECUT pattern.
+
+# Required content for every Local Study entry
+
+For each Related Local Study, explain:
+
+1. the exact verified title of the study, application, or system;
+2. the verified author or developing institution;
+3. the publication or completion year;
+4. where the study was conducted;
+5. the problem it addressed;
+6. its intended users;
+7. the method used;
+8. its data sources;
+9. its technologies or system components;
+10. its major functions;
+11. whether it was proposed, prototyped, tested, evaluated, deployed, or operational;
+12. its relevant findings;
+13. its limitations;
+14. its similarities to FloodSense;
+15. its differences from FloodSense;
+16. which concepts support the FloodSense study;
+17. which features or findings cannot be transferred to FloodSense; and
+18. the verified citation supporting the discussion.
+
+The description must be written as a cohesive academic discussion, not as a numbered list inside the manuscript.
+
+# Depth of the Local Studies section
+
+Develop the Related Local Studies section to a depth comparable to SURECUT.
+
+After inspecting SURECUT, estimate the number and length of its local-study discussions. Propose a comparable number of legitimate and relevant FloodSense local studies.
+
+Do not reach the target number by:
+
+- duplicating sources;
+- dividing one study into multiple entries;
+- inventing application titles;
+- using unrelated Philippine systems;
+- citing news articles as academic studies;
+- using unverifiable student projects;
+- treating institutional webpages as completed research;
+- or repeatedly describing the same national platform.
+
+Quality and relevance take priority over reaching an exact number. If fewer legitimate Philippine studies can be verified, report that limitation instead of fabricating additional entries.
+
+# Assess the current FloodSense Chapter 2
+
+Report:
+
+- existing headings and subheadings;
+- existing foreign literature;
+- existing local literature;
+- existing foreign studies;
+- existing local studies;
+- existing named applications or systems;
+- topics that are sufficiently discussed;
+- topics that are too brief;
+- missing topics;
+- weak or disconnected source summaries;
+- outdated references;
+- unverifiable references;
+- duplicated references;
+- unsupported claims;
+- paragraphs that fail to connect a source to FloodSense;
+- areas needing more Philippine evidence;
+- missing comparisons;
+- missing limitations;
+- weaknesses in the synthesis;
+- weaknesses in the research gap; and
+- formatting differences between FloodSense and SURECUT.
+
+# Proposed Chapter 2 organization
+
+Use an appropriate structure comparable to SURECUT, such as:
+
+- Related Foreign Literature
+- Related Local Literature
+- Related Foreign Studies
+- Related Local Studies
+- Synthesis of the Reviewed Literature
+- Research Gap
+- Comparative Synthesis of Related Studies
+
+Follow SURECUT’s actual sequence when appropriate, but do not force a section that cannot be supported by legitimate evidence.
+
+# Required FloodSense topics
+
+Develop properly sourced discussions concerning:
+
+- flood susceptibility;
+- scenario-based flood assessment;
+- deterministic Rule-Based Expert Systems;
+- explainable inference;
+- knowledge bases and rule matching;
+- Decision Support Systems;
+- separation of assessment and preparedness guidance;
+- GIS and interactive flood maps;
+- geographic data processing;
+- spatial databases;
+- PostgreSQL/PostGIS or comparable technology;
+- foreground GPS and location privacy;
+- flood-risk communication;
+- disaster preparedness;
+- evacuation information;
+- data provenance;
+- geographic-data validation;
+- responsible use of hazard data;
+- administrative data governance;
+- software testing;
+- software-quality evaluation;
+- ISO/IEC 25010;
+- Philippine flood conditions;
+- Cavite flood conditions;
+- Bacoor City flood conditions; and
+- comparable Philippine flood-related applications or systems.
+
+Do not add topics solely to increase the chapter’s length.
+
+# Local-source research priorities
+
+Search carefully for recent and verifiable materials from:
+
+- Philippine academic journals;
+- Philippine universities and institutional repositories;
+- DOST-PAGASA;
+- DOST-PHIVOLCS;
+- GeoRisk Philippines;
+- the Office of Civil Defense;
+- the National Disaster Risk Reduction and Management Council;
+- the Department of Environment and Natural Resources;
+- the Mines and Geosciences Bureau;
+- the Philippine Statistics Authority;
+- the Department of Science and Technology;
+- the Department of Information and Communications Technology;
+- the National Privacy Commission;
+- national and local government publications;
+- Philippine flood-prone communities;
+- Philippine flood-related mobile applications;
+- Philippine disaster-preparedness platforms;
+- Philippine GIS-based hazard systems;
+- Philippine expert or decision-support systems;
+- Cavite studies;
+- Bacoor City studies;
+- Imus River Basin studies; and
+- legitimate Philippine theses or dissertations that can be independently verified.
+
+Do not use a source merely because it is Philippine-based. It must support a specific FloodSense concept.
+
+If there are not enough Bacoor-specific studies, use relevant studies from comparable Philippine locations and state clearly that their findings cannot automatically be generalized to Bacoor City.
+
+# Source-verification requirements
+
+- Generally use sources published from 2021 to 2026.
+- Retain older sources only when they are foundational, legally authoritative, historically necessary, or part of applicable original content.
+- Prefer peer-reviewed original studies and official publications.
+- Verify every author, title, application name, institution, year, journal, volume, issue, page number, DOI, and URL.
+- Inspect the full source whenever possible.
+- Confirm that the source supports every attributed claim.
+- Do not rely only on titles, abstracts, snippets, search-result descriptions, or AI summaries.
+- Do not cite search-result pages.
+- Do not invent citations or bibliographic information.
+- Do not include unverifiable student projects.
+- Do not claim that a source is peer-reviewed without proof.
+- Do not describe an agency webpage as an academic study.
+- Do not describe a questionnaire as survey results.
+- Do not present provisional information as official data.
+
+Exclude sources that cannot be adequately verified and report why they were excluded.
+
+# Required discussion for every study
+
+For every foreign or local study, explain:
+
+1. what was investigated;
+2. where the study was conducted;
+3. the participants, dataset, or geographic coverage;
+4. the method or technology;
+5. the major functions, when it concerns a system;
+6. the relevant findings;
+7. the limitations;
+8. the relevance to FloodSense;
+9. the similarities to FloodSense;
+10. the differences from FloodSense; and
+11. which findings, formulas, datasets, features, or parameters cannot be transferred directly to Bacoor City.
+
+Avoid disconnected summaries. Use transitions and thematic analysis to compare the sources.
+
+# FloodSense scope protection
+
+Do not hallucinate or expand FloodSense functionality based on the literature.
+
+A local or foreign application containing real-time monitoring, forecasting, automatic alerts, machine learning, sensors, routing, or live evacuation functions does not mean FloodSense contains those functions.
+
+Maintain these confirmed boundaries:
+
+- FloodSense is scenario-based and pre-event.
+- A user selects or confirms a hypothetical rainfall scenario.
+- A user explicitly requests an assessment.
+- The Rule-Based Expert System is deterministic.
+- Susceptibility assessment is separate from DSS preparedness guidance.
+- Ordinary administrators do not edit raw rules or algorithm logic.
+- Technical Django Admin is separate from the custom Admin portal.
+- Fixed-schema CSV exchange is confirmed but not implemented.
+- The 47-barangay layer is an administrative reference, not a susceptibility dataset.
+- Technical validation does not equal City verification.
+- No approved operational susceptibility dataset is established.
+- Provisional data is not official Bacoor City information.
+- A script does not prove operational integration.
+- A mockup does not prove implementation.
+- A model does not prove user-facing availability.
+- A questionnaire does not prove survey findings.
+
+Do not claim that FloodSense currently provides:
+
+- real-time flood monitoring;
+- official forecasting;
+- autonomous alerts;
+- official warnings;
+- automatic evacuation orders;
+- background GPS tracking;
+- safe-road routing;
+- live center occupancy;
+- machine-learning prediction;
+- self-modifying rules;
+- resident assessment history;
+- completed resident accounts;
+- offline operation;
+- completed system evaluation; or
+- production deployment.
+
+# Chapter 2 writing boundary
+
+Chapter 2 must remain a literature review. It must not become a repository audit or development-status report.
+
+Do not insert the following into the formal Chapter 2 narrative:
+
+- source-code paths;
+- commit hashes;
+- Git status;
+- testing commands;
+- repository folder names;
+- development-history narration;
+- detailed implementation-status tables; or
+- statements such as “the developers recently added.”
+
+Use implementation evidence only to prevent incorrect comparisons and unsupported FloodSense claims.
+
+# Synthesis requirements
+
+The synthesis must:
+
+- combine sources thematically;
+- avoid repeating individual summaries;
+- identify agreements and differences;
+- compare methods and technologies;
+- identify data and geographic limitations;
+- explain which concepts support FloodSense;
+- distinguish assessment from preparedness guidance;
+- emphasize explainability and provenance;
+- explain why external formulas and weights cannot automatically be transferred to Bacoor City;
+- explain why local validation is necessary;
+- connect the literature to the existing FloodSense objectives without creating new objectives; and
+- establish the research gap.
+
+# Research-gap requirements
+
+The research gap must explain:
+
+- what existing applications and studies already provide;
+- what existing susceptibility approaches address;
+- what existing GIS and DSS platforms contribute;
+- limitations in public-facing location-specific flood information;
+- limitations in scenario-based assessment;
+- limitations involving explainability and provenance;
+- limitations in Philippine or Bacoor City research;
+- the need for local institutional validation;
+- how FloodSense combines its verified concepts; and
+- why FloodSense remains different from official forecasting and warning systems.
+
+Do not claim that FloodSense is the first system of its kind unless a comprehensive review proves it.
+
+# Comparative synthesis table
+
+If SURECUT uses a comparison table, prepare a FloodSense table with suitable columns such as:
+
+- Application, system, or study title
+- Author and year
+- Location
+- System type
+- Method or technology
+- Main functions
+- Major contribution
+- Limitation
+- Similarity to FloodSense
+- Difference from FloodSense
+
+Use exact verified system titles.
+
+Keep the entries concise and explain important comparisons in the surrounding discussion.
+
+Ensure that the table:
+
+- fits within the margins;
+- uses readable text;
+- repeats its header row when necessary;
+- does not split individual rows incorrectly;
+- has a properly formatted title or caption; and
+- follows SURECUT’s visual presentation.
+
+# Formatting requirements
+
+Mirror SURECUT Chapter 2’s:
+
+- organization;
+- heading sequence;
+- system-title or application-title presentation;
+- paragraph pattern;
+- font;
+- font size;
+- heading capitalization;
+- bolding;
+- margins;
+- indentation;
+- spacing;
+- alignment;
+- pagination;
+- tables;
+- captions;
+- citation style;
+- reference formatting; and
+- overall visual appearance.
+
+Do not copy its factual content or wording.
+
+# Reference-list boundary
+
+Add complete reference entries at the end of the entire manuscript for sources cited in Chapter 2.
+
+Only add, correct, or remove entries directly affected by the Chapter 2 revision.
+
+Do not rewrite unrelated Chapter 1 or Chapter 3 references.
+
+Before removing an existing reference, verify that it is not cited elsewhere.
+
+# Required workflow before editing
+
+Do not edit the manuscript yet.
+
+First provide:
+
+1. a complete structural analysis of SURECUT Chapter 2;
+2. a focused analysis of SURECUT’s Related Local Studies format;
+3. a list of every application or system title used in SURECUT’s Local Studies section;
+4. an explanation of how SURECUT describes each application or system;
+5. an assessment of the current FloodSense Chapter 2;
+6. the number and distribution of foreign and local sources;
+7. missing foreign-literature topics;
+8. missing local-literature topics;
+9. missing foreign studies;
+10. missing Philippine or local studies;
+11. potential local applications or systems relevant to FloodSense;
+12. weak, outdated, unverifiable, duplicated, or irrelevant references;
+13. recommended replacements and additions;
+14. the proposed Chapter 2 heading structure;
+15. a source-verification table;
+16. the proposed Local Studies application-title structure;
+17. the proposed comparative table;
+18. a paragraph-by-paragraph Chapter 2 change map;
+19. unsupported statements;
+20. information that cannot currently be established;
+21. corresponding reference-list changes;
+22. every item requiring my permission; and
+23. the proposed output filename.
+
+For every proposed source, report:
+
+- exact title;
+- exact application or system name, when applicable;
+- authors or institution;
+- year;
+- source type;
+- study location;
+- topic supported;
+- verified DOI or official URL;
+- whether the full source was inspected;
+- implementation status described by the source;
+- relevance to FloodSense;
+- important limitations; and
+- proposed Chapter 2 section.
+
+Stop after presenting the review and change map.
+
+Do not edit any file until I explicitly say `Proceed`.
+
+# Work after I say Proceed
+
+After I say `Proceed`:
+
+1. create a new manuscript file;
+2. preserve the original manuscript;
+3. edit only Chapter 2;
+4. update only corresponding reference entries;
+5. retain applicable original Chapter 2 literature;
+6. expand the foreign and local sections with verified sources;
+7. develop the Local Studies section to a depth comparable to SURECUT;
+8. present legitimate applications and systems using the verified-title-and-description pattern;
+9. cite every application or system correctly;
+10. connect every source to a verified FloodSense concept;
+11. avoid transferring unsupported features or findings to FloodSense;
+12. update only Chapter 2–related alignment-tracker entries;
+13. verify all citations and references;
+14. render the revised manuscript;
+15. inspect every Chapter 2 page;
+16. compare the rendered Chapter 2 with SURECUT;
+17. correct headings, margins, spacing, page breaks, tables, citations, and references;
+18. confirm that Chapters 1 and 3 remain unchanged; and
+19. provide a final change report.
+
+The final report must separate:
+
+- preserved Chapter 2 material;
+- new foreign literature;
+- new local literature;
+- new foreign studies;
+- new local applications and systems;
+- corrected references;
+- excluded or unverifiable sources;
+- unsupported claims removed;
+- formatting changes;
+- unresolved research gaps;
+- pending permissions; and
+- confirmation that Chapters 1 and 3 were not modified.
