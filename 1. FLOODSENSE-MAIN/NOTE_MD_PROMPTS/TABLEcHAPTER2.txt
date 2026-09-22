@@ -1,0 +1,85 @@
+# Output manuscript boundary
+
+The newly created manuscript must contain only:
+
+1. the existing preliminary pages required before Chapter 1;
+2. Chapter 1, preserved exactly from the selected source manuscript;
+3. the completely revised Chapter 2;
+4. Chapter 2 comparative tables formatted according to SURECUT; and
+5. the complete reference list required by Chapters 1 and 2.
+
+The output manuscript must end after the reference list following Chapter 2.
+
+Do not include Chapter 3 in the newly generated manuscript.
+
+The absence of Chapter 3 from the new output file is an intentional output boundary and must not be treated as deletion or revision of Chapter 3. The source manuscript containing Chapter 3 must remain unchanged and available.
+
+Do not create empty Chapter 3 headings, methodology placeholders, diagram placeholders, survey placeholders, or blank Chapter 3 pages.
+
+Only references required by Chapters 1 and 2 should appear in the new manuscript. Before excluding a reference from the new file, verify that it is not cited in Chapter 1 or the revised Chapter 2.
+
+# Revised preservation requirements
+
+For the new Chapter 1–2 manuscript:
+
+- preserve the preliminary pages unless an entry specifically refers to a removed Chapter 3 section;
+- preserve Chapter 1 exactly;
+- completely revise Chapter 2 according to the instructions;
+- preserve the original source manuscript;
+- do not modify Chapter 3 in the source manuscript;
+- do not copy Chapter 3 into the new output manuscript;
+- do not edit the original `FloodSense_Chapter_1_MAIN`; and
+- do not overwrite any previously generated manuscript.
+
+If the Table of Contents is included, update it so that it contains only the preliminary sections, Chapter 1, Chapter 2, and the references included in the new manuscript.
+
+If the List of Tables is included, list only tables that appear in Chapters 1 and 2.
+
+If the List of Figures is included, list only figures that remain in the preliminary pages, Chapter 1, or Chapter 2.
+
+Remove Chapter 3 entries from the new output file’s:
+
+- Table of Contents;
+- List of Tables;
+- List of Figures; and
+- internal navigation fields.
+
+These removals apply only to the new Chapter 1–2 output manuscript. Do not remove them from the source manuscript.
+
+# Revised output filename
+
+Use a descriptive filename such as:
+
+`FloodSense_Chapters_1_and_2_SURECUT_Table_Aligned_2026-09-21.docx`
+
+Do not use a filename suggesting that Chapter 3 is included.
+
+# Revised final verification
+
+Before delivery, confirm that:
+
+1. the new manuscript contains no Chapter 3 content;
+2. Chapter 1 is unchanged from the selected source;
+3. the revised Chapter 2 follows SURECUT’s structure and table formatting;
+4. the references support Chapters 1 and 2;
+5. the Table of Contents does not contain Chapter 3;
+6. the List of Tables and List of Figures do not contain excluded Chapter 3 materials;
+7. the source manuscript remains unchanged;
+8. the original `FloodSense_Chapter_1_MAIN` remains unchanged;
+9. the new manuscript ends after the Chapter 1–2 reference list; and
+10. no blank Chapter 3 pages or headings remain.
+
+# Revised final report requirement
+
+The final report must state:
+
+- that the delivered manuscript contains only the preliminary pages, Chapter 1, Chapter 2, and their references;
+- that Chapter 3 was intentionally excluded from the new output;
+- that Chapter 3 was not deleted or modified in the source manuscript;
+- that Chapter 1 was preserved;
+- which Chapter 2 tables were rebuilt;
+- which SURECUT formatting elements were reproduced;
+- which Chapter 2 sources and systems were added or removed;
+- which references were added, corrected, retained, or excluded;
+- the results of the rendered-page inspection; and
+- the final output filename.

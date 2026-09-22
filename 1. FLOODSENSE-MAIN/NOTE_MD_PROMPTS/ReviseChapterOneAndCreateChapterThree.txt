@@ -1,0 +1,51 @@
+Revise the existing FloodSense manuscript in this workspace. **Analyze the sources and the team’s actual development process before selecting or writing the methodology.** Then edit the main Word file in place. Do not create a second manuscript.
+
+**Primary files**
+
+- Main file to edit: `1. FLOODSENSE-MAIN/MAIN FILESS/FloodSense_Chapters_1_and_2_MAIN.docx`
+- Structure and formatting guide: `1. FLOODSENSE-MAIN/GUIDE FILES/SURECUT-MANUSCRIPT.docx`
+- Preliminary survey evidence:
+  - `2. FLOODSENSE-DEVELOPMENT TEAM/FILES/data gathered/Flood 1st Survey Summary.pdf`
+  - `2. FLOODSENSE-DEVELOPMENT TEAM/FILES/data gathered/FloodSense 2nd Survey AnalysisReport (not reflected in chapter 1).pdf`
+
+Also examine relevant approved study documents, feature specifications, diagrams, interview reports, development records, prototype versions, testing records, and TA requirements available in the workspace.
+
+## 1. Verify and choose the methodology
+
+Treat **Iterative and Incremental Development (Agile-informed)** as the leading *candidate* for FloodSense’s system-development method, not as an established fact. Check whether the team can document cycles of building, testing, receiving feedback, and revising the system. Identify which cycles have actually happened and which are only planned. If the records support this approach, use and justify it. If they do not, choose a more accurate development method or describe the intended process as planned. Do not call the process Scrum unless the team actually followed its defined roles and events.
+
+Choose the **research design separately** from the development method. Consider Design Science Research only if FloodSense’s thesis genuinely follows an artifact-design, demonstration, and evaluation process. An unfinished evaluation does not automatically rule it out; describe evaluation as planned or ongoing when that is its true status. Select the research design that best fits the study’s objectives, evidence, and TA requirements, and explain the choice.
+
+Choose any **software-quality evaluation framework separately** as well. Consider ISO/IEC 25010 if its quality characteristics suit the intended evaluation, but do not call it a research design or SDLC. Verify methodological definitions and citations using authoritative sources before including them.
+
+Assess SureCut’s Agile Design Thinking methodology fairly. Use Design Thinking activities only where FloodSense’s actual work or justified plan supports them. Do not adopt its phase names, iteration claims, participant counts, or procedures merely to match SureCut.
+
+## 2. Write Chapter 3
+
+Analyze SureCut’s Chapter 3 for its chapter organization, heading hierarchy, figure placement, captions, tables, and academic style. Follow that presentation pattern while creating content and subsections appropriate to FloodSense.
+
+Add a complete **Chapter 3: Methodology** to the main file. Distinguish clearly among the research design, requirements gathering, system-development method, participants, materials, development procedures, and system evaluation. For each development stage, explain its purpose, FloodSense-specific activities, inputs, outputs, and whether it is completed, ongoing, or planned. Include a testing and revision process only to the extent supported by records or clearly stated plans.
+
+Insert an original methodology diagram in the Method section, positioned and captioned similarly to SureCut’s figure. Ensure that its stages and feedback loops match the written process. Use a figure number and source attribution appropriate to the manuscript.
+
+Do not invent equipment, tools, prototype versions, development cycles, tests, feedback, survey findings, participant counts, dates, outcomes, or citations. Where documentation is missing, use accurate prospective wording and list the detail for later confirmation. Do not turn a planned procedure into a reported accomplishment.
+
+## 3. Use the old surveys as temporary evidence
+
+Use the two earlier survey reports as **clearly labeled preliminary evidence** until the new survey is conducted. Preserve their separate respondent counts, dates, questions, findings, and limitations. Do not combine their samples or percentages unless the underlying data proves that doing so is valid. Verify any calculation used in the manuscript.
+
+Do not present either report as the new survey or as a completed final evaluation. Do not include our possible future plan to use purposive sampling in the Methodology chapter. A sampling method documented in an old report may be mentioned only as a verified fact about that earlier survey, if relevant.
+
+## 4. Revise Chapter 1
+
+Align Chapter 1 with the methodology selected for Chapter 3, especially **Time and Place of the Study**. Make locations, timelines, terminology, and verb tenses consistent with the evidence.
+
+Review **Significance of the Study** and aim for roughly two to three clear sentences per beneficiary or point where sufficient. Review **Theoretical Framework** for unnecessary length and repetition. Preserve essential explanations and citations; add material only where needed for accuracy or completeness.
+
+## 5. Preserve Chapter 2 and verify the result
+
+Do not revise Chapter 2’s substantive text, citations, tables, or figures. Update the table of contents, page numbering, figure numbering, and cross-references only as needed to accommodate Chapter 3.
+
+Edit `FloodSense_Chapters_1_and_2_MAIN.docx` **in place** and preserve its Word formatting. Inspect the rendered pages and correct layout problems. Compare Chapter 2 with its original version to confirm that its substantive content remains unchanged.
+
+After completing the edits, briefly report the selected research design, development method, and evaluation framework with the evidence supporting each choice. State which activities are completed versus planned, how the old surveys were used, what you verified in the document, and which facts still need confirmation.
