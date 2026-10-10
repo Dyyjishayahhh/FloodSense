@@ -1,0 +1,406 @@
+import 'package:flutter/material.dart';
+
+import '../../app/theme/app_colors.dart';
+import '../../data/models/verified_center.dart';
+import 'nearest_center_controller.dart';
+
+class NearestCentersSection extends StatelessWidget {
+  const NearestCentersSection({
+    required this.controller,
+    this.compact = false,
+    this.footer,
+    this.onRefreshFallback,
+    super.key,
+  });
+
+  final NearestCenterController controller;
+  final bool compact;
+  final Widget? footer;
+  final VoidCallback? onRefreshFallback;
+
+  @override
+  Widget build(BuildContext context) => AnimatedBuilder(
+    animation: controller,
+    builder: (context, _) => compact
+        ? _compactPanel(context)
+        : Card(
+            key: const Key('nearest-centers-section'),
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(
+                    controller.isDemonstration
+                        ? 'Local test center preview'
+                        : 'Nearby verified center information',
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
+                  const SizedBox(height: 6),
+                  Semantics(
+                    liveRegion: controller.phase != NearestCenterPhase.initial,
+                    child: Text(
+                      controller.message,
+                      key: const Key('nearest-centers-state-message'),
+                    ),
+                  ),
+                  if (controller.phase == NearestCenterPhase.loading) ...[
+                    const SizedBox(height: 12),
+                    const LinearProgressIndicator(
+                      key: Key('nearest-centers-loading'),
+                      semanticsLabel: 'Loading verified center information',
+                    ),
+                  ],
+                  if (controller.canRetry) ...[
+                    const SizedBox(height: 12),
+                    OutlinedButton.icon(
+                      key: const Key('nearest-centers-retry'),
+                      onPressed: controller.retry,
+                      icon: const Icon(Icons.refresh),
+                      label: const Text('Try center request again'),
+                    ),
+                  ],
+                  if (controller.canRefresh) ...[
+                    const SizedBox(height: 12),
+                    OutlinedButton.icon(
+                      key: const Key('nearest-centers-refresh'),
+                      onPressed: controller.refresh,
+                      icon: const Icon(Icons.refresh),
+                      label: const Text('Refresh centers'),
+                    ),
+                  ],
+                  if (controller.warnings.isNotEmpty) ...[
+                    const SizedBox(height: 12),
+                    Semantics(
+                      container: true,
+                      label: controller.warnings.join(' '),
+                      child: Container(
+                        key: const Key('nearest-center-response-warnings'),
+                        padding: const EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: AppColors.warningSurface,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            for (final warning in controller.warnings)
+                              Text('• $warning'),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                  if (controller.centers.isNotEmpty) ...[
+                    const SizedBox(height: 14),
+                    _NearestDistanceSummary(controller: controller),
+                    const SizedBox(height: 14),
+                    for (final center in controller.centers) ...[
+                      _CenterCard(center: center, controller: controller),
+                      if (center != controller.centers.last)
+                        const SizedBox(height: 10),
+                    ],
+                    const SizedBox(height: 14),
+                    const _CenterSafetyNotice(),
+                  ],
+                ],
+              ),
+            ),
+          ),
+  );
+
+  Widget _compactPanel(BuildContext context) => Card(
+    key: const Key('nearest-centers-section'),
+    child: ExpansionTile(
+      key: const Key('prepare-nearby-centers'),
+      title: const Text('Nearby centers'),
+      subtitle: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (controller.isDemonstration)
+            const Text(
+              'LOCAL TEST — not real facilities',
+              style: TextStyle(fontWeight: FontWeight.w700),
+            ),
+          if (controller.centers.isNotEmpty) ...[
+            Text('${controller.centers.length} center records'),
+            Text(
+              'Nearest: ${controller.centers.first.distanceLabel}',
+              key: const Key('nearest-center-distance-summary'),
+            ),
+            Text(
+              controller.distanceOriginLabel,
+              key: const Key('nearest-center-distance-origin'),
+            ),
+            const Text(
+              'Not road distance. Nearest is not safest; '
+              'opening and availability are unconfirmed.',
+            ),
+          ] else
+            Text(
+              controller.message,
+              key: const Key('nearest-centers-state-message'),
+            ),
+        ],
+      ),
+      childrenPadding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
+      expandedCrossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        if (controller.phase == NearestCenterPhase.loading)
+          const LinearProgressIndicator(key: Key('nearest-centers-loading')),
+        if (controller.canRetry ||
+            controller.canRefresh ||
+            onRefreshFallback != null)
+          OutlinedButton.icon(
+            key: Key(
+              controller.canRetry
+                  ? 'nearest-centers-retry'
+                  : 'nearest-centers-refresh',
+            ),
+            onPressed: controller.canRetry
+                ? controller.retry
+                : controller.canRefresh
+                ? controller.refresh
+                : onRefreshFallback,
+            icon: const Icon(Icons.refresh),
+            label: Text(
+              controller.canRetry
+                  ? 'Try center request again'
+                  : 'Refresh centers',
+            ),
+          ),
+        for (final center in controller.centers)
+          _CompactCenterCard(center: center, controller: controller),
+        ExpansionTile(
+          title: const Text('Distance, sources and limitations'),
+          children: [
+            const _CenterSafetyNotice(),
+            for (final warning in controller.warnings.toSet()) Text(warning),
+          ],
+        ),
+        ?footer,
+      ],
+    ),
+  );
+}
+
+class _CompactCenterCard extends StatelessWidget {
+  const _CompactCenterCard({required this.center, required this.controller});
+  final VerifiedCenter center;
+  final NearestCenterController controller;
+
+  @override
+  Widget build(BuildContext context) => Card(
+    key: Key('nearest-center-card-${center.publicIdentifier}'),
+    child: Padding(
+      padding: const EdgeInsets.all(12),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          if (center.publicIdentifier == controller.nearestCenterIdentifier)
+            const Text(
+              'Nearest by straight-line distance',
+              style: TextStyle(
+                color: AppColors.primary,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+          Text(center.name, style: Theme.of(context).textTheme.titleMedium),
+          Text(center.barangay.name),
+          Text(
+            center.distanceLabel,
+            key: Key('nearest-center-distance-${center.publicIdentifier}'),
+          ),
+          if (center.isDemonstration)
+            const Text(
+              'LOCAL TEST — not a real or verified facility',
+              style: TextStyle(fontWeight: FontWeight.w700),
+            ),
+          TextButton.icon(
+            onPressed: () => controller.selectCenter(center.publicIdentifier),
+            icon: const Icon(Icons.place_outlined),
+            label: Text(
+              controller.selectedCenterIdentifier == center.publicIdentifier
+                  ? 'Selected on map'
+                  : 'Show on map',
+            ),
+          ),
+          ExpansionTile(
+            title: const Text('Details and source'),
+            tilePadding: EdgeInsets.zero,
+            expandedCrossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(center.address),
+              Text('Barangay PSGC: ${center.barangay.psgcCode}'),
+              Text(center.verificationLabel),
+              Text('Source: ${center.sourceAttribution}'),
+              for (final limitation in center.limitations.toSet())
+                Text('Limitation: $limitation'),
+            ],
+          ),
+        ],
+      ),
+    ),
+  );
+}
+
+class _NearestDistanceSummary extends StatelessWidget {
+  const _NearestDistanceSummary({required this.controller});
+
+  final NearestCenterController controller;
+
+  @override
+  Widget build(BuildContext context) {
+    final center = controller.centers.first;
+    return Container(
+      key: const Key('nearest-center-distance-summary'),
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: AppColors.pageBackground,
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: AppColors.primary),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Row(
+            children: [
+              Icon(Icons.night_shelter_outlined, color: AppColors.primary),
+              SizedBox(width: 8),
+              Expanded(
+                child: Text(
+                  'Nearest by straight-line distance',
+                  style: TextStyle(fontWeight: FontWeight.w800),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          Text(
+            'Nearest: ${center.name}',
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
+          Text(
+            'Distance: ${center.distanceLabel}',
+            style: Theme.of(context).textTheme.titleMedium
+                ?.copyWith(fontWeight: FontWeight.w800),
+          ),
+          Text(
+            controller.distanceOriginLabel,
+            key: const Key('nearest-center-distance-origin'),
+          ),
+          if (center.isDemonstration)
+            const Text('LOCAL TEST—not a real or verified facility.'),
+          const SizedBox(height: 4),
+          const Text('Not road distance or a safest-route recommendation.'),
+        ],
+      ),
+    );
+  }
+}
+
+class _CenterCard extends StatelessWidget {
+  const _CenterCard({required this.center, required this.controller});
+
+  final VerifiedCenter center;
+  final NearestCenterController controller;
+
+  @override
+  Widget build(BuildContext context) {
+    final selected =
+        controller.selectedCenterIdentifier == center.publicIdentifier;
+    final nearest =
+        controller.centers.first.publicIdentifier == center.publicIdentifier;
+    final verificationLabel = center.verificationLabel;
+    return Semantics(
+      button: true,
+      selected: selected,
+      excludeSemantics: true,
+      label:
+          '${center.name}. ${center.distanceLabel}. '
+          '${nearest ? 'Nearest by straight-line distance. ' : ''}'
+          '${controller.distanceOriginLabel}. '
+          '$verificationLabel. '
+          '${center.barangay.name}, PSGC ${center.barangay.psgcCode}. '
+          'Address: ${center.address}. '
+          'Source: ${center.sourceAttribution}. '
+          '${center.limitations.map((item) => 'Limitation: $item.').join(' ')} '
+          'Select this center on the map.',
+      child: InkWell(
+        key: Key('nearest-center-card-${center.publicIdentifier}'),
+        onTap: () => controller.selectCenter(center.publicIdentifier),
+        borderRadius: BorderRadius.circular(10),
+        child: Container(
+          padding: const EdgeInsets.all(12),
+          decoration: BoxDecoration(
+            color: selected ? AppColors.activeBackground : AppColors.surface,
+            border: Border.all(
+              color: selected ? AppColors.primary : AppColors.divider,
+              width: selected ? 2 : 1,
+            ),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              if (nearest) ...[
+                const Text(
+                  'Nearest by straight-line distance',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w800,
+                    color: AppColors.primary,
+                  ),
+                ),
+                const SizedBox(height: 4),
+              ],
+              Text(
+                center.name,
+                style: const TextStyle(fontWeight: FontWeight.w800),
+              ),
+              const SizedBox(height: 4),
+              Text(center.address),
+              Text('${center.barangay.name} (${center.barangay.psgcCode})'),
+              const SizedBox(height: 6),
+              Text(
+                center.distanceLabel,
+                key: Key('nearest-center-distance-${center.publicIdentifier}'),
+                style: const TextStyle(fontWeight: FontWeight.w700),
+              ),
+              Text(verificationLabel),
+              Text('Source: ${center.sourceAttribution}'),
+              for (final limitation in center.limitations)
+                Padding(
+                  padding: const EdgeInsets.only(top: 4),
+                  child: Text('Limitation: $limitation'),
+                ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _CenterSafetyNotice extends StatelessWidget {
+  const _CenterSafetyNotice();
+
+  @override
+  Widget build(BuildContext context) => Semantics(
+    container: true,
+    label: 'Distance is approximate straight-line distance, not road distance. Nearest does not mean safest. FloodSense does not confirm that a center is open or reachable and does not guarantee available space. Follow official local instructions during an emergency.',
+    child: Container(
+      key: const Key('nearest-center-safety-warning'),
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: AppColors.warningSurface,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: const Text(
+        'Distances are approximate straight-line distances, not road distances. '
+        'Nearest does not mean safest. FloodSense does not confirm that a center '
+        'is open or reachable and does not guarantee available space. Follow '
+        'official local instructions during an emergency.',
+      ),
+    ),
+  );
+}

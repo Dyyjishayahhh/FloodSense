@@ -1,4 +1,4 @@
-# FloodSense Android application
+# FloodSense mobile and web application
 
 This Flutter application provides the Day 6 FloodSense demonstration flow. It
 loads administrator-managed rainfall options and fictional polygons from
@@ -8,8 +8,9 @@ displays the full explanation and DSS preparedness guidance for the selected
 zone.
 
 The application never stores permanent assessment rules, classifications,
-guidance, or pin coordinates. It does not use GPS and is not a live forecast,
-warning, boundary authority, route-safety, or evacuation-order service.
+guidance, or pin coordinates. Foreground GPS is optional and temporary. The
+application is not a live forecast, warning, boundary authority, route-safety,
+or evacuation-order service.
 
 ## Run on the Android emulator
 
@@ -38,6 +39,32 @@ http://10.0.2.2:8000/api/v1
 Android emulator traffic uses a debug-only cleartext-HTTP exception. Release
 builds retain Android's normal cleartext restriction; production must use an
 HTTPS API.
+
+## Run in Chrome for local development
+
+Install the backend dependencies and start Django on port 8000:
+
+```powershell
+Set-Location ..\server
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe manage.py runserver 127.0.0.1:8000
+```
+
+In another terminal, use the fixed browser origin allowed by the local Django
+configuration:
+
+```powershell
+Set-Location mobile
+flutter pub get
+flutter run -d chrome --web-hostname localhost --web-port 3000
+```
+
+The web build defaults to `http://127.0.0.1:8000/api/v1`. Use
+`--dart-define=FLOODSENSE_API_BASE_URL=https://.../api/v1` for a deployed HTTPS
+backend. Browser GPS requires a secure context; `localhost` is accepted for
+development. Google sign-in remains Android-only until the web interface uses
+Google's required provider-rendered button and approved OAuth origin. Username
+or email authentication remains available in the web preview.
 
 ## Run on a physical Android device
 
@@ -73,13 +100,38 @@ source.
 If any required collection is empty, the app explains that an administrator
 must configure demonstration records. It never substitutes local fake data.
 
-## Map networking and attribution
+## Map networking, optional Mapbox presentation, and attribution
 
-The development map uses OpenStreetMap standard tiles, identifies the Android
-package as `ph.edu.cvsu.bacoor.floodsense`, and keeps
-`© OpenStreetMap contributors` visible. Public internet is required for the
-basemap; API polygons, labels, warnings, and neutral error states remain
-separate from the basemap. Production tile-provider review is still required.
+OpenStreetMap remains the zero-configuration renderer and the automatic
+fallback. Mapbox is the default presentation on supported Android/iOS devices,
+but it still requires a restricted public token at build/run time. The normal
+local Android command reads that token without writing it to the repository:
+
+```powershell
+Set-Location ..
+.\scripts\run_android_local.ps1
+```
+
+Perspective buildings are a presentation-only, opt-in enhancement. They remain
+off unless the additional flag is supplied, and every map starts overhead:
+
+```powershell
+flutter run --dart-define=FLOODSENSE_MAP_PROVIDER=mapbox `
+  --dart-define=MAPBOX_ACCESS_TOKEN=<your-restricted-public-pk-token> `
+  --dart-define=FLOODSENSE_MAP_3D=true
+```
+
+Use only a public `pk.` token in the client. Restrict it in Mapbox, rotate it if
+exposed outside its intended use, and never use or commit an `sk.` token. A
+missing/invalid token, an unsupported platform, or a Mapbox load failure keeps
+or restores the standard OSM map. Stable Mapbox Flutter support is used only on
+Android/iOS; the Flutter web preview deliberately remains on OSM.
+
+The OSM renderer identifies the Android package as
+`ph.edu.cvsu.bacoor.floodsense` and keeps `© OpenStreetMap contributors`
+visible. The Mapbox renderer retains the SDK wordmark and attribution control.
+Public internet is required for either basemap; API polygons, labels, warnings,
+and neutral error states remain separate from the basemap.
 
 The map adds these API calls to the Day 5 endpoints:
 
@@ -90,4 +142,6 @@ POST /api/v1/geography/resolve-point/
 
 See `../docs/DAY_5_FLUTTER_ASSESSMENT_GUIDE.md` for the detailed-result flow and
 `../docs/DAY_6_DYNAMIC_MAP_GUIDE.md` for geometry parsing, map state, endpoint
-contracts, seeding, testing, and teammate setup.
+contracts, seeding, testing, and teammate setup. See
+`../docs/MAP_PRESENTATION_PROVIDER_GUIDE.md` for provider selection, Admin setup,
+fallback behavior, and release-rehearsal checks.

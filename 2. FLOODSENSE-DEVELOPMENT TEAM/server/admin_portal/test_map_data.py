@@ -149,6 +149,48 @@ class MapDataTests(TestCase):
             [item["id"] for item in data["payload"]["layers"]["administrative"]["features"]],
         )
 
+    def test_map_explains_the_neutral_outside_bacoor_coverage_mask(self):
+        self.area(area_type=GeographicArea.AreaType.CITY, code="TEST_CITY")
+
+        response = self.client.get(self.url)
+
+        self.assertContains(response, "Outside Bacoor assessment coverage")
+        self.assertContains(response, "map-swatch--outside")
+        self.assertTrue(response.context["map_data"]["coverage_mask_available"])
+
+    def test_status_filter_matches_dashboard_review_definition_and_preserves_selection(self):
+        pending = self.area()
+        demonstration = self.demo()
+
+        response = self.client.get(
+            self.url,
+            {"status": PublicationStatus.PENDING_VALIDATION, "area": pending.pk},
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.context["map_data"]["counts"]["total"], 1)
+        self.assertEqual(
+            [record["id"] for record in response.context["map_data"]["records"]],
+            [str(pending.pk)],
+        )
+        self.assertNotContains(response, demonstration.name)
+        self.assertContains(
+            response,
+            f'name="status" value="{PublicationStatus.PENDING_VALIDATION}"',
+            count=1,
+        )
+
+    def test_invalid_status_filter_is_safe_and_shows_all_reviewable_records(self):
+        self.area()
+        self.demo()
+
+        response = self.client.get(self.url, {"status": "NOT_A_STATUS"})
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.context["map_data"]["counts"]["total"], 2)
+        self.assertContains(response, "The status filter is invalid")
+        self.assertNotContains(response, 'type="hidden" name="status"')
+
     def test_excludes_unrelated_restricted_retired_and_misidentified_sources(self):
         valid = self.area()
         source_changes = (
@@ -156,7 +198,6 @@ class MapDataTests(TestCase):
             {"name": BACOOR_REFERENCE_SOURCE_NAME + " copy"},
             {"status": PublicationStatus.RESTRICTED},
             {"status": PublicationStatus.RETIRED},
-            {"status": PublicationStatus.APPROVED},
             {"source_type": DataSource.SourceType.DEMONSTRATION},
             {"is_publicly_releasable": False},
         )
@@ -167,7 +208,6 @@ class MapDataTests(TestCase):
         for status in (
             PublicationStatus.RESTRICTED,
             PublicationStatus.RETIRED,
-            PublicationStatus.APPROVED,
         ):
             self.area(
                 valid.source, code=f"EXCLUDED_{status}", status=status, name="Excluded sentinel"
@@ -308,7 +348,22 @@ class MapDataTests(TestCase):
         self.assertContains(response, escape(attack))
         self.assertNotContains(response, attack)
         html = DashboardHTML(response)
-        self.assertFalse(html.select("img"))
+        # Only the trusted sidebar images may exist; record content stays text.
+        from django.templatetags.static import static
+
+        from .templatetags.portal_icons import PORTAL_ICONS
+
+        approved_images = {
+            static(f"admin_portal/icons/lucide/{icon}.svg")
+            for icon in PORTAL_ICONS.values()
+        }
+        for image in html.select("img"):
+            self.assertIn(image["attrs"].get("src"), approved_images)
+            self.assertFalse(any(key.startswith("on") for key in image["attrs"]))
+            self.assertTrue(any(
+                ancestor["attrs"].get("id") == "portal-sidebar"
+                for ancestor in image["ancestors"]
+            ))
         script = html.select("script", id="map-data-payload", type="application/json")[0]
         payload = json.loads("".join(script["text"]))
         self.assertEqual(payload["records"][0]["name"], attack)

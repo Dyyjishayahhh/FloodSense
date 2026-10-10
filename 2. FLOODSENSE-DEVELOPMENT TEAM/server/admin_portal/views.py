@@ -59,12 +59,15 @@ from .forms import (
     GuidanceFilterForm,
     GuidanceItemForm,
     GuidanceTransitionForm,
+    MapDataFilterForm,
     RainfallReferenceFilterForm,
     SettingsInventoryFilterForm,
     StaffAuthenticationForm,
 )
-from .services.dashboard import get_dashboard_summary
+from .map_config import get_map_client_config
 from .services.map_data import get_map_data
+from .services.overview import MODE_LABELS, get_overview_snapshot
+from .services.reports import get_report_summary
 from .services.settings_data import get_settings_data
 
 SECTIONS = {
@@ -90,8 +93,7 @@ SECTIONS = {
         "title": "Evacuation centers",
         "eyebrow": "Verified resources",
         "description": (
-            "Review and verify sourced center records supplied by the responsible "
-            "data custodian."
+            "Review and verify sourced center records supplied by the responsible data custodian."
         ),
         "day": "Day 6",
     },
@@ -115,9 +117,55 @@ AUDIT_MODULES = (
     (("geography", "geographicarea"), "Map data"),
     (("provenance", "datasource"), "Sources and content"),
     (("dss", "guidanceitem"), "DSS content"),
+    (("dss", "dssflowversion"), "Structured Prepare versions"),
+    (("dss", "dssquestion"), "Prepare questions"),
+    (("dss", "dssoption"), "Prepare options"),
+    (("dss", "dssoutcome"), "Prepare outcomes"),
+    (("dss", "dsscontentblock"), "Prepare content blocks"),
     (("expert", "scenariooption"), "Rainfall references"),
     (("evacuation", "evacuationcenter"), "Evacuation centers"),
 )
+
+CENTER_AUDIT_FIELD_LABELS = {
+    "name": "name",
+    "address": "address",
+    "geographic_area": "geographic area",
+    "latitude": "latitude",
+    "longitude": "longitude",
+    "contact_information": "contact information",
+    "source": "source association",
+    "publication_status": "publication status",
+    "notes": "notes",
+    "limitations": "public limitations",
+}
+
+
+def _selected_center_source(form: EvacuationCenterForm) -> DataSource | None:
+    """Return permitted source metadata for staff presentation, never raw POST data."""
+    if form.is_bound:
+        source = getattr(form, "cleaned_data", {}).get("source")
+        return source if isinstance(source, DataSource) else None
+    source_id = form.initial.get("source")
+    if not source_id and form.instance and form.instance.source_id:
+        source_id = form.instance.source_id
+    if not source_id:
+        return None
+    return form.fields["source"].queryset.filter(pk=source_id).first()
+
+
+def _center_edit_audit_message(form: EvacuationCenterForm) -> str:
+    labels = [
+        CENTER_AUDIT_FIELD_LABELS[name]
+        for name in form.changed_data
+        if name in CENTER_AUDIT_FIELD_LABELS
+    ]
+    if not labels:
+        return "Evacuation-center draft saved without a material field change."
+    return (
+        "Evacuation-center draft edited through the management portal. Changed fields: "
+        + ", ".join(labels)
+        + "."
+    )
 
 
 def staff_required(view: Callable[..., HttpResponse]) -> Callable[..., HttpResponse]:
@@ -152,18 +200,21 @@ def portal_permission_required(permission: str):
 
 
 def _portal_context(request: HttpRequest, *, active_section: str) -> dict[str, Any]:
+    from core.local_testing import local_testing_enabled
+
     display_name = request.user.display_name.strip() or request.user.email
     initials = "".join(
         part[0].upper() for part in display_name.replace("@", " ").split()[:2] if part
     )
     context = {
+        "local_testing": local_testing_enabled(request),
         "active_section": active_section,
         "display_name": display_name,
         "user_initials": initials or "FS",
         "navigation": [
             ("dashboard", "Overview", "▦"),
+            ("reports", "Reports", "▤"),
             ("map-data", "Map data", "◇"),
-            ("settings", "Settings", "◎"),
             ("dss-content", "DSS content", "?"),
             ("rainfall-references", "Rainfall references", "≈"),
             ("evacuation-centers", "Evacuation centers", "⌂"),
@@ -183,6 +234,7 @@ def _portal_context(request: HttpRequest, *, active_section: str) -> dict[str, A
         for item in context["navigation"]
         if item[0] not in required_permissions
         or request.user.has_perm(required_permissions[item[0]])
+        or (item[0] == "dss-content" and request.user.has_perm("dss.view_dssflowversion"))
     ]
     return context
 
@@ -229,16 +281,36 @@ def password_help(request: HttpRequest) -> HttpResponse:
 @require_GET
 def dashboard(request: HttpRequest) -> HttpResponse:
     context = _portal_context(request, active_section="dashboard")
-    context["dashboard"] = get_dashboard_summary()
+    mode = request.GET.get("mode", "OFFICIAL").strip().upper()
+    context["dashboard"] = get_overview_snapshot(
+        user=request.user, mode=mode if mode in MODE_LABELS else "OFFICIAL"
+    )
     return render(request, "admin_portal/dashboard.html", context)
+
+
+@staff_required
+@require_GET
+def reports(request: HttpRequest) -> HttpResponse:
+    context = _portal_context(request, active_section="reports")
+    context["report"] = get_report_summary(user=request.user)
+    return render(request, "admin_portal/reports.html", context)
 
 
 @staff_required
 @require_GET
 def map_data(request: HttpRequest) -> HttpResponse:
     context = _portal_context(request, active_section="map-data")
-    context["map_data"] = get_map_data(selected_id=request.GET.get("area"))
+    filters = MapDataFilterForm(request.GET)
+    valid = filters.is_valid()
+    selected_status = filters.cleaned_data.get("status") if valid else ""
+    context["filters"] = filters
+    context["map_status_filter"] = selected_status
+    context["map_data"] = get_map_data(
+        selected_id=request.GET.get("area"),
+        status=selected_status,
+    )
     context["openlayers_root"] = OPENLAYERS_CDN_ROOT
+    context["map_config"] = get_map_client_config()
     return render(request, "admin_portal/map_data.html", context)
 
 
@@ -267,9 +339,12 @@ def assessment_parameters(request: HttpRequest) -> HttpResponse:
 
 
 @staff_required
-@portal_permission_required("dss.view_guidanceitem")
 @require_GET
 def guidance_list(request: HttpRequest) -> HttpResponse:
+    if not request.user.has_perm("dss.view_guidanceitem"):
+        if request.user.has_perm("dss.view_dssflowversion"):
+            return redirect("admin_portal:dss-flow-list")
+        raise PermissionDenied
     filters = GuidanceFilterForm(request.GET)
     queryset = GuidanceItem.objects.select_related("susceptibility_level", "source").order_by(
         "susceptibility_level__display_order", "display_order", "id"
@@ -288,6 +363,11 @@ def guidance_list(request: HttpRequest) -> HttpResponse:
             queryset = queryset.filter(category=category)
         if workflow_status := filters.cleaned_data["workflow_status"]:
             queryset = queryset.filter(workflow_status=workflow_status)
+        if filters.cleaned_data["review_attention"] == "needs_review":
+            queryset = queryset.filter(
+                Q(status=PublicationStatus.PENDING_VALIDATION)
+                | Q(workflow_status=GuidanceItem.WorkflowStatus.IN_REVIEW)
+            )
         if susceptibility_level := filters.cleaned_data["susceptibility_level"]:
             queryset = queryset.filter(susceptibility_level=susceptibility_level)
 
@@ -305,6 +385,7 @@ def guidance_list(request: HttpRequest) -> HttpResponse:
             "can_change": request.user.has_perm("dss.change_guidanceitem"),
             "can_approve": request.user.has_perm("dss.approve_guidanceitem"),
             "can_publish": request.user.has_perm("dss.publish_guidanceitem"),
+            "can_view_flows": request.user.has_perm("dss.view_dssflowversion"),
         }
     )
     for item in page.object_list:
@@ -405,6 +486,7 @@ def guidance_transition(request: HttpRequest, item_id: int, action: str) -> Http
                 action=action,
                 actor=request.user,
                 expected_status=form.cleaned_data["expected_status"],
+                expected_updated_at=form.cleaned_data.get("expected_updated_at"),
             )
         except GuidanceItem.DoesNotExist as error:
             raise Http404 from error
@@ -516,6 +598,8 @@ def evacuation_center_list(request: HttpRequest) -> HttpResponse:
 @portal_permission_required("evacuation.view_evacuationcenter")
 @require_GET
 def evacuation_center_detail(request: HttpRequest, center_id: int) -> HttpResponse:
+    from .operations_views import resident_checklist
+
     center = get_object_or_404(
         EvacuationCenter.objects.select_related("geographic_area", "source"),
         pk=center_id,
@@ -526,7 +610,9 @@ def evacuation_center_detail(request: HttpRequest, center_id: int) -> HttpRespon
         {
             "center": center,
             "openlayers_root": OPENLAYERS_CDN_ROOT,
+            "map_config": get_map_client_config(),
             "can_change": request.user.has_perm("evacuation.change_evacuationcenter"),
+            "resident_checklist": resident_checklist(center),
         }
     )
     return render(request, "admin_portal/evacuation_center_detail.html", context)
@@ -558,6 +644,8 @@ def evacuation_center_create(request: HttpRequest) -> HttpResponse:
             "center": None,
             "form_mode": "create",
             "openlayers_root": OPENLAYERS_CDN_ROOT,
+            "map_config": get_map_client_config(),
+            "selected_source": _selected_center_source(form),
         }
     )
     return render(request, "admin_portal/evacuation_center_form.html", context)
@@ -581,7 +669,7 @@ def evacuation_center_edit(request: HttpRequest, center_id: int) -> HttpResponse
             log_center_action(
                 actor=request.user,
                 center=center,
-                message="Evacuation-center draft edited through the management portal.",
+                message=_center_edit_audit_message(form),
             )
         messages.success(request, "Evacuation-center draft updated.")
         return redirect("admin_portal:evacuation-center-detail", center_id=center.pk)
@@ -592,6 +680,8 @@ def evacuation_center_edit(request: HttpRequest, center_id: int) -> HttpResponse
             "center": center,
             "form_mode": "edit",
             "openlayers_root": OPENLAYERS_CDN_ROOT,
+            "map_config": get_map_client_config(),
+            "selected_source": _selected_center_source(form),
         }
     )
     return render(request, "admin_portal/evacuation_center_form.html", context)
@@ -601,6 +691,8 @@ def evacuation_center_edit(request: HttpRequest, center_id: int) -> HttpResponse
 @portal_permission_required("evacuation.view_evacuationcenter")
 @require_http_methods(["GET", "POST"])
 def evacuation_center_transition(request: HttpRequest, center_id: int, action: str) -> HttpResponse:
+    from core.local_testing import local_testing_enabled
+
     transition = CENTER_TRANSITIONS.get(action)
     if transition is None:
         raise Http404
@@ -609,6 +701,8 @@ def evacuation_center_transition(request: HttpRequest, center_id: int, action: s
     center = get_object_or_404(
         EvacuationCenter.objects.select_related("source", "geographic_area"), pk=center_id
     )
+    if center.is_temporary and not local_testing_enabled(request):
+        raise PermissionDenied("Temporary changes require a loopback local testing session.")
     if center.verification_status != transition.source_status:
         messages.error(request, "That verification action is no longer available.")
         return redirect("admin_portal:evacuation-center-detail", center_id=center.pk)
@@ -627,7 +721,10 @@ def evacuation_center_transition(request: HttpRequest, center_id: int, action: s
                 expected_status=form.cleaned_data["expected_status"],
                 verified_on=form.cleaned_data.get("verified_on"),
                 capacity=form.cleaned_data.get("capacity"),
+                expected_updated_at=form.cleaned_data.get("expected_updated_at"),
             )
+        except EvacuationCenter.DoesNotExist:
+            raise Http404 from None
         except ValidationError as error:
             form.add_error(None, " ".join(error.messages))
             response_status = 409
@@ -648,8 +745,12 @@ def evacuation_center_transition(request: HttpRequest, center_id: int, action: s
 @portal_permission_required("provenance.view_datasource")
 @require_GET
 def data_source_list(request: HttpRequest) -> HttpResponse:
+    from geography.boundaries import annotate_boundary_source_identity
+
     filters = DataSourceFilterForm(request.GET)
-    queryset = DataSource.objects.select_related("reviewed_by").order_by("name", "id")
+    queryset = annotate_boundary_source_identity(
+        DataSource.objects.select_related("reviewed_by").order_by("name", "id")
+    )
     if filters.is_valid():
         if query := filters.cleaned_data["q"]:
             queryset = queryset.filter(
@@ -683,6 +784,8 @@ def data_source_list(request: HttpRequest) -> HttpResponse:
 @portal_permission_required("provenance.view_datasource")
 @require_GET
 def data_source_detail(request: HttpRequest, source_id: int) -> HttpResponse:
+    from geography.boundaries import is_bacoor_boundary_source
+
     source = get_object_or_404(DataSource.objects.select_related("reviewed_by"), pk=source_id)
     source.portal_transitions = available_source_transitions(source, request.user)
     context = _portal_context(request, active_section="sources-content")
@@ -690,6 +793,7 @@ def data_source_detail(request: HttpRequest, source_id: int) -> HttpResponse:
         {
             "source": source,
             "can_change": request.user.has_perm("provenance.change_datasource"),
+            "is_boundary_source": is_bacoor_boundary_source(source),
             "linked_counts": {
                 "rainfall": source.scenario_options.count(),
                 "guidance": source.guidance_items.count(),
@@ -758,12 +862,16 @@ def data_source_edit(request: HttpRequest, source_id: int) -> HttpResponse:
 @portal_permission_required("provenance.view_datasource")
 @require_http_methods(["GET", "POST"])
 def data_source_transition(request: HttpRequest, source_id: int, action: str) -> HttpResponse:
+    from core.local_testing import local_testing_enabled
+
     transition = SOURCE_TRANSITIONS.get(action)
     if transition is None:
         raise Http404
     if not request.user.has_perm(transition.permission):
         raise PermissionDenied
     source = get_object_or_404(DataSource, pk=source_id)
+    if source.is_temporary and not local_testing_enabled(request):
+        raise PermissionDenied("Temporary changes require a loopback local testing session.")
     if (
         source.status != transition.source_status
         or source.is_publicly_releasable != transition.source_public
@@ -786,7 +894,10 @@ def data_source_transition(request: HttpRequest, source_id: int, action: str) ->
                 actor=request.user,
                 expected_status=form.cleaned_data["expected_status"],
                 expected_public=form.cleaned_data["expected_public"],
+                expected_updated_at=form.cleaned_data.get("expected_updated_at"),
             )
+        except DataSource.DoesNotExist:
+            raise Http404 from None
         except ValidationError as error:
             form.add_error(None, " ".join(error.messages))
             response_status = 409

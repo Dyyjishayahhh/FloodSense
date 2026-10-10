@@ -5,7 +5,10 @@ abstract final class LocationCopy {
   static const purposeTitle = 'Use your location for this assessment?';
   static const purpose =
       'FloodSense can use one temporary location to look up a likely Bacoor '
-      'barangay. This lookup does not determine flood susceptibility.';
+      'barangay and request nearby verified center information with approximate '
+      'straight-line distances. This lookup does not determine flood '
+      'susceptibility, route safety, accessibility, availability, or an '
+      'evacuation recommendation.';
   static const privacy =
       'Your coordinate is used only during this flow and is not retained. '
       'You can use the map pin or barangay selector instead.';
@@ -16,8 +19,9 @@ abstract final class LocationCopy {
       'Location permission is blocked for FloodSense. You may enable it in '
       'Android app settings, or choose a location manually.';
   static const serviceDisabled =
-      'Device location is turned off. Enable it in Android settings, retry, '
-      'or choose a location manually.';
+      'Location is turned off. Enable it in Android Location Settings, then '
+      'return here. If settings did not open, tap Try again. You can also '
+      'choose a barangay manually.';
   static const inaccurateOrUnavailable =
       'FloodSense could not get a reliable location. Try again, place a '
       'temporary map pin, or select a barangay.';

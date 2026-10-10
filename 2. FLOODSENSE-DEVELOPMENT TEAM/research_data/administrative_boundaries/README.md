@@ -130,6 +130,17 @@ coverage.
 
 ## Importing into FloodSense
 
+Compatibility update — 5 October 2026: the existing City PSGC record and its
+source relationship identify the dataset even after its display name changes.
+Pending and internally approved geometry/source statuses are supported for
+mapping; approval does not establish City endorsement or flood susceptibility.
+The statements below about pending status describe a **fresh import**. Reimports
+preserve existing names, source metadata, approval/release, and enabled states;
+reviewed geometry is not silently overwritten. Restricted/retired rows are not
+restored by an import. This code update requires no import or seed against an
+already populated database. Do not run `seed_demo` to repair approval compatibility:
+it also creates/refreshes fictional demonstration records.
+
 After migrations have been applied, import the checked-in normalized extracts
 from the repository root:
 
@@ -160,7 +171,9 @@ barangays from:
 GET /api/v1/geography/reference-boundaries/
 ```
 
-This dedicated endpoint and its neutral map are separate from the fictional
-demonstration assessment endpoints. Do not add flood classifications or
-`AreaFact` records to the imported barangays unless those values have an
-independently reviewed source and approval workflow.
+This dedicated endpoint remains separate from the fictional demonstration
+assessment endpoints and data records. The Android client may compose both
+layers in one map: the 47 barangays provide administrative context while the
+synthetic `DEMO_ZONE` polygons carry scenario colors. Do not add flood
+classifications or `AreaFact` records to the imported barangays unless those
+values have an independently reviewed source and approval workflow.

@@ -6,6 +6,80 @@
 
 **Scope:** Foreground GPS, barangay detection, nearest verified evacuation-center discovery, and safe improvements that do not change the research algorithm
 
+**Implementation checkpoint (22 September 2026):** The production mobile
+nearest-center adapter, strict complete-envelope parser, mandatory warning
+presentation, and typed failure mapping are implemented and wired into the
+default app. The full Flutter suite passes with 175 tests, and the live backend
+honest-empty envelope was verified over localhost and the phone-accessible LAN
+address. Authorized center data, populated Admin-to-API-to-device evidence,
+fresh Admin browser QA, and deployment/governance review remain pending. See
+`GPS_STREAMS_A_B_DEPENDENCY_BLOCKERS.md` for the cross-day inventory and exact handoff.
+
+**Team B Day 1 checkpoint (20 September 2026):** Streams C/D contract, repository
+privacy review, ownership, and baseline foundation are complete. The frozen
+contract and strict wire serializers have 153 passing database-independent tests;
+Flutter analysis and 164 tests passed. Full backend regression was blocked locally
+by missing PostGIS in the test database (183 passed, 227 setup errors); this
+historical blocker is resolved in the Day 2 checkpoint below. See
+`server/evacuation/NEAREST_CENTER_CONTRACT.md` from the repository root and
+`GPS_STREAM_C_D_DAY_1_BASELINE.md` / `GPS_STREAM_C_D_DAY_1_PRIVACY_REVIEW.md` here.
+No model/migration, service, endpoint, URL registration, mobile adapter, or live
+integration was added. Foreground GPS remains the safe team implementation
+direction, not a claim of adviser approval; final GPS requirements remain unresolved.
+
+**Team B Day 2 checkpoint (21 September 2026): Streams C/D Day 2 complete.**
+The public UUID migration,
+internal eligibility/PostGIS distance service, safe response assembly, and targeted
+Admin improvements are written. Database-backed migration, eligibility, distance,
+no-write and permission tests now pass. The full backend suite has 511 passes and
+127 warnings after correcting two NaN test fixtures; the provisioning blocker
+is resolved. The prior Flutter baseline remains clean with 164 tests passed.
+The user confirmed all manual browser accessibility/layout checks passed. A
+read-only migration check confirms the UUID migration is applied locally.
+See `GPS_STREAM_C_D_DAY_2_GUIDE.md` for the exact tests, evidence attribution,
+migration steps, and remaining work. Day 1 frozen contract files are unchanged;
+no public route, mobile adapter, or official data import was added.
+
+Repeatable walkthrough: [Streams C/D Days 1–2 manual test guide](GPS_STREAM_C_D_DAYS_1_2_MANUAL_TEST_GUIDE.md).
+
+**Team B Day 3 checkpoint (21 September 2026): Backend verified; fresh browser QA pending.**
+The public `POST /api/v1/evacuation-centers/nearest/` route now calls the preserved
+Day 2 service using the frozen contract. JSON-only parsing, a 1,024-byte body
+limit, scoped 30/min throttling, normalized errors, no-store headers and HTTP
+no-write/privacy checks are implemented. All 599 backend tests pass, including
+85 new endpoint cases and three map-safety regressions; the separate Admin suite
+has 105 passes. Flutter analysis and 167 tests pass with no mobile edits.
+Map code review found no production-code gap; fresh desktop/320px, keyboard and
+JavaScript-disabled browser verification remains pending because no browser was
+connected. Do not mark the full Day 3 C/D acceptance gate complete yet.
+See [Day 3 evidence](GPS_STREAM_C_D_DAY_3_GUIDE.md) and the
+[Stream A handoff](GPS_STREAM_A_NEAREST_CENTER_DAY_3_HANDOFF.md).
+There is no new migration or dependency. Production Flutter integration,
+physical-device results, deployed privacy controls and Day 4 acceptance remain
+unverified; the historical Day 1/2 checkpoints above describe their own scope.
+
+**Team B Day 4 checkpoint (21 September 2026): Automated C/D work complete; fresh browser QA pending.**
+Current-state center/source eligibility, WGS 84 distance edge cases,
+full-precision-before-rounding behavior, bounded safe output, and truthful empty
+responses are explicitly regression-tested. The evacuation Admin now adds exact
+normalized-name/exact-coordinate review warnings without merging, stronger
+server-side validation, clearer provenance and transition effects, safe audit
+field summaries, and non-map coordinate status/fallbacks. Focused Day 4 and
+existing endpoint/Admin suites pass. No schema change, migration, data import,
+mobile edit, or geography edit was required. The connected browser runtime had
+no available browser, so fresh visual/keyboard/responsive/no-script verification
+remains an environment limitation. See `GPS_STREAM_C_D_DAY_4_GUIDE.md`.
+
+**Stream A integration follow-up (22 September 2026): Mobile adapter complete;
+data-dependent acceptance remains.** The app now posts confirmed coordinates in
+the JSON body to the frozen nearest-center endpoint, parses the exact complete
+response envelope, preserves server order and mandatory warnings, rejects
+malformed public records, and maps request, rate, connectivity, timeout, server,
+and malformed-response failures without automatic retries. The app was installed
+on a connected Android 14 physical device and its initial API requests succeeded.
+The truthful empty response is live; populated-card acceptance must wait for
+authorized, source-backed center records and must not use invented production data.
+
 ## 1. Purpose
 
 This plan turns the currently safe and independently actionable work into one

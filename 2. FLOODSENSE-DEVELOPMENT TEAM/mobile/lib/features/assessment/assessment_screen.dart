@@ -4,13 +4,20 @@ import '../../app/theme/app_colors.dart';
 import '../../data/api/api_exception.dart';
 import '../../data/api/floodsense_api_client.dart';
 import '../../data/models/assessment_result.dart';
+import '../../data/models/barangay_resolution.dart';
+import '../../data/models/geographic_area.dart';
+import '../evacuation/nearest_center_controller.dart';
+import '../evacuation/evacuation_map_controller.dart';
+import '../evacuation/evacuation_map_status.dart';
+import '../evacuation/nearest_center_provider.dart';
+import '../evacuation/nearest_centers_section.dart';
 import '../location/location_card.dart';
 import '../location/location_controller.dart';
 import '../location/location_service.dart';
 import 'assessment_controller.dart';
 import 'widgets/assessment_result_card.dart';
 import 'widgets/demonstration_warning.dart';
-import 'widgets/dynamic_map_card.dart';
+import 'widgets/dynamic_map_card.dart' show SelectedZonePreview;
 import 'widgets/duration_selector.dart';
 import 'widgets/limitation_result_card.dart';
 import 'widgets/reference_boundary_map_card.dart';
@@ -21,12 +28,16 @@ class AssessmentScreen extends StatefulWidget {
   const AssessmentScreen({
     required this.api,
     this.locationService,
+    this.nearestCenterProvider,
+    this.evacuationMapProvider,
     this.showBasemap = true,
     super.key,
   });
 
   final FloodSenseApi api;
   final LocationService? locationService;
+  final NearestCenterProvider? nearestCenterProvider;
+  final EvacuationMapProvider? evacuationMapProvider;
   final bool showBasemap;
 
   @override
@@ -36,26 +47,90 @@ class AssessmentScreen extends StatefulWidget {
 class _AssessmentScreenState extends State<AssessmentScreen> {
   late final AssessmentController _controller;
   LocationController? _locationController;
+  NearestCenterController? _nearestCenterController;
+  EvacuationMapController? _mapCenters;
+  bool _synchronizingBarangay = false;
+
+  bool get _usesBarangayAssessments =>
+      _controller.areas.isNotEmpty &&
+      _controller.areas.every((area) => area.areaType == 'BARANGAY');
+
+  bool get _hasMgbPreview =>
+      _controller.areas.any((area) => area.susceptibilitySummary != null);
 
   @override
   void initState() {
     super.initState();
     _controller = AssessmentController(widget.api);
+    if (widget.evacuationMapProvider case final provider?) {
+      _mapCenters = EvacuationMapController(provider);
+    }
     final locationService = widget.locationService;
     if (locationService != null) {
       _locationController = LocationController(
         locationService,
         resolver: widget.api,
       );
+      _nearestCenterController = NearestCenterController(
+        _locationController!,
+        provider: widget.nearestCenterProvider,
+        mapController: _mapCenters,
+      );
+      _locationController!.addListener(_synchronizeConfirmedBarangay);
+      _controller.addListener(_synchronizeConfirmedBarangay);
     }
+    _controller.addListener(_synchronizeMapCenters);
+    _locationController?.addListener(_synchronizeMapCenters);
     _controller.load();
   }
 
   @override
   void dispose() {
+    _locationController?.removeListener(_synchronizeConfirmedBarangay);
+    _controller.removeListener(_synchronizeConfirmedBarangay);
+    _controller.removeListener(_synchronizeMapCenters);
+    _locationController?.removeListener(_synchronizeMapCenters);
     _controller.dispose();
+    _nearestCenterController?.dispose();
+    _mapCenters?.dispose();
     _locationController?.dispose();
     super.dispose();
+  }
+
+  void _synchronizeConfirmedBarangay() {
+    if (_synchronizingBarangay ||
+        !_usesBarangayAssessments ||
+        _locationController == null) {
+      return;
+    }
+    final code = _locationController!.confirmedBarangay?.geographicAreaCode;
+    if (_controller.selectedArea?.code == code) return;
+    _synchronizingBarangay = true;
+    _controller.selectAreaByCode(code);
+    _synchronizingBarangay = false;
+  }
+
+  void _synchronizeMapCenters() => _mapCenters?.synchronizePin(
+    referenceAreas: _controller.referenceAreas,
+    coordinate: _locationController == null
+        ? _controller.pinCoordinate
+        : _locationController!.lookupCoordinate,
+  );
+
+  void _selectArea(GeographicArea? area) {
+    final location = _locationController;
+    if (_usesBarangayAssessments && location != null) {
+      if (area == null) {
+        location.clearLocation();
+      } else if (RegExp(r'^PSGC_\d{10}$').hasMatch(area.code)) {
+        location.selectManualBarangay(
+          BarangayIdentity(psgcCode: area.code.substring(5), name: area.name),
+          geometry: area.geometry,
+        );
+      }
+      return;
+    }
+    _controller.selectArea(area);
   }
 
   @override
@@ -87,7 +162,7 @@ class _AssessmentScreenState extends State<AssessmentScreen> {
                       ),
                       const SizedBox(height: 8),
                       Text(
-                        'Choose a hypothetical rainfall scenario and a fictional demonstration zone.',
+                        'Choose a hypothetical rainfall scenario, then explore it on the Bacoor barangay map.',
                         style: Theme.of(context).textTheme.bodyLarge
                             ?.copyWith(color: AppColors.secondaryText),
                       ),
@@ -122,12 +197,6 @@ class _AssessmentScreenState extends State<AssessmentScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        ReferenceBoundaryMapCard(
-          controller: _controller,
-          locationController: _locationController,
-          showBasemap: widget.showBasemap,
-        ),
-        const SizedBox(height: 14),
         Card(
           child: Padding(
             padding: const EdgeInsets.all(16),
@@ -169,11 +238,19 @@ class _AssessmentScreenState extends State<AssessmentScreen> {
           ),
           const SizedBox(height: 14),
         ],
-        DynamicMapCard(
+        ReferenceBoundaryMapCard(
           controller: _controller,
+          locationController: _locationController,
+          nearestCenterController: _nearestCenterController,
+          evacuationMapController: _mapCenters,
           showBasemap: widget.showBasemap,
         ),
         const SizedBox(height: 14),
+        if (_mapCenters case final catalog?)
+          EvacuationMapStatus(
+            controller: catalog,
+            nearestController: _nearestCenterController,
+          ),
         Card(
           child: Padding(
             padding: const EdgeInsets.all(16),
@@ -181,19 +258,37 @@ class _AssessmentScreenState extends State<AssessmentScreen> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(
-                  'Choose the assessment zone',
+                  _usesBarangayAssessments
+                      ? 'Choose the assessment barangay'
+                      : 'Choose the assessment zone',
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
                 const SizedBox(height: 6),
                 Text(
-                  'The selector remains available if placing a map pin is difficult.',
+                  _usesBarangayAssessments
+                      ? (_hasMgbPreview
+                            ? 'Choose one Bacoor barangay. Its provisional MGB-derived area summary is a consultation input, not an official whole-barangay classification.'
+                            : 'Choose one Bacoor barangay. The provisional MGB consultation preview is not active on this server, so an assessment will remain insufficient until that local preview is explicitly set up.')
+                      : 'Choose a fictional demonstration zone. It does not classify an entire Bacoor barangay.',
                   style: Theme.of(context).textTheme.bodySmall,
                 ),
                 const SizedBox(height: 14),
                 ZoneSelector(
                   areas: _controller.areas,
                   selected: _controller.selectedArea,
-                  onChanged: _controller.selectArea,
+                  onChanged: _selectArea,
+                  title: _usesBarangayAssessments
+                      ? 'Barangay'
+                      : 'Demonstration zone',
+                  description: _usesBarangayAssessments
+                      ? 'The barangay boundary is the assessment area shown on the map.'
+                      : 'Choose a fictional zone supplied by the FloodSense API.',
+                  hintText: _usesBarangayAssessments
+                      ? 'Select a barangay'
+                      : 'Select a demonstration zone',
+                  semanticLabel: _usesBarangayAssessments
+                      ? 'Barangay selector'
+                      : 'Demonstration zone selector',
                 ),
                 const SizedBox(height: 14),
                 SelectedZonePreview(controller: _controller),
@@ -251,6 +346,10 @@ class _AssessmentScreenState extends State<AssessmentScreen> {
             )
           else
             LimitationResultCard(result: result),
+        ],
+        if (_nearestCenterController case final nearestCenterController?) ...[
+          const SizedBox(height: 14),
+          NearestCentersSection(controller: nearestCenterController),
         ],
       ],
     );

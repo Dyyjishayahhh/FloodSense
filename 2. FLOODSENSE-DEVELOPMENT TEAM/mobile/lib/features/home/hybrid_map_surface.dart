@@ -1,0 +1,646 @@
+import 'dart:async';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_map/flutter_map.dart';
+import 'package:latlong2/latlong.dart';
+
+import '../../app/theme/app_colors.dart';
+import '../../data/models/assessment_result.dart';
+import '../../data/models/geojson_geometry.dart';
+import '../../data/models/geographic_area.dart';
+import '../../data/models/map_assessment_result.dart';
+import '../../data/models/point_resolution.dart';
+import '../../data/models/verified_center.dart';
+import '../../data/models/center_map_record.dart';
+import '../assessment/assessment_controller.dart';
+import '../assessment/widgets/dynamic_map_card.dart';
+import '../evacuation/nearest_center_controller.dart';
+import '../evacuation/evacuation_map_controller.dart';
+import '../evacuation/evacuation_center_marker.dart';
+import '../location/location_controller.dart';
+import '../map/bacoor_coverage_mask.dart';
+import '../map/flood_map_presentation.dart';
+import '../map/flood_map_palette.dart';
+import '../map/provider_aware_flood_map.dart';
+
+/// The shared map canvas behind Map, Assess, and Prepare.
+///
+/// It deliberately owns only presentation state. Scenario, location, result,
+/// and DSS state remain in the resident shell controllers.
+class HybridMapSurface extends StatefulWidget {
+  const HybridMapSurface({
+    required this.controller,
+    this.locationController,
+    this.nearestCenterController,
+    this.evacuationMapController,
+    this.showBasemap = true,
+    super.key,
+  });
+
+  final AssessmentController controller;
+  final LocationController? locationController;
+  final NearestCenterController? nearestCenterController;
+  final EvacuationMapController? evacuationMapController;
+  final bool showBasemap;
+
+  @override
+  State<HybridMapSurface> createState() => _HybridMapSurfaceState();
+}
+
+class _HybridMapSurfaceState extends State<HybridMapSurface> {
+  final MapController _mapController = MapController();
+  bool _mapReady = false;
+  double? _lastCenteredLatitude;
+  double? _lastCenteredLongitude;
+  String? _lastSelectedCenter;
+  List<GeographicArea>? _cachedCoverageAreas;
+  List<Polygon<int>> _cachedCoveragePolygons = const [];
+
+  // When managed location exists, its null coordinate means cleared/unknown.
+  // Do not resurrect the assessment controller's legacy pin cache.
+  MapCoordinate? get _mapCoordinate {
+    final location = widget.locationController;
+    return location == null
+        ? widget.controller.pinCoordinate
+        : location.lookupCoordinate;
+  }
+
+  String? get _selectedCenterIdentifier =>
+      widget.nearestCenterController?.selectedCenterIdentifier ??
+      widget.evacuationMapController?.selectedCenterIdentifier;
+
+  List<CenterMapRecord> get _mapMarkers => FloodMapPresentation(
+    referenceAreas: const [],
+    scenarioAreas: const [],
+    scenarioResults: const {},
+    onCoordinateTapped: (_) {},
+    centers: widget.nearestCenterController?.centers ?? const [],
+    mapCenters: widget.evacuationMapController?.centers ?? const [],
+    mapCentersAreAuthoritative: widget.evacuationMapController != null,
+    nearestIsDemonstration: _nearestMode,
+  ).mapMarkers;
+
+  bool? get _nearestMode => switch (widget.nearestCenterController?.phase) {
+    NearestCenterPhase.resultsAvailable ||
+    NearestCenterPhase.empty => widget.nearestCenterController!.isDemonstration,
+    _ => null,
+  };
+
+  void _selectCenter(String identifier) {
+    if (widget.nearestCenterController?.centers.any(
+          (center) => center.publicIdentifier == identifier,
+        ) ??
+        false) {
+      widget.evacuationMapController?.clearSelection();
+      widget.nearestCenterController!.selectCenter(identifier);
+    } else {
+      widget.nearestCenterController?.clearSelection();
+      widget.evacuationMapController?.selectCenter(identifier);
+    }
+  }
+
+  @override
+  void didUpdateWidget(covariant HybridMapSurface oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    _centerSelectionWhenNeeded();
+  }
+
+  @override
+  void dispose() {
+    _mapController.dispose();
+    super.dispose();
+  }
+
+  void _fitAll() {
+    if (!_mapReady || widget.controller.referenceAreas.isEmpty) return;
+    _mapController.fitCamera(
+      CameraFit.bounds(
+        bounds: GeoJsonGeometry.boundsFor(
+          widget.controller.referenceAreas.map((area) => area.geometry),
+        ),
+        padding: const EdgeInsets.fromLTRB(24, 132, 24, 170),
+        maxZoom: 14,
+      ),
+    );
+  }
+
+  void _zoom(double delta) {
+    if (!_mapReady) return;
+    final camera = _mapController.camera;
+    final coordinate = _mapCoordinate;
+    _mapController.move(
+      coordinate?.latLng ?? camera.center,
+      (camera.zoom + delta).clamp(2, 18).toDouble(),
+    );
+  }
+
+  void _recenterOnTemporaryPoint() {
+    final coordinate = _mapCoordinate;
+    if (!_mapReady || coordinate == null) return;
+    _mapController.move(coordinate.latLng, 15.5);
+  }
+
+  void _centerSelectionWhenNeeded() {
+    if (!_mapReady) return;
+    final coordinate = _mapCoordinate;
+    if (coordinate == null) {
+      _lastCenteredLatitude = null;
+      _lastCenteredLongitude = null;
+    }
+    if (coordinate != null &&
+        (coordinate.latitude != _lastCenteredLatitude ||
+            coordinate.longitude != _lastCenteredLongitude)) {
+      _lastCenteredLatitude = coordinate.latitude;
+      _lastCenteredLongitude = coordinate.longitude;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted && _mapReady && _mapCoordinate == coordinate) {
+          _mapController.move(coordinate.latLng, 15.5);
+        }
+      });
+    }
+
+    final selected = _selectedCenterIdentifier;
+    if (selected == null) _lastSelectedCenter = null;
+    if (selected != null && selected != _lastSelectedCenter) {
+      final matches = _mapMarkers.where(
+        (center) => center.publicIdentifier == selected,
+      );
+      if (matches.length == 1) {
+        _lastSelectedCenter = selected;
+        final center = matches.single;
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (mounted &&
+              _mapReady &&
+              _selectedCenterIdentifier == selected &&
+              _mapMarkers.any(
+                (current) =>
+                    current.publicIdentifier == selected &&
+                    current.latitude == center.latitude &&
+                    current.longitude == center.longitude,
+              )) {
+            _mapController.move(
+              LatLng(center.latitude, center.longitude),
+              15.5,
+            );
+          }
+        });
+      }
+    }
+  }
+
+  void _placeTemporaryPin(LatLng point) {
+    final coordinate = MapCoordinate(
+      latitude: point.latitude,
+      longitude: point.longitude,
+    );
+    unawaited(widget.controller.placePin(coordinate));
+    final location = widget.locationController;
+    if (location != null) unawaited(location.resolveManualPin(coordinate));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final listenables = <Listenable>[
+      widget.controller,
+      ?widget.locationController,
+      ?widget.nearestCenterController,
+      ?widget.evacuationMapController,
+    ];
+    return AnimatedBuilder(
+      animation: Listenable.merge(listenables),
+      builder: (context, _) {
+        _centerSelectionWhenNeeded();
+        if (widget.controller.isReferenceLoading) {
+          return const ColoredBox(
+            color: Color(0xFFEAF4F7),
+            child: Center(
+              child: CircularProgressIndicator(
+                semanticsLabel: 'Loading the Bacoor map',
+              ),
+            ),
+          );
+        }
+        if (widget.controller.referenceError case final error?) {
+          return _MapUnavailable(
+            message: error.message,
+            onRetry: widget.controller.loadReferenceBoundaries,
+          );
+        }
+        if (widget.controller.referenceAreas.isEmpty) {
+          return const _MapUnavailable(
+            message: 'No supported Bacoor boundary layer is available. Ask an administrator to review the map data setup.',
+          );
+        }
+        return _map(context);
+      },
+    );
+  }
+
+  Widget _map(BuildContext context) {
+    final controller = widget.controller;
+    final bounds = GeoJsonGeometry.boundsFor(
+      controller.referenceAreas.map((area) => area.geometry),
+    );
+    final coordinate = _mapCoordinate;
+    final centers = _mapMarkers;
+
+    return Semantics(
+      container: true,
+      label: 'Interactive Bacoor scenario map. Bacoor is clear and areas outside assessment coverage are gray. Drag the pin to choose a point, drag the map to pan, or pinch to zoom. On the standard-map fallback, tap to place the pin.',
+      child: ProviderAwareFloodMap(
+        presentation: FloodMapPresentation(
+          referenceAreas: controller.referenceAreas,
+          scenarioAreas: controller.areas,
+          scenarioResults: controller.mapResultsByAreaId,
+          selectedAreaId: controller.selectedArea?.id,
+          confirmedAreaCode:
+              widget.locationController?.confirmedBarangay?.geographicAreaCode,
+          coordinate: coordinate,
+          accuracyMeters:
+              widget.locationController?.temporaryLocation?.accuracyMeters,
+          centers:
+              widget.nearestCenterController?.centers ??
+              const <VerifiedCenter>[],
+          mapCenters: widget.evacuationMapController?.centers ?? const [],
+          mapCentersAreAuthoritative: widget.evacuationMapController != null,
+          nearestCenterIdentifier:
+              widget.nearestCenterController?.nearestCenterIdentifier,
+          nearestIsDemonstration: _nearestMode,
+          selectedCenterIdentifier: _selectedCenterIdentifier,
+          coordinateDescription:
+              widget.locationController?.coordinateDescription,
+          onCoordinateTapped: (point) {
+            unawaited(controller.placePin(point));
+            final location = widget.locationController;
+            if (location != null) {
+              unawaited(location.resolveManualPin(point));
+            }
+          },
+          onCenterTapped: _selectCenter,
+          fitPadding: const FloodMapPadding(
+            top: 118,
+            right: 22,
+            bottom: 150,
+            left: 22,
+          ),
+          controlsOnRight: true,
+        ),
+        foreground: _mapForeground(controller),
+        osmMap: Stack(
+          fit: StackFit.expand,
+          children: [
+            FlutterMap(
+              mapController: _mapController,
+              options: MapOptions(
+                initialCameraFit: CameraFit.bounds(
+                  bounds: bounds,
+                  padding: const EdgeInsets.fromLTRB(22, 118, 22, 150),
+                  maxZoom: 14,
+                ),
+                minZoom: 2,
+                maxZoom: 18,
+                keepAlive: true,
+                onMapReady: () {
+                  _mapReady = true;
+                  _centerSelectionWhenNeeded();
+                },
+                onTap: (_, point) => _placeTemporaryPin(point),
+              ),
+              children: [
+                if (widget.showBasemap)
+                  TileLayer(
+                    urlTemplate:
+                        'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                    userAgentPackageName: 'ph.edu.cvsu.bacoor.floodsense',
+                    maxNativeZoom: 19,
+                  ),
+                PolygonLayer<int>(
+                  key: const Key('hybrid-bacoor-coverage-mask'),
+                  polygons: _coveragePolygons(controller.referenceAreas),
+                  invertedFill: bacoorOutsideCoverageColor,
+                  polygonLabels: false,
+                ),
+                PolygonLayer<int>(
+                  key: const Key('hybrid-scenario-polygons'),
+                  polygons: _scenarioPolygons(controller),
+                  drawLabelsLast: true,
+                ),
+                PolygonLayer<int>(
+                  key: const Key('hybrid-boundary-polygons'),
+                  polygons: _boundaryPolygons(controller.referenceAreas),
+                ),
+                if (centers.isNotEmpty)
+                  MarkerLayer(
+                    markers: [
+                      for (final center in centers) _centerMarker(center),
+                    ],
+                  ),
+                if (widget.locationController?.temporaryLocation
+                    case final temporary?)
+                  CircleLayer<String>(
+                    circles: [
+                      CircleMarker<String>(
+                        point:
+                            widget.locationController!.lookupCoordinate!.latLng,
+                        radius: temporary.accuracyMeters,
+                        useRadiusInMeter: true,
+                        color: AppColors.primary.withValues(alpha: 0.12),
+                        borderColor: AppColors.primary,
+                        borderStrokeWidth: 1.5,
+                      ),
+                    ],
+                  ),
+                if (coordinate != null)
+                  MarkerLayer(
+                    markers: [
+                      Marker(
+                        key: const Key('hybrid-temporary-pin'),
+                        point: coordinate.latLng,
+                        width: 52,
+                        height: 52,
+                        alignment: Alignment.topCenter,
+                        child: Semantics(
+                          label:
+                              '${widget.locationController?.coordinateDescription ?? 'Temporary map pin'}. This coordinate is not saved.',
+                          child: const Icon(
+                            Icons.location_on,
+                            color: AppColors.primary,
+                            size: 46,
+                            shadows: [
+                              Shadow(color: Colors.white, blurRadius: 5),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                const Align(
+                  alignment: Alignment.bottomRight,
+                  child: ColoredBox(
+                    color: Color(0xDDFFFFFF),
+                    child: Padding(
+                      padding: EdgeInsets.all(4),
+                      child: Text(
+                        '© OpenStreetMap contributors',
+                        key: Key('hybrid-osm-attribution'),
+                        style: TextStyle(fontSize: 10),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Positioned(
+              right: 14,
+              top: 8,
+              child: Column(
+                children: [
+                  _MapButton(
+                    label: 'Zoom in',
+                    icon: Icons.add,
+                    onPressed: () => _zoom(1),
+                  ),
+                  const SizedBox(height: 8),
+                  _MapButton(
+                    label: 'Zoom out',
+                    icon: Icons.remove,
+                    onPressed: () => _zoom(-1),
+                  ),
+                  const SizedBox(height: 8),
+                  _MapButton(
+                    label: 'Fit all Bacoor barangays',
+                    icon: Icons.center_focus_strong,
+                    onPressed: _fitAll,
+                  ),
+                  if (coordinate != null) ...[
+                    const SizedBox(height: 8),
+                    _MapButton(
+                      label: 'Recenter on temporary point',
+                      icon: Icons.my_location,
+                      onPressed: _recenterOnTemporaryPoint,
+                    ),
+                  ],
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _mapForeground(AssessmentController controller) => Stack(
+    fit: StackFit.expand,
+    children: [
+      if (controller.mapError == null)
+        Positioned(
+          left: 14,
+          right: 76,
+          top: 68,
+          child: Align(
+            alignment: Alignment.centerLeft,
+            child: BacoorCoverageLegend(
+              compact: true,
+              results: controller.mapResultsByAreaId,
+              isDemonstration:
+                  controller.mapAssessment?.dataStatus == 'DEMONSTRATION',
+            ),
+          ),
+        ),
+      if (controller.isMapAssessing)
+        const Positioned.fill(child: MapLoadingOverlay()),
+      if (controller.mapError case final error?)
+        Positioned(
+          left: 14,
+          right: 76,
+          top: 68,
+          child: Material(
+            elevation: 2,
+            borderRadius: BorderRadius.circular(12),
+            child: Padding(
+              padding: const EdgeInsets.all(10),
+              child: Row(
+                children: [
+                  const Icon(Icons.cloud_off, color: AppColors.error),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      error.message,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                  IconButton(
+                    tooltip: 'Retry map scenario',
+                    onPressed: () =>
+                        controller.refreshMapAssessment(force: true),
+                    icon: const Icon(Icons.refresh),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+    ],
+  );
+
+  List<Polygon<int>> _scenarioPolygons(AssessmentController controller) {
+    final polygons = <Polygon<int>>[];
+    for (final area in controller.areas) {
+      final assessment = controller.mapResultsByAreaId[area.id];
+      final selected = controller.selectedArea?.id == area.id;
+      final color = FloodMapPalette.forAssessment(assessment);
+      for (var index = 0; index < area.geometry.polygons.length; index++) {
+        final polygon = area.geometry.polygons[index];
+        polygons.add(
+          Polygon<int>(
+            points: polygon.exterior,
+            holePointsList: polygon.holes.isEmpty ? null : polygon.holes,
+            color: color.withValues(alpha: selected ? 0.5 : 0.32),
+            borderColor: selected ? AppColors.primary : color,
+            borderStrokeWidth: selected ? 4 : 2,
+            label: selected && index == 0
+                ? '${area.name}\n${_scenarioLabel(assessment)}'
+                : null,
+            labelStyle: const TextStyle(
+              color: AppColors.bodyText,
+              fontSize: 10,
+              fontWeight: FontWeight.w800,
+              shadows: [Shadow(color: Colors.white, blurRadius: 4)],
+            ),
+            hitValue: area.id,
+          ),
+        );
+      }
+    }
+    return polygons;
+  }
+
+  List<Polygon<int>> _boundaryPolygons(List<GeographicArea> areas) {
+    final confirmedCode =
+        widget.locationController?.confirmedBarangay?.geographicAreaCode;
+    return [
+      for (final area in areas)
+        for (final polygon in area.geometry.polygons)
+          Polygon<int>(
+            points: polygon.exterior,
+            holePointsList: polygon.holes.isEmpty ? null : polygon.holes,
+            color: AppColors.primary.withValues(
+              alpha: area.code == confirmedCode ? 0.17 : 0.025,
+            ),
+            borderColor: area.code == confirmedCode
+                ? AppColors.primary
+                : AppColors.primary.withValues(alpha: 0.7),
+            borderStrokeWidth: area.code == confirmedCode ? 3 : 1.2,
+            hitValue: area.id,
+          ),
+    ];
+  }
+
+  List<Polygon<int>> _coveragePolygons(List<GeographicArea> areas) {
+    if (identical(areas, _cachedCoverageAreas)) {
+      return _cachedCoveragePolygons;
+    }
+    _cachedCoverageAreas = areas;
+    return _cachedCoveragePolygons = buildBacoorCoveragePolygons(areas);
+  }
+
+  Marker _centerMarker(CenterMapRecord center) {
+    final active = _selectedCenterIdentifier == center.publicIdentifier;
+    return Marker(
+      key: Key('hybrid-center-${center.publicIdentifier}'),
+      point: LatLng(center.latitude, center.longitude),
+      width: 56,
+      height: 56,
+      child: EvacuationCenterMarker(
+        key: ValueKey(center.publicIdentifier),
+        name: center.name,
+        isSelected: active,
+        isNearest:
+            center.publicIdentifier ==
+            widget.nearestCenterController?.nearestCenterIdentifier,
+        isDemonstration: center.isDemonstration,
+        onTap: () => _selectCenter(center.publicIdentifier),
+      ),
+    );
+  }
+}
+
+String _scenarioLabel(MapAreaAssessment? result) {
+  if (result == null) return 'Choose a scenario';
+  return switch (result.state) {
+    AssessmentState.classified => result.susceptibility!.label,
+    AssessmentState.uncertain => 'Uncertain',
+    AssessmentState.insufficientData => 'Insufficient data',
+    AssessmentState.unknown => 'Unavailable',
+  };
+}
+
+class _MapButton extends StatelessWidget {
+  const _MapButton({
+    required this.label,
+    required this.icon,
+    required this.onPressed,
+  });
+
+  final String label;
+  final IconData icon;
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) => Tooltip(
+    message: label,
+    excludeFromSemantics: true,
+    child: Semantics(
+      button: true,
+      label: label,
+      child: Material(
+        color: AppColors.surface,
+        elevation: 3,
+        borderRadius: BorderRadius.circular(12),
+        child: InkWell(
+          onTap: onPressed,
+          borderRadius: BorderRadius.circular(12),
+          child: SizedBox(
+            width: 48,
+            height: 48,
+            child: Icon(icon, color: AppColors.primary),
+          ),
+        ),
+      ),
+    ),
+  );
+}
+
+class _MapUnavailable extends StatelessWidget {
+  const _MapUnavailable({required this.message, this.onRetry});
+
+  final String message;
+  final VoidCallback? onRetry;
+
+  @override
+  Widget build(BuildContext context) => ColoredBox(
+    color: const Color(0xFFEAF4F7),
+    child: Center(
+      child: Padding(
+        padding: const EdgeInsets.all(28),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Icon(Icons.map_outlined, size: 52, color: AppColors.primary),
+            const SizedBox(height: 12),
+            Text(message, textAlign: TextAlign.center),
+            if (onRetry != null) ...[
+              const SizedBox(height: 14),
+              FilledButton.icon(
+                onPressed: onRetry,
+                icon: const Icon(Icons.refresh),
+                label: const Text('Retry map'),
+              ),
+            ],
+          ],
+        ),
+      ),
+    ),
+  );
+}

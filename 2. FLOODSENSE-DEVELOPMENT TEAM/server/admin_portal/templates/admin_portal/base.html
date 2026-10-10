@@ -1,4 +1,4 @@
-{% load static %}
+{% load static portal_icons %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,77 +6,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="FloodSense administration console">
   <title>{% block title %}FloodSense Admin{% endblock %}</title>
-  <link rel="stylesheet" href="{% static 'admin_portal/css/admin_portal.css' %}">
+  <link rel="stylesheet" href="{% static 'admin_portal/css/admin_portal.css' %}?v=icons-20261006-2">
+  <noscript><link rel="stylesheet" href="{% static 'admin_portal/css/no_script.css' %}?v=sidebar-20261001-1"></noscript>
   {% block extra_css %}{% endblock %}
 </head>
 <body class="portal-page">
-  <header class="topbar">
-    <button class="mobile-menu-button" type="button" data-menu-toggle aria-controls="portal-sidebar" aria-expanded="false">
-      <span aria-hidden="true">☰</span><span class="sr-only">Open navigation</span>
-    </button>
-    <a class="brand mobile-brand" href="{% url 'admin_portal:dashboard' %}">
-      <span class="brand__mark" aria-hidden="true">≈</span>
-      <span>FloodSense</span>
-    </a>
-    <div class="topbar__spacer"></div>
-    <span class="system-state"><span class="status-dot" aria-hidden="true"></span>Development environment</span>
-    <div class="account-menu">
-      <button class="account-menu__toggle" type="button" data-account-toggle aria-controls="account-menu" aria-expanded="false" aria-haspopup="menu">
-        <span class="account-summary__name">{{ display_name }}</span>
-        <span class="avatar" aria-hidden="true">{{ user_initials }}</span>
-        <span class="sr-only">Open account menu</span>
-      </button>
-      <div class="account-menu__panel" id="account-menu" data-account-menu role="menu" hidden>
-        <a class="account-menu__item" href="{% url 'admin_portal:settings' %}" role="menuitem">
-          <span aria-hidden="true">⚙</span><span>Settings</span>
-        </a>
-        <form method="post" action="{% url 'admin_portal:logout' %}">
-          {% csrf_token %}
-          <button class="account-menu__item" type="submit" role="menuitem">
-            <span aria-hidden="true">↪</span><span>Sign out</span>
-          </button>
-        </form>
-      </div>
-    </div>
-  </header>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
   <div class="portal-layout">
     <aside class="sidebar" id="portal-sidebar">
-      <a class="sidebar__brand" href="{% url 'admin_portal:dashboard' %}">
-        <span class="sidebar__brand-mark" aria-hidden="true">≈</span><span>FloodSense</span>
-      </a>
-      <nav aria-label="Administration navigation">
+      <div class="sidebar__brand-area">
+        <a class="sidebar__brand" aria-label="FloodSense home" href="{% url 'admin_portal:dashboard' %}">
+          <span class="sidebar__brand-mark" aria-hidden="true">≈</span><span class="sidebar__brand-name">FloodSense</span>
+        </a>
+        <button class="sidebar-toggle" type="button" data-sidebar-toggle data-sidebar-tooltip="Close sidebar" aria-label="Collapse Sidebar" title="Collapse Sidebar (Ctrl + B)" aria-controls="sidebar-navigation" aria-expanded="true" hidden><svg class="sidebar-toggle__icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16"/></svg></button>
+      </div>
+      <nav id="sidebar-navigation" aria-label="Administration navigation">
         <ul class="nav-list">
           {% for slug, label, icon in navigation %}
             <li>
               {% if slug == 'dashboard' %}
-                <a class="nav-link{% if active_section == slug %} nav-link--active{% endif %}" href="{% url 'admin_portal:dashboard' %}"{% if active_section == slug %} aria-current="page"{% endif %}>
+                <a aria-label="{{ label }}" class="nav-link{% if active_section == slug %} nav-link--active{% endif %}" href="{% url 'admin_portal:dashboard' %}"{% if active_section == slug %} aria-current="page"{% endif %}>
               {% elif slug == 'map-data' %}
-                <a class="nav-link{% if active_section == slug %} nav-link--active{% endif %}" href="{% url 'admin_portal:map-data' %}"{% if active_section == slug %} aria-current="page"{% endif %}>
-              {% elif slug == 'settings' %}
-                <a class="nav-link{% if active_section == slug %} nav-link--active{% endif %}" href="{% url 'admin_portal:settings' %}"{% if active_section == slug %} aria-current="page"{% endif %}>
+                <a aria-label="{{ label }}" class="nav-link{% if active_section == slug %} nav-link--active{% endif %}" href="{% url 'admin_portal:map-data' %}"{% if active_section == slug %} aria-current="page"{% endif %}>
+              {% elif slug == 'reports' %}
+                <a aria-label="{{ label }}" class="nav-link{% if active_section == slug %} nav-link--active{% endif %}" href="{% url 'admin_portal:reports' %}"{% if active_section == slug %} aria-current="page"{% endif %}>
               {% elif slug == 'dss-content' %}
-                <a class="nav-link{% if active_section == slug %} nav-link--active{% endif %}" href="{% url 'admin_portal:dss-content' %}"{% if active_section == slug %} aria-current="page"{% endif %}>
+                <a aria-label="{{ label }}" class="nav-link{% if active_section == slug %} nav-link--active{% endif %}" href="{% url 'admin_portal:dss-content' %}"{% if active_section == slug %} aria-current="page"{% endif %}>
               {% elif slug == 'rainfall-references' %}
-                <a class="nav-link{% if active_section == slug %} nav-link--active{% endif %}" href="{% url 'admin_portal:rainfall-references' %}"{% if active_section == slug %} aria-current="page"{% endif %}>
+                <a aria-label="{{ label }}" class="nav-link{% if active_section == slug %} nav-link--active{% endif %}" href="{% url 'admin_portal:rainfall-references' %}"{% if active_section == slug %} aria-current="page"{% endif %}>
               {% elif slug == 'evacuation-centers' %}
-                <a class="nav-link{% if active_section == slug %} nav-link--active{% endif %}" href="{% url 'admin_portal:evacuation-centers' %}"{% if active_section == slug %} aria-current="page"{% endif %}>
+                <a aria-label="{{ label }}" class="nav-link{% if active_section == slug %} nav-link--active{% endif %}" href="{% url 'admin_portal:evacuation-centers' %}"{% if active_section == slug %} aria-current="page"{% endif %}>
               {% elif slug == 'sources-content' %}
-                <a class="nav-link{% if active_section == slug %} nav-link--active{% endif %}" href="{% url 'admin_portal:sources-content' %}"{% if active_section == slug %} aria-current="page"{% endif %}>
+                <a aria-label="{{ label }}" class="nav-link{% if active_section == slug %} nav-link--active{% endif %}" href="{% url 'admin_portal:sources-content' %}"{% if active_section == slug %} aria-current="page"{% endif %}>
               {% elif slug == 'audit-history' %}
-                <a class="nav-link{% if active_section == slug %} nav-link--active{% endif %}" href="{% url 'admin_portal:audit-history' %}"{% if active_section == slug %} aria-current="page"{% endif %}>
+                <a aria-label="{{ label }}" class="nav-link{% if active_section == slug %} nav-link--active{% endif %}" href="{% url 'admin_portal:audit-history' %}"{% if active_section == slug %} aria-current="page"{% endif %}>
               {% else %}
-                <a class="nav-link{% if active_section == slug %} nav-link--active{% endif %}" href="{% url 'admin_portal:section' section_slug=slug %}"{% if active_section == slug %} aria-current="page"{% endif %}>
+                <a aria-label="{{ label }}" class="nav-link{% if active_section == slug %} nav-link--active{% endif %}" href="{% url 'admin_portal:section' section_slug=slug %}"{% if active_section == slug %} aria-current="page"{% endif %}>
               {% endif %}
-                <span class="nav-link__icon" aria-hidden="true">{{ icon }}</span><span>{{ label }}</span>
+                <span class="nav-link__icon" aria-hidden="true">{% portal_icon slug icon %}</span><span class="nav-link__label">{{ label }}</span>
               </a>
             </li>
           {% endfor %}
         </ul>
       </nav>
+    <div class="account-menu">
+      <button class="account-menu__toggle" type="button" data-account-toggle data-profile-name="{{ display_name }}" aria-label="Open account menu for {{ display_name }}" aria-controls="account-menu" aria-expanded="false" aria-haspopup="menu">
+        <span class="avatar" aria-hidden="true">{{ user_initials }}</span>
+        <span class="account-summary">
+          <span class="account-summary__name">{{ display_name }}</span>
+          <span class="system-state"><span class="status-dot" aria-hidden="true"></span>Development environment</span>
+        </span>
+      </button>
+      <div class="account-menu__panel" id="account-menu" data-account-menu role="menu" hidden>
+        <a class="account-menu__item" href="{% url 'admin_portal:settings' %}" role="menuitem"{% if active_section == 'settings' %} aria-current="page"{% endif %}>
+          <span aria-hidden="true">{% portal_icon 'settings' '⚙' %}</span><span>Settings</span>
+        </a>
+        <form method="post" action="{% url 'admin_portal:logout' %}">
+          {% csrf_token %}
+          <button class="account-menu__item" type="submit" role="menuitem">
+            <span aria-hidden="true">{% portal_icon 'sign-out' '↪' %}</span><span>Sign out</span>
+          </button>
+        </form>
+      </div>
+    </div>
+
     </aside>
 
-    <main class="portal-main" id="main-content">
+    <main class="portal-main" id="main-content" tabindex="-1">
+      <button class="mobile-menu-button" type="button" data-menu-toggle aria-controls="portal-sidebar" aria-expanded="false">
+        <span aria-hidden="true">☰</span><span class="sr-only">Open navigation</span>
+      </button>
       {% if messages %}
         <div class="portal-messages" aria-live="polite">
           {% for message in messages %}
@@ -88,7 +89,7 @@
     </main>
   </div>
   <div class="sidebar-scrim" data-menu-scrim></div>
-  <script src="{% static 'admin_portal/js/admin_portal.js' %}" defer></script>
+  <script src="{% static 'admin_portal/js/admin_portal.js' %}?v=sidebar-20261001-1" defer></script>
   {% block extra_js %}{% endblock %}
 </body>
 </html>

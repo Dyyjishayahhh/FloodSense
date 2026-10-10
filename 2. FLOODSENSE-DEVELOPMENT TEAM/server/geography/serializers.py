@@ -6,12 +6,17 @@ from math import isfinite
 from core.serializers import OperatingModeQuerySerializer
 from rest_framework import serializers
 
-from .constants import BACOOR_REFERENCE_LIMITATION, BACOOR_REFERENCE_WARNING
+from .constants import (
+    BACOOR_BOUNDARY_STATUSES,
+    BACOOR_REFERENCE_LIMITATION,
+    BACOOR_REFERENCE_WARNING,
+)
 
 RESOLVER_PATH = "/api/v1/geography/resolve-barangay/"
 RESOLVER_ALLOWED_METHODS = ("POST", "OPTIONS")
 RESOLVER_CONTENT_TYPE = "application/json"
 RESOLVER_COORDINATE_DECIMAL_PLACES = 5
+RESOLVER_MAX_REQUEST_BYTES = 1024
 
 
 class BarangayResolutionState:
@@ -75,8 +80,8 @@ class PublicBarangayIdentitySerializer(serializers.Serializer):
 
 class BoundaryReferenceStatusSerializer(serializers.Serializer):
     layer_kind = serializers.ChoiceField(("ADMINISTRATIVE_REFERENCE",))
-    data_status = serializers.ChoiceField(("PENDING_VALIDATION",))
-    source_status = serializers.ChoiceField(("PENDING_VALIDATION",))
+    data_status = serializers.ChoiceField(BACOOR_BOUNDARY_STATUSES)
+    source_status = serializers.ChoiceField(BACOOR_BOUNDARY_STATUSES)
     city_verified = serializers.BooleanField()
 
     def validate_city_verified(self, value):
@@ -122,6 +127,8 @@ def make_barangay_resolution_response(
     latitude: float,
     longitude: float,
     barangay: dict | None = None,
+    data_status: str = "PENDING_VALIDATION",
+    source_status: str = "PENDING_VALIDATION",
 ) -> dict:
     """Build one schema-validated, allowlisted response without any database write."""
 
@@ -135,8 +142,8 @@ def make_barangay_resolution_response(
         "barangay": barangay,
         "boundary": {
             "layer_kind": "ADMINISTRATIVE_REFERENCE",
-            "data_status": "PENDING_VALIDATION",
-            "source_status": "PENDING_VALIDATION",
+            "data_status": data_status,
+            "source_status": source_status,
             "city_verified": False,
         },
         "limitations": [BACOOR_REFERENCE_WARNING, BACOOR_REFERENCE_LIMITATION],

@@ -1,21 +1,55 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
-import '../../app/theme/app_colors.dart';
 import '../../data/models/barangay_resolution.dart';
 import '../../data/models/geographic_area.dart';
+import '../map/map_pin_location_notice.dart';
 import 'location_controller.dart';
 import 'location_copy.dart';
 import 'location_flow_state.dart';
 
-class LocationCard extends StatelessWidget {
+class LocationCard extends StatefulWidget {
   const LocationCard({
     required this.controller,
     this.barangays = const [],
+    this.showAreaConfirmation = true,
     super.key,
   });
 
   final LocationController controller;
   final List<GeographicArea> barangays;
+
+  /// The guided resident flow provides its single Confirm area action outside
+  /// the card. Standalone assessment screens still need one action here.
+  final bool showAreaConfirmation;
+
+  @override
+  State<LocationCard> createState() => _LocationCardState();
+}
+
+class _LocationCardState extends State<LocationCard>
+    with WidgetsBindingObserver {
+  LocationController get controller => widget.controller;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed) {
+      unawaited(controller.resumeAfterLocationSettings());
+    }
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,48 +64,81 @@ class LocationCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Text(
-                  'Optional device location',
-                  style: Theme.of(context).textTheme.titleLarge,
-                ),
-                const SizedBox(height: 6),
-                const Text(
-                  'Use one temporary foreground reading, or continue with the map pin and selector.',
-                ),
+                Text('Location', style: Theme.of(context).textTheme.titleLarge),
                 const SizedBox(height: 12),
-                if (controller.hasTemporaryLocation) ...[
-                  _TemporaryLocationIndicator(controller: controller),
-                  const SizedBox(height: 12),
-                ],
-                Semantics(
-                  liveRegion: state.phase != LocationFlowPhase.initial,
-                  child: Text(
-                    state.message,
-                    key: const Key('location-state-message'),
+                if (controller.lookupCoordinate != null &&
+                    controller.coordinateDescription != null) ...[
+                  MapPinLocationNotice(
+                    description: controller.coordinateDescription!,
+                    displayDescription: controller.isApproximateCoordinate
+                        ? 'Approximate barangay reference point'
+                        : null,
+                    icon: switch (controller.coordinateOrigin) {
+                      LocationCoordinateOrigin.deviceGps => Icons.my_location,
+                      LocationCoordinateOrigin.barangayReference =>
+                        Icons.location_city,
+                      _ => Icons.location_on,
+                    },
+                    key: controller.isApproximateCoordinate
+                        ? const Key('approximate-barangay-reference-point')
+                        : const Key('location-card-pin-description'),
                   ),
+                  const SizedBox(height: 4),
+                ],
+                if (controller.candidateBarangay ?? controller.confirmedBarangay
+                    case final barangay?) ...[
+                  Semantics(
+                    liveRegion: true,
+                    child: Text(
+                      barangay.name,
+                      key: controller.candidateBarangay != null
+                          ? const Key('detected-barangay-candidate')
+                          : const Key('confirmed-barangay'),
+                      style: const TextStyle(fontWeight: FontWeight.w700),
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                ],
+                if (_showsRecoveryMessage(state.phase)) ...[
+                  Semantics(
+                    liveRegion: true,
+                    child: Text(
+                      state.message,
+                      key: const Key('location-state-message'),
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                ],
+                _LocationActions(
+                  controller: controller,
+                  showAreaConfirmation: widget.showAreaConfirmation,
                 ),
-                if (state.phase == LocationFlowPhase.resolvedCandidate) ...[
-                  const SizedBox(height: 12),
-                  _CandidateDetails(controller: controller),
-                ],
-                if (state.phase == LocationFlowPhase.confirmed) ...[
-                  const SizedBox(height: 12),
-                  _ConfirmedBarangay(controller: controller),
-                ],
-                const SizedBox(height: 12),
-                _LocationActions(controller: controller),
-                if (barangays.isNotEmpty) ...[
+                if (widget.barangays.isNotEmpty) ...[
                   const SizedBox(height: 12),
                   _ManualBarangaySelector(
                     controller: controller,
-                    barangays: barangays,
+                    barangays: widget.barangays,
                   ),
                 ],
-                const SizedBox(height: 10),
-                Text(
-                  'GPS is optional. Manual pin placement and manual selection remain available below.',
-                  style: Theme.of(context).textTheme.bodySmall,
-                ),
+                if (!controller.isBusy &&
+                    (controller.hasTemporaryLocation ||
+                        controller.lookupCoordinate != null ||
+                        controller.confirmedBarangay != null)) ...[
+                  const SizedBox(height: 8),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: TextButton.icon(
+                      key: const Key('clear-location-button'),
+                      onPressed: controller.clearLocation,
+                      icon: const Icon(Icons.location_off_outlined),
+                      label: Text(
+                        controller.hasTemporaryLocation
+                            ? 'Clear temporary location'
+                            : 'Clear location choice',
+                      ),
+                    ),
+                  ),
+                ],
               ],
             ),
           ),
@@ -79,6 +146,19 @@ class LocationCard extends StatelessWidget {
       },
     );
   }
+
+  bool _showsRecoveryMessage(LocationFlowPhase phase) => switch (phase) {
+    LocationFlowPhase.initial ||
+    LocationFlowPhase.purposeExplanation ||
+    LocationFlowPhase.acquiring ||
+    LocationFlowPhase.acquired ||
+    LocationFlowPhase.resolvingBarangay ||
+    LocationFlowPhase.resolvedCandidate ||
+    LocationFlowPhase.confirmed ||
+    LocationFlowPhase.cleared ||
+    LocationFlowPhase.cancelled => false,
+    _ => true,
+  };
 }
 
 Future<void> _showLocationPurpose(
@@ -91,6 +171,7 @@ Future<void> _showLocationPurpose(
     barrierDismissible: false,
     builder: (context) => AlertDialog(
       key: const Key('location-purpose-dialog'),
+      scrollable: true,
       title: const Text(LocationCopy.purposeTitle),
       content: const Text('${LocationCopy.purpose}\n\n${LocationCopy.privacy}'),
       actions: [
@@ -115,9 +196,13 @@ Future<void> _showLocationPurpose(
 }
 
 class _LocationActions extends StatelessWidget {
-  const _LocationActions({required this.controller});
+  const _LocationActions({
+    required this.controller,
+    required this.showAreaConfirmation,
+  });
 
   final LocationController controller;
+  final bool showAreaConfirmation;
 
   @override
   Widget build(BuildContext context) {
@@ -149,25 +234,19 @@ class _LocationActions extends StatelessWidget {
     }
 
     final actions = <Widget>[];
-    if (phase == LocationFlowPhase.resolvedCandidate) {
-      actions.addAll([
+    if (phase == LocationFlowPhase.resolvedCandidate && showAreaConfirmation) {
+      actions.add(
         FilledButton.icon(
           key: const Key('confirm-detected-barangay-button'),
           onPressed: controller.confirmCandidate,
           icon: const Icon(Icons.check_circle_outline),
-          label: const Text('Confirm barangay'),
+          label: const Text('Confirm area'),
         ),
-        OutlinedButton.icon(
-          key: const Key('reject-detected-barangay-button'),
-          onPressed: controller.rejectCandidate,
-          icon: const Icon(Icons.edit_location_alt_outlined),
-          label: const Text('Correct manually'),
-        ),
-      ]);
+      );
     }
-    if (phase == LocationFlowPhase.initial ||
-        phase == LocationFlowPhase.cleared ||
-        phase == LocationFlowPhase.cancelled) {
+    if (!controller.state.retryAllowed &&
+        phase != LocationFlowPhase.permissionDeniedPermanently &&
+        phase != LocationFlowPhase.purposeExplanation) {
       actions.add(
         FilledButton.icon(
           key: const Key('use-my-location-button'),
@@ -187,15 +266,6 @@ class _LocationActions extends StatelessWidget {
         ),
       );
     }
-    if (phase == LocationFlowPhase.serviceDisabled) {
-      actions.add(
-        OutlinedButton(
-          key: const Key('open-location-settings-button'),
-          onPressed: controller.openLocationSettings,
-          child: const Text('Open location settings'),
-        ),
-      );
-    }
     if (phase == LocationFlowPhase.permissionDeniedPermanently) {
       actions.add(
         OutlinedButton(
@@ -205,92 +275,7 @@ class _LocationActions extends StatelessWidget {
         ),
       );
     }
-    if (!controller.hasTemporaryLocation &&
-        (phase == LocationFlowPhase.confirmed ||
-            phase == LocationFlowPhase.rejected ||
-            phase == LocationFlowPhase.outsideBacoor ||
-            phase == LocationFlowPhase.ambiguousBoundary ||
-            phase == LocationFlowPhase.resolverUnavailable ||
-            phase == LocationFlowPhase.resolverTimeout ||
-            phase == LocationFlowPhase.resolverFailure ||
-            phase == LocationFlowPhase.malformedResponse)) {
-      actions.add(
-        TextButton.icon(
-          key: const Key('clear-location-button'),
-          onPressed: controller.clearLocation,
-          icon: const Icon(Icons.location_off_outlined),
-          label: const Text('Clear location choice'),
-        ),
-      );
-    }
     return Wrap(spacing: 8, runSpacing: 8, children: actions);
-  }
-}
-
-class _CandidateDetails extends StatelessWidget {
-  const _CandidateDetails({required this.controller});
-
-  final LocationController controller;
-
-  @override
-  Widget build(BuildContext context) {
-    final resolution = controller.resolution!;
-    final barangay = resolution.barangay!;
-    return Container(
-      key: const Key('detected-barangay-candidate'),
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: AppColors.warningSurface,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            'Proposed barangay—confirmation required',
-            style: TextStyle(fontWeight: FontWeight.w800),
-          ),
-          const SizedBox(height: 5),
-          Text('${barangay.name} (${barangay.psgcCode})'),
-          const SizedBox(height: 5),
-          const Text(
-            'Matched using the derived administrative reference. It is pending validation and not City-verified.',
-          ),
-          ...resolution.limitations.map(
-            (limitation) => Padding(
-              padding: const EdgeInsets.only(top: 4),
-              child: Text(
-                limitation,
-                style: Theme.of(context).textTheme.bodySmall,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _ConfirmedBarangay extends StatelessWidget {
-  const _ConfirmedBarangay({required this.controller});
-
-  final LocationController controller;
-
-  @override
-  Widget build(BuildContext context) {
-    final barangay = controller.confirmedBarangay!;
-    return Container(
-      key: const Key('confirmed-barangay'),
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: AppColors.activeBackground,
-        border: Border.all(color: AppColors.primary),
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Text(
-        '${barangay.name} (${barangay.psgcCode}) is the confirmed administrative location. No susceptibility assessment was started automatically.',
-      ),
-    );
   }
 }
 
@@ -318,7 +303,6 @@ class _ManualBarangaySelector extends StatelessWidget {
         initialValue: selected.length == 1 ? selected.single : null,
         decoration: const InputDecoration(
           labelText: 'Choose a barangay manually',
-          helperText: 'Manual selection remains available if GPS or boundaries are uncertain.',
           border: OutlineInputBorder(),
         ),
         isExpanded: true,
@@ -337,63 +321,9 @@ class _ManualBarangaySelector extends StatelessWidget {
               psgcCode: area.code.substring('PSGC_'.length),
               name: area.name,
             ),
+            geometry: area.geometry,
           );
         },
-      ),
-    );
-  }
-}
-
-class _TemporaryLocationIndicator extends StatelessWidget {
-  const _TemporaryLocationIndicator({required this.controller});
-
-  final LocationController controller;
-
-  @override
-  Widget build(BuildContext context) {
-    final accuracy = controller.temporaryLocation!.accuracyMeters.round();
-    return Semantics(
-      container: true,
-      liveRegion: true,
-      label:
-          'Temporary device location acquired. Reported accuracy about $accuracy meters.',
-      child: Container(
-        key: const Key('temporary-location-indicator'),
-        padding: const EdgeInsets.all(12),
-        decoration: BoxDecoration(
-          color: AppColors.activeBackground,
-          border: Border.all(color: AppColors.primary),
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            const Row(
-              children: [
-                Icon(Icons.location_on_outlined, color: AppColors.primary),
-                SizedBox(width: 8),
-                Expanded(
-                  child: Text(
-                    'Temporary location acquired',
-                    style: TextStyle(fontWeight: FontWeight.w800),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 6),
-            Text('Android reported an accuracy of about $accuracy meters.'),
-            const Text(
-              'No barangay or susceptibility result has been assumed.',
-            ),
-            const SizedBox(height: 10),
-            OutlinedButton.icon(
-              key: const Key('clear-location-button'),
-              onPressed: controller.clearLocation,
-              icon: const Icon(Icons.location_off_outlined),
-              label: const Text('Clear temporary location'),
-            ),
-          ],
-        ),
       ),
     );
   }

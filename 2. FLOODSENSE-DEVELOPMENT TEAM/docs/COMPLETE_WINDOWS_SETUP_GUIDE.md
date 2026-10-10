@@ -7,6 +7,22 @@ have not used Django, PostgreSQL/PostGIS, Flutter, or Android Studio before.
 
 Last verified: September 6, 2026
 
+Local testing update (5 October 2026):
+
+Selected local data sharing (6 October 2026): after normal setup, teammates can
+follow [this handoff](TEAM_LOCAL_DATA_HANDOFF.md) to preview/apply the selected
+boundary/source statuses and two temporary centers in their own existing local
+tables. No account, contact detail, credential, restricted dataset or full
+database is shared, and this package adds no schema migration or dependency.
+
+The [evacuation map and pin update](EVACUATION_MAP_AND_PIN_UPGRADE.md) adds
+startup shelter icons and synchronized manual/GPS pins. This update needs no
+new package, migration or seed; restart Django and relaunch the Flutter client.
+[Temporary sources and centers in the main workflow](LOCAL_TESTING_WORKFLOW.md)
+uses one private setting and `scripts/run_android_local.ps1`. Existing setups
+need no new packages, migrations or seed data for this update; restart Django
+and rebuild Flutter. The older separate center-preview workflow is legacy only.
+
 ### How to use this manual
 
 - A teammate preparing a new computer should follow sections 3 through 20 in
@@ -599,6 +615,10 @@ DJANGO_DEBUG=true
 DJANGO_SECRET_KEY=replace-with-a-long-random-value
 DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1,10.0.2.2
 FLOODSENSE_GIS_ENABLED=true
+FLOODSENSE_ENABLE_PROVISIONAL_MGB_PREVIEW=false
+FLOODSENSE_MAP_PROVIDER=mapbox
+MAPBOX_ACCESS_TOKEN=
+FLOODSENSE_MAP_3D=false
 DATABASE_NAME=floodsense
 DATABASE_USER=floodsense
 DATABASE_PASSWORD=replace-with-the-floodsense-database-password
@@ -615,6 +635,13 @@ Important rules:
 - Never send `server/.env` through chat or commit it to Git.
 - `10.0.2.2` allows requests from the Android emulator during development.
 - Development settings are not production deployment settings.
+- Keep `FLOODSENSE_ENABLE_PROVISIONAL_MGB_PREVIEW=false` for ordinary setup. The
+  provisional MGB data README documents the explicit local consultation-only
+  workflow; enabling it does not approve or publish that source.
+- Mapbox is the default presentation. Add only a restricted public `pk.` token
+  to the private `server/.env`; never use an `sk.` token. Leaving it blank uses
+  the safe OSM fallback. See
+  `MAP_PRESENTATION_PROVIDER_GUIDE.md`.
 
 Generate a local Django secret key with:
 
@@ -827,6 +854,10 @@ flutter devices
 flutter build apk --debug
 ```
 
+Mapbox is optional. The commands above use OSM when no public token is supplied.
+For the Mapbox-specific Android rehearsal command and fallback checks, follow
+`docs/MAP_PRESENTATION_PROVIDER_GUIDE.md`.
+
 Expected results:
 
 - `flutter analyze`: no issues found.
@@ -844,11 +875,17 @@ This is a development APK, not a signed production release.
 
 ### Run the app with live debugging
 
-Make sure `FloodSense_API_36` has finished booting, then run:
+For the normal Android Mapbox workflow, return to the repository root and run:
 
 ```powershell
-flutter run
+Set-Location ..
+.\scripts\run_android_local.ps1
 ```
+
+The launcher reads only the public Mapbox token needed by Flutter from the
+private Django configuration and prefers one connected USB phone over a stale
+wireless-debugging connection. A bare `flutter run` does not inherit that token
+and therefore uses the safe OSM fallback.
 
 Leave this terminal open while developing. Interactive keys include:
 
@@ -970,11 +1007,11 @@ that another researcher did not authorize for sharing.
    server\.venv\Scripts\python.exe server\manage.py runserver 0.0.0.0:8000
    ```
 
-5. In VS Code terminal 2, start Flutter:
+5. In VS Code terminal 2, start the Android Mapbox workflow from the repository
+   root:
 
    ```powershell
-   Set-Location mobile
-   flutter run
+   .\scripts\run_android_local.ps1
    ```
 
 6. Keep both terminals open while testing app-to-server behavior.

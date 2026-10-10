@@ -1,5 +1,21 @@
 # FloodSense
 
+For terminal commands to start, run, and safely stop the local Windows system,
+see [Start and stop FloodSense](start.md).
+
+For temporary sources and evacuation centers in the normal local Admin → API →
+Android workflow, see [Local testing setup](docs/LOCAL_TESTING_WORKFLOW.md).
+No separate application database, new package, migration, or seed is needed.
+
+To reproduce the selected boundary/source states and two temporary centers in
+another teammate's existing local database, follow
+[Selected local data handoff](docs/TEAM_LOCAL_DATA_HANDOFF.md). This is an
+explicit preview/apply import, not automatic database synchronization by Git.
+
+For startup evacuation-center shelter icons, nearest-distance highlighting,
+and synchronized GPS/manual location pins, see the
+[Evacuation map and pin update](docs/EVACUATION_MAP_AND_PIN_UPGRADE.md).
+
 FloodSense is a planned Android application for scenario-based flood susceptibility assessment and pre-event preparedness in Bacoor City. Its core classification component is a deterministic, rule-based Expert System. It is not a real-time forecast or official warning service.
 
 The current demonstration vertical slice includes Django-managed hypothetical
@@ -26,6 +42,15 @@ These current decision documents supersede conflicting feature descriptions in
 older demonstration guides or diagrams. In particular, FloodSense does not run
 background rainfall timers, and ordinary administrators do not edit raw Expert
 System rules.
+
+## Proposals awaiting team review
+
+- [Flood-susceptibility methodology proposal](docs/FLOOD_SUSCEPTIBILITY_METHODOLOGY_PROPOSAL.md)
+  records a candidate AHP-derived weighting, GIS weighted-linear-combination
+  terrain baseline, and rule-based rainfall-scenario method for evaluation. It
+  is not a current source of truth, implementation authorization, validated
+  Bacoor methodology, or approved manuscript content. Teammates and coding
+  agents must follow its review-only disclaimer and approval gate.
 
 ## Planned stack
 
@@ -64,6 +89,12 @@ in `docs/SETUP_WINDOWS.md`. All contributors and coding agents must also follow
 `docs/TEAM_DATABASE_AND_GIT_WORKFLOW.md` before changing models, migrations,
 seed/import processes, or shared backend data.
 
+For the current barangay-susceptibility consultation preview, structured
+Prepare flow, and resident bottom-sheet update, teammates should follow
+`docs/TEAM_HANDOFF_BARANGAY_PREVIEW_AND_PREPARE.md` after pulling. It lists the
+required migration and seed steps, plus the separately guarded optional MGB
+extract/import process.
+
 Before PostGIS is installed, the database-independent backend foundation can be checked with:
 
 ```powershell
@@ -77,17 +108,24 @@ powershell -ExecutionPolicy Bypass -File scripts/verify_postgis.ps1
 ```
 
 For an authorized local development database only, the tested setup command can
-create or refresh the fictional demonstration records and the separate
-pending-validation Bacoor City/barangay administrative reference layer:
+create or refresh the fictional demonstration records, the versioned presentation
+preparedness flow, and the separate pending-validation Bacoor City/barangay
+administrative reference layer:
 
 ```powershell
 server\.venv\Scripts\python.exe server\manage.py seed_demo
 ```
 
-The administrative reference records contain no susceptibility facts and are
-not City-verified. Never run this command against a shared, staging, or deployed
-database without explicit authorization. See
+The structured flow is published only in demonstration operating mode and remains
+pending expert validation. The administrative reference records contain no
+susceptibility facts and are not City-verified. Never run this command against a
+shared, staging, or deployed database without explicit authorization. See
 `docs/DAY_6_DYNAMIC_MAP_GUIDE.md` for its safety checks and the map/API workflow.
+
+Resident authentication, Remember Me, email/Google setup, versioned legal and
+onboarding gates, Account/Preferences, structured DSS, and the multi-step
+Android assessment are documented in
+`docs/RESIDENT_AUTH_ONBOARDING_AND_DSS_SETUP.md`.
 
 ## Administration portal
 

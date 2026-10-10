@@ -1,3 +1,6 @@
+import uuid
+
+from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
@@ -14,6 +17,7 @@ class EvacuationCenter(models.Model):
         VERIFIED = "VERIFIED", "Verified"
         INACTIVE = "INACTIVE", "Inactive"
 
+    public_id = models.UUIDField(default=uuid.uuid4, unique=True, editable=False)
     name = models.CharField(max_length=180)
     address = models.TextField()
     geographic_area = models.ForeignKey(
@@ -75,11 +79,37 @@ class EvacuationCenter(models.Model):
     def clean(self) -> None:
         super().clean()
         errors: dict[str, str] = {}
-        if self.verification_status == self.VerificationStatus.VERIFIED:
+        from geography.boundaries import is_bacoor_boundary_source
+
+        if self.source_id and is_bacoor_boundary_source(self.source):
+            errors["source"] = (
+                "Administrative boundaries are not facility evidence; "
+                "choose the center's own source."
+            )
+        if (
+            self.source_id
+            and self.source.source_type == DataSource.SourceType.DEMONSTRATION
+            and self.publication_status == PublicationStatus.APPROVED
+        ):
+            errors["publication_status"] = (
+                "Temporary data cannot be published as an approved facility."
+            )
+        if self.verification_status == self.VerificationStatus.VERIFIED and self.is_temporary:
+            if not self.source.test_approved:
+                errors["source"] = "Approve the temporary source for local testing first."
+            if self.verified_on is not None or self.capacity is not None:
+                errors["verified_on"] = (
+                    "A local workflow test must not claim facility verification or capacity."
+                )
+        elif self.verification_status == self.VerificationStatus.VERIFIED:
             if not self.verified_on:
                 errors["verified_on"] = "A verified center requires a verification date."
             if self.source_id and self.source.status != PublicationStatus.APPROVED:
-                errors["source"] = "A verified center requires an approved source."
+                errors["source"] = (
+                    f"A verified center requires an approved source. '{self.source.name}' is "
+                    f"{self.source.get_status_display()}. Keep a draft, review the source "
+                    "metadata inline, or submit source and center together."
+                )
             if self.source_id and not self.source.organization.strip():
                 errors["source"] = (
                     "A verified center requires a source with a responsible organization."
@@ -94,3 +124,53 @@ class EvacuationCenter(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+    @property
+    def is_temporary(self):
+        return bool(
+            self.source_id
+            and self.source.is_temporary
+            and self.publication_status == PublicationStatus.DEMONSTRATION
+        )
+
+    def get_verification_status_display(self):
+        if self.is_temporary and self.verification_status == self.VerificationStatus.VERIFIED:
+            return "Approved for local testing—not facility verification"
+        return self.VerificationStatus(self.verification_status).label
+
+
+class CenterImportBatch(models.Model):
+    """Staff-only reviewed staging, never a second resident center datastore."""
+
+    public_id = models.UUIDField(default=uuid.uuid4, unique=True, editable=False)
+    source = models.ForeignKey(DataSource, on_delete=models.PROTECT)
+    actor = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, on_delete=models.SET_NULL)
+    filename = models.CharField(max_length=180)  # basename only; uploaded bytes are not retained
+    source_revision = models.DateTimeField()
+    rows = models.JSONField(default=list)
+    shared_limitations = models.TextField(blank=True)
+    row_count = models.PositiveIntegerField()
+    valid_count = models.PositiveIntegerField()
+    invalid_count = models.PositiveIntegerField()
+    imported_count = models.PositiveIntegerField(default=0)
+    created_at = models.DateTimeField(auto_now_add=True)
+    imported_at = models.DateTimeField(null=True, blank=True)
+    imported_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="imported_center_batches",
+    )
+
+    class Meta:
+        ordering = ("-created_at", "-id")
+        constraints = [
+            models.CheckConstraint(
+                condition=models.Q(row_count=models.F("valid_count") + models.F("invalid_count")),
+                name="center_batch_counts_match",
+            )
+        ]
+
+    def __str__(self):
+        return f"Center batch {self.public_id} ({self.row_count} rows)"

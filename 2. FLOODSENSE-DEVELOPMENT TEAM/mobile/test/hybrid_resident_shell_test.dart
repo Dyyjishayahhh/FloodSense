@@ -1,0 +1,374 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_map/flutter_map.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:floodsense/app/floodsense_app.dart';
+import 'package:floodsense/data/auth/resident_auth_repository.dart';
+import 'package:floodsense/data/dss/structured_dss_repository.dart';
+import 'package:floodsense/data/models/geographic_area.dart';
+
+import 'resident_test_fakes.dart';
+import 'test_data.dart';
+
+class _FakeDssRepository implements StructuredDssRepository {
+  @override
+  Future<DssStep> start(
+    String susceptibilityCode, {
+    required String operatingMode,
+  }) async => const DssStep(
+    flowCode: 'preparedness',
+    flowVersion: '1',
+    title: 'Preparedness guidance',
+    dataStatus: 'DEMONSTRATION',
+    warning: 'This is not an evacuation order.',
+    position: 1,
+    total: 2,
+    question: DssQuestion(
+      code: 'supplies',
+      prompt: 'Are essential supplies ready?',
+      explanation: 'Choose the answer that matches your household plan.',
+      options: [
+        DssOption(code: 'yes', label: 'Yes', supportingText: ''),
+        DssOption(
+          code: 'no',
+          label: 'No',
+          supportingText: 'Review supplies before an emergency.',
+        ),
+      ],
+    ),
+  );
+
+  @override
+  Future<DssStep> answer({
+    required DssStep current,
+    required String susceptibilityCode,
+    required String operatingMode,
+    required String optionCode,
+  }) async => const DssStep(
+    flowCode: 'preparedness',
+    flowVersion: '1',
+    title: 'Preparedness guidance',
+    dataStatus: 'DEMONSTRATION',
+    warning: 'This is not an evacuation order.',
+    position: 2,
+    total: 2,
+    outcome: DssOutcome(
+      title: 'Prepare safely',
+      instruction: 'Review supplies and follow official authorities.',
+      warning: 'This does not change the susceptibility classification.',
+      source: 'TEST DEMONSTRATION SOURCE',
+    ),
+  );
+}
+
+Future<void> _pumpApp(
+  WidgetTester tester, {
+  required FakeResidentAuthRepository auth,
+  FakeFloodSenseApi? api,
+  Size size = const Size(390, 844),
+}) async {
+  tester.view.physicalSize = size;
+  tester.view.devicePixelRatio = 1;
+  addTearDown(tester.view.resetPhysicalSize);
+  addTearDown(tester.view.resetDevicePixelRatio);
+  await tester.pumpWidget(
+    FloodSenseApp(
+      api: api ?? FakeFloodSenseApi(),
+      authRepository: auth,
+      dssRepository: _FakeDssRepository(),
+      enableResidentAuthentication: true,
+      showBasemap: false,
+    ),
+  );
+  await tester.pumpAndSettle();
+}
+
+Future<void> _scrollTo(
+  WidgetTester tester,
+  Finder target,
+  Key scrollableKey,
+) async {
+  await tester.scrollUntilVisible(
+    target,
+    300,
+    scrollable: find.descendant(
+      of: find.byKey(scrollableKey),
+      matching: find.byType(Scrollable),
+    ),
+  );
+  await tester.pumpAndSettle();
+}
+
+void main() {
+  testWidgets('login remains card-free and has no resident navigation', (
+    tester,
+  ) async {
+    await _pumpApp(tester, auth: FakeResidentAuthRepository());
+
+    expect(find.text('Resident sign in'), findsOneWidget);
+    expect(find.byType(Card), findsNothing);
+    expect(find.byKey(const Key('resident-bottom-navigation')), findsNothing);
+    expect(find.textContaining('Planning scenarios only'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets(
+    'context sheet hides, expands, and remains draggable after navigation',
+    (tester) async {
+      final auth = FakeResidentAuthRepository()
+        ..restoration = testSession(SetupStage.authenticatedReady);
+      await _pumpApp(tester, auth: auth);
+
+      final sheet = find.byKey(const Key('resident-context-sheet'));
+      final retainedMap = find.byKey(
+        const Key('resident-hybrid-map'),
+        skipOffstage: false,
+      );
+      final mapState = tester.state(retainedMap);
+      final handle = find.byKey(const Key('resident-sheet-handle'));
+      final collapse = find.byKey(const Key('resident-sheet-collapse-button'));
+      final initialHeight = tester.getSize(sheet).height;
+
+      await tester.tap(collapse);
+      await tester.pumpAndSettle();
+      final hiddenHeight = tester.getSize(sheet).height;
+      expect(hiddenHeight, lessThan(initialHeight));
+      expect(
+        find.byKey(const Key('resident-sheet-expand-tab')),
+        findsOneWidget,
+      );
+
+      await tester.tap(find.byKey(const Key('resident-sheet-expand-tab')));
+      await tester.pumpAndSettle();
+      expect(tester.getSize(sheet).height, greaterThan(hiddenHeight));
+      expect(find.byKey(const Key('resident-sheet-expand-tab')), findsNothing);
+
+      await tester.tap(find.byKey(const Key('resident-nav-profile')));
+      await tester.pumpAndSettle();
+      expect(sheet, findsNothing);
+      expect(retainedMap, findsOneWidget);
+      expect(tester.state(retainedMap), same(mapState));
+
+      await tester.tap(find.byKey(const Key('resident-nav-assess')));
+      await tester.pumpAndSettle();
+      await _scrollTo(
+        tester,
+        find.byKey(const Key('map-start-assessment')),
+        const Key('map-context-sheet-content'),
+      );
+      await tester.tap(find.byKey(const Key('map-start-assessment')));
+      await tester.pumpAndSettle();
+      expect(sheet, findsOneWidget);
+      expect(tester.state(retainedMap), same(mapState));
+      final assessmentHeight = tester.getSize(sheet).height;
+
+      await tester.drag(handle, const Offset(0, 180));
+      await tester.pumpAndSettle();
+      final userChosenHeight = tester.getSize(sheet).height;
+      expect(userChosenHeight, lessThan(assessmentHeight));
+      expect(userChosenHeight, greaterThan(hiddenHeight));
+      expect(find.byKey(const Key('resident-sheet-expand-tab')), findsNothing);
+
+      await tester.drag(handle, const Offset(0, -90));
+      await tester.pumpAndSettle();
+      final raisedHeight = tester.getSize(sheet).height;
+      expect(raisedHeight, greaterThan(userChosenHeight));
+      expect(raisedHeight, lessThan(assessmentHeight));
+
+      await tester.drag(handle, const Offset(0, 900));
+      await tester.pumpAndSettle();
+      expect(
+        find.byKey(const Key('resident-sheet-expand-tab')),
+        findsOneWidget,
+      );
+      expect(tester.takeException(), isNull);
+    },
+  );
+
+  testWidgets(
+    'three destinations preserve choices and assessment returns to Assess results',
+    (tester) async {
+      final api = FakeFloodSenseApi();
+      final auth = FakeResidentAuthRepository()
+        ..restoration = testSession(SetupStage.authenticatedReady);
+      tester.view.padding = const FakeViewPadding(top: 24);
+      addTearDown(tester.view.resetPadding);
+      await _pumpApp(tester, auth: auth, api: api, size: const Size(320, 640));
+
+      expect(find.byKey(const Key('resident-hybrid-map')), findsOneWidget);
+      expect(find.text('FloodSense'), findsOneWidget);
+      expect(find.byIcon(Icons.waves), findsOneWidget);
+      expect(find.byType(AppBar), findsNothing);
+      expect(
+        tester.getTopLeft(find.byKey(const Key('resident-hybrid-map'))).dy,
+        24,
+      );
+      final scenarioBounds = tester.getRect(find.byKey(const Key('map-brand')));
+      final zoomBounds = tester.getRect(find.byTooltip('Zoom in'));
+      expect(scenarioBounds.top, 34);
+      expect(scenarioBounds.overlaps(zoomBounds), isFalse);
+      expect(
+        tester.getTopLeft(find.byKey(const Key('bacoor-coverage-legend'))).dy,
+        greaterThan(scenarioBounds.bottom),
+      );
+      final coverage = tester.widget<PolygonLayer<int>>(
+        find.byKey(const Key('hybrid-bacoor-coverage-mask')),
+      );
+      expect(coverage.polygons, hasLength(1));
+      expect(coverage.invertedFill, const Color(0xA6677280));
+      expect(find.text('Outside Bacoor assessment coverage'), findsNothing);
+      expect(find.text('Legend'), findsOneWidget);
+      expect(find.byKey(const Key('resident-nav-map')), findsNothing);
+      expect(find.byType(NavigationDestination), findsNWidgets(3));
+      expect(find.text('Assess'), findsOneWidget);
+      expect(find.text('Prepare'), findsOneWidget);
+      expect(find.text('Profile'), findsOneWidget);
+
+      await tester.tap(find.byKey(const Key('resident-nav-assess')));
+      await tester.pumpAndSettle();
+      expect(find.text('Flood information'), findsOneWidget);
+      await _scrollTo(
+        tester,
+        find.byKey(const Key('map-start-assessment')),
+        const Key('map-context-sheet-content'),
+      );
+      await tester.tap(find.byKey(const Key('map-start-assessment')));
+      await tester.pumpAndSettle();
+      expect(find.text('FloodSense'), findsOneWidget);
+      expect(
+        find.byKey(const Key('hybrid-assessment-scenario')),
+        findsOneWidget,
+      );
+
+      final intensity = find.byKey(const Key('option-DEMO_HEAVY'));
+      await _scrollTo(
+        tester,
+        intensity,
+        const Key('hybrid-assessment-scenario'),
+      );
+      await tester.tap(intensity);
+      await tester.pump();
+      final duration = find.byKey(const Key('duration-DEMO_6_HOURS'));
+      await _scrollTo(
+        tester,
+        duration,
+        const Key('hybrid-assessment-scenario'),
+      );
+      await tester.tap(duration);
+      await tester.pump();
+
+      await tester.tap(find.byKey(const Key('resident-nav-prepare')));
+      await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const Key('resident-nav-assess')));
+      await tester.pumpAndSettle();
+      expect(find.bySemanticsLabel(RegExp('Heavy, selected')), findsOneWidget);
+
+      final scenarioContinue = find.byKey(
+        const Key('hybrid-assessment-continue'),
+      );
+      await _scrollTo(
+        tester,
+        scenarioContinue,
+        const Key('hybrid-assessment-scenario'),
+      );
+      await tester.tap(scenarioContinue);
+      await tester.pumpAndSettle();
+      expect(
+        find.byKey(const Key('hybrid-assessment-location')),
+        findsOneWidget,
+      );
+
+      final zone = find.byType(DropdownButtonFormField<GeographicArea>);
+      await _scrollTo(tester, zone, const Key('hybrid-assessment-location'));
+      await tester.tap(zone);
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Demo Zone A (DEMO_ZONE_A)').last);
+      await tester.pumpAndSettle();
+      final locationContinue = find.byKey(
+        const Key('hybrid-assessment-continue'),
+      );
+      await _scrollTo(
+        tester,
+        locationContinue,
+        const Key('hybrid-assessment-location'),
+      );
+      await tester.tap(locationContinue);
+      await tester.pumpAndSettle();
+      expect(find.byKey(const Key('hybrid-assessment-review')), findsOneWidget);
+
+      final runAssessment = find.byKey(const Key('hybrid-run-assessment'));
+      await _scrollTo(
+        tester,
+        runAssessment,
+        const Key('hybrid-assessment-review'),
+      );
+      await tester.tap(runAssessment);
+      await tester.pumpAndSettle();
+
+      expect(api.evaluateCalls, 1);
+      expect(find.byKey(const Key('hybrid-result-banner')), findsOneWidget);
+      expect(find.text('High susceptibility'), findsOneWidget);
+      final preparedness = find.byKey(const Key('result-view-preparedness'));
+      await _scrollTo(
+        tester,
+        preparedness,
+        const Key('map-context-sheet-content'),
+      );
+      await tester.tap(preparedness);
+      await tester.pumpAndSettle();
+      expect(find.text('FloodSense'), findsOneWidget);
+      expect(find.byKey(const Key('prepare-priorities')), findsOneWidget);
+      expect(find.text('Are essential supplies ready?'), findsNothing);
+      final validationStatus = find.byKey(const Key('prepare-guidance-status'));
+      await _scrollTo(tester, validationStatus, const Key('prepare-dashboard'));
+      expect(validationStatus, findsOneWidget);
+      final tailor = find.byKey(const Key('prepare-tailor-household'));
+      await _scrollTo(tester, tailor, const Key('prepare-dashboard'));
+      await tester.tap(tailor);
+      await tester.pumpAndSettle();
+      final question = find.text('Are essential supplies ready?');
+      await _scrollTo(tester, question, const Key('dss-flow-view'));
+      expect(question, findsOneWidget);
+      expect(tester.takeException(), isNull);
+    },
+  );
+
+  testWidgets('Profile exposes secondary options and scenario limitation', (
+    tester,
+  ) async {
+    final auth = FakeResidentAuthRepository()
+      ..restoration = testSession(SetupStage.authenticatedReady);
+    await _pumpApp(tester, auth: auth, size: const Size(320, 640));
+
+    await tester.tap(find.byKey(const Key('resident-nav-profile')));
+    await tester.pumpAndSettle();
+    expect(find.byType(AppBar), findsNothing);
+    expect(find.byKey(const Key('profile-brand')), findsOneWidget);
+    expect(find.text('FloodSense'), findsOneWidget);
+    expect(find.byIcon(Icons.waves), findsOneWidget);
+    expect(
+      tester.getBottomLeft(find.byKey(const Key('profile-brand'))).dy,
+      lessThan(tester.getTopLeft(find.text('Profile').first).dy),
+    );
+    expect(find.byKey(const Key('profile-secondary-options')), findsOneWidget);
+    expect(find.byKey(const Key('profile-preferences')), findsOneWidget);
+    expect(find.textContaining('Live alerts are not enabled'), findsOneWidget);
+    final sources = find.byKey(const Key('profile-data-sources'));
+    await _scrollTo(tester, sources, const Key('profile-secondary-options'));
+    expect(sources, findsOneWidget);
+    await tester.tap(sources);
+    await tester.pumpAndSettle();
+    expect(find.byKey(const Key('data-sources-screen')), findsOneWidget);
+    expect(find.text('FloodSense data register'), findsOneWidget);
+    expect(find.text('Background map'), findsOneWidget);
+    await tester.pageBack();
+    await tester.pumpAndSettle();
+    final methodology = find.text('Data & methodology');
+    await _scrollTo(
+      tester,
+      methodology,
+      const Key('profile-secondary-options'),
+    );
+    expect(methodology, findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
+}

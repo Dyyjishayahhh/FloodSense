@@ -10,12 +10,14 @@ class AssessmentResultCard extends StatelessWidget {
     required this.result,
     required this.intensity,
     required this.duration,
+    this.showGuidance = true,
     super.key,
   });
 
   final AssessmentResult result;
   final ScenarioOption intensity;
   final ScenarioOption duration;
+  final bool showGuidance;
 
   @override
   Widget build(BuildContext context) {
@@ -129,7 +131,7 @@ class AssessmentResultCard extends StatelessWidget {
           const SizedBox(height: 12),
           _Warnings(warnings: result.warnings),
           const SizedBox(height: 12),
-          GuidanceSection(items: result.guidance),
+          if (showGuidance) GuidanceSection(items: result.guidance),
         ],
       ),
     );
@@ -142,8 +144,14 @@ class AssessmentResultCard extends StatelessWidget {
   }
 
   String _factLabel(String key) => switch (key) {
-    'zone_code' => 'Zone code',
-    'zone_baseline_rank' => 'Demonstration zone baseline rank',
+    'zone_code' => 'Assessment area code',
+    'zone_baseline_rank' => 'Provisional area baseline rank',
+    'mgb_dominant_mapped_class' => 'MGB dominant mapped class',
+    'mgb_dominant_mapped_percent' => 'Dominant class share (%)',
+    'mgb_mapped_percent' => 'Mapped LF/MF/HF/VHF coverage (%)',
+    'mgb_unmapped_percent' => 'Unmapped area (%)',
+    'mgb_conflict_percent' => 'Conflicting class area (%)',
+    'mgb_dataset_version' => 'MGB-derived dataset version',
     'rainfall_intensity_code' => 'Rainfall intensity code',
     'rainfall_intensity_rank' => 'Demonstration rainfall intensity rank',
     'rainfall_duration_code' => 'Rainfall duration code',

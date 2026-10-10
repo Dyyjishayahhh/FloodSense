@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:floodsense/app/floodsense_app.dart';
+import 'package:floodsense/data/models/barangay_resolution.dart';
 import 'package:floodsense/features/location/location_card.dart';
 import 'package:floodsense/features/location/location_controller.dart';
 import 'package:floodsense/features/location/location_flow_state.dart';
@@ -31,6 +32,7 @@ class FakeDay2LocationService implements LocationService {
   int clearCalls = 0;
   int appSettingsCalls = 0;
   int locationSettingsCalls = 0;
+  bool locationSettingsOpened = true;
   bool disposed = false;
 
   @override
@@ -74,7 +76,7 @@ class FakeDay2LocationService implements LocationService {
   @override
   Future<bool> openLocationSettings() async {
     locationSettingsCalls++;
-    return true;
+    return locationSettingsOpened;
   }
 
   @override
@@ -180,6 +182,133 @@ void main() {
           expect(service.acquisitions, 0);
           controller.dispose();
         }
+      },
+    );
+
+    test(
+      'Continue opens disabled-service settings and retries once on return',
+      () async {
+        final service = FakeDay2LocationService()..serviceEnabled = false;
+        final controller = LocationController(service);
+        controller.showPurposeExplanation();
+        await controller.continueAfterPurposeExplanation();
+
+        expect(controller.state.phase, LocationFlowPhase.serviceDisabled);
+        expect(service.serviceChecks, 1);
+        expect(service.locationSettingsCalls, 1);
+
+        await controller.retry();
+        await controller.retry();
+        expect(service.locationSettingsCalls, 1);
+        expect(service.serviceChecks, 1);
+
+        service
+          ..serviceEnabled = true
+          ..checkedPermission = LocationPermissionState.foregroundGranted;
+        await controller.resumeAfterLocationSettings();
+
+        expect(service.serviceChecks, 2);
+        expect(service.acquisitions, 1);
+        expect(controller.state.phase, LocationFlowPhase.acquired);
+
+        await controller.resumeAfterLocationSettings();
+        expect(service.serviceChecks, 2);
+        expect(service.acquisitions, 1);
+        controller.dispose();
+      },
+    );
+
+    test('failed settings launch does not arm a later retry', () async {
+      final service = FakeDay2LocationService()
+        ..serviceEnabled = false
+        ..locationSettingsOpened = false;
+      final controller = LocationController(service);
+      controller.showPurposeExplanation();
+      await controller.continueAfterPurposeExplanation();
+
+      await controller.retry();
+      service.serviceEnabled = true;
+      await controller.resumeAfterLocationSettings();
+
+      expect(service.locationSettingsCalls, 2);
+      expect(service.serviceChecks, 1);
+      expect(service.acquisitions, 0);
+      expect(controller.state.phase, LocationFlowPhase.serviceDisabled);
+      controller.dispose();
+    });
+
+    test(
+      'returning with location still off never opens settings in a loop',
+      () async {
+        final service = FakeDay2LocationService()..serviceEnabled = false;
+        final controller = LocationController(service);
+        addTearDown(controller.dispose);
+        controller.showPurposeExplanation();
+        expect(service.locationSettingsCalls, 0);
+        await controller.continueAfterPurposeExplanation();
+        expect(service.locationSettingsCalls, 1);
+        await controller.resumeAfterLocationSettings();
+        await controller.resumeAfterLocationSettings();
+        expect(service.serviceChecks, 2);
+        expect(service.locationSettingsCalls, 1);
+        expect(service.acquisitions, 0);
+        expect(controller.state.phase, LocationFlowPhase.serviceDisabled);
+        await controller.retry();
+        expect(service.locationSettingsCalls, 2);
+      },
+    );
+
+    test('manual selection cancels the settings-return acquisition', () async {
+      final service = FakeDay2LocationService()..serviceEnabled = false;
+      final controller = LocationController(service);
+      addTearDown(controller.dispose);
+      controller.showPurposeExplanation();
+      await controller.continueAfterPurposeExplanation();
+      await controller.selectManualBarangay(
+        BarangayIdentity(psgcCode: '0402103004', name: 'Bayanan'),
+        geometry: sampleReferenceAreas().single.geometry,
+      );
+      service.serviceEnabled = true;
+      await controller.resumeAfterLocationSettings();
+      expect(controller.confirmedBarangay!.name, 'Bayanan');
+      expect(controller.isApproximateCoordinate, isTrue);
+      expect(service.acquisitions, 0);
+      expect(service.permissionRequests, 0);
+    });
+
+    test(
+      'cancelling settings recovery never requests GPS on a later resume',
+      () async {
+        final service = FakeDay2LocationService()..serviceEnabled = false;
+        final controller = LocationController(service);
+        addTearDown(controller.dispose);
+        controller.showPurposeExplanation();
+        await controller.continueAfterPurposeExplanation();
+        await controller.cancel();
+        service.serviceEnabled = true;
+        await controller.resumeAfterLocationSettings();
+        expect(service.serviceChecks, 1);
+        expect(service.acquisitions, 0);
+        expect(controller.state.phase, LocationFlowPhase.cancelled);
+      },
+    );
+
+    test(
+      'service switched off during acquisition also opens settings on Continue',
+      () async {
+        final service = FakeDay2LocationService()
+          ..checkedPermission = LocationPermissionState.foregroundGranted
+          ..acquisitionError = const LocationFailure(
+            LocationFailureKind.serviceDisabled,
+            'Device location was turned off.',
+          );
+        final controller = LocationController(service);
+        addTearDown(controller.dispose);
+        controller.showPurposeExplanation();
+        await controller.continueAfterPurposeExplanation();
+        expect(controller.state.phase, LocationFlowPhase.serviceDisabled);
+        expect(service.locationSettingsCalls, 1);
+        expect(controller.lookupCoordinate, isNull);
       },
     );
 
@@ -311,31 +440,34 @@ void main() {
       controller.dispose();
     });
 
-    testWidgets('explicit continue acquires and clear removes indicator', (
-      tester,
-    ) async {
-      final service = FakeDay2LocationService();
-      final controller = LocationController(service);
-      await pumpLocationCard(tester, controller);
+    testWidgets(
+      'explicit continue acquires without a green panel and clear removes location',
+      (tester) async {
+        final service = FakeDay2LocationService();
+        final controller = LocationController(service);
+        await pumpLocationCard(tester, controller);
 
-      await beginAndContinue(tester);
+        await beginAndContinue(tester);
 
-      expect(service.permissionRequests, 1);
-      expect(
-        find.byKey(const Key('temporary-location-indicator')),
-        findsOneWidget,
-      );
-      expect(find.textContaining('14.41'), findsNothing);
+        expect(service.permissionRequests, 1);
+        expect(
+          find.byKey(const Key('temporary-location-indicator')),
+          findsNothing,
+        );
+        expect(find.byKey(const Key('clear-location-button')), findsOneWidget);
+        expect(find.text('Temporary device GPS location'), findsOneWidget);
+        expect(find.textContaining('14.41'), findsNothing);
 
-      await tester.tap(find.byKey(const Key('clear-location-button')));
-      await tester.pumpAndSettle();
-      expect(
-        find.byKey(const Key('temporary-location-indicator')),
-        findsNothing,
-      );
-      expect(find.byKey(const Key('use-my-location-button')), findsOneWidget);
-      controller.dispose();
-    });
+        await tester.tap(find.byKey(const Key('clear-location-button')));
+        await tester.pumpAndSettle();
+        expect(
+          find.byKey(const Key('temporary-location-indicator')),
+          findsNothing,
+        );
+        expect(find.byKey(const Key('use-my-location-button')), findsOneWidget);
+        controller.dispose();
+      },
+    );
 
     testWidgets('settings open only after an explicit settings tap', (
       tester,
@@ -353,6 +485,43 @@ void main() {
       expect(service.appSettingsCalls, 1);
       controller.dispose();
     });
+
+    testWidgets(
+      'disabled-service Continue opens settings and resumes one retry',
+      (tester) async {
+        final service = FakeDay2LocationService()..serviceEnabled = false;
+        final controller = LocationController(service);
+        await pumpLocationCard(tester, controller);
+        await beginAndContinue(tester);
+
+        expect(find.byKey(const Key('location-retry-button')), findsOneWidget);
+        expect(
+          find.byKey(const Key('open-location-settings-button')),
+          findsNothing,
+        );
+        expect(find.text('Open location settings'), findsNothing);
+        expect(service.locationSettingsCalls, 1);
+
+        await tester.tap(find.byKey(const Key('location-retry-button')));
+        await tester.pumpAndSettle();
+        expect(service.locationSettingsCalls, 1);
+        expect(service.serviceChecks, 1);
+
+        service
+          ..serviceEnabled = true
+          ..checkedPermission = LocationPermissionState.foregroundGranted;
+        tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.paused);
+        tester.binding.handleAppLifecycleStateChanged(
+          AppLifecycleState.resumed,
+        );
+        await tester.pumpAndSettle();
+
+        expect(service.serviceChecks, 2);
+        expect(service.acquisitions, 1);
+        expect(controller.state.phase, LocationFlowPhase.acquired);
+        controller.dispose();
+      },
+    );
 
     testWidgets('manual controls and rainfall selection survive denied GPS', (
       tester,
@@ -379,7 +548,7 @@ void main() {
       await tester.tap(find.byKey(const Key('location-purpose-continue')));
       await tester.pumpAndSettle();
 
-      expect(find.byKey(const Key('dynamic-map')), findsOneWidget);
+      expect(find.byKey(const Key('reference-boundary-map')), findsOneWidget);
       expect(find.byKey(const Key('manual-barangay-selector')), findsOneWidget);
       expect(find.byKey(const Key('zone-none')), findsOneWidget);
       expect(find.bySemanticsLabel(RegExp('Light, selected')), findsOneWidget);

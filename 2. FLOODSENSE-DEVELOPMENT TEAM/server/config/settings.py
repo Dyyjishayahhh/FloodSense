@@ -1,10 +1,12 @@
 """Django settings for the FloodSense backend."""
 
 import os
+import re
 from datetime import timedelta
 from pathlib import Path
 
 import dj_database_url
+from django.core.exceptions import ImproperlyConfigured
 from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -18,12 +20,37 @@ def env_bool(name: str, default: bool = False) -> bool:
     return value.strip().lower() in {"1", "true", "yes", "on"}
 
 
+DEVELOPMENT_SECRET_KEY = "development-only-change-before-deployment"
 SECRET_KEY = os.getenv(
     "DJANGO_SECRET_KEY",
-    "development-only-change-before-deployment",
+    DEVELOPMENT_SECRET_KEY,
 )
 DEBUG = env_bool("DJANGO_DEBUG", True)
 GIS_ENABLED = env_bool("FLOODSENSE_GIS_ENABLED", True)
+ENABLE_PROVISIONAL_MGB_PREVIEW = env_bool(
+    "FLOODSENSE_ENABLE_PROVISIONAL_MGB_PREVIEW",
+    False,
+)
+ENABLE_LOCAL_CENTER_PREVIEW = env_bool("FLOODSENSE_ENABLE_LOCAL_CENTER_PREVIEW", False)
+ENABLE_LOCAL_TESTING = env_bool("FLOODSENSE_LOCAL_TESTING", False)
+
+# Mapbox-first presentation provider. Mapbox is enabled only with a public
+# `pk.` token; missing, invalid, and secret tokens always fall back to the
+# existing OpenStreetMap/OpenLayers presentation.
+FLOODSENSE_MAP_PROVIDER = os.getenv("FLOODSENSE_MAP_PROVIDER", "mapbox").strip().lower()
+if FLOODSENSE_MAP_PROVIDER not in {"auto", "mapbox", "osm"}:
+    raise ImproperlyConfigured(
+        "FLOODSENSE_MAP_PROVIDER must be one of: auto, mapbox, osm."
+    )
+MAPBOX_ACCESS_TOKEN = os.getenv("MAPBOX_ACCESS_TOKEN", "").strip()
+FLOODSENSE_MAP_3D = env_bool("FLOODSENSE_MAP_3D", False)
+MAPBOX_GL_JS_VERSION = "v3.30.0"
+MAPBOX_GL_JS_ROOT = (
+    f"https://api.mapbox.com/mapbox-gl-js/{MAPBOX_GL_JS_VERSION}"
+)
+
+if not DEBUG and SECRET_KEY == DEVELOPMENT_SECRET_KEY:
+    raise ImproperlyConfigured("DJANGO_SECRET_KEY must be set when DJANGO_DEBUG is false.")
 
 if gdal_library_path := os.getenv("GDAL_LIBRARY_PATH"):
     GDAL_LIBRARY_PATH = gdal_library_path
@@ -45,7 +72,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "corsheaders",
     "rest_framework",
+    "rest_framework_simplejwt.token_blacklist",
     "admin_portal",
     "accounts",
     "core",
@@ -61,6 +90,7 @@ if GIS_ENABLED:
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -69,6 +99,22 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+# Browser clients must opt in through an exact origin. The fixed local web
+# development port matches the Flutter command documented in mobile/README.md.
+# Production must replace this list with its deployed HTTPS origin.
+default_cors_origins = (
+    "http://localhost:3000,http://127.0.0.1:3000" if DEBUG else ""
+)
+CORS_ALLOWED_ORIGINS = [
+    origin.strip()
+    for origin in os.getenv(
+        "DJANGO_CORS_ALLOWED_ORIGINS",
+        default_cors_origins,
+    ).split(",")
+    if origin.strip()
+]
+CORS_URLS_REGEX = r"^/api/.*$"
 
 ROOT_URLCONF = "config.urls"
 
@@ -133,6 +179,19 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+NEAREST_CENTER_RATE = os.getenv("FLOODSENSE_NEAREST_CENTER_RATE", "30/min")
+if not re.fullmatch(r"[1-9][0-9]*/(?:s|sec|second|m|min|minute|h|hour|d|day)", NEAREST_CENTER_RATE):
+    raise ImproperlyConfigured("FLOODSENSE_NEAREST_CENTER_RATE must be a positive DRF rate.")
+
+
+def throttle_rate(name: str, default: str) -> str:
+    value = os.getenv(name, default)
+    if not re.fullmatch(
+        r"[1-9][0-9]*/(?:s|sec|second|m|min|minute|h|hour|d|day)", value
+    ):
+        raise ImproperlyConfigured(f"{name} must be a positive DRF rate.")
+    return value
+
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
@@ -140,6 +199,26 @@ REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": (
         "rest_framework.permissions.IsAuthenticated",
     ),
+    # Only views opting into this scope are throttled. No location enters cache.
+    "DEFAULT_THROTTLE_RATES": {
+        "nearest_centers": NEAREST_CENTER_RATE,
+        "resident_login": throttle_rate("FLOODSENSE_LOGIN_RATE", "10/min"),
+        "resident_registration": throttle_rate(
+            "FLOODSENSE_REGISTRATION_RATE", "5/hour"
+        ),
+        "resident_password_reset": throttle_rate(
+            "FLOODSENSE_PASSWORD_RESET_RATE", "5/hour"
+        ),
+        "resident_verification": throttle_rate(
+            "FLOODSENSE_VERIFICATION_RATE", "5/hour"
+        ),
+        "resident_google_auth": throttle_rate(
+            "FLOODSENSE_GOOGLE_AUTH_RATE", "10/min"
+        ),
+        "resident_token_refresh": throttle_rate(
+            "FLOODSENSE_TOKEN_REFRESH_RATE", "30/min"
+        ),
+    },
     "DEFAULT_RENDERER_CLASSES": (
         "rest_framework.renderers.JSONRenderer",
         *(
@@ -154,8 +233,40 @@ SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=15),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
     "ROTATE_REFRESH_TOKENS": True,
-    "BLACKLIST_AFTER_ROTATION": False,
+    "BLACKLIST_AFTER_ROTATION": True,
 }
+
+PASSWORD_RESET_TIMEOUT = int(os.getenv("FLOODSENSE_PASSWORD_RESET_TIMEOUT", "3600"))
+EMAIL_VERIFICATION_EXPIRY_HOURS = int(
+    os.getenv("FLOODSENSE_EMAIL_VERIFICATION_EXPIRY_HOURS", "24")
+)
+ACCOUNT_DELETION_GRACE_DAYS = int(
+    os.getenv("FLOODSENSE_ACCOUNT_DELETION_GRACE_DAYS", "30")
+)
+RESIDENT_APP_PUBLIC_URL = os.getenv(
+    "FLOODSENSE_RESIDENT_APP_PUBLIC_URL", "http://localhost:3000"
+)
+# Explicit local testers only; the service also requires DEBUG and a local DB.
+LOCAL_TESTER_EMAILS = frozenset(
+    email.strip().lower()
+    for email in os.getenv("FLOODSENSE_LOCAL_TESTER_EMAILS", "").split(",")
+    if email.strip()
+)
+GOOGLE_OAUTH_WEB_CLIENT_ID = os.getenv("GOOGLE_OAUTH_WEB_CLIENT_ID", "").strip()
+
+EMAIL_BACKEND = os.getenv(
+    "DJANGO_EMAIL_BACKEND",
+    "django.core.mail.backends.console.EmailBackend",
+)
+DEFAULT_FROM_EMAIL = os.getenv(
+    "DJANGO_DEFAULT_FROM_EMAIL", "FloodSense <no-reply@localhost>"
+)
+EMAIL_HOST = os.getenv("DJANGO_EMAIL_HOST", "localhost")
+EMAIL_PORT = int(os.getenv("DJANGO_EMAIL_PORT", "25"))
+EMAIL_HOST_USER = os.getenv("DJANGO_EMAIL_HOST_USER", "")
+EMAIL_HOST_PASSWORD = os.getenv("DJANGO_EMAIL_HOST_PASSWORD", "")
+EMAIL_USE_TLS = env_bool("DJANGO_EMAIL_USE_TLS", False)
+EMAIL_USE_SSL = env_bool("DJANGO_EMAIL_USE_SSL", False)
 
 LANGUAGE_CODE = "en-us"
 TIME_ZONE = "Asia/Manila"
@@ -182,6 +293,14 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 LOGIN_URL = "admin_portal:login"
 LOGIN_REDIRECT_URL = "admin_portal:dashboard"
 LOGOUT_REDIRECT_URL = "admin_portal:login"
+
+# Keep session/authentication cookies inaccessible to scripts and same-site by
+# default. Production additionally requires HTTPS-only transport below.
+SESSION_COOKIE_HTTPONLY = True
+SESSION_COOKIE_SAMESITE = "Lax"
+CSRF_COOKIE_SAMESITE = "Lax"
+SECURE_CONTENT_TYPE_NOSNIFF = True
+X_FRAME_OPTIONS = "DENY"
 
 if not DEBUG:
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")

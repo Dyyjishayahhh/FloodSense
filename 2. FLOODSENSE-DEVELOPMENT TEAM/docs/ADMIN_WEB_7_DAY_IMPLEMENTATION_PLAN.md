@@ -46,6 +46,43 @@ All work must also follow:
 
 ## Current status
 
+Boundary review compatibility (5 October 2026): source renaming and internal
+metadata approval no longer hide the existing City/47-barangay dataset. The
+source registry supports ordinary permission-checked review actions; existing
+geometry release can be retained during review/approval without enabling new
+publication. Map inventory includes pending and approved administrative geometry.
+Approval is not City endorsement or susceptibility approval, and boundary
+provenance remains unavailable as facility evidence. See
+`BOUNDARY_APPROVAL_COMPATIBILITY.md` for checks and teammate setup.
+
+### Navigation and reporting update — 30 September 2026
+
+The requested portal layout update supersedes the older Overview arrangement
+below. Overview remains the landing page and contains five record-summary cards.
+Reports (`/management/reports/`) follows Overview in the sidebar and contains
+permission-aware status tables, review workloads, interpretation, and related
+management links. Settings is reached through the account menu only; its direct
+URLs and compatibility redirect remain supported. Desktop navigation now has a
+persistent collapsible rail with permission-aware clickable navigation icons and
+hover labels, and the geographic map spans the content width with
+layer controls below it. Scientific, permission, and publication policies remain
+unchanged. See `ADMIN_REPORTS_AND_LAYOUT_HANDOFF.md` for definitions and validation.
+
+On 1 October 2026, the top bar was removed and the account menu moved to the
+sidebar footer. Expanded navigation shows the avatar, name, and system state;
+collapsed navigation shows the avatar with a name tooltip. The same profile
+control opens Settings and Sign out in both states and in the mobile drawer.
+
+On 6 October 2026, the owner requested a compact, permission-aware Overview
+availability snapshot. The five cards now use existing resident/source gates,
+include structured Prepare visibility and distinguish approved-source from
+demonstration mode. A targeted Needs attention panel, configuration notices and
+small permission-controlled shortcut/activity sections replace the former
+stored-status breakdowns. Reports retains detailed stored-record statistics.
+This intentionally supersedes the earlier Overview-only card arrangement;
+scientific, approval, publication and scenario-only boundaries are unchanged.
+See `ADMIN_OVERVIEW_AVAILABILITY.md` for definitions, validation and teammate steps.
+
 | Day | Status | Main outcome |
 | --- | --- | --- |
 | 1 | Complete | Authentication, responsive shell, navigation, Settings placeholder |
@@ -414,6 +451,14 @@ for missing approved data must not be mistaken for an implemented workflow.
 
 ## Team handoff for each day
 
+On 5 October 2026 the project owner authorized the
+[normal local temporary-data workflow](LOCAL_TESTING_WORKFLOW.md) for sources
+and evacuation centers. These use existing tables and forms, labeled local
+approval (not facility verification), manual mobile refresh and confirmed
+single-row cleanup. The reserved boundary reference source is not facility
+evidence. This development decision does not unlock parameters or modify public
+approval rules outside the gated local environment, and is not adviser approval.
+
 Before starting:
 
 1. pull only when explicitly requested and protect local work first;
@@ -434,6 +479,12 @@ Before handing off:
    explicitly authorized for that target.
 
 ## Parallel-work rule
+
+On 5 October 2026 the project owner requested removal of the repetitive global
+local-testing banner from the custom Admin layout. Keep temporary labels on
+individual records and preserve all approval/publication/local-only gates.
+This is a display refinement, not permission to present temporary data as
+official or to change scenario, parameter or Expert System governance.
 
 Day 4 is at its governance checkpoint. Later days may be designed in parallel, but implementation
 must respect dependencies:

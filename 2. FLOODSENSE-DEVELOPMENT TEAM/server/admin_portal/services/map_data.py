@@ -6,8 +6,10 @@ not a susceptibility service: AreaFact and Expert System tables are never read.
 
 import json
 
-from django.db.models import Count, Q
+from django.db.models import Count, Exists, Q
+from geography.boundaries import bacoor_boundary_source_ids
 from geography.constants import (
+    BACOOR_BOUNDARY_STATUSES,
     BACOOR_REFERENCE_LIMITATION,
     BACOOR_REFERENCE_SOURCE_NAME,
     BACOOR_REFERENCE_WARNING,
@@ -21,13 +23,19 @@ ADMINISTRATIVE = "administrative"
 DEMONSTRATION = "demonstration"
 
 
-def _reviewable_areas():
-    administrative = Q(
+def reviewable_area_filter():
+    """Return the shared definition used by the map and dashboard review count."""
+
+    city_source = bacoor_boundary_source_ids()
+    identity = Q(source_id__in=city_source) | (
+        Q(~Exists(city_source)) & Q(source__name=BACOOR_REFERENCE_SOURCE_NAME)
+    )
+    # The legacy-name fallback is staff inventory only, never resident eligibility.
+    administrative = identity & Q(
         area_type__in=(GeographicArea.AreaType.CITY, GeographicArea.AreaType.BARANGAY),
-        status=PublicationStatus.PENDING_VALIDATION,
-        source__name=BACOOR_REFERENCE_SOURCE_NAME,
+        status__in=BACOOR_BOUNDARY_STATUSES,
         source__source_type=DataSource.SourceType.AGENCY_DATASET,
-        source__status=PublicationStatus.PENDING_VALIDATION,
+        source__status__in=BACOOR_BOUNDARY_STATUSES,
         source__is_publicly_releasable=True,
     )
     demonstration = Q(
@@ -36,8 +44,12 @@ def _reviewable_areas():
         source__status=PublicationStatus.DEMONSTRATION,
         source__source_type=DataSource.SourceType.DEMONSTRATION,
     )
+    return administrative | demonstration
+
+
+def _reviewable_areas():
     # Disabled eligible rows remain reviewable; only enabled valid geometry is mapped.
-    return GeographicArea.objects.filter(administrative | demonstration)
+    return GeographicArea.objects.filter(reviewable_area_filter())
 
 
 def _date(value):
@@ -125,13 +137,15 @@ def _record(area):
     return record, feature
 
 
-def get_map_data(*, selected_id=None):
+def get_map_data(*, selected_id=None, status=None):
     """Two SELECTs regardless of record count; no private notes or rule fields.
 
     Counts deliberately cover only the two supported review categories. Generic
     approved geographic rows cannot establish an approved susceptibility layer.
     """
     areas = _reviewable_areas()
+    if status:
+        areas = areas.filter(status=status)
     counts = areas.aggregate(
         total=Count("pk"),
         enabled=Count("pk", filter=Q(is_enabled=True)),
@@ -186,5 +200,9 @@ def get_map_data(*, selected_id=None):
         "unavailable_selection": unavailable_selection,
         "administrative_mapped": len(layers[ADMINISTRATIVE]["features"]),
         "demonstration_mapped": len(layers[DEMONSTRATION]["features"]),
+        "coverage_mask_available": any(
+            feature["properties"]["area_type"] == GeographicArea.AreaType.CITY
+            for feature in layers[ADMINISTRATIVE]["features"]
+        ),
         "payload": {"records": records, "layers": layers},
     }
