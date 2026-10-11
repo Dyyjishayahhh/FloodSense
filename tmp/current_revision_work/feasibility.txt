@@ -1,0 +1,838 @@
+SOURCE: 1. FLOODSENSE-MAIN\MAIN FILESS\FloodSense_Feasibility_Study.pdf
+PAGES: 22
+
+===== PAGE 1 =====
+ 
+ 
+FEASIBILITY STUDY 
+ 
+FloodSense: An Expert System-Based Flood Susceptibility Android 
+Application for Pre-Event Flood Preparedness in Bacoor City 
+ 
+Presented to the Department of Computer Studies 
+Cavite State University — Bacoor City Campus 
+ 
+Submitted by: 
+Reymart V. Goc-ong 
+Martin Lorenz D. Juanites 
+Romar T. Pulao 
+ 
+May 2027 
+ 
+ 
+OVERVIEW 
+Flooding remains one of the most persistent and consequential natural hazards affecting Bacoor 
+City, Cavite. Located in a low -lying coastal area within Cavite province, Bacoor  City is 
+regularly exposed to flooding driven by monsoon rainfall, storm surges, and inadequate 
+drainage infrastructure. As supported by the findings of the primary data gathering phase of 
+this study, the impact of flooding on residents is not only physica l but also informational — 
+residents consistently lack timely, accurate, and location -specific flood susceptibility 
+information that would allow them to make informed decisions before and during flood events. 
+A structured survey administered to 50 resident s across 12 flood -prone barangays in Bacoor 
+City revealed significant gaps in the current state of flood information dissemination. Of all 
+===== PAGE 2 =====
+respondents, 92% reported experiencing flooding in their area, with 54% experiencing it almost 
+every rainy season and 58% reporting severe flooding. Despite the frequency and severity of 
+flooding, only 20% of respondents considered themselves well -informed about flood -prone 
+areas in Bacoor City — with the remaining 80% falling under 'Somewhat Aware,' 'Not Sure,' 
+or 'Not Aware at All.' The three Likert -scale items on flood information quality (Q9 –Q11) 
+yielded mean scores of 2.62, 2.70, and 2.72 respectively, indicating near -dissatisfied 
+perceptions of current information quality, timeliness, and clarity. Most critically, 6 4% of 
+respondents reported having made a wrong decision due to insufficient flood information, 
+including taking flooded roads, failing to evacuate in time, and misjudging flood conditions. 
+Thematic analysis of open-ended survey responses confirmed the natu re of this gap. The two 
+most prevalent themes from respondents regarding their biggest problem in getting flood 
+information were Late or Delayed Information (26%) and Lack of Information or No Warnings 
+at All (20%), together accounting for 38% of all respo nses. Respondents also cited unclear or 
+inaccurate information (12%) and lack of location -specific flood susceptibility information 
+(6%) as recurring barriers. These findings were validated through a Key Informant Interview 
+with a staff member of the Bacoo r Disaster Risk Reduction and Management Office 
+(BDRRMO), who confirmed that the office's current flood information dissemination relies 
+primarily on social media, email, and barangay coordination — and acknowledged that resident 
+engagement with official warning channels remains low due to poverty, work constraints, and 
+low attendance at flood orientations. 
+The BDRRMO interview further revealed that while the office maintains historical flood data 
+and field-assessed exposure maps per barangay, these datasets are not accessible to the general 
+public in a usable or interactive format. The interviewee confirmed that the office's data 
+holdings include barangay boundary maps, historical flood records, and field -assessed 
+susceptibility data — and expressed opennes s to data sharing for research and academic 
+purposes. The BDRRMO officer affirmed that a Android-based tool providing location -
+specific flood susceptibility information and expert-guided preparedness advice would serve a 
+genuine community need. 
+A supplementary problem-identification interview conducted with the Officer-in-Charge of the 
+Bacoor City Planning and Development Office (CPDCO) confirmed that the office holds land-
+use maps, elevation maps, flood -hazard maps, and barangay boundary maps that can be 
+released to the research team under a formal endorsement. The CPDCO officer further 
+===== PAGE 3 =====
+confirmed that Bacoor functions as a regional catch basin and that drainage degradation is a 
+key flood driver, validating the environmental features selected for the expert knowledge base. 
+FloodSense is a proposed Android application that addresses these identified gaps through the 
+integration of an Expert System-based flood susceptibility classification engine, a pre-rendered 
+scenario-driven susceptibility map, and an active p re-event flood preparedness guidance 
+system. Unlike the original design, which relied on machine learning for susceptibility 
+classification and augmented reality for visualization, the revised FloodSense system is 
+grounded entirely in expert knowledge form ally sourced from BDRRMO — the institutional 
+partner of this study. The thesis adviser confirmed that machine learning is more appropriate 
+for learning behavioral patterns from data, while the susceptibility classifications required by 
+FloodSense are factu al, expert -validated assessments that are better encoded as structured 
+expert system rules. 
+The Android application is built using Flutter (Dart), a purpose -built Android development 
+framework that replaces Unity, which was originally selected for its augmen ted reality 
+capabilities. With the AR component removed, Flutter offers a more efficient, maintainable, 
+and Android-appropriate development environment for the revised feature set. Firebase 
+continues to serve as the backend infrastructure for authentication, data storage, and serverless 
+functions. 
+In response to the panel's challenge — 'What happens next after users become aware?' — three 
+action features are incorporated: Check My Area, which presents an interactive map with a 
+draggable pin for manual location identification without requiring GPS permissions; an Expert 
+System DSS with an integrated AI assistant that presents a guided decision tree informed by 
+BDRRMO expert knowledge and allows users to ask flood awareness questions in context; and 
+Find Nearest Evacuation Center, which ranks BDRRMO -designated centers by distance and 
+links to Google Maps. Together, these features transition FloodSense from a passive awareness 
+tool to an active, expert-guided flood preparedness system. 
+ 
+KEY FEATURES 
+Core Features (Revised) 
+Pre-Rendered Flood Susceptibility Map 
+===== PAGE 4 =====
+Displays a pre-rendered, color-coded barangay-level flood susceptibility map of Bacoor City. 
+The map updates automatically based on the user's selected rainfall scenario (intensity and 
+duration). No camera, augmented reality engine, or GPS anchoring  is required. Users can 
+pinch-to-zoom to examine individual barangay labels and susceptibility colors. 
+• Color-coded susceptibility levels: Low (green), Moderate (yellow), High (orange), 
+Very High (red) 
+• Map updates dynamically based on the selected rainfall intensity and duration 
+• No camera or GPS required — full-city static visualization rendered in Flutter 
+• Color legend and disclaimer accessible at all times during map view 
+• Disclaimer: susceptibility levels represent expert -assessed estimates, not real -time 
+flood guarantees 
+ 
+PAGASA-Aligned Rainfall Input 
+Users select a rainfall scenario and duration from dropdown menus using plain-language labels 
+tied to PAGASA's public rainfall advisory classification. The app internally maps these 
+selections to millimeter-per-hour values, removing the need for technical numeric input from 
+non-expert users. This design was directly validated by the BDRRMO key informant. 
+• Rainfall intensity presets: Light (<2.5 mm/hr), Moderate (2.5–7.5 mm/hr), Heavy (7.5–
+15 mm/hr), Intense (15–30 mm/hr), Torrential (>30 mm/hr) 
+• Duration dropdown: 1 hr, 3 hrs, 6 hrs, 12 hrs, 24 hrs 
+• Saved rainfall preferences auto-filled from previous session 
+ 
+Expert System Flood Susceptibility Classification 
+Flood susceptibility per barangay is derived from expert knowledge formally sourced from 
+BDRRMO, incorp orating historical flood records, field -assessed exposure data, elevation 
+features from CPDCO, and PAGASA rainfall parameters. Results are pre-computed and stored 
+as static JSON lookup tables in Firebase Firestore. No machine learning model is used and no 
+live inference occurs at runtime. The Expert System replaces the previously proposed ML 
+classifier in accordance with the thesis adviser's guidance that factual susceptibility data is more 
+appropriately encoded through expert knowledge rules than learned from behavioral patterns. 
+===== PAGE 5 =====
+• Classification output: Low / Moderate / High / Very High — one per barangay per 
+rainfall scenario 
+• Knowledge source: BDRRMO historical flood records, field -assessed barangay 
+exposure data, CPDCO elevation and land -use maps, PAGASA r ainfall classification 
+tables 
+• Runtime behavior: app retrieves pre -computed JSON from Firestore — no ML server 
+or model inference required 
+ 
+Results Summary Screen 
+A scrollable list of all Bacoor City barangays with color-coded susceptibility badges, populated 
+from the pre -computed Firestore lookup table. Provides an at -a-glance overview without 
+requiring the map interface. 
+ 
+User Account and Preference System 
+Users create an account to access personalized features including saved rainfall preferences. 
+Firebase Authentication handles user management with secure credential storage. 
+• Username and password account creation and login 
+• Home barangay registered at account creation 
+• Saved rainfall preference parameters (intensity and duration) 
+ 
+Onboarding and Disclaimer Screen 
+A first-launch onboarding screen informs users of the app's purpose, limitations, and proper 
+usage. Re-accessible from the main dashboard at any time. 
+• App purpose and scope explanation 
+• Disclaimer: 'This app provides expert -assessed flood susceptibility estimates. It is not 
+a real -time flood sensor. Always follow official warnings from BDRRMO and 
+PAGASA.' 
+• Introduction to the Expert System DSS and AI assistant features 
+ 
+===== PAGE 6 =====
+Action Features (Post-Panel Feedback) 
+In response to the panel's challenge — 'What happens next after users become aware?' — three 
+action features transition FloodSense from a passive awareness tool to an active, expert-guided 
+flood preparedness system. All three operate within the existing Firebase free tier or minimal-
+cost API tiers. 
+ 
+Check My Area — Location-Based Safety Status 
+After viewing the susceptibility map or Results Summary, the user taps 'Check My Area'. The 
+app presents an interactive map of Bacoor City with a draggable pin marker. The user manually 
+drags and drops the pin onto their preferred location — no GPS permission is requested or 
+required. The app cross -references the pin's coordinates against a static GeoJSON barangay 
+boundary file to identify the user's barangay, then queries the pre -computed Firestore 
+susceptibility lookup for that barangay under the currently selected rainfall scenario. A 
+dedicated results screen displays the barangay name, susceptibility level with color indicator, 
+active rainfall scenario, and a plain-language safety status summary. 
+• All pin coordinate processing performed locally on-device — not stored or transmitted 
+• Compliant with Republic Act 10173 (Data Privacy Act) 
+• Result is scenario-aware: changing the rainfall scenario refreshes the result for the same 
+pinned location automatically 
+ 
+Expert System DSS — Decision Tree with Integrated AI Assistant 
+Automatically displayed after the Safety Status card. The Expert System presents a structured 
+decision tree that guides the user through a series of situational questions and branches to level-
+appropriate, BDRRMO -informed action recommendations. Integrated  within the same 
+interface is an AI assistant trained on BDRRMO expert knowledge and pre -event flood 
+awareness data. At every step of the decision tree, users may ask open-ended flood awareness 
+questions and receive expert -grounded, contextually relevant r esponses informed by their 
+current pinned barangay, susceptibility level, and active rainfall scenario. 
+• Decision tree knowledge base sourced exclusively from BDRRMO expert data — not 
+general internet sources 
+===== PAGE 7 =====
+• AI assistant is context-aware: receives user's barangay, susceptibility level, and rainfall 
+scenario with each query 
+• Example queries: 'What should I put in a go-bag?', 'Which roads in Talaba flood during 
+heavy rain?', 'What does Very High susceptibility mean for my family?' 
+• Decision tree functions fully  offline using locally stored rules; AI assistant requires 
+internet connection and falls back gracefully when unavailable 
+• Compliant with RA 10173 — no personally identifiable information transmitted with 
+AI queries 
+ 
+Find Nearest Evacuation Center 
+Triggered automatically when the user's barangay is classified as Moderate, High, or Very High 
+susceptibility. A ranked list of BDRRMO -designated evacuation centers is displayed, sorted 
+by straight-line distance from the user's pinned location using the Haversine formula computed 
+on-device. Each entry shows the center name, barangay, and estimated distance. The user taps 
+'Get Directions' to be deep-linked into Google Maps for turn-by-turn navigation. 
+• Evacuation center list sourced from BDRRMO as part of the existing  data-sharing 
+collaboration 
+• No routing API or paid geolocation service required 
+• All navigation handled by Google Maps via standard geo: URI deep-link 
+• Distance calculated from the pin coordinates set in Check My Area — no additional 
+location input required 
+ 
+I. TECHNICAL FEASIBILITY 
+This section evaluates whether FloodSense can be built using currently available technologies, 
+tools, and frameworks within the capability of an undergraduate Computer Science team. Each 
+component is mapped to a specific, free or low -cost technology with a  documented 
+implementation path. The assessment covers the revised core features — including the 
+transition from Unity and Vuforia to Flutter, the removal of the machine learning pipeline, and 
+the introduction of the Expert System DSS with an integrated AI assistant. 
+ 
+===== PAGE 8 =====
+1.1 Proposed Technology Stack 
+Layer Technology Cost & Justification 
+Android App (All 
+Screens) 
+Flutter (Dart) Free (open -source). Purpose -built for multi -
+screen Android applications. Replaces Unity + 
+uGUI, which was selected solely for AR 
+capabilities no longer required in the revised 
+system. Flutter's widget system, hot-reload, and 
+Firebase SDK integration make it more efficient 
+for the revised FloodSense architecture. 
+Map Display flutter_map (open -
+source) or Google 
+Maps Flutter plugin 
+Free. Supports pre -rendered color -coded 
+barangay overlays, GeoJSON boundary 
+rendering, and draggable pin markers. Replaces 
+Vuforia ground-plane AR tracking. 
+Backend / 
+Database 
+Firebase (Firestore, 
+Auth, Functions) 
+Free tier (Spark Plan). Real -time sync, b uilt-in 
+authentication, cloud storage, and serverless 
+functions. Unchanged from original design. 
+Expert System 
+Knowledge Base 
+Firebase Firestore 
+(pre-computed 
+JSON lookup 
+tables) 
+Free tier. BDRRMO expert knowledge encoded 
+as static susceptibility lookup t ables keyed by 
+rainfall intensity and duration. Replaces ML 
+model and scikit -learn pipeline — no training 
+infrastructure required. 
+DSS Decision 
+Tree 
+Rule-based logic 
+(Dart) + Firestore 
+Free. Decision tree rules encoded from 
+BDRRMO expert knowledge and sto red in 
+Firestore. Rendered in Flutter widgets. No 
+external API required for the decision tree layer. 
+AI Assistant LLM API (e.g., 
+Anthropic Claude 
+API) + Firebase 
+Functions 
+Pay-per-use (minimal cost for pilot scale of 20–
+50 users). LLM trained via system prompt 
+embedding BDRRMO expert knowledge. 
+Firebase Functions serve as secure middleware 
+to handle API calls without exposing credentials 
+in the app. 
+GeoJSON 
+Boundary Lookup 
+Static GeoJSON file 
+(bundled with app) 
+Free. Used to resolve pin coordinates to 
+barangay names. Processed on -device — no 
+external API call required. 
+===== PAGE 9 =====
+Distance 
+Calculation 
+Haversine formula 
+(Dart, on-device) 
+Free. Calculates straight -line distance from pin 
+coordinates to each evacuation center. No 
+routing API required. 
+Navigation 
+(Directions) 
+Google Maps URI 
+deep-link 
+Free. Passes destination coordinates to the 
+installed Google Maps app. All routing handled 
+by Google Maps. 
+Elevation / Spatial 
+Data 
+CPDCO (via data -
+sharing agreement) 
+Free (institutional). Topographic and land -use 
+features for expert knowledge encoding. 
+Historical Flood 
+Data 
+BDRRMO (via 
+data-sharing 
+agreement) 
+Free (institutional). Ground -truth flood 
+occurrence data per barangay; evacuation center 
+list with GPS coordinates. 
+Rainfall 
+Reference 
+PAGASA Advisory 
+Classification 
+Free (public domain). Basis for user -facing 
+rainfall intensity presets. 
+UI/UX 
+Prototyping 
+Figma Free tier. Android interface design and 
+prototyping prior to Flutter development. 
+ 
+1.2 Feature-Level Technical Assessment 
+Feature Implementation 
+Approach 
+Complexity Est. Time 
+Pre-Rendered 
+Susceptibility Map 
+flutter_map or 
+Google Maps 
+Flutter plugin; 
+color-coded 
+barangay zone 
+overlay from pre -
+computed Firestore 
+lookup; pinch -to-
+zoom interaction 
+Low 1 week 
+PAGASA Rainfall 
+Input + Firestore 
+Lookup 
+Flutter Dropdown 
+widgets mapped to 
+mm/hr values; app 
+reads matching pre-
+computed 
+susceptibility 
+Low 1 week 
+===== PAGE 10 =====
+JSON from 
+Firestore 
+Expert System 
+Classification 
+(Firestore) 
+BDRRMO expert 
+knowledge 
+encoded as pre -
+computed JSON 
+lookup tables; 
+uploaded to 
+Firestore; Flutter 
+app fetches the 
+appropriate 
+document. No ML 
+server required. 
+Low 1 week 
+Results Summary 
+Screen 
+Flutter ListView of 
+barangay names 
+with color badge; 
+fed from ML 
+lookup stored in 
+Firestore 
+Low 0.5 week 
+User Account + 
+Auth (Firebase) 
+Firebase 
+Authentication for 
+username/password 
+login; Firestore for 
+user preferences 
+and saved barangay 
+Low 1 week 
+Onboarding + 
+Disclaimer Screen 
+Flutter first -launch 
+screen with 
+instructions and 
+disclaimer; 
+dismissable; re -
+accessible from 
+main dashboard 
+Low 0.5 week 
+Check My Area flutter_map or 
+Google Maps 
+Flutter plugin with 
+draggable marker; 
+GeoJSON 
+Low-
+Medium 
+1 week 
+===== PAGE 11 =====
+boundary lookup 
+using pin 
+coordinates; 
+Firestore 
+susceptibility 
+lookup; scenario -
+aware results 
+screen. No GPS 
+permission 
+required. 
+DSS Decision Tree Rule-based 
+decision tree 
+encoded from 
+BDRRMO 
+knowledge; Flutter 
+widget-based step -
+by-step question 
+interface; Firestore 
+for knowledge base 
+storage 
+Medium 1.5 weeks 
+AI Assistant 
+(integrated in DSS) 
+LLM API with 
+BDRRMO-
+grounded system 
+prompt; Firebase 
+Functions 
+middleware; Flutter 
+chat widget 
+embedded in the 
+DSS interface; 
+context injection 
+per query 
+(barangay, 
+susceptibility level, 
+rainfall scenario) 
+Medium 1.5 weeks 
+Find Nearest 
+Evacuation Center 
+Static evacuation 
+center JSON from 
+BDRRMO in 
+Firestore; 
+Low-
+Medium 
+1 week 
+===== PAGE 12 =====
+Haversine formula 
+for on -device 
+distance 
+calculation; ranked 
+Flutter ListView; 
+'Get Directions' 
+deep-links to 
+Google Maps via 
+geo: URI 
+ 
+1.3 Technical Challenges and Mitigations 
+Flutter Learning Curve 
+The team's prior experience was with Unity (C#). Transitioning to Flutter (Dart) introduces a 
+new language and framework. 
+Mitigation: Dart is syntactically similar to Java and C#, reducing the learning curve for a CS 
+team. Flutter's extensive documentation , large developer community, and hot -reload feature 
+significantly shorten iteration time. The team is advised to complete Flutter fundamentals 
+during Phase 1 of the development timeline. 
+ 
+Expert System Knowledge Encoding 
+Translating BDRRMO expert knowledge  into structured susceptibility lookup tables and 
+decision tree rules requires careful data collection, validation, and encoding. 
+Mitigation: Conduct structured knowledge elicitation sessions with BDRRMO using 
+predefined templates aligned with the lookup t able schema (barangay × rainfall scenario × 
+susceptibility level). Cross-validate encoded rules against BDRRMO's existing field -assessed 
+exposure data and historical flood records. All encoded knowledge must be reviewed and 
+approved by BDRRMO before deployment. 
+ 
+AI Assistant Knowledge Grounding 
+An LLM API trained only on its general training data may produce responses that are 
+inaccurate, generic, or irrelevant to Bacoor City's specific flood conditions. 
+===== PAGE 13 =====
+Mitigation: The AI assistant is grounded through a carefully curated system prompt that 
+embeds BDRRMO expert knowledge — including barangay-level flood history, preparedness 
+protocols, evacuation procedures, and locally relevant road and area information. The system 
+prompt is treated as the AI's authoritative knowledge base. Responses are constrained to flood 
+awareness and preparedness topics relevant to Bacoor City. The AI assistant is tested against a 
+set of expected queries before deployment to evaluate response accuracy and relevance. 
+ 
+AI Assistant Internet Dependency 
+The AI assistant requires an active internet connection for each query. During flood events, 
+connectivity may be degraded or unavailable. 
+Mitigation: The decision tree layer of the Expert S ystem DSS operates fully offline using 
+locally stored rules in Firestore's offline persistence cache. When the AI assistant is unavailable 
+due to connectivity issues, a graceful fallback message is displayed directing users to the 
+decision tree for guidance. The core susceptibility lookup and Check My Area features are also 
+fully functional offline. 
+ 
+Pin Placement Accuracy 
+Users placing the draggable pin near barangay boundary edges may occasionally resolve to an 
+adjacent barangay due to minor GeoJSON digitization inaccuracies. 
+Mitigation: Cross -validate the GeoJSON boundary file against NAMRIA and CPDCO 
+reference data. Inform users via the onboarding screen that boundary detection is approximate 
+and that they should confirm their barangay manually if the de tected result appears incorrect. 
+The draggable pin design gives users direct visual control over their queried location, reducing 
+ambiguous boundary placements compared to automatic GPS detection. 
+ 
+GeoJSON Boundary Accuracy 
+Barangay boundary GeoJSON files derived from hard -copy maps may contain minor 
+digitization inaccuracies. 
+Mitigation: Cross -validate the GeoJSON boundary file against NAMRIA and CPDCO 
+reference data. Inform users via the onboarding screen that boundary detection is approximate. 
+===== PAGE 14 =====
+The draggable pin interaction allows users to make manual corrections if the detected barangay 
+appears incorrect. 
+ 
+II. OPERATIONAL FEASIBILITY 
+This section evaluates whether FloodSense can be realistically developed, deployed, and used 
+within the constraints of the thesis timeline, team size, target users, and available institutional 
+resources. The assessment reflects the fully revised feature se t, including the transition to 
+Flutter, the Expert System approach, and the integrated AI assistant. 
+ 
+2.1 Team Composition and Role Distribution 
+Member Primary Role & Responsibilities 
+Member 1 — Android 
+Developer 
+Flutter app development: all screens (login, dashboard, map 
+display, results summary, check my area, DSS decision tree, AI 
+assistant chat, evacuation center, account); Flutter map widget 
+integration; draggable pin implementation; GeoJSON boundary 
+lookup; Firebase integration on the client side. 
+Member 2 — Backend 
+/ Expert System 
+Engineer 
+Expert system knowledge encoding: structuring BDRRMO data 
+into susceptibility lookup tables and decision tree rules; Firebase 
+setup; Firestore data upload and management; Firebase Functions 
+development for AI assistant middleware; LLM API integration 
+and system prompt engineering. 
+Member 3 — Data / 
+Research Lead 
+Spatial data collection and preprocessing (CPDCO, BDRRMO); 
+barangay zone GeoJSON preparation; evacuation center data 
+encoding; knowledge elicitation sessions with BDRRMO; 
+usability testing coordination; thesis documentation. 
+ 
+2.2 Recommended Development Timeline (10 Months) 
+Phase / Period Deliverables 
+Phase 1 — Foundation 
+(Months 1–2) 
+Project setup; Firebase configuration; user authentication; Flutter 
+framework onboarding; basic Flutter UI screens; formal data 
+===== PAGE 15 =====
+request letters to BDRRMO and CPDCO; initial data 
+preprocessing; GeoJSON barangay boundary file acquisition or 
+preparation. 
+Phase 2 — Expert 
+System Development 
+(Months 2–4) 
+Structured knowledge elicitation sessions with BDRRMO; 
+encoding of susceptibility lookup tables (barangay × rainfall 
+scenario × susceptibility level) into Firestore JSON; encoding of 
+decision tree rules from BDRRMO preparedness protocols; AI 
+assistant syst em prompt development and testing using 
+BDRRMO expert knowledge; Firebase Functions middleware 
+for LLM API; encoding of BDRRMO evacuation center list into 
+Firestore. 
+Phase 3 — Map & Core 
+Features (Months 4–6) 
+Pre-rendered barangay susceptibility map integ ration using 
+flutter_map or Google Maps Flutter plugin; color -coded zone 
+overlay; scenario -driven map update logic; results summary 
+screen; PAGASA -aligned rainfall input; user preferences and 
+account management. 
+Phase 4 — Action 
+Features Integration 
+(Months 6–8) 
+Check My Area: flutter_map draggable pin, GeoJSON boundary 
+lookup, scenario -aware results screen; DSS Decision Tree: 
+Flutter step -by-step question interface with Firestore -backed 
+rules; AI Assistant Chat: Flutter chat widget integrated into DSS 
+interface, Firebase Functions middleware, context injection; Find 
+Nearest Evacuation Center: Haversine distance calculation, 
+ranked list UI, Google Maps deep-link. 
+Phase 5 — Testing & 
+Refinement (Months 8 –
+9) 
+Usability testing with at least 20 residents from the survey pool; 
+BDRRMO review of susceptibility outputs, decision tree rules, 
+AI assistant response quality, and evacuation center data 
+accuracy; bug fixes; final feature refinements; AI assistant 
+response evaluation against expected query set. 
+Phase 6 — Final 
+Defense Preparation 
+(Month 10) 
+Final defense preparation; documentation completion; thesis 
+manuscript finalization. 
+ 
+2.3 Target Users and Adoption Feasibility 
+FloodSense targets all residents of Bacoor City, with priority distribution through BDRRMO 
+community outreach channels and direct recruitment from the original survey respondent pool. 
+===== PAGE 16 =====
+• Tier 1 — Bacoor City Residents (flood -prone barangays): Residents of his torically 
+susceptible barangays (Zapote, Mambog, Talaba, Niog) who experience flooding 
+regularly and need location -specific susceptibility information and expert -guided 
+preparedness advice for evacuation and safety decisions. Pilot distribution through 
+BDRRMO community outreach and barangay -level orientation; direct recruitment 
+from survey respondents. 
+• Tier 2 — General Bacoor Residents: Residents outside the highest-susceptibility zones 
+who use the app for general flood awareness and community preparedness planning. 
+App store distribution; awareness through city-level flood information campaigns. 
+ 
+2.4 Financial Feasibility 
+FloodSense is designed to operate at near -zero licensing cost during the thesis development 
+and pilot testing phases. The transition to F lutter and the Expert System approach eliminates 
+the costs associated with Unity Pro licensing considerations and ML cloud inference. The only 
+service with a usage-based cost is the LLM API for the AI assistant, which is estimated to be 
+minimal at pilot scale. 
+Tool / Service Purpose Cost 
+Flutter SDK Android app development 
+framework for all screens 
+and UI 
+Free (open-source) 
+flutter_map / Google 
+Maps Flutter Plugin 
+Pre-rendered susceptibility 
+map overlay and draggable 
+pin interaction 
+Free 
+Firebase Spark Plan Authentication, Firestore 
+database, Firebase 
+Functions, offline 
+persistence 
+Free tier 
+LLM API (e.g., 
+Anthropic Claude 
+API) 
+AI assistant powering the 
+Expert System DSS 
+conversational interface, 
+grounded on BDRRMO 
+expert knowledge 
+Pay-per-use; estimated minimal 
+cost at pilot scale (20–50 users) 
+===== PAGE 17 =====
+Google Maps URI 
+Deep-Link 
+Turn-by-turn navigation 
+from Find Nearest 
+Evacuation Center 
+Free 
+CPDCO Topographic 
+Data 
+Elevation and land -use 
+features for expert 
+knowledge encoding 
+Free (data-sharing agreement) 
+BDRRMO Historical 
+Flood Data 
+Ground-truth barangay flood 
+records; evacuation center 
+list; expert knowledge for 
+DSS and AI assistant 
+Free (data-sharing agreement) 
+PAGASA Rainfall 
+Advisory Data 
+Rainfall intensity 
+classification reference for 
+dropdown input 
+Free (public domain) 
+Figma UI/UX prototyping prior to 
+Flutter development 
+Free tier 
+ 
+2.5 Operational Risks and Mitigations 
+BDRRMO Data Access Delay 
+BDRRMO may require additional time to process a formal data -sharing request, potentially 
+delaying expert system knowledge encoding and evacuation center data entry. 
+Mitigation: Initiate formal data request immediately after title defense approval. Begin ex pert 
+system development in parallel using publicly available PAGASA data and CPDCO maps as 
+primary sources. Placeholder susceptibility values and decision tree rules can be used for 
+development purposes, with official BDRRMO data substituted upon release. 
+ 
+CPDCO Spatial Data Inaccessibility 
+CPDCO may not have digital GIS files readily available, or may store data in formats 
+incompatible with the research pipeline. 
+Mitigation: Hard-copy maps can be georeferenced and digitized using QGIS. If digitization 
+time exceeds the project schedule, open digital elevation models (SRTM, ALOS PALSAR) 
+and NAMRIA land-cover data will be used directly. 
+===== PAGE 18 =====
+ 
+AI Assistant Response Quality 
+The AI assistant may produce responses that are too generic, inaccurate for Bacoor City's 
+specific conditions, or outside the intended flood awareness scope. 
+Mitigation: The AI assistant's system prompt is treated as its authoritative knowledge base and 
+is developed iteratively using structured BDRRMO expert knowledge. A dedicated evaluation 
+phase (Phase 5) tests the assistant against a set of expected user queries covering all 
+susceptibility levels, barangays, and common flood awareness topics. BDRRMO staff review 
+AI responses for factual accuracy before deployment. Response scope is restricted to flood 
+awareness and preparedness topics relevant to Bacoor City. 
+ 
+Low Pilot User Adoption 
+Community residents, particularly elderly or low -literacy users, may find the app interface or 
+the AI assistant chat unfamiliar or difficult to use. 
+Mitigation: Conduct usability testing with at least 20 residents from the original survey pool. 
+Simplify onboarding with visual step-by-step instructions. The DSS decision tree uses simple 
+tap-to-answer interactions before offering the AI chat, reducing th e initial interaction 
+complexity. The draggable pin eliminates the need for GPS permissions, removing a common 
+Android app friction point. Plain -language labels (aligned with PAGASA classifications) are 
+used throughout. 
+ 
+Scope Management 
+The integration of Flutter, an Expert System, a DSS decision tree, and an AI assistant within a 
+single thesis represents a substantial scope. 
+Mitigation: The phased timeline isolates Flutter onboarding (Phase 1), expert system encoding 
+(Phase 2), map and core feature develop ment (Phase 3), and action feature integration (Phase 
+4) into distinct, manageable phases. The removal of the ML training pipeline and AR 
+integration from the original design significantly reduces technical complexity. The decision 
+tree and AI assistant share the same Firebase Functions infrastructure, reducing duplication of 
+effort. 
+===== PAGE 19 =====
+ 
+Data Privacy Compliance 
+User account data and AI assistant queries are subject to Philippine Republic Act 10173 (Data 
+Privacy Act). 
+Mitigation: Firebase Security Rules enforce per-user data isolation. Informed consent obtained 
+from all pilot participants. Pin coordinates used in Check My Area and Find Nearest Evacuation 
+Center are processed on -device only and not stored or transmitted. AI assistant queries are 
+routed through Fi rebase Functions middleware and contain no personally identifiable 
+information — only the contextual scenario data (barangay name, susceptibility level, rainfall 
+scenario). The draggable pin design eliminates the need to request GPS permissions entirely. 
+ 
+Sustainability Post-Thesis 
+Without a formal maintenance agreement, the app's expert knowledge base may become 
+outdated as new flood events occur and evacuation center data changes. 
+Mitigation: Frame sustainability as future work in the thesis defense. Prop osed sustainability 
+pathway: establish a formal MOU with BDRRMO for periodic knowledge base updates using 
+updated historical flood records and revised preparedness protocols. Explore integration with 
+BDRRMO's existing community information dissemination ch annels for sustained 
+distribution. LLM API costs for full public deployment to be evaluated and proposed to 
+BDRRMO or the university for institutional support. 
+ 
+Interview-Identified Gap: User Input Accuracy 
+As raised by the BDRRMO key informant, users cann ot accurately estimate rainfall in 
+millimeters, making free-text or numeric input unreliable. 
+Mitigation: Fully addressed through the PAGASA -aligned dropdown design — users select 
+plain-language intensity levels (Light, Moderate, Heavy, Intense, and Torren tial) tied to 
+standardized mm/hr ranges. The app handles all technical conversion internally. This design 
+decision was directly validated by the BDRRMO interview. 
+ 
+===== PAGE 20 =====
+Interview-Identified Gap: Output Clarity for Non-Expert Users 
+The BDRRMO interviewee raised that users unfamiliar with susceptibility mapping may 
+misread susceptibility levels as absolute flood predictions rather than expert -assessed 
+estimates. 
+Mitigation: Include a brief legend explanation accessible from the map view. Add disclaimer 
+on first la unch: 'Susceptibility levels indicate the likelihood of flooding based on expert 
+assessment of environmental conditions — not a guarantee of actual flooding.' The plain -
+language safety status cards in Check My Area reinforce this framing. The AI assistant is also 
+instructed to clarify the meaning of susceptibility levels when asked. 
+ 
+III. FEASIBILITY SUMMARY 
+Dimension Assessment Verdict 
+Technical All features implementable with free, well-documented 
+tools. Expert System susceptibility classification uses 
+BDRRMO-sourced pre-computed lookup tables stored 
+in Firestore — no ML server required. Flutter replaces 
+Unity as the Android framework, better suit ed for a 
+multi-screen, data -driven app. Pre -rendered map 
+replaces AR (Vuforia removed). DSS decision tree uses 
+rule-based Dart logic with Firestore. AI assistant uses 
+LLM API with Firebase Functions middleware. 
+GeoJSON boundary lookup and Haversine distanc e 
+calculation performed on-device. 
+FEASIBLE 
+Financial Near-zero licensing cost during thesis period. Flutter, 
+Firebase Spark Plan, flutter_map, and Google Maps 
+URI deep -link are all free. LLM API (AI assistant) 
+operates on a pay -per-use model estimated to be 
+minimal at pilot scale of 20 –50 users. Removal of 
+Unity, Vuforia, and ML cloud infrastructure eliminates 
+previously anticipated licensing and compute costs. 
+FEASIBLE 
+Team Capacity Three-person team with clearly separated Android 
+Dev, Backend/Expert System, and Data/Research 
+roles. 10 -month phased timeline isolates Flutter 
+FEASIBLE 
+===== PAGE 21 =====
+onboarding, expert system encoding, map and core 
+feature development, and action feature integration into 
+distinct phases to prevent bottlenecks. Flutter learning 
+curve is manageable given the team's C#/Java 
+background. 
+User Adoption Pilot testing achievable through BDRRMO community 
+outreach and direct recruitment from survey 
+respondents. PAGASA -aligned plain -language input 
+removes technical barrier. Decision tree presents 
+structured guidance before the AI chat, minimizing 
+complexity for non -technical users. Draggable pin 
+eliminates GPS permission friction. AI assistant 
+grounded on BDRRMO knowledge ensures locally 
+relevant responses. 
+FEASIBLE 
+Institutional 
+Support 
+BDRRMO key informant confirmed openness to data 
+sharing and collaboration; serves as the institutional 
+expert knowledge source for both the Expert System 
+classification and the AI assistant. CPDCO confirmed 
+required spatial maps exist and can be released as hard-
+copy prints. BDRRMO evacuation center data 
+obtainable under the existing data -sharing 
+collaboration. 
+FEASIBLE 
+Scope Revised system removes ML training pipeline and AR 
+engine (Vuforia, Unity) — significant reduction in 
+technical complexity vs. original design. New additions 
+(Expert System DSS with integrated AI assistant) are 
+architecturally grounded in a single Firebase  backend 
+and share the same Firestore data backbone. Combined 
+estimated development time for all new and revised 
+features is approximately 7 –8 weeks, well within the 
+10-month window. 
+FEASIBLE 
+Academic 
+Contribution 
+Novel integration of Expert System -based flood 
+susceptibility classification, pre-event decision support 
+(DSS), and an AI assistant grounded in institutional 
+expert knowledge for a Philippine LGU context. 
+PAGASA-aligned community input design. 
+BDRRMO-validated problem, concept, and knowledge 
+base. Extends the study beyond susceptibility mapping 
+FEASIBLE 
+===== PAGE 22 =====
+into actionable, expert -guided community-level flood 
+preparedness. 
+ 

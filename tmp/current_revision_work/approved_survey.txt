@@ -1,0 +1,176 @@
+SOURCE: 1. FLOODSENSE-MAIN\QUESTIONNAIRES\revised-questionnaire-the-approved-survey.docx
+PARAGRAPHS: 189
+TABLES: 0
+
+P0000 [Normal] FloodSense Resident Survey Questionnaire
+P0001 [Normal] Introduction / Panimula
+P0002 [Normal] We are studying how Bacoor City residents receive and use flood-related information. We want to understand what currently works, what problems residents experience, and whether a proposed FloodSense application could be useful.
+P0003 [Normal] Pinag-aaralan namin kung paano natatanggap at ginagamit ng mga residente ng Bacoor City ang impormasyon tungkol sa baha. Nais naming malaman kung ano ang kasalukuyang gumagana, anong mga problema ang nararanasan, at kung maaaring makatulong ang iminungkahing FloodSense application.
+P0004 [Normal] Participation is voluntary. Please review the privacy notice and indicate your consent before continuing. Select only one answer unless the question says otherwise.
+P0005 [Normal] Kusang-loob ang pagsali. Basahin ang pahayag sa pagkapribado at ipahayag ang inyong pahintulot bago magpatuloy. Pumili lamang ng isang sagot maliban kung may ibang panuto.
+P0008 [Normal] Data Privacy Notice and Consent / Pahayag sa Pagkapribado at Pahintulot
+P0009 [Normal] In accordance with Republic Act No. 10173, or the Data Privacy Act of 2012, the FloodSense research team will collect and process the personal information you provide, including your name, age, sex or gender, and general place of residence, only for this academic study on flood-information needs in Bacoor City. Participation is voluntary. You may skip a demographic question or stop answering at any time without penalty. Your responses will be kept confidential, accessed only by the research team and its academic advisers, reported in summary form whenever possible, retained only as long as necessary for the study and required academic recordkeeping, and then securely disposed of. Your information will not be sold or used for marketing. Subject to applicable law, you may request access to, correction of, or deletion of your information, or withdraw your consent, by contacting the FloodSense research team through the survey administrator.
+P0010 [Normal] Alinsunod sa Republic Act No. 10173, o Data Privacy Act of 2012, kokolektahin at gagamitin ng FloodSense research team ang personal na impormasyong ibibigay ninyo, kabilang ang inyong pangalan, edad, kasarian, at pangkalahatang lugar ng tirahan, para lamang sa akademikong pag-aaral na ito tungkol sa pangangailangan sa impormasyong may kaugnayan sa baha sa Bacoor City. Kusang-loob ang pagsali. Maaari ninyong laktawan ang isang tanong sa demograpiko o huminto anumang oras nang walang kaparusahan. Pananatiling kumpidensiyal ang inyong mga sagot, at tanging ang research team at mga academic adviser nito ang magkakaroon ng access. Ilalahad ang mga resulta sa pinagsama-samang paraan hangga't maaari, itatago lamang ang datos habang kailangan para sa pag-aaral at sa kinakailangang academic recordkeeping, at pagkatapos ay ligtas na buburahin o sisirain. Hindi ibebenta o gagamitin sa marketing ang inyong impormasyon. Alinsunod sa umiiral na batas, maaari kayong humiling na makita, iwasto, o ipabura ang inyong impormasyon, o bawiin ang pahintulot, sa pamamagitan ng pakikipag-ugnayan sa FloodSense research team sa survey administrator.
+P0011 [Normal] Consent / Pahintulot
+P0012 [Normal] ☐ I have read and understood the notice, and I voluntarily agree to participate. / Nabasa at naunawaan ko ang pahayag, at kusang-loob akong pumapayag na lumahok.
+P0013 [Normal] ☐ I do not agree to participate. / Hindi ako pumapayag na lumahok.
+P0014 [Normal] If you do not agree, end the survey. / Kung hindi kayo pumapayag, itigil ang survey.
+P0015 [Normal] Demographic Information / Impormasyong Demograpiko
+P0016 [Normal] Please provide the following information. You may write Prefer not to answer for any item you do not wish to disclose.
+P0017 [Normal] Ibigay ang sumusunod na impormasyon. Maaari ninyong isulat ang Mas nais kong hindi sumagot sa anumang aytem na ayaw ninyong ibahagi.
+P0018 [Normal] D1. Full name / Buong pangalan: ____________________________________________________
+P0019 [Normal] D2. Age / Edad: ____________
+P0020 [Normal] D3. Sex or gender / Kasarian:
+P0021 [Normal] Male / Lalaki
+P0022 [Normal] Female / Babae
+P0023 [Normal] Prefer to self-describe / Nais ilarawan ang sarili: ____________________
+P0024 [Normal] Prefer not to answer / Mas nais kong hindi sumagot
+P0025 [Normal] D4. Barangay or community and city / Barangay o komunidad at lungsod: ________________________________
+P0026 [Normal] D5. How long have you lived in your current barangay or community? / Gaano na kayo katagal nakatira sa inyong kasalukuyang barangay o komunidad?
+P0027 [Normal] Less than 1 year / Mas mababa sa 1 taon
+P0028 [Normal] 1 to 5 years / 1 hanggang 5 taon
+P0029 [Normal] 6 to 10 years / 6 hanggang 10 taon
+P0030 [Normal] More than 10 years / Higit sa 10 taon
+P0031 [Normal] Prefer not to answer / Mas nais kong hindi sumagot
+P0032 [Normal] Part I — Eligibility and Flood Experience Q1. Are you 18 years old or older?
+P0033 [Normal] Kayo ba ay 18 taong gulang o mas matanda?
+P0034 [Normal] Yes / Oo
+P0035 [Normal] No / Hindi
+P0036 [Normal] Prefer not to answer / Mas nais kong hindi sumagot 
+If No or Prefer not to answer, end the survey.
+P0037 [Normal] Q2. Do you currently live in a Bacoor City community included in this study?
+P0038 [Normal] Kasalukuyan ba kayong nakatira sa isang komunidad sa Bacoor City na kasama sa pagaaral na ito?
+P0039 [Normal] Yes / Oo
+P0040 [Normal] No / Hindi
+P0041 [Normal] I am not sure / Hindi ako tiyak
+P0042 [Normal] If No, end the survey.
+P0044 [Normal] Q3. During the past three years, how often has flooding or heavy rain directly affected your household, travel, work, or studies?
+P0045 [Normal] Sa nakalipas na tatlong taon, gaano kadalas direktang naapektuhan ng baha o malakas na ulan ang inyong sambahayan, pagbiyahe, trabaho, o pag-aaral?
+P0046 [Normal] Very often / Napakadalas
+P0047 [Normal] Often / Madalas
+P0048 [Normal] Sometimes / Paminsan-minsan
+P0049 [Normal] Rarely / Bihira
+P0050 [Normal] Never / Hindi kailanman
+P0051 [Normal] I cannot recall / Hindi ko maalala
+P0053 [Normal] Part II — Current Flood-Information Experience
+P0054 [Normal] Q4. Which source do you usually check first for flood-related information?
+P0055 [Normal] Aling pinagmumulan ang karaniwan ninyong unang tinitingnan para sa impormasyon tungkol sa baha?
+P0056 [Normal] Official government social-media page / Opisyal na social-media page ng pamahalaan
+P0057 [Normal] Barangay announcement or public-address system / Anunsiyo o public-address system ng barangay
+P0058 [Normal] Text or SMS alert / Text o SMS alert
+P0059 [Normal] Television or radio / Telebisyon o radyo
+P0060 [Normal] Government or weather website / Website ng pamahalaan o serbisyong pangpanahon
+P0061 [Normal] Family, neighbors, or community group / Pamilya, kapitbahay, o grupong pangkomunidad
+P0062 [Normal] Personal observation / Sariling pagmamasid
+P0063 [Normal] I do not usually check any source / Wala akong karaniwang tinitingnang pinagmulan
+P0065 [Normal] Q5. During flooding or heavy rain, how often are you able to obtain the information you need?
+P0066 [Normal] Kapag may baha o malakas na ulan, gaano kadalas ninyong nakukuha ang impormasyong kailangan ninyo?
+P0067 [Normal] Always / Palagi
+P0068 [Normal] Often / Madalas
+P0069 [Normal] Sometimes / Paminsan-minsan
+P0070 [Normal] Rarely / Bihira
+P0071 [Normal] Never / Hindi kailanman
+P0072 [Normal] I usually do not need flood information / Karaniwan ay hindi ko kailangan ang impormasyon
+P0074 [Normal] Q6. When does useful flood information usually reach you?
+P0075 [Normal] Kailan karaniwang dumarating sa inyo ang kapaki-pakinabang na impormasyon tungkol sa baha?
+P0076 [Normal] Early enough to prepare or decide / Sapat ang aga upang makapaghanda o makapagdesisyon
+P0077 [Normal] Shortly before I need to act / Kaunting oras bago ko kailangang kumilos
+P0078 [Normal] After I have already started acting / Pagkatapos kong magsimulang kumilos
+P0079 [Normal] After flooding has already affected me / Pagkatapos akong maapektuhan ng baha
+P0080 [Normal] I usually receive no useful information / Karaniwan ay wala akong natatanggap na kapaki-pakinabang na impormasyon
+P0081 [Normal] I cannot recall / Hindi ko maalala
+P0083 [Normal] Q7. How easy or difficult is the flood information you receive to understand?
+P0084 [Normal] Gaano kadali o kahirap unawain ang impormasyong natatanggap ninyo tungkol sa baha?
+P0085 [Normal] Very easy / Napakadali
+P0086 [Normal] Easy / Madali
+P0087 [Normal] Neither easy nor difficult / Hindi madali at hindi rin mahirap
+P0088 [Normal] Difficult / Mahirap
+P0089 [Normal] Very difficult / Napakahirap
+P0090 [Normal] I do not receive flood information / Wala akong natatanggap na impormasyon
+P0092 [Normal] Q8. How well does the information identify the location that may be affected?
+P0093 [Normal] Gaano kahusay tinutukoy ng impormasyon ang lugar na maaaring maapektuhan?
+P0094 [Normal] It gives all the location details I need / Ibinibigay nito ang lahat ng detalyeng kailangan ko
+P0095 [Normal] It gives some, but not all, location details / May ibinibigay itong detalye ngunit hindi kumpleto
+P0096 [Normal] It is too general to help me identify the affected location / Masyado itong pangkalahatan upang matukoy ang apektadong lugar
+P0097 [Normal] Location details are not important for my decisions / Hindi mahalaga sa aking desisyon ang detalye ng lugar
+P0098 [Normal] I do not receive flood information / Wala akong natatanggap na impormasyon
+P0099 [Normal] I am not sure / Hindi ako tiyak
+P0101 [Normal] Q9. How often do different flood-information sources provide conflicting or inconsistent information?
+P0102 [Normal] Gaano kadalas nagbibigay ng magkakasalungat o hindi magkakatugmang impormasyon ang iba’t ibang pinagmumulan?
+P0103 [Normal] Very often / Napakadalas
+P0104 [Normal] Often / Madalas
+P0105 [Normal] Sometimes / Paminsan-minsan
+P0106 [Normal] Rarely / Bihira
+P0107 [Normal] Never / Hindi kailanman
+P0108 [Normal] I use only one source / Isang pinagmumulan lamang ang ginagamit ko
+P0109 [Normal] I am not sure / Hindi ako tiyak
+P0113 [Normal] Q10. Which statement best describes how the available information affects your decisions?
+P0114 [Normal] Aling pahayag ang pinakamahusay na naglalarawan kung paano nakaaapekto sa inyong mga desisyon ang impormasyong mayroon kayo?
+P0115 [Normal] It usually helps me decide in time / Karaniwan ay nakatutulong ito upang makapagdesisyon ako sa tamang oras
+P0116 [Normal] It helps, but sometimes arrives too late / Nakatutulong ito ngunit kung minsan ay huli nang dumarating
+P0117 [Normal] Information is available but is not useful for my decision / May impormasyon ngunit hindi ito kapaki-pakinabang sa aking desisyon
+P0118 [Normal] I usually cannot obtain the information I need / Karaniwan ay hindi ko nakukuha ang impormasyong kailangan ko
+P0119 [Normal] I usually do not need information to decide / Karaniwan ay hindi ko kailangan ng impormasyon upang makapagdesisyon
+P0120 [Normal] I am not sure / Hindi ako tiyak
+P0122 [Normal] Q11. What problems do you experience with flood information?
+P0123 [Normal] Anong mga problema ang nararanasan ninyo sa impormasyon tungkol sa baha?
+P0124 [Normal] Select all that apply. / Pumili ng lahat na naaangkop.
+P0125 [Normal] ☐ It arrives too late / Huli itong dumarating
+P0126 [Normal] ☐ It is difficult to understand / Mahirap itong unawain
+P0127 [Normal] ☐ It does not identify the affected location clearly / Hindi nito malinaw na tinutukoy ang   apektadong lugar
+P0128 [Normal] ☐ Different sources provide inconsistent information / Hindi magkakatugma ang     impormasyon mula sa iba't ibang pinagmumulan
+P0129 [Normal] ☐ I cannot access it when needed / Hindi ko ito ma-access kapag kailangan
+P0130 [Normal] ☐ It appears outdated / Tila luma na ang impormasyon
+P0131 [Normal] ☐ I do not usually experience a problem / Karaniwan ay wala akong nararanasang    problema
+P0132 [Normal] ☐ I am not sure / Hindi ako tiyak
+P0134 [Normal] Q12. For planning before heavy rain, how far in advance is flood-related information useful to you?
+P0135 [Normal] Para sa paghahanda bago ang malakas na ulan, gaano kaagang impormasyon tungkol sa baha ang kapaki-pakinabang sa inyo?
+P0136 [Normal] Select all that apply. / Pumili ng lahat na naaangkop.
+P0137 [Normal] ☐ Less than 30 minutes before / Wala pang 30 minuto bago
+P0138 [Normal] ☐ About 30 minutes to 1 hour before / Humigit-kumulang 30 minuto hanggang 1 oras bago
+P0139 [Normal] ☐ About 2 to 3 hours before / Humigit-kumulang 2 hanggang 3 oras bago
+P0140 [Normal] ☐ About 4 to 6 hours before / Humigit-kumulang 4 hanggang 6 na oras bago
+P0141 [Normal] ☐ More than 6 hours before / Mahigit 6 na oras bago
+P0142 [Normal] ☐ It depends on the situation / Depende sa sitwasyon
+P0143 [Normal] ☐ I do not need advance information / Hindi ko kailangan ng maagang impormasyon
+P0145 [Normal] Q13. Which of these flood information types help you prepare?
+P0146 [Normal] Alin sa mga sumusunod na uri ng impormasyon tungkol sa baha ang tumutulong sa inyong paghahanda?
+P0147 [Normal] Select 1 or 2 answers. / Pumili ng 1 o 2 sagot.
+P0148 [Normal] ☐ Advance flood warning or advisory / Maagang babala o abiso tungkol sa baha
+P0149 [Normal] ☐ Whether my area may be susceptible to flooding / Kung maaaring bahain ang aking lugar
+P0150 [Normal] ☐ Expected Road or route conditions before flooding occurs / Inaasahang kalagayan ng kalsada o ruta bago mangyari ang baha
+P0151 [Normal] ☐ Expected water depth in flood-prone areas / Inaasahang lalim ng tubig sa mga lugar na madalas bahain
+P0152 [Normal] ☐ Recommended or planned evacuation routes / Inirerekomenda o pinlanong mga rutang pang-evacuation
+P0153 [Normal] ☐ Verified evacuation-center information / Beripikadong impormasyon tungkol sa evacuation center
+P0154 [Normal] ☐ Household preparedness instructions / Mga tagubilin sa paghahanda ng sambahayan
+P0155 [Normal] ☐ Emergency contact information / Impormasyon sa emergency contact
+P0156 [Normal] ☐ I do not need additional information / Hindi ko kailangan ng dagdag na impormasyon
+P0158 [Normal] Q14. Overall, how well do your current sources meet your flood-information needs?
+P0159 [Normal] Sa kabuuan, gaano kahusay natutugunan ng inyong kasalukuyang mga pinagmumulan ang pangangailangan ninyo sa impormasyon tungkol sa baha?
+P0160 [Normal] Completely / Ganap
+P0161 [Normal] Mostly / Karamihan
+P0162 [Normal] Partly / Bahagya
+P0163 [Normal] Very little / Kaunti lamang
+P0164 [Normal] Not at all / Hindi talaga
+P0165 [Normal] I do not need flood information / Hindi ko kailangan ng impormasyon tungkol sa baha
+P0167 [Normal] Part III — Technology Access and Preference
+P0168 [Normal] Q15. Which statement best describes your usual access to a mobile phone?
+P0169 [Normal] Aling pahayag ang pinakamahusay na naglalarawan sa karaniwan ninyong access sa mobile phone?
+P0170 [Normal] I regularly use my own smartphone / Regular kong ginagamit ang sarili kong smartphone
+P0171 [Normal] I regularly use a shared smartphone / Regular kong ginagamit ang smartphone na pinagsasaluhan
+P0172 [Normal] I use a basic phone without applications / Basic phone na walang applications ang ginagamit ko
+P0173 [Normal] I do not regularly have access to a mobile phone / Wala akong regular na access sa mobile phone
+P0174 [Normal] Prefer not to answer / Mas nais kong hindi sumagot
+P0176 [Normal] Q16. Which of the following methods helps you receive flood information?
+P0177 [Normal] Alin sa mga sumusunod na paraan ang tumutulong sa inyo upang matanggap ang impormasyon tungkol sa baha?
+P0178 [Normal] Select all that apply. / Pumili ng lahat na naaangkop.
+P0179 [Normal] ☐ Text or SMS / Text o SMS
+P0180 [Normal] ☐ Official social media / Opisyal na social media
+P0181 [Normal] ☐ Barangay public-address announcement / Public-address announcement ng barangay
+P0182 [Normal] ☐ Television or radio / Telebisyon o radyo
+P0183 [Normal] ☐ Mobile application / Mobile application
+P0184 [Normal] ☐ Government website / Website ng pamahalaan
+P0185 [Normal] ☐ Telephone hotline / Telephone hotline
+P0186 [Normal] ☐ Family or community network / Pamilya o network ng komunidad
+P0187 [Normal] ☐ None of these methods help me / Wala sa mga ito ang nakatutulong sa akin
+P0188 [Normal] ☐ I do not want to receive additional information / Ayaw ko ng dagdag na impormasyon

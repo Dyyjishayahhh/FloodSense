@@ -1,0 +1,799 @@
+58 
+ 
+ 
+BANTAYBAHA: FLOOD MONITORING SYSTEM  
+WITH SMS NOTIFICATION 
+ 
+David Cedric Delos Reyes, Ronnie Cabreros,  
+Jim Leonard Paulino,  and Paul John Garcia 
+Adviser: Rowell Santos  
+ 
+ 
+Abstract 
+ 
+The advancements in technology have resulted to a new 
+form of monitoring the flood, the use of Internet of Things. 
+Internet of Things(IoT) can now connect every device                 
+imaginable with the right devices and software. It can be a 
+person with a heart monitor implant, a farm animal, an 
+automobile that has built -in sensors to alert the driver 
+when tire pressure is low, a device that checks the volume 
+of water in the farm through the use of sensors and many 
+more. The researchers chose “BantayBaha: Flood                      
+Monitoring System with SMS Notification” to assist on a 
+barangay called Virgen Delas Flores which is located in 
+Baliwag, Bulacan. The method used by the barangay               
+officials to monitor the flood is by using measurement bars 
+on their posts. Integrating the Flood Monitoring System to 
+their barangay would really help them be more prepared 
+and lessen their burden because the device itself will send 
+an SMS notification to the residents of the barangay                
+indicating the water level of the flood and the data will be 
+recorded and saved to the website .a realistic perspective 
+of the university campus. 
+ 
+   Keywords: Internet of Things, SMS notif ication,            
+monitoring system, flood 
+  
+ 
+ 
+ 
+ 
+59 
+ 
+ 
+ In many parts of the Philippines, floods make harms 
+on properties and it brings an enormous misfortune to              
+people and governments. The researchers conducted a              
+research on the barangays located in Baliwag, Bulacan and 
+decided to choose the nearest and most frequently flooded 
+barangay which is the barangay Virgen Delas Flores. The 
+method used by the barangay officials to monitor the flood is 
+by putting a measurement bar on the posts in their area . The 
+barangay officials use a megaphone to announce the water 
+level of flood in their barangay. 
+ 
+  As stated in the study of Souza A., Curvello A. and 
+Souza F. et al in a flood warning system to critical region 
+(2017), “In light of the E -noe 6 project, this paper is created 
+to decrease harms and misfortunes brought about by flood in 
+urban focuses, through the modest flood cautioning                  
+framework to authorities and population. The framework 
+screens the water level of a runway or stream and as per the 
+hazard with the level, triggers crisis alarms to the authorities 
+through phone calls and SMS messages. For the population, 
+there are light guides that characterize the circumstance of 
+the stream. The information is gathered in distributed             
+storage through the Ubidots server, going conceivable to    
+picture them progressively”.  
+ 
+ The researchers will be using Internet of Things (IoT) 
+which is a system of interrelated computing devices,            
+mechanical and digital machines, objects, animals or people 
+that are provided with unique identifiers and the ability to 
+transfer data over a network without requiring human -to-
+human or human -to computer interaction. Thus, in this             
+project, the incorporation of IoT, to make a simple flood 
+monitoring system into a smart flood monitoring system will 
+be sending SMS notification to the people so that they can 
+evacuate and can prevent destruction of properties due to 
+flood. With the use of SMS notification enhanced to this flood 
+monitoring and warning system, it will greatly satisfy the 
+needs of the people especially the government. It will make 
+the people more alerted on the situation.  
+Tekne Portal, Vol. 7(1), 2020 
+
+60 
+ 
+ 
+As mentioned by Whitmore A., Agarwal A. and Xu L. in The 
+Internet of Things: a survey of topics and trends (2015), “The 
+Internet of Things is a worldview where ordinary articles  
+can be outfitted with recognizing, detecting, systems                             
+administration and preparing capacities that will enable 
+them to speak with each other and with different gadgets and 
+administrations over the Internet to achieve some target. 
+Eventually, IoT gadgets will be pervasive, setting mindful and 
+will empower surrounding insight. This article covers the ebb 
+and flow condition of research on the Internet of Things by 
+inspecting the writing, distinguishing momentum patterns, 
+depicting difficulties that compromise IoT dissemination,  
+exhibiting open research questions and future bearings and 
+gathering an extensive reference rundown to help analysts”.  
+ 
+ Moreover, flood monitoring is one of the critical tasks 
+to do to ensure the safety of the people. Especially whenever 
+there is a strong typhoon that will hit the country.  
+ 
+ The purpose of this project is to prevent the feeling of 
+being anxious by the flooding caused by the strong typhoon 
+or heavy rain. In fact, the proposed project, BantayBaha,         
+automatically sends SMS notification to the people whenever 
+the flood water level is increasing, so they can be alerted as 
+soon as possible to evacuate.  
+ 
+ The device can create a logsheet that contains the  
+water level, time, and phone number who received the text 
+message. This logsheet will be displayed in the website.          
+Eventually, the project mainly focuses on community where 
+there is a possibility to get flooded such as Brgy. Virgen Delas 
+Flores of Baliwag, Bulacan. Their streets are prone to                
+flooding so this project will help them act right away when-
+ever the flood water level is increasing to prevent further 
+damages. They could expect the substantial benefits from this 
+project because of the convenience it can actually give.  
+ 
+ 
+ 
+61 
+ 
+ 
+Project Context 
+ 
+ The project seeks to integrate an innovative flood 
+monitoring system with SMS notification. The proponents 
+proposed a flood monitoring device that will monitor the  
+water level of the place and when it reaches a certain level it 
+will automatically send a text message using SMS notification 
+to the people to alert them. The main objective of this study is 
+to introduce a flood monitoring system, to help the citizens 
+be prepared and knowledgeable whenever there is flood. 1.3 
+PURPOSE AND DESCRIPTION OF THE PROJECT The project 
+proposed by the researchers is an Flood Monitoring System 
+with SMS notification for Virgen Delas Flores (VDF). The             
+project also includes user management system. The Internet 
+of Things allows the users to monitor the flood online.                    
+Moreover, it is fully customized according to the needs of the 
+barangay which also means that more features can be added 
+or be modified in the future.  
+ 
+Objectives of the Project  
+ 
+ The main objective of this project is to create a              
+technologically advanced flood monitoring device that can 
+send SMS notification to the people regarding the water level 
+status of their barangay. Specific Objectives: The following 
+are the objectives of BantayBaha: Flood Monitoring System: 
+1. To monitor the water level of the flood. 2. To send an SMS 
+notification update to the residents of Virgen Delas Flores
+(VDF), Baliwag Bulacan. 3. To inform the residence of VDF for 
+evacuation in case it reaches the critical level using the LED 
+light signals. 4. To have the capability to log the changes in 
+water level. 5. To be able to add and delete users from the 
+database.  
+ 
+Scope and Limitation 
+  
+ The BantayBaha: flood monitoring device can detect 
+the water level of the flood. After detecting the water level of 
+the area it will automatically send sms notification to the   
+
+62 
+ 
+ 
+residents of Brgy. Virgen Delas Flores, Baliwag, Bulacan. The 
+device can create a logsheet that contains the water level, 
+time, and phone number who received the text message. This 
+logsheet will be displayed in the website. There will be a user 
+interface to add or remove users from the database. This   
+project does not use solar power supply as energy source. 
+The system cannot determine the temperature of the flood. 
+The device cannot control or remove the flood of the area 
+affected.  
+ 
+Significance of the Project 
+  
+ Residents of Brgy. Virgen Delas Flores, Baliwag,          
+Bulacan This project will help the residents to be informed of 
+the upcoming flood and to prepare for evacuation if                      
+necessary. Barangay Officials This project will help the                 
+barangay officials to be more cautious and alerted in terms of 
+monitoring the flood level of their barangay. Schools This 
+project will help the schools to react or suspend the classes 
+immediately whenever they receive alert messages from the 
+flood monitoring device.  
+ 
+Review of Related Literature and Studies  
+ 
+Related Literature 
+ 
+ Based on the article of Lee K. (2015), The Internet of 
+Things (IoT), also called the Internet of Everything or the  
+Industrial Internet, is an innovation model that is equipped 
+for interfacing with one another with the utilization of a 
+worldwide system of machines and gadgets. The IoT is               
+getting the consideration from the wide scope of enterprises 
+remembering it as one of the significant territories of future 
+innovation.  
+ 
+ Based on the article of Lee K. (2015), Internet of 
+Things is also called Internet of Everything since these days, 
+everything that can be associated can interface with the web. 
+Internet of Things is currently being gazed upward to get in 
+63 
+ 
+ 
+the IT business. Utilizing various machines and gadgets that 
+can be associated with the web is proficient to relate with 
+one another. Individuals admire this as their future in the 
+innovation world that will make their lives simpler and will 
+make them increasingly beneficial, in corporate ventures also 
+in the family units of each network.  
+ 
+ As said by Madakam and Tripathi et al. (2015), the 
+arrival of IT and ITes technologies make a colossal effect on 
+the association's working conditions in people's everyday 
+lives. It is being a verifiable truth crosswise over business 
+sectors on account of its few applications incorporating 
+men's regular day to day existence in the general public. The 
+improvement of the Internet of Things (IoT) has been                    
+essentially determined as a result of the necessities of               
+enormous companies that incredibly advantage from the 
+prescience and consistency given by the capacity to pursue 
+all items that are put through the procedure utilized by firms 
+to accumulate assets, change them into merchandise or item, 
+and appropriate them to the purchasers. 
+ 
+ As said by Madakam and Tripathi et al. (2015),            
+Human life is changing regularly as various innovation in the 
+IT business ceaselessly comes through. It makes a major              
+effect on everyone's regular daily existence as it is being            
+applied in nearly everything occasionally, regardless of 
+whether it is on an association or on one's family. It is in            
+effect surely understood known as a result of the significant 
+advantages it can give extraordinarily for those in enormous 
+partnerships that have huge necessities of innovation use. It 
+enables organizations to be increasingly proficient, and to 
+have a progressively adaptable authoritative framework.  
+ 
+ As stated in the article of Mahar A., Lagmay F. and    
+Racoma B. et al. (2017) The Philippines being a locus of             
+tropical typhoons, tidal waves, seismic tremors and volcanic                   
+emissions, is a hotbed of calamities. These common dangers 
+cause loss of lives and expensive harm to property. Arranged 
+in an area where atmosphere and geophysical storm is       
+
+64 
+ 
+ 
+normal, the Philippines will definitely experience the ill         
+effects of disasters like those accomplished as of late.                 
+Proceeded with improvement and populace development in 
+peril inclined regions, it is relied upon that harm to                      
+foundation and human misfortunes would endure and even 
+ascent except if proper measures are promptly actualized by 
+government.  
+ 
+ According to Kundzewicz Z., Kanae S. and Seneviratne 
+S. et al. (2014) An all-encompassing point of view on evolving 
+precipitation driven flood hazard is accommodated during 
+the late twentieth and mid -21st hundreds of years. Financial 
+misfortunes from floods have enormously expanded, chiefly 
+determined by the growing presentation of benefits in               
+danger. It has not been conceivable to characteristic                 
+downpour created top stream flow patterns to anthropogen-
+ic environmental change in the course of recent decades.                  
+Anticipated increments in the recurrence and power of            
+substantial precipitation, in light of atmosphere models, 
+ought to add to increments in precipitation -created                 
+neighborhood flooding (for example blaze flooding and             
+urban flooding).  
+ 
+ As stated by Brooks G. and George S. (2015)                  
+Significant flooding impacts networks and country zones, 
+including the City of Winnipeg, had caused critical flood              
+debacles in the nineteenth and twentieth hundreds of years. 
+Since 1950, a variety of basic flood control measures had 
+been developed (and some later moved up) to relieve               
+flooding, including two preoccupation channels, a flood           
+control dam, dyking (straight and ring dyking), and had 
+raised earthen cushions under structures. As said by Che D. 
+and May L. (2017) The use of a streamlining/reenactment 
+model for the mimicked continuous flood control for                 
+waterway repository frameworks to the cataclysmic May 
+2010 flood on the Cumberland River at Nashville, Tennessee 
+is depicted. The advancement/reenactment model                     
+incorporates five significant parts, including a hydrologic 
+precipitation spillover model, a water driven temperamental 
+65 
+ 
+ 
+stream model, a momentary precipitation estimating model, a 
+supply activity model, and a hereditary calculation                    
+improvement model.  
+ 
+ As stated in the article of Rahman M., Rahman A. and 
+Chowdhury S. (2017) This examination has utilized a survey 
+of the existence cycle of flood moderation extends, an audit of 
+manageability evaluation procedures, meetings with                   
+specialists and contextual investigations including two flood 
+alleviation extends in Australia.  
+ 
+ According to Ghanbarpour M.R , Saravi M. and Salimi 
+S. (2014) The outcomes have demonstrated that expressed 
+WTPs essentially fluctuates with family unit pay, separation 
+individuals live from the stream and the land use sort of  
+properties. Discoveries of this investigation propose that 
+most of respondents view flood peril as the most significant 
+cataclysmic event. Moreover, WTPs are altogether higher for 
+the individuals who have elevated level of flood hazard          
+recognition.  
+ 
+ As mentioned by Prawiranegara M. (2014) The           
+Philippines is one of the most normal peril inclined nations on 
+the planet, particularly for water -related calamities (floods 
+and avalanches) activated by storm. This investigation is 
+spurred by the outrageous flooding occurrence in Metro              
+Manila and encompassing zones in September 2009 during 
+the most obliterating hurricane to hit the nation named as 
+Tropical Storm Ondoy. Exceptionally urbanized urban                  
+communities of Metro Manila in the downstream of Marikina 
+River Basin endured the most and the debasement of the          
+upper piece of the bowl in Rizal Province has been                  
+distinguished as one of the fundamental driver of such huge 
+flooding.  
+ 
+ As stated by Beven K. and Hall J. (2014) Flood chance 
+administration is a procedure of basic leadership under             
+vulnerability. Customary ways to deal with dissecting floods 
+accepted a pretense of determinism however ideas, for        
+
+66 
+ 
+ 
+example, "structure floods", and dealt with vulnerabilities 
+verifiably and hazily through freeboard remittances and             
+different variables of wellbeing.  
+ 
+ According to Tahir W., Jani J. and Endut I. et al. (2016) 
+Flood is a characteristic climate related fiasco as often as     
+possible happening in Malaysia. Perhaps the best challenge 
+that Malaysia faces today is perceiving the greatness of              
+dangers presented by flooding. The general population,              
+private and NGOs should ponder the measure of speculations 
+required to lessen the flood chance, including making proper 
+crisis arrangements, fortifying the current Standard                   
+Operating Procedures (SOPs), and finding new answer for 
+limiting danger identified with flood catastrophe. The current 
+existing SOPs show that there is still absence of                                
+all-encompassing flood chance administration framework to 
+limit this issue. The nation ought to be resolved to set up a 
+national approach on flood chance administration that             
+requires viable, affordable, reasonable, and steady                         
+administration of flood hazard to individuals, properties, and 
+networks  
+ 
+Methodology 
+ 
+Requirement Analysis  
+ 
+ This section includes the analysis of the information 
+that the researchers have obtained through their observation 
+and study. User Need Analysis. The project was not only for 
+barangay officials but also for any concerned citizen and             
+different establishments. It can be used as a mean of                      
+informing them remotely. The proposed objective of the             
+project is to cater the concern of the barangay constituents. It 
+is done by providing a system that will allow them to                    
+automatically receive information regarding water level in 
+their barangay that is a must need during rainy seasons. The 
+BantayBaha device will be beneficial to the people who are 
+affected. Methods to create the project. The researchers first 
+researched about flood and how to monitor floods then the 
+67 
+ 
+ 
+researchers conducted an interview on the head rescue team 
+of brgy. Virgen Delas Flores, Baliwag, Bulacan to get                  
+information from him about the flood in their barangay. The 
+researchers made a list of the parts of the device that will be 
+needed for the project.  
+ 
+Requirements Documentation 
+  
+ This section includes the sources that are needed for 
+the documentation that are acquired by the researchers 
+through data gathering  
+ 
+Source of Data 
+  
+ The researchers concluded an interview with                
+barangay officials about the corresponding water level that 
+will indicate which level is normal to critical. The researchers 
+also made the project progressive through the use of the                
+following sources of data: Internet. The researchers were 
+able to obtain information on the scholarly articles through 
+browsing the internet. The researchers utilized educational 
+websites and e -books for further information about the              
+project.  
+ 
+Responsibilities 
+  
+ Capstone Project Leader Leads the members to find 
+new heights in conducting the research project. The one who 
+manages and assigns tasks for each member. Has the ability 
+to take leadership of the work that the member cannot do. 
+The leader is also the person who keeps the team together 
+and organizes the needed materials. Capstone                              
+Documentation Writer. Conducts the process and                    
+requirements of the project. Collects the information used for 
+the project. The person who does all the paper work about 
+the project. The documentation has different chapters and 
+includes Introduction, Related Literatures and Studies,             
+Technical Background, Methodology, Results and Discussion, 
+Recommendation, References and Appendices. Capstone   
+
+68 
+ 
+ 
+Program Designer. The person who designs and codes the 
+program to meet the needs of the project.  
+ 
+Verification, Validation and Testing  
+ 
+ For the verification the researchers made it certain 
+that the design specifications requirements and necessary 
+functionalities of the web interface and the system are                  
+attained. For the validation the researchers performed code 
+inspections, regular repetitions of testing and simulation of 
+the device. For the testing the researchers carried out               
+various types of verification and validation to try the overall 
+quality of the entire system to steadily avoid and point out 
+the defects, errors, missing requirements and risks. 
+ 
+Results and Discussion 
+ 
+ The researchers conducted an evaluation for the            
+proposed project. This chapter consists of results regarding 
+the assessed evaluation. With the help of Baliuag University 
+students the proponents evaluated 70 respondents with the 
+given criteria to test the website and to know if the                       
+proponents meet their objectives  
+ 
+  Every criterion below is scaled from numbers 1 to 5. 
+With 5 as the highest scale, it is rated as “Excellent”, number 
+4 rated as “Very Good”, number 3 rated as “Good”, number 2 
+rated as “Fair”, and number 1 rated as “Poor”. 
+ 
+I. System Functionality 
+ 
+Question  
+Indicators  
+E VS S P B Mean 
+1. The device can be used to             
+remotely monitor the flood. 54 16    4.77 
+2. The device can send alert            
+notifications to the phone. 46 24    4.65 
+69 
+ 
+ 
+Continuation 
+ 
+ As a result of the evaluation conducted by the                  
+researchers about the system functionality, fifty -four                    
+respondents answered excellent that the device can be used 
+to remotely monitor the flood via internet and there are               
+sixteen respondents who were very satisfied on it. Forty -six 
+respondents likewise answered excellent that the device can 
+send alert notifications. There are twenty -four respondents 
+who were very satisfied on it. Fifty respondents answered 
+excellent that the float switches successfully detects water. 
+There are nineteen respondents who are very satisfied on it 
+and one respondent was satisfied. Forty -eight respondents 
+answered excellent that the LED lights turn on/off which     
+correspond to the water level. There are twenty respondents 
+who were very satisfied on it and two respondents were              
+satisfied. Fifty-five respondents answered excellent that the 
+GSM module has a good signal reception. There are fifteen 
+respondents who were very satisfied on it. 
+ 
+II. System User Interface (UI) 
+Question  
+Indicators  
+E VS S P B Mean 
+3. The float switches successfully 
+detects water. 50 19 1   4.69 
+4. The LED lights turn on/off which 
+correspond to the water level. 48 20 2   4.65 
+5. The GSM module has a good signal 
+reception. 55 15    4.78 
+Grand Mean      4.70 
+Question  
+Indicators  
+E VS S P B Mean 
+1. The web interface is easy to navi-
+gate. 33 31 6   4.38 
+2. The web server in phone is easy to 
+use. 44 25 1   4.61 
+
+70 
+ 
+ 
+Continuation  
+ 
+ When it comes to the user interface. Thirty -three           
+respondents answered excellent and found the web server 
+easy to navigate, On the other hand, thirty -one respondents 
+chose to answer very satisfactory and six respondents                
+answered satisfactory. Forty -four respondents answered        
+excellent and found the web server in phone easy to use. On 
+the other hand, twenty -five respondents were very satisfied 
+and one respondent is satisfied. Forty respondents answered 
+excellent and found the web server user -friendly. On the             
+other hand, twenty -nine respondents are very satisfied and 
+one respondent is satisfied. Forty respondents answered              
+excellent and found the website design appealing, On the  
+other hand, twenty -five respondents chose to answer very 
+satisfactory and five respondents answered satisfactory. 
+ 
+III. System Reliability 
+Question  
+Indicators  
+E VS S P B Mean 
+3. The web server is user-friendly. 40 29 1   4.55 
+4. The design of the website is              
+appealing. 40 25 5   4.49 
+Grand Mean      4.50 
+Question  
+Indicators  
+E VS S P B Mean 
+1. The device can function in any 
+environment. 38 27 5   4.47 
+2. The device is user intuitive. 35 35    4.5 
+3. The device can be easily                   
+maintained. 40 28 2   4.54 
+4. The device can help the residents. 54 15 1   4.75 
+5. The parts of the device are                
+durable. 43 24 2   4.58 
+71 
+ 
+ 
+Continuation 
+ 
+ When it comes to the system reliability. Thirty -eight 
+respondents answered excellent that the device can function 
+in any environment and there are twentyseven respondents 
+who were very satisfied and five respondents were satisfied. 
+Thirty-five respondents answered excellent that the device is 
+user intuitive and thirty -five respondents who are very               
+satisfied. Forty respondents answered excellent that the                
+device can be easily maintained. There are twenty -eight             
+respondents who were very satisfied and two respondents 
+were satisfied. Fiftyfour respondents answered excellent that 
+the device can help the residents. There are fifteen                          
+respondents who were very satisfied and one respondent 
+was satisfied. Forty -three respondents answered excellent 
+that the parts of the device are durable. There are twenty-five 
+respondents who were very satisfied and two respondents 
+were satisfied. Forty-six respondents answered excellent that 
+the device can be easily controlled. There are twenty -two      
+respondents who answered very satisfactory and two            
+respondents answered satisfactory. The researchers                     
+conclude that most of the respondents are very satisfied with 
+the functionality of the system and gave it an average of 4.70
+(Very Satisfactory). Most of the respondents are also very 
+satisfied with its user interface and gave it an average of 4.50
+(Very Satisfactory) and also agreed that the system is reliable 
+so they gave it an average of 4.57(Very Satisfactory). The             
+following chapter concludes this project. Likewise in this 
+chapter, a summary of the project is presented and findings 
+of the project will be discussed and interpreted. Moreover, 
+the significance of this project to the Internet of Things will 
+be analyzed. These conclusions might be held inaccurate,  
+Question  
+Indicators  
+E VS S P B Mean 
+6. The device can be controlled              
+easily. 46 22 2   4.62 
+Grand Mean      4.57 
+
+72 
+ 
+ 
+although these conclusions are relevant to the advancement 
+of Internet of Things in this modern age. 
+ 
+Conclusion  
+ 
+ The conclusion that can be taken from the project is 
+that having a device like BantayBaha that can monitor flood 
+water levels is a great help especially in a country like             
+Philippines where due to storm and typhoons running                
+rampant all year long. The conclusions from this project are 
+not statements such as “Having a device such as this is a must 
+in every barangay in the nation.” Instead, results from               
+qualitative and quantitative methodologies are presented 
+with the implications that this project should be tried by             
+others and studied more.  
+ 
+Recommendations  
+ 
+ The researchers would like to recommend future         
+researchers to improve the BantayBaha device by taking             
+different approach such as visual studio based interface 
+where instead of HTML format they can use an .exe file type. 
+The researchers would like to recommend future researchers 
+to improve the BantayBaha device by adding peripherals 
+such as a solar power supply to make the device self -
+sufficient. For the instance where the location you want to 
+place a BantayBaha have drastic temperature discrepancy 
+adding a module that can determine the water temperature 
+would be beneficial. Future researchers are allowed to use 
+and to improve the BantayBaha device given that it will                
+improve the features of the system 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+73 
+ 
+ 
+References 
+ 
+Lee, K. (2015) The Internet of Things (IoT): Applications,  
+investments, and challenges for enterprises. Indiana 
+University. Elsevier Inc. from: https://
+www.sciencedirect.com/science/article/pii/
+S0007681315000373 
+ 
+Madakam S. and Tripathi S. (2015) Internet of Things (IoT): A 
+Literature Review. India. Scientific Research                    
+Publishing. from: https://www.researchgate.net/
+publication/280527542_Internet_of_Things_ 
+IoT_A_Literature_Review 
+ 
+Souza A., Curvello A. and Souza F. et al (2017) A flood              
+warning system in critical region. Procedia Computer 
+Science. from: https://www.sciencedirect.com/
+science/article/pii/S1877050917311353 
+ 
+Whitmore A., Agarwal A. and Xu L. (2015) The Internet of 
+Things: a survey of topics and trends. Information 
+Systems Frontiers. from: https://link.springer.com/
+article/10.1007/s10796-014-9489-2 
+ 
+Kundzewicz Z., Kanae S. and Seneviratne S. et al. (2014) 
+Flood risk and climate change: global and regional 
+perspectives. from: https://www.tandfonline.com/
+doi/full/10.1080/02626667.2013.857411?
+src=recsys 
+ 
+Brooks G. and George S. (2015) Flooding, Structural Flood 
+Control Measures, and Recent Geomorphic Research 
+along the Red River, Manitoba, Canada. Canada. from: 
+https://link.springer.com/chapter/10.1007/978-1-
+4939-2380-9_5?fbclid=IwAR2D1XTu_orjE4Oid0pl0Pa 
+TN0Sd1yVu-6gOyGJwEw60Wqc_Nw4109u87w 
+ 
+ 
+ 
+
+74 
+ 
+ 
+Che D. and May L. (2017) Application of an Optimization/
+Simulation Model for Real-Time Flood-Control                  
+Operation of River-Reservoirs Systems. USA. from: 
+https://link.springer.com/article/10.1007/s11269-
+017-1644-3?fbclid=IwAR1mMSGzi4pYReBy 
+QGdU1SFtQCPrOS2KfJS8Dkvi6t8Va_UoVuXIWTUuow 
+ 
+Rahman M., Rahman A. and Chowdhury S. (2017) Sustainabil-
+ity assessment of flood mitigation projects: An inno-
+vative decision support framework. Griffith Universi-
+ty. Australia. from:https://www.sciencedirect.com/
+science/article/pii/S2212420916307026?
+fbclid=IwAR2N4UbBeCy9T-icfmG073qX-
+g2o3Tqfo8fwXatgBNAjNx8RWWWvOjk1E90 
+ 
+Ghanbarpour M.R , Saravi M. and Salimi S. (2014) Floodplain 
+Inundation Analysis Combined with Contingent Valu-
+ation: Implications for Sustainable Flood Risk Man-
+agement. USA and Iran. from:https://
+link.springer.com/article/10.1007/s11269-014-0622
+-2?fbclid=IwAR0UrdPzYNgkxpB7chUwsBa_o2G 
+2JmoZNGONLI68TfEbVD6VpF2qMQzmVs 
+ 
+Castro J. , Badenas G. and Caldit W. et al. (2015) Study on 
+Flood Control System Introducing Storage Tank in 
+Manila City Hall Area. Adamson University. from: 
+https://www.researchgate.net/publication/ 
+278968140_A_Study_on_Flood_Control Sys-
+tem_Introducing_Storage_Tank_in_Manila_City_Hall_A
+rea 
+ 
+Prawiranegara M. (2014) Spatial Multi-criteria Analysis 
+(SMCA) for Basin-wide Flood Risk Assessment as a 
+Tool in Improving Spatial Planning and Urban Resili-
+ence Policy Making: A Case Study of Marikina River 
+Basin, Metro Manila –Philippines. Ministry of Publick 
+Works. from:https://www.sciencedirect.com/
+science/article/pii/S1877042814042475 
+ 
+75 
+ 
+ 
+Abon C. , Kneis D. and Crisologo I. et al. (2015) Evaluating the 
+potential of radarbased rainfall estimates for stream-
+flow and flood simulations in the Philippines. Philip-
+pines. from: https://www.tandfonline.com/doi/
+full/10.1080/19475705.2015.1058862?
+scroll=top&needAccess=true 
+ 
+Mahar A., Lagmay F. and Racoma B. et al. (2017) Disseminat-
+ing near-real-time hazards information and flood 
+maps in the Philippines through Web-GIS. National 
+Institute of Geological Sciences. University of the Phil-
+ippines. from: https://www.sciencedirect.com/
+science/article/pii/S1001074216314693 
+ 
+Dhonde K. (2016) A Dissertation in Telecommunications and 
+Computer Networking And Computer Science. Uni-
+versity of Missouri. Kansas City. from: https://
+mospace.umsystem.edu/xmlui/bitstream/
+handle/10355/61363/
+Dissertation_2016_Dhondge.pdf?
+sequence=1&isAllowed=y 
+ 
+Rahman S. (2014) IMPACTS OF FLOOD ON THE LIVES AND 
+LIVELIHOODS OF PEOPLE IN BANGLADESH:A CASE 
+STUDY OF A VILLAGE IN MANIKGANJ DISTRICT. 
+Bangladesh. from: http://dspace.bracu.ac.bd/
+bitstream/handle/10361/3802/13168004.pdf?
+sequence=1 
+ 
+Twumasiwaah K. (2016) URBAN FLOOD RISK MANAGE-
+MENT: A CASE STUDY OF ABOABO,KUMASI. Kwame 
+NkrumahUniversity of Science and Technology. Ge-
+omatric Engineering Department. from: http://
+ir.knust.edu.gh/bitstream/123456789/10343/1/
+THESIS-WORD.pdf 
+ 
+Rahmtalla A. and Mohammed A. (2015) REAL TIME WIRE-
+LESS FLOOD MONITERINGSYSTEM USING ULTRA-
+SONIC WAVES. TianJin University. from: https://
+
+76 
+ 
+ 
+www.academia.edu/34443185/
+REL_TIME_WIRELESS_FLOOD_MONITORING_SYSTEM
+_USING_ULTRASONIC_WAVES 
+ 
+Prime T. , Brown J. and Plater A. (2015) Physical and Eco-
+nomic Impacts of SeaLevel Rise and Low Probability 
+Flooding Events on Coastal Communities. from: 
+https://doi.org/10.1371/journal.pone.0117030 
+ 
+Mendez J. (2017) Flood Monitoring and Early Warning Sys-
+tem using Ultrasonic Sensor. Lorma. from:https://
+research.lorma.edu/xmlui/handle/123456789/68 
+ 
+Beven K. and Hall J. (2014) Applied Uncertainty Analysis For 
+Flood Risk Management. World Scientific. from: 
+https://books.google.com.ph/books?
+id=rdC3CgAAQBAJ&source=gbs_navlinks_s 
+ 
+Tahir W. , Jani J. and Endut I. et al. (2016) Flood Disaster 
+Management in Malaysia: Standard Operating Proce-
+dures (SOPs) Review. Malaysia. from: https://
+link.springer.com/chapter/10.1007/978-981-10-
+0500-8_3 
+ 
+Azid S. , Sharma B. and Raghuwaiya K. et al. (2015) SMS 
+BASED FLOOD MONITORING AND EARLY WARNING 
+SYSTEM. The University of the South Pacific. Suva, 
+Fuji. from:https://www.researchgate.net/profile/
+Bibhya_Sharma2/publication/283101853 
+_SMS_based_flood _monitoring_and_early_warning 
+_system/links/5c3bfd3892851c22a3735e66/SMS-
+based-flood-monitoring-and-early-warning-
+system.pd 
+ 
+ 
+ 
+ 

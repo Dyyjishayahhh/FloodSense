@@ -1,0 +1,160 @@
+{
+  "source": "E:\\School Downloads-Jiraah\\00 FILES IN SCHOOL\\3RD YEAR 2ND SEM\\DCIT 60\\FLOODSENSE\\1.FLOODSENSE-200A\\FloodSense\\1. FLOODSENSE-MAIN\\QUESTIONNAIRES_SURVEY\\FLOODSENSE_INITIAL_SURVEY_RESULTS_AND_SUMMARY\\FloodSense Resident Survey Questionnaire (Responses).xlsx",
+  "responses": 40,
+  "consented_and_eligible": {
+    "consent": 40,
+    "adult": 40,
+    "bacoor_resident": 40,
+    "flood_experience": 40
+  },
+  "headline": {
+    "hard_to_obtain": [
+      29,
+      72.5
+    ],
+    "decision_often_always": [
+      30,
+      75.0
+    ],
+    "susceptibility_challenge": [
+      30,
+      75.0
+    ],
+    "evacuation_information_challenge": [
+      33,
+      82.5
+    ],
+    "android_access": [
+      39,
+      97.5
+    ],
+    "reliable_internet": [
+      29,
+      72.5
+    ]
+  },
+  "barangays": [
+    [
+      "Niog",
+      13
+    ],
+    [
+      "Zapote 1",
+      7
+    ],
+    [
+      "Zapote 2",
+      5
+    ],
+    [
+      "Zapote 3",
+      3
+    ],
+    [
+      "Talaba 2",
+      2
+    ],
+    [
+      "Mambog 1",
+      2
+    ],
+    [
+      "Mambog 4",
+      1
+    ],
+    [
+      "Ligas 1",
+      1
+    ],
+    [
+      "Talaba 3",
+      1
+    ],
+    [
+      "Mambog 3",
+      1
+    ],
+    [
+      "Talaba 1",
+      1
+    ],
+    [
+      "San Nicolas 1",
+      1
+    ],
+    [
+      "Poblacion",
+      1
+    ],
+    [
+      "Maliksi 1",
+      1
+    ]
+  ],
+  "problem_means": [
+    [
+      "Information is too general or not location-specific",
+      4.158,
+      29
+    ],
+    [
+      "Information is difficult to access when internet or electricity is unreliable",
+      4.135,
+      28
+    ],
+    [
+      "Preparedness instructions are too general",
+      4.108,
+      28
+    ],
+    [
+      "Source or date is unclear",
+      4.079,
+      28
+    ],
+    [
+      "Verified evacuation-center information is difficult to find",
+      4.053,
+      29
+    ],
+    [
+      "Different sources provide conflicting information",
+      4.027,
+      26
+    ],
+    [
+      "Information is difficult to understand",
+      3.974,
+      30
+    ],
+    [
+      "Information arrives too late or is outdated",
+      3.795,
+      24
+    ]
+  ],
+  "data_quality": {
+    "duplicate_group_sizes": [
+      2
+    ],
+    "rapid_intervals_under_10_seconds": [
+      0.571,
+      1.116,
+      1.512,
+      0.627
+    ],
+    "repeated_comment_counts": [
+      6,
+      2,
+      2
+    ],
+    "checkbox_contradictions": {
+      "no information plus information sources": 1,
+      "none plus affected decisions": 2,
+      "no guidance problem plus another guidance problem": 1,
+      "no evacuation information need plus requested details": 2,
+      "location discomfort plus accepted method": 1
+    }
+  },
+  "docx": "E:\\School Downloads-Jiraah\\00 FILES IN SCHOOL\\3RD YEAR 2ND SEM\\DCIT 60\\FLOODSENSE\\1.FLOODSENSE-200A\\FloodSense\\1. FLOODSENSE-MAIN\\QUESTIONNAIRES_SURVEY\\FLOODSENSE_INITIAL_SURVEY_RESULTS_AND_SUMMARY\\FloodSense_Initial_Survey_Results_and_Summary.docx"
+}

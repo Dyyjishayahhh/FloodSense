@@ -1,0 +1,745 @@
+SOURCE: interviews\BDDRMO-INTERVIEW-LATEST.pdf
+PAGES: 20
+
+===== PAGE 1 =====
+BDDRMO INTERVIEW 
+Researcher 1: Romar Pulao 
+Researcher 2: Martin Lorenz D. Juanites 
+Researcher 3: Reymart Goc-ong 
+Interviewee: Johnny 
+[INTERVIEW STARTS WITH RESEARCHERS EXPLAINING THE BACKGROUND OF THE STUDY TO 
+BDDRMO SPECIFICALLY THE OLD THESIS TITLE] 
+Researcher 1: Yung mga napag usapan po natin dati sir, is about sa flood susceptibility areas. Ibig 
+sabihin, yung mga binabahang areas. Kasi meron po kaming dalawang scenario which is, tagal ng 
+ulan atsaka lakas ng ulan. 
+Interviewee: teka muna, nung huling punta nyo dito, anong status na ng thesis nyo chapters 1 to 3 
+pa lang yon? or title pa lang? 
+Researcher 2: Title pa lang po, title proposal pa lang. 
+Interviewee: Na depensahan nyo na ba yung title? 
+Researcher 3: Yes po, ngayon po gumagawa na po kami ng chapters 1 to 3 and yung system 
+development 
+Interviewee: Edi na depensahan nyo na? 
+Researcher 1: yes po gumagawa na po kami ng chapter 1 to 3. At kasama na yung system 
+Interviewee: okay, sige tuloy mo na ulit yung pinag uusapan kanina. 
+Researcher 1: yung sa system pa po namin don ay, yung ML or machine learning at Augmented 
+Reality yung map, bale gagamit po ng camera. Ngayon po, iniba na po namin, ni-reconceptualize na 
+po namin, dahil sa advise po ng aming Thesis Adviser, ang ginawa po namin ay, (shows the admin 
+and user interface of the floodsense).  
+Researcher 2: So eto po yung Bacoor Layer at Barangay Layer. 
+Interviewee: Saan Galing yan? 
+Researcher 2: Sa, OCHA po, sa United Nations Office for the Coordination of Humanitarian 
+Affairs, Pero yung pinag kuhaan po nila ng boundaries ay sa NAMRIA rin po tsaka sa PSA. 
+Interviewee: Shapefile to? 
+Researcher 2: um, GeoJSON po.  
+Interviewee: GeoJSON? Wala tong attribute? 
+Resaercher 2: Meron po. 
+===== PAGE 2 =====
+Interviewee: Anong laman 
+Researcher 2: Currently po wala pa meron merong supoosed attribute. 
+Interviewee: Okay so boundary pa lang yan? 
+Researcher 2:  Boundary pa lang po siya so far, kase po wala pa po kaming datasets na mailalagay 
+dito sa each barangays. Pero po yung inital na pwede nyang maging laman is, historical flood data 
+atsaka ng if makakakuha po kami ng RIDF (rainfall, Intensity, Duration and Frequency) 
+Interviewee: wala kami nong RIDF . 
+Researcher 2: Sa PAGASA po namin siya kukunin.  
+Researcher 1: Ang pinaka importante po samin is yung historical flood data. 
+Interviewee: mag le-letter ulit kayo non, dapat isinabay nyo na ngayon pa lang, 
+Researcher 1: ayun nga po, meron po kaming naging problem don, nag letter na kami nung 
+nakaraan kaso na reject.  
+Interviewee: bakit daw? 
+Researcher 2: ang una po kase non (shows the letter that got rejected by the HR) is boundaries ng 
+bacoor at barangay, kase ayon po siguro yung pinaka naging reason bakit na reject, kaya po 
+humanap na lang kami sa opensource and fortunately meron po kaming nakitang source. 
+Researcher 1: (shows the data we requested) eto po yung nirerequest namin, etong dalawa; yung 
+boundary at historical flood record.  
+ Interviewee: Ano daw reason ng HR? 
+Researcher 1: Baka daw po maka istorbo sa daily operation nyo daw po.  
+Researcher 2 : Sa PAGASA po, nag sesearch po kami ng RIDF , kaso wala silang station dito sa 
+bacoor. 
+Interviewee: oo, wala talaga. Sa tagaytay at cavite city lang. 
+Researcher 2:  Sa may Sangley point po,  and pag kinuha po ba namin yon is applicable sya dito? 
+Interviewee: Pwede, kase  naka pulo by pulo yan e . pwede ka kumuha sa tagaytay or jan sa sangley. 
+Researcher 2: Either way po pwede sya? 
+Interviewee: Mas maganda sa Cavite city, kase mas malapit. 
+Researcher 2: Atsaka po kumuha rin po kami ng rainfall data sa DOST-ASTI e. 
+Interviewee: sa Bacoor lang? ang alam ko kasi sa DOST-ASTI meron yan sa bacoor. 
+===== PAGE 3 =====
+Researcher 2: meron po sila, pero yung water level monitoring system. Kaso po last 2021 pa yung 
+last reading.  
+Interviewee: Pano gagawin natin jan, kung hindi pinayagan ng HR. irerevise nyo yung letter kasi iba 
+na yung hihingiin nyo. 
+Researcher 2: opo yung historical flood records na lang po.  
+Research 1: ano po kaya yung paraan sir para pwede silang pumayag. 
+Interviewee: irequest nyo lang yung hinihingi nyo, ipakita nyo yung unang letter nyo. diba may 
+privacy act kayo? yung pinaka una, bago kayo mag simula. Diba may pinakita kayo sa admin. I 
+support documents nyo yon. Na binigyan kami dati ng admin sa mag data gathet at sa privacy act. 
+Ngayon mag rerequest ulit kayo sa bddrmo regarding sa historical flood records. Yun lang, palitan 
+nyo lang letter nyo.  
+Researcher 2: sige po sir, dito naman po tayo sa barangay at bacoor layer. Okay naman po ba siya or 
+valid po ba siya? 
+Interviewee: Okay naman siya. Layer lang naman yan e, at for visualization. 
+Researcher 1: kasama rin po kase ayan sa nirerequest namin kaso baka ayan yung reason bakit na 
+reject dahil sa complexity ng files or format. 
+Interviewee: titignan ko kung magagamit namin yang system nyo ah.  
+Researcher 2: (proceeds to showcase the floodsense application as user) as of now po sir, nilagyan 
+po namin yung each barangay ng values para ma testing yung rule at flood scuceptibility if ever kung 
+gagana ba each layer. So una po pipila ka muna ng flood scenario mo which is yung duration at 
+intensity, tapos pwede kang pumili ng barangay manually or current location mo kung nasan ka. So 
+ayan halimbawa yung rainfall duration mo is 6 hours then yung intensity is 6 hours and nasa zapote 
+ka. (suddenly the connection plug between my device and my laptop disconnects). Ay wait lang po 
+sir na disconnect yung phone sa laptop, pwede po ba tanungin ka po ba muna namin sa mga 
+interview questions namin habang sinesetup ko ulit) 
+Interviewee: Sige 
+Researcher 1: Babasahin nalang po ba namin sainyo to or kayo na po magbabasa? 
+Interviewee: akin na, basahin ko nalang, (he proceed on reading the interview). Bakit hindi nyo 
+sinammarize to, andami naman nito? 
+Researcher 1: expert system po kasi yung thesis namin, ang kailangan po kasi namin maraming 
+validation and confimation from the expert like you po. So dapat daw po, yung knowledge na 
+ilalabas ng system namin is purely galing or validated sa expert. 
+Interviewee: dapat ito, iniwan nyo na sa akin e. andami kasi nento, baka abutin tayo hanggang 
+mamayang hapon nito. Pwede namang iwan to, sabay pag balik nyo pag usapan natin lahat ng may 
+===== PAGE 4 =====
+mga query ako. Pag kuha nyo nalang ng Data, saka natin pag usapan to. Diba mag rerequest kayo ng 
+data? 
+Researcher 1: opo 
+Interviewee: yun lang, wag na isama ang interview.  Kase pag bigay ko ng data, isasabay ko na ang 
+pag explain dito sa interview questions nyo. kase lahat ng query dito, yun lang ang pag-usapan natin 
+kasi kung babasahin ko lahat to, baka anong oras tayo matapos nito. 
+Researcher 1: kasi yung mga question po jan, yun po yung ilalagay namin dito lahat, kasi expert 
+system po kasi to. Yun ibibigay po ng system na decision support sa user ay galing sa expert. 
+Interviewee: Teka yang FloodSense (The web application admin side) pwede na mabuksan yan? 
+Kung makakakuha ako ng link niyan? 
+Researcher 2: Local pa lang po siya. 
+Interviewee: ah, local pa lang. 
+Researcher 2: Pag for deployment na po, dun nyo pa lang siya pwede ma buksan. 
+Interviewee: Para makita ko rin kung nasang part ng system tong asa questionare nyo, at masasabi 
+ko sainyo kung ano dapat ang kailangan, parang viewer lang. hindi namna editor, viewer lang siya. 
+Halimbawa binuksan ko yan, makikita at ma-eexplore ko. Kaya hindi ko maiintindihan tong mga 
+questions nyo, kung hindi ko ma alam ano meron jan sa web nyo.  kase example, may nabasa ako 
+dito e. etong number 19, How should FloodSense respond when evidence is missing, outdated, 
+contradictory, or too coarse for the selected location? Pang community ba to? Ano ibigsabihin nyo 
+jan? sang part ng system nyo tinutukoy dito? Sa admin or sa user side?  
+Researcher 2: sa User side po. 
+Interviewee: ahh. Kase floodSensse lang nilagay nyo, kase dalawa yan diba. Isang admin side at 
+user side. 
+Researcher 1: meron po yan nakalgay jan, ayan po nasa taas, Section 7, User Interface and 
+Usability Requirements. 
+Interviewee: okay, sorry nakaligtaan ko, so ibigsabihin ang tinutoy dito ay sa user side.  
+Researcher 2: opo. Under user po 
+Interviewee: so when evidence is missing or outdated? Anong ibigsabihin nyo jan, ano bang 
+sinasabi nyong missing. 
+Reseacher 2: ano po kasi, expected naman na po sa every system is since maraming data, hindi 
+maiiwasan may mga missing or oudated na data. 
+Interviewee: Sa user side kamo yan diba. 
+===== PAGE 5 =====
+Researcher 1: opo, kunwari po sir. Si user is ginamit nya yung app, then napansin nya na parang 
+oudated tong data na to, anong gagawin ng app or ni floodsense  para maparating sa user na okay 
+lang tong data na kahit outdated siya, kunwari 2020 pala yung basis ng datas na to. 
+Interviewee: anong klaseng data. Kase yung boundary kahit sampung taon yan hindi yan basta 
+basta  magiging outdated.  
+Researcher 2: yung mga historical flood po sir. 
+Interviewee: ang history kase, outdated lahat yon kasi historical yon e.  ang history kase,past talaga 
+yan. So hindi na naaupdate yon. Kase ang magiging oudated mo lang jan, yung population each 
+barangay at evacuation.  
+Researcher 1: so pano po kaya mahahandle ng floodsense yung mga gantong matter. 
+Interviewee: dapat alam nyo kung kelan ina-update, dapat meron updated last ganito for example 
+201 makikita sa system kung kelan yung data na yon, nakalagay disclaimer yan sa ilalim. Na kada 
+mag babasa kayo, nakalagay kung kelan siya huling na update or na published. 
+Researcher 2: parang ganito po (shows the system had that section already), yang source and 
+version, jan siya lalabas yung info. 
+Interviewee: oo halimbawa yung google earth, nakalagay don 2026 diba, meaning yung data nila is 
+as of 2026 eto pa lang ang meron, ganon siya dapat.  Para hindi sila nagtatanong.  
+Researcher 2:  Pero po if ever, mag rerequest kami ng data ng historical.  
+Interviewee: meron, meron tayo nyan. Kase ang kailangan mo jan. historical data diba, at rain rate? 
+Edi history din yon na itutugma mo don sa rain rate per barangay. Tsaka yung tagal ng pagkakaba, 
+history din yan. Pero hindi yon samin, sa barangay yon. Yung historical Data meron kami, yung sa 
+barangay mag tatanong lang kayo don, gano po katagal bago mawala yung baha, hindi 
+manggagaling samin yon. Hindi magiging reliable source kami, bakit? Kase buong bacoor yung 
+tinignan namin e, siyempre iba parin yung kung yung pagtatanungan mo ay  yung pinaka barangay 
+mismo, halimbawa nag subside yung baha ng gantong oras, yung ibang maliliit na lugar. Hindi na 
+namin alam yon kasi hindi naman nila nirereport yon e. kung sila nag rereport samin ng ganon, 
+pwede namin yon ma iprovide sainyo kaso wala.  
+Researcher 2: edi pupunta po namin kada barangay po yun sir? 
+Interviewee: yung mga flood prone lang, at sa mismong barangay. Hindi pa kayo kumuha ng hazard 
+map. 
+Researcher 2: kasama po yun sa letter. 
+Interviewee: sabi nyo historical lang. at downloadable yon sa namria, yung flood hazard map, 
+shapefile kamo.  
+Researcher 2:  huling check po kasi namin, picture lang po siya. Yung ganong hazard map 
+===== PAGE 6 =====
+Interviewee: ano yang mapbox? Jan galing yung boundary nyo? 
+Researcher 2: hindi po, pinatong lang po naming yung boundary sa mapbox  at inalign. 
+Interviewee: ah para ma-3d? 
+Researcher 2: opo para magkaroon din ng magandang visualization. 
+Interviewee: tapos ganyan lang yung kulay nya? (plain) 
+Reseacher 2: dipende po sa scenario po.  
+Interviewee: sige nga, punta sa niog  
+Researcher 1: dito po sir, yung mga datas po dito, placeholder pa lang po siya, ibigsabihin gawa-
+gawa pa lang po namin siya. 
+Interviewee: okay lang yon, dami lang naman yan e. sige ilagay mo niog (for demonstation) 
+(shows the susceptibility for niog based on the given scenario) 
+Interviewee: Ano yung red? (Proceeds in pointing the Pinned Location) 
+Researcher 1: Ang red po yung is High 
+Interviewee: Ano yung Yellow? 
+Researcher 1: Moderate po 
+Interviewee: Ano yung iba pa? 
+Researcher 1: Yung red po is ano…. 
+Interviewee: Pano mo nalamang High yung Pula? 
+Researcher 1: Yan po yung classification namin, yan din po yung ano sa…. 
+Interviewee: Di nga, ano yung basehan mo bakit naging High yan (yung red)? San galing yung data? 
+Researcher 1: Ano lang po ito, initial, nilalagyan lang po namin siya ng data para matesting po yung 
+system 
+Researcher 2: Kase wala pa po kaming datasets na Validated ng mge experts, parang placeholder 
+palang po yang mga yan 
+Interviewee: Okay, okay, Yellow kase dapat ay Low, ang Flood dito sa Bacoor apat, Low, Moderate, 
+High, Very High. Yung Low – dilaw (Yellow), yung moderate – Violet, yung High – orange, yung Very 
+High ay Red. Yon, sa Historical data, ipapasok mo lang jan (sa system niyo) yung historical data, 
+iinput mo lang sa admin kung san yung High, low, or etc.  
+Researcher 1: Opo, tapos mag rereflect na po sa user  
+===== PAGE 7 =====
+Researcher 2: Opo, kapag meron na po kaming mga available datasets 
+Interviewee: Mas maganda tapusin niyo yung ginagawa niyo eh, kase meron akong exhibit eh, kung 
+baga sinilect mo Poblacion. October exhibit namin 24, tinatapos ko yung exhibit ko eh, dalawa yan, 
+may quantum. Pag in-enter ko yung Quantum, may simulator ako. Pag sinilect ko yung Poblacion, 
+lalabas don yung mapa ng Poblacion – gano kalaki yung Poblacion, san Exposed na Hazard, pero 
+walang Rain rate yun ah – ano ba siya, High, low, moderate, very high, lalabas yon don. Tapos pwede 
+mo pasukan or lapatan ng Density, pwede mong lapatan ng kung ano mang Data yan, then kung 
+anong hinihingi don, dadalhin mo sa Simulator, papasok mo don, ang lalabas don kung anong 
+reach meron ka, Critical ba, moderate, or low, yun yon eh.  
+Researcher 2: Ang pinakapurpose po kase ng system po namin is pre-event awareness, ibig sabihin 
+po nun, hindi po siya live 
+Interviewee: Oonga, hindi talaga siya live, kase historical data yung kinukuha niyo eh. 
+Researcher 2: Ang iniisip ko po, necessary po ba yung mga data like… 
+Interviewee: Ang necessary don, historical data, tama yung ginagawa ninyo, para may projected 
+water level kayo na naaccumalate, ngayon – ang rain rate ang mahalaga, kase may computation 
+yan, sa chapter 3, dapat alam mo anong computation ang gagawin, ano yung output mo… 
+Halimbawa, ang rain rate po ay 30mm per hour, yung binabanggit mong classifications like High, 
+low, etc nayan, kungwari sa Niog, binanggit mong High yan, kung uulan siya ng 30mm, kailangan 
+makuha mo yung elevation niyan, para malaman mo kung saan jan yung merong 30mm per hour na 
+baha. 
+Researcher 1 and 2: Kung saang parte dito sir yung binabaha ng ganyan? 
+Interviewee: Oo, kung makukuha mo yung elevation, yun dapat, kase yun na yung warning eh. 
+Halimbawa, meron kang basis, kapag 30mm naman per hour, pag nilatag mo dito (yung measuring 
+device sa surface), ikinasa mo sa elevation, alam mo na kung ano, gano ba kataas yong 30mm?  
+Researcher 1: Mga ganito po sir, mga 3cm 
+Interviewee: Oh sige, isang oras ganyan kataas, saan dito yon (sa mapa ng Bacoor), eh 
+nagdalawang oras, eh nagtatlong oras, sa Tatlong oras, naging ganito na kataas yung baha, ngayon 
+may nilagay ako don, water level monitoring pero manual yon ah. Sa isang baso, pag lagpas ng 
+isang oras, kung nag 30mm or 60mm, sa isang oras kapag napuno yon, baha na don.  
+Researcher 2: So depende sa elevation 
+Interviewee: Kung gusto niyo talaga magkaroon ng Preparedness measure, dapat makuha niyo yung 
+elevation, kase manghuhula lang kau jan kung saan jan yung High or low or etc. Kase yung ibibigay 
+kong Low, Moderate, High, Very High, NAMRIA Projected yon, di yun actual, projected nila yon. 
+Matutulungan ko kayong maigi diyan kase gusto ko yung ginagawa ninyo, makuha niyo yung 
+elevation, matuturo ko sainyo kung pano iformulate yan. Merong formula yan eh, diba ganyan 
+Elevation, pano ka makakakuh ang OUTPUT nito (yung Low, Moderate, high, Very High), kung 
+===== PAGE 8 =====
+nakuha mo yung Rain Rate, san mo ibabanga yung Rain Rate, dapat meron, san ko ibabanga. Yung 
+dami ng  ulan, san ko ibabanga, eh kung mataas sa Molino, kahit pa 50mm per hour eh mataas 
+halimbawa yung Molino, di niya kaya Punuin yan, so saan dito. Saan ka macocompute. Halimbawa, 
+30mm per hour yan yung baranggay (Proceeds in pointing the Pinned baranggay in the map), na 
+pwede niyang punuin, makakagawa ka ngayon ng conclusion, preparedness measure, from 10, 20, 
+30, 40, pag 30mm rain rate, anong flood level doon sa baranggay? Kase 30mm rain rate eh, rain rate 
+yun ah, hindi water level yun ah, Rain Rate, Gano kataas then ilang oras, 30mm per hour ang 
+halimbawa non, dami ng ulan na ibinaba sa specific time rate. So saan dito yung 30mm per hour, 
+anong flood level siya sa baranggay. Sample nalang, sa Niog may Nilagay ako jan, pag napuno sa 
+isang oras yung baso nayon naka yellow, may Baha na sa Fabian St. na hanggang tuhod, ganon yon. 
+Researcher 2: Manu-manu lang yun sir? 
+Interviewee: Oo, sa Ligas naman, tinatanong ko kase yung mga baranggay eh, bantayan niyo yan ah, 
+pag yan napuno, puntahan niyo yung binabahang lugar, Fabian ang binabaha, hanggang tuhod. 
+Researcher 2: Mas valid po ba kapag ganon? 
+Interviewee: Oo naman, pero kailangan niyo makuha yung elevation, kase maglalagay kayo ng ilang 
+baranggay ng Water level, yung yung magiging basehan niyo, evidence-based kayo dapat. Sample, 
+Ligas, may ilog silang binabantayan, pero wala silang rain rate, kase dito may Rain Rate sa Niog, 
+pero indigenous yon, di siya electronic. Dito naman sa Ligas 1, ilog ang binabantayan, may level, 
+Level 1 to 10 ata, tinanong ko yung secretary, “Sec, kapag level 3, may baha o wala?” sabi niya “sir 
+Wala pa” , pero kapag yan tumataas nag pre-prep naya sila, kase kapag Level 5, may baha na, 
+nagets mo? Yung yung konsepto ng  Early warning, kase pre-emptive kayo kamo eh, preparedness 
+eh.  
+Researcher 2: So sabihin natin sir, ganito na po sa Molino 3, kase binabaha na yun don sir. 
+Interviewee: Yun nga yun eh, dun magvavary, kaya pinapakuha kayo ng marami. Una ang hihingiin 
+sainyo jan, Rain Rate, 10, 20, 30, etc.  san diyan yon (Sa mapa ng FloodSense), anong computation, 
+san mo ibabanga yon, hindi naman porke 30mm per hour dito sa Niog, eh baha na jan sa isang lugar 
+nayan. Pano mo majujustify na walang baha yung 30mm per hour na Tubig. Pero kung tutuusin, 
+tignan mo yung Pag-asa ah kung tama, pansinin mo, 30mm, Ilan yan? (Proceed in pointing the Pag-
+sa Chart) 
+Researcher 2: 50 at 30 
+Interviewee: Ilang galon yan, walong galon per sqr meter  
+Researcher 2: Pwede namin kunin toh sir? 
+Interviewee: Kukunin mo toh pero depende yan sa elevation paren, yang yung computation mo. Yan 
+yung formula niyo, kapag may 30mm per hour na tubig, pero san mo siya ibabanga. Doon sa 
+elevation at other data sets niyo. Ngayon pano niyo cocompute-in yan ng gamit yang formula nayan 
+sa elevation. Anong nawawala? 
+===== PAGE 9 =====
+Researcher 2: Elevation, san kaya makakakuha niyan Sir? 
+Interviewee: Sa NAMRIA paren, wala kami nun eh, naglagay palang dito eh, di naman tinapos. 
+Kapag nakakuha kayo ng Elevation sa Kanila, tutulungan ko kayo, gagamit tayo ng Quantum, 
+marunong kayo gumamit ng Quantum? 
+Researcher 2: Di pa namin na eexplore sir, pero yung nagamit palang namin yung QGIS. 
+Interviewee: Yun nga yun eh, Quantum Geographic Information System yun yon. Kase meron akong 
+shapefile nito, meron din akong shapefile ng Low, Moderate, high, Very High, kaso di talaga bibigay 
+kase confidential yon. Pumunta kayo ng Poblacion, may nilagay ako don, Early Warning Device, 
+hanapin ko ah. Kailangan niyo talaga pumunta don. May thesis din ako eh pero ang sakin risk, 
+sainyo susceptibility. Ang risk kase may kasamang vulnerability, exposure, hazard over capacity 
+equivalent to Risk. So sainyo, ganun din, ano ba yung hinahanap mo jan, ano bang output ninyo. Bat 
+kayo gumawa nento (System FloodSense), anong ibig sabihin niyan?  
+Researcher 2: Matulungan po si User ano po yung gagawin niya sa Ganitong Scenario. 
+Interviewee: So decision making yan 
+Researcher 1:  Yes po sir Decision Support po 
+Interviewee: Ang mangyayari diyan, kung decision Support yan, dapat aware sila asaan yung 
+pinakamataas na tubig kapag umuulan ng 30mm per hour, saan yung baha, kung mag re-route ako, 
+magbiyahe ako, kung kailangan na ba mag evacuate, yun  yung kailangan niyo tama? So kailangan 
+niyo talaga ng elevation. Tignan niyo toh, ito yung ginawa ko sa Baranggay, ito yung mapa, yang Pula 
+nayan sa mapa ko, yan yung Residential Area, hindi yan nakabarangay, hindi naman lahat yan 
+residential eh, yung iba jan open area eh, eto lahat oh, yan yung residential. High Exposure: 
+Sinbanali, Daang Bukid, Niog, yan yung mga High Exposure Area. Ayan oh, Vulnerable Population, 
+nilagay ko rin yan, Data Sources, Monitoring and warning services, eto yung karugtong ng ginagawa 
+niyo, bakit? Eto diba, Water level, Marker, narate mo dito, through elevation, nameet niya tong 
+Yellow, magrereflect Yellow diba? Anong gagawin niya( Yung Residente o User), eto yung 
+pinakaoutput niyo na dapat mangyare. Naglagay ka nga Yellow, eto yung susunduin mo, anong 
+gagawin nila (Nung mga User) pag yellow? Eh nag orange yan, anong gagawin mo pag nag orange? 
+Eh nag red, anong gagawin mo pag nagred, makikita niyo yan dito sa ginawa ko (Pointing at his Map 
+work with risk assessment and planning). Tapos eto Alert, Warning level, ano gagawin ng 
+community 
+Researcher 2: May violet kayo jan sir sa Moderate? 
+Interviewee: Wala, kase risk toh eh. Pag yung flood level ng namria, Violet yon.  
+Researcher 2: Bale yan po sir, pwede namin ipagbangga dito? 
+Interviewee: Yan talaga dapat (Yung ginawa ni BDRRMO na map) ang ipagbangga dito (FloodSense), 
+kase etong kulay nayan, magrereflect dapat yan jan. Tapos na nga oh, kung gusto mo, tapos na 
+===== PAGE 10 =====
+project niyo eh, bakit? Lumabas ang yellow, eto ang gagawin ng Community, ayan oh  (Pointing at 
+his Risk Map Flood), community response, action, kung anong gagawin ng Community.  
+Researcher 2: Pwede namin kunin yan sir? 
+Interviewee: Ayoko nga, pinaghirapan ko toh eh. Halimbawa, FloodSense, na-compute niyo, 
+nabigay niyo yung elevation, lumabas dito yellow, orange, or red etc, ano bang gagawin ko, san ba 
+ako nakatira jan, ah Yellow ako, Yellow alert. Anong Gagawin ng community, anong condition, eto 
+sya, anong action taken, ayon eh (pointing at the Risk Management he created on what the 
+Community will do based on the level). 
+Researcher 2: Pano sir kapag mag isa lang siya sa bahay, anong gagawin niya? 
+Interviewee: Ayan oh, monitor office…. 
+Researcher 1: Palalawakin nalang natin yang mga nilagay ni sir diyan. 
+Interviewee: Oo ganon, palawakin niyo nalang. Tsaka i-lemmatized niyo, kase kapag cinlick nila 
+tong orange, mag papa pop-up na jan. Eto na dapat  yung magpo-pop up jan sa system niyo 
+(pointing at his Risk assessment map). Halimbawa binasa niya, nakayellow ako ah, siyempre Yellow 
+lang yon. Ngayon, papaano yung communication kapag mag isa kalang, sino kokontakin mo? 
+Baranggay ba? Sino ba dapat? Eto,  sunod- sunod nayun. Response capability, eto yung response 
+capability ng Bacoor, so kung nag woworry yung isang tao nayon na mag-isa sya, ayan oh (pointing 
+again on his map), eto yung ginagawa ng city, para di siya mag-alala. Nagets niyo na? May soft copy 
+ako nito. 
+Researcher 2: Kase po yung output po namin diba, sa Mapa output namen 
+Interviewee: Oh eto sinasabi niya pa oh, *inaudible* frequency, every 6 hours, kelan ko ba 
+imomonitor toh, every 1 hour?  
+Researcher 2: 1, 3, 6, 12, 24 
+Interviewee: Oh ayan oh, (pointing at his created map with Assessments and all the User needs this 
+map is same with the first map he just presented to us), 30 minutes? Andiyan na lahat eh, pag ka 
+normal lang ang weather, every 6 hours imomonitor mo ito, normal, ulan ulan lang. pag ka Heavy 
+Rain, everyhour, para magreflect yung orange, red, tska yellow mo etc.  
+Researcher 2: Yung saamin po kase sir hindi live 
+Interviewee: Oonga, Hindi live, ibig sabihin, pag ako nakatira na sa lugar na toh, nababasa ko yan, 
+naexexplore ko yan, pag nabasa ko toh, pag ka malakas yung ulan, ibig sabihin imomonitor ko yung 
+ulan every hour 
+Researcher 2 and 3: Parang caution po siya, parang kung kelan nagstart? 
+Interviewee: Oo, ilalagay mo rito, diba may Rain Rate diba, 30mm, kung 30mm yung rain rate mo, 
+dapat mag aappear doon kung anong flood level, dito yon, Dito lalabas yon (Proceed at pointing at 
+===== PAGE 11 =====
+the bottom part of the FloodSense map), yung flood level, pag ginawa mo ng dilaw halimbawa – ako 
+nakatira dito, ulan nang ulan, malakas ang ulan, isang oras na, binuksan yung app, tinignan ko, kung 
+20mm ang rain rate, if ever narinig niya sa radio, 30mm rain rate tayo ngayon, binuksan niya ngayon 
+yung app niyo, syempre kapag binuksan niya yan, clclick niya yung 30mm rain rate, kung san siya 
+dito, sasabihin niya “Eto pala ang level ko” , eto yung mangyayare sakin, edi anong gagawin ko? 
+Lalabas na tong mga toh (Pointing sa mga anong gagawin kapag ganitong level ka, tinuturo niya 
+yung nakasulat sa ginawa niyang mapa), sino kokontakin ko? lalabas na toh (Pointing at his map 
+again), eto dapat yung pinakaOUTPUT ninyo.  
+Researcher 2: So after ng Decision Support System, eto yung pwede ko gawin? 
+Interviewee: Oo, kaya tapos na yung project niyo, kase kapag nagawa niyo toh, ilalagay niyo nalang 
+tong ginawa ko sa system niyo, palawakin niyo nalang talaga, kase ivavalidate ko parin naman yan 
+bago ma release sa public eh. 
+Researcher 1: Dito sa RDIF sir, ano pa ba yung mga kailangan namin bukod dito sa RDIF? 
+Interviewee: Puro free source yang ginagamit niyo ah 
+Researcher 1: Di po may bayad po ito, 400 per station po. Eto po kase yung process ng Pag-asa sa 
+pag bibigay ng data nila. Tinatanong ko po ano po yung mga kailangan pa namin data bukod po dito 
+sa RDIF? Meron po kase dito mga telepathry station, flood hazard map etc.. 
+Interviewee: Wag nayang Flood Hazard map, meron ako niyan eh, Rain Rate ang Kailangan mo 
+Tsaka Elevation 
+Researcher 1: Sa NAMRIA tayo kukuha ng elevation. Etong dalawang station naman sir (Proceed in 
+pointing the stations of the Pag-asa in the map) yung meron sila na malapit sa Bacoor.  
+Interviewee: Tanong mo yung PAG-ASA, ipakita mo yan, Tatlo yan diba (Stations), Tagaytay Weather 
+Station, Cavite City, wala ng Tagaytay? Merong Tagaytay ah. Ah tinanggal nila yung Tagaytay. Oh 
+tanunging, pero kung tatanungin mo ganito siyempre,  Alin diyan kamo ang mas Accurate kamo sa 
+Bacoor, yung yung kunin niyo, tapos kunin mo  yung elevation, para matrabaho na ito 
+Researcher 1: Sa elevation po, san po kaya kami magrerequest kung sakali? 
+Interviewee: Sa kanila din, sa NAMRIA, gumagawa ng mapa. Ang hihingiin niyo area, Area of 
+elevation.  
+Researcher 1: pwede po palagay ng Draft ano po yung kailangan namin sa Elevation.  
+Interviewee: eto sample lang, eto molino 3, molino 4, eto yung mapa niya (proceed in drawing the 
+map of Molino 3 and molino 4) ganun siya. Anong level ang elevation nito? Naka contour yan meron 
+kasi ako yung hindi updated, naka contour yan  
+ 
+Researcher 1: Ayan yung mga layer (contour elevation) 
+ 
+===== PAGE 12 =====
+BDRRMO Johnny: Ayan ngayun yung mga ilalagay mo dito  
+ 
+Researcher 1: Bawat layer po kasi may value  
+ 
+BDRRMO Johnny: May value yan so papaaano. Alam nyu na   
+ 
+Researcher 1: Hindi, parang ganyan yung itsura nya pero hindi dapat ganyan sa output  
+ 
+BDRRMO Johnny: Kasi output na yung kailangan nyu, eto isang buo na yan (contour elevation map 
+example) Anong ano yan  
+ 
+Researcher 2: Sabihen natin mga 30mm  
+ 
+BDRRMO Johnny: 30mm kukulayan mo ngayun sya. Kung ang 30mm nyu ay high kukulayan mo ng 
+red yan  
+ 
+Researcher 2: Edi ibig sabihen lahat ng 30mm ay red ang kulay  
+ 
+BDRRMO Johnny: Tapos kukulayan mo ito kung ito ay 20mm kukulayan mo ito para ito yung 
+barangay saan tumama yan may kulay yan. Saan ang bahay mo, dito kung tinamaan dyan ay red 
+30mm ka so anong computation mo ngayun  
+Researcher 2: Mga liters  
+ 
+BDRRMO Johnny: Atleast alam mo na. Ano yung formula ng 30mm tapos = to flood level o anong 
+formula nyan rainrate tapos elevation tapos water level, ang water level nyu sa isang oras merong 8 
+gallons equivalent to 30mm per rate pero area ang kukunin mo ilang area to?   
+ 
+Researcher 1: Madami 
+ 
+BDRRMO Johnny: Square metre ang pinag-uusapan nyu. Ang per square metre nyan merong 8 
+gallon tubig. Ilang square metre nyan? Ko-computen nyu ngayun yan dun lalabas yung water level 
+ng buong barangay. Nakuha nyu na? 
+ 
+Researcher 2: Elevation talaga 
+ 
+BDRRMO Johnny: Kunin nyu yung formula  
+ 
+Researcher 2: Magkano po kaya yung elevation data? 
+ 
+BDRRMO Johnny: Hindi ko alam eh.  
+ 
+===== PAGE 13 =====
+Researcher 1: Saan po namin mahahanap yung formula?   
+ 
+BDRRMO Johnny: Sa internet den.  
+ 
+Researcher 2: Paano po kung may mahanap kaming elevation na free?  
+ 
+BDRRMO Johnny: Edi gamitin nyu  
+ 
+Researcher 2: Maba-validate nyu yung Sir?  
+ 
+BDRRMO Johnny: Eba-validate sa field kung tama. Kukuha ka ng respondent na kung ilan yung 
+binabahang lugar at least 60% na binabaha ang iba-validate kung tama nga sya  
+ 
+Researcher 1: Sa community na po yun? 
+ 
+BDRRMO Johnny: Sa community  
+ 
+Researcher 2: Halimbawa, sa Molino 3 mga ilan kaya?  
+ 
+BDRRMO Johnny: Chapter 1 tapos na?  
+ 
+Researcher 1: Opo 
+ 
+Researcher 2: Ere-revise nalang yun Sir 
+ 
+BDRRMO Johnny: Chapter 2 madali lang eh literature lang yun.  
+ 
+Researcher 2: Tapos na yun Sir 
+ 
+BDRRMO Johnny: Yung Chapter 3   
+ 
+Researcher 1: Methodology medyo mahaba  
+ 
+BDRRMO Johnny: Nandun yung questionnaire, gagawa pa kayo ng questionnaire  
+ 
+Researcher 1: If ever po magre-request kami sa NAMRIA (National Mapping and Resource 
+Information Authority) ano po ba yung format yung kailangan or suitable? 
+ 
+Researcher 2: Kailangan pa po ba namin ng pirma ng City Hall (Bacoor)?  
+ 
+BDRRMO Johnny: Hindi, tanong nyu nalang kung ano yung requirements na kailangan nyu, na 
+===== PAGE 14 =====
+maipo-provide nyu. Kailangan nyu munang mag inquire sa kanila, paliwanag nyu “sir ganito po yung 
+kailangan namin, kasi flood level yung kailangan namin naisip po namin na kailangan ng elevation 
+para malaman namin saaan yung high, low, or moderate” . 
+ 
+Researcher 2: Sa NOAH nga (https://noah.up.edu.ph/know-your-hazards)  nga. Punta ka NOAH. 
+Eto para ma-visualized ni Sir Johnny  
+ 
+BDRRMO Johnny: Pwede rin namang ganyan pero kailangan makuha nyu yung … 
+ 
+Researcher 1: Hindi walang mga layer yan, kumbaga ito ay based sa 100-year rain return for floods 
+ 
+Researcher 2: Pero nakuha nya sir yung exact square meter 
+ 
+BDRRMO Johnny: Ang layo na ngayun nyan, history nalang yan  
+ 
+Researcher 1: Hindi na sya updated? 
+ 
+BDRRMO Johnny: Kasi ang sabi nga ng NOAH, 50 years from now ang binabaha na Bayanan  
+ 
+Researcher 2: Pagkinuha kaya namin ito Sir maba-validate pa rin samin. For example, ginaya namin 
+yung mismong paglagay nila ng mga kulay 
+ 
+BDRRMO Johnny: May laman ba yung bawat (barangay) pag kli-nick mo may laman ba?  
+ 
+Researcher 1: Wala 
+ 
+BDRRMO Johnny: Wala namang data eh. Click mo yung pula, wala kailangan may laman yan  
+ 
+Researcher 2: Eto, dapat po ba mag ganito?  
+ 
+BDRRMO Johnny: Eto, ayan yung may high and medium dapat may laman yan. Ayan den naman 
+yung laman ng flood hazard natin ngayun  
+ 
+Researcher 2: Kapag pinned nya dyanSir mag iiba. Kapag kinuha namin yan Sir ang kaso wala yung 
+susceptibility level   
+ 
+BDRRMO Johnny: Wala kang basihan, sasabihen ng teacher mo dapat ayan nalang sana prinesent 
+nyu 
+===== PAGE 15 =====
+ 
+Researcher 1: Galing pang ibang bansa yan, yung atin Bacoor lang   
+ 
+Researcher 2: Ibang bansa gumawa nyan? Akala ko UP? 
+ 
+BDRRMO Johnny: Ang hanapin nyu, kung makakakuha kayo ng ganitong data tapos may mga 10-
+80mm, anong mga meaning nyan  
+ 
+Researcher 2: Baka mga mm (millimeters) yan Sir kasi pataas ng pataas  
+ 
+BDRRMO Johnny: Ayun ang pag-aralan nyu, baka dyan palang makakuha kayo ng contour elevation 
+ng Bacoor, aaralin nyu talaga yan tapos kukulayan nyu  
+ 
+Researcher 2: Isa isa yan buong Bacoor  
+ 
+BDRRMO Johnny: Hindi naka contour na yan  
+ 
+Researcher 1: Kapag kinulayan mo ito lahat na yan makukulayan 
+ 
+BDRRMO Johnny: Halimbawa ang computation ninyo pag 30mm ang elevation nya nandun lang 
+yung mababa yan ang elevation so ayun ang babahain ng 30mm, parang sinabi nung Barangay na 
+“Sir, sa ilog pag Level 5 baha na itong portion na to pero dito hindi” so mababa dito. Ayun ang 
+kailangan ninyo pag 30mm na ang rain rate anong portion ang may baha at gaano kalalim. Yun yung 
+kailangan nyung malaman para magamit nyu ito. 
+  
+Researcher 2: Pero hindi nyu pa maibibigay yan Sir (Risk Level Map) 
+ 
+BDRRMO Johnny: Hindi pa tapusin nyu muna yan  
+ 
+Researcher 1: Picturan muna natin  
+ 
+BDRRMO Johnny: Nandun sa bayan (St. Michael Church) sa may poblacion nakita ko naka display 
+dalawa yan earthquake at tsaka flood  
+ 
+ 
+Researcher 1: Sa tanong ko po kanina, if ever po magre-request kami ng ganito sa NAMRIA ano po 
+ba yung format na mas suitable 
+ 
+BDRRMO Johnny: Hindi ko alam sa kanila, kasi sabihen nyu lang sa kanila ano yung plano ninyo. 
+Ang kailangan nyu lang naman kasi yung elevation data kung below sea level. Halimbawa 5 meters 
+ang sea level nyu ilan? Kasi ayun ang basihan nyu eh sea level yun ang magiging basihan ng 
+===== PAGE 16 =====
+elevation. Halimbawa kung 20 meters above sea level tayo dito paano yung iba? Ilan sila? 5 meters 
+10 meters    
+ 
+Researcher 2: May fix naman yung NAMRIA  
+ 
+BDRRMO Johnny: Oo, hindi naman basta basta nagbabago ang ano nyan   
+ 
+Researcher 1: Yun din po ang advantage ng admin side, kumbaga pwede nyang palitan yung data 
+pero matagal 
+ 
+BDRRMO Johnny: Matagal, ngayun bumababa nagkakaron ng infrastructure nababawasan yung 
+elevation nya kasi pwede nilang tambakan yun. 
+ 
+Researcher 2: Bale sa DSS (Decision Support System) yung mga output nya (Risk Level Map) dyan 
+pwede naming palawakin tapos va-validate nyu sir. Halimbawa po gagawa kami ng mga ganitong 
+scenario sainyo namin ipapa-validate kung tama?  
+ 
+BDRRMO Johnny: Pwede, OO e-validate natin.  
+ 
+Researcher 2: Dahil may ganito kayo sir (Risk Level Map), medyo hindi na kailangan kasi pwede 
+naman kaming gumawa ng sarili namin tapos ipa-validate sainyo base sa Risk Level Map. Pag 
+nakuha namin yung elevation may formula na kami dyan ilang liters 
+ 
+BDRRMO Johnny: Basta kung anong lumabas dito na kulay base sa elevation ninyo na kinuha nyu 
+sa rain rate, rain rate kasi yung magiging basihan ninyo para makuha yung flood level or water level. 
+Makukuha mo yung exact water level kung alam mo ren ang elevation  
+ 
+Researcher 2: Ano ano po yung mga parameters ng rain rate bukod sa lakas  
+ 
+BDRRMO Johnny: Ang rain rate ay binigay yan ng ulan pero saan mo gagamitin yung rain rate para 
+malaman mo yung water level so paano mo malalaman ang water level sa elevation at tsaka yung 
+walong gallon per square metre dun palang may idea kana 
+ 
+Researcher 2: Bale ang rain rate Sir, paano nyu sya nasusukat kapag dito sa Bacoor 
+ 
+BDRRMO Johnny: May ano yan, per oras. Ang ginawa ko sa Niog, bumili ako ng bote ng softdrinks 
+na plastic. Mula sa bottom sinukat ko yan 30mm, babantayan mo yan sa loob ng isang oras 
+pagnapuno meron kang 30mm per hour. Manual yun sila matic, may sahuran talaga sila may 
+imbudo yan sila  
+ 
+Researcher 2: Ang sasabihen ko nalang ganito kalakas naglagay ako ng marami bote sa buong 
+===== PAGE 17 =====
+barangay, pwede ba yun?  
+ 
+BDRRMO Johnny: Kaya nga mayroon kayong basihan hindi naman aabot sa 30mm sa 20mm 
+pumunta, saan yung may baha kung 20mm ang rain rate. Dun magva-varie yung level of flooding or 
+water level sa community based sa rain rate at base sa elevation yung water level 
+ 
+Researcher 2: Bale to summary Sir, halimbawa ito yung bote nyu 20mm, ang baha sa Niog dun nyu 
+maba-base yung baha sa 20mm  
+ 
+BDRRMO Johnny: Dun mo makukuha yun. Paano makukuha elevation.  
+ 
+Researcher 1: May ganun ka nga hindi mo naman alam kung gaano kataas yung sea level  
+ 
+Researcher 2: Bale ito yung basehan mo Sir para hindi kana lumusong sa malalim 
+ 
+BDRRMO Johnny: Hindi na, naka rate na. Duon ka nakatira pagnalaman mong 20mm of rain rate 
+babahain na sa amin  
+ 
+Researcher 2: Kunwari Sir dito 20mm na baha na siguro dyan  
+ 
+BDRRMO Johnny: Ganun yung magiging mindset mo ngayun yun yung magre-reflect dito at 
+gagamitin nilang o tatandaan lang nila kunwari taga Niog ako tatandaan ko lang naman yun  
+ 
+Researcher 2: May pin location naman kapag pinindot nya (barangay) malalaman nya kung saan 
+sya 
+ 
+BDRRMO Johnny: Kapag 30mm ganito ang gagawin ko eh narinig nya sa TV 30mm balikan ko nga 
+para sigurado, oo nga 30mm anong gagawin ko  
+ 
+Researcher 2: Mas magandang parameter yung mm o milemeter kasi yung mga parameters lang 
+namin dyan yung lakas at tagal ng ulan  
+ 
+BDRRMO Johnny: Kung community ang pag-uusapan hindi nyu kailangan ng mm kasi malay nila 
+dun. Ganyang lang, pero i-input nyu duon sa formula yung line kung ilang mm yun pero dapat may 
+formula den kayong nilalalabas para alam nila yun kung papaano, halimbawa binuksan mo ito naka 
+line nakalagay dito yung information ng line para alam ng mambabasa na ang line ay 20mm  
+ 
+ 
+ 
+Researcher 2: Dito po sa baba, area lang na yun  
+ 
+===== PAGE 18 =====
+BDRRMO Johnny: Halimbawa, ito nag ganito nag yellow, ano yung legend ng yellow, nag red ano 
+yung legend ng red magpapalit palit yan  
+ 
+Researcher 2: Bale, kapag nakuha na po namin Sir yung elevation kami na po bahala sa mga 
+decision support tapos iba-validate nyu nalang  
+ 
+BDRRMO Johnny: Makukuha nyu na yun kasi ang kailangan nyung makuha ay water level output 
+ano yung formula baka mali pa rin ako baka kulang pa kasi una rainrate, elevation, ano pa yung 
+kailangan nyung formula para makuha nyu yung water level 
+ 
+Researcher 2: May existing na po ba kayong water level 
+ 
+BDRRMO Johnny: May history  
+ 
+Researcher 2: Ayun yung pwede naming kunin?   
+ 
+BDRRMO Johnny: Ayun ang re-request nyu  
+ 
+Researcher 2: Ano po yung pwede naming isulat dun? Historical ..  
+ 
+BDRRMO Johnny: Historical data lang o flood history lang okay na yun  
+ 
+Researcher 2: Wag na po namin e-specific para hindi na mabutasan 
+ 
+BDRRMO Johnny: Flood history lang 
+ 
+Researcher 1: If ever po na e-reject nila e-include lang po namin yung mga past interview  
+ 
+BDRRMO Johnny: Kukunin nyu lang naman yung mga kailangan ninyo halimbawa anong barangay 
+ito bat ganito kabaha maju-justify nyu ngayun gamit yung formula naging high, halimbawa na ang 
+sinabi ko sa area na ito 12inches nung ginamit nyu yung pag-aaral nyu yung elevation nyu, yung 
+rainrate nyu, etc bumangga duon sa waterlevel malalaman nyu tama, 12inches nga ito. Pwedeng 
+mawala si rainrate, meron kang water level eh, dito ka ngayun kukuha malalaman mo kung ilang 
+rainrate pag 12inches, ganun sya  
+ 
+Researcher 2: Nabubuo na sa utak namin  
+ 
+BDRRMO Johnny: Nabubuo nyu na, formula lang yan.  
+ 
+Researcher 2: Bale, kapag may elevation na kami Sir kayang kaya na namin tapusin yan  
+ 
+===== PAGE 19 =====
+Researcher 1: Hindi, kailangan pa ng RDIF (Rainfall Intensity-Duration-Frequency) may elevation ka 
+nga wala ka namang RDIF  
+ 
+BDRRMO Johnny: Madali lang naman ang rainrate, formula lang naman ang kukunin mo hindi 
+kailangan kunin ang rainrate kung 20mm ang ni-require umuulan ngayun at sinabi ng PAGASA 
+20mm.  
+ 
+Researcher 1: Yung nasa PAGASA  
+ 
+BDRRMO Johnny: Oo, ang makukuha mo dyan history rainrate history. Pwede kang kumuha 
+basihan mo. Halimbawa may binigay akong history sainyo kunin mo lang yung rainrate ng ganitong 
+bagyo meron kanang basihan mako-compute mo na kung gaano kataas. Halimbawa bagyong 
+Crising may binigay akong kung gaano kataas yung tubig sa barangay na ganito search nyu dyan 
+rainrate ng bagyong Crising pagsinabi nyang 30mm edi malalaman nyu na kung ilan  
+ 
+Researcher 2: Ano pong bagyo ang nagpabaha dito sa Bacoor?  
+ 
+BDRRMO Johnny: Hindi ko matandaan eh pero marami, Ondoy marami-maraming typhoon ang 
+nagpabaha, ayan Crising kasama yan  
+ 
+Researcher 2: Pwede namin sya gawing basihan Sir? 
+ 
+BDRRMO Johnny:  Hindi, pagnaibigay ko na si history magagawan nyu na yun ang hihingiin nyu lang 
+na historical data na ibabangga nyu duon sa ibibigay kong flood history. Yung flood history may 
+pangalan ng bagyo yun at anong oras, at anong water level yun yung magiging basihan ninyo para 
+mag request sa NAMRIA ng rainrate ng ganitong bagyo at ganitong oras  
+ 
+Researcher 2: Pero kailangan po muna naming kunin yung elevation ng fix  
+ 
+BDRRMO Johnny: Kunin nyu yung elevation para formulate nyu kung sa mga susunod na panahon 
+kasi yung history magiging evidence based nyu yan ayan yung pattern bakit tama yung ginagawa 
+nyu. Ayun lang naman ang gusto ng thesis kaya nga pinapakuha kayo ng mga source o saang 
+literature yan. Chapter 3 kayo ngayun magfocus kasi duon mahigpit yung mga panel  
+ 
+Researcher 2: Ito sir, okay na po ba ito o kailangan pa ng elevation  
+ 
+BDRRMO Johnny: Okay na yan, kailangan nyu lang ng elevation at iba pang formula na mako-
+compute nyu yung water level kasi kapag nabutasan kayo dun dapat alam nyu yung pasikot sikot ng 
+water level  
+ 
+Researcher 2: Mahihirapan kaya sila dun Sir yung mga panel?  
+===== PAGE 20 =====
+ 
+BDRRMO Johnny: Mahihirapan sila dun pero mahirap mag tanong ang walang alam, mas mahirap 
+magtanong yung walang alam.  
+ 
+Researcher 2: Mai-explain namin sa kanila na ano yung basis namin 
+ 
+BDRRMO Johnny: Oo, pa tanga-tangang tanong pero totoo merong ganun. May sense yung tanong 
+nya kahit pa tanga-tangang tanong lang pero may sense yung tanong nya 
+ 
+Researcher 2: Baka tanungin kami “anong basis nyu at bakit ganyan” edi may maisasagot kami Sir 
+ 
+BDRRMO Johnny: May historical data kami, “Paano mo nalamang 12?” ang rainrate nya ganito at 
+ganyan gumawa kami ng elevation.  
+ 
+Researcher 2: Basta hindi natin ipapaalam paano natin ci-node  
+ 
+BDRRMO Johnny: Ito na ang susundin natin at labas yan “bakit tama yan” may kinuha kaming 
+history so tama yung ginagawa natin  
+ 
+Researcher 1: Malinaw na po  
+ 
+BDRRMO Johnny: Malinaw na.  
+ 
+ 
+ 
+ 
+ 
+ 
+     
+ 
+ 
+ 

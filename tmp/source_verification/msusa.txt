@@ -1,0 +1,749 @@
+Developing a Climate-Smart Web GIS App for Multi-Hazard Early Warning against 
+Climate-Based Disaster Risks 
+ 
+Anastazia Daniel Msusa 1, Dorothea Deus 1, Octavian Gasper Nyalali 4,  Anthony Gidudu 2, Engelbert Wangabo 1, Salma Makuti 3, 
+Gideon Marandu 1 
+ 
+1 Dept of Geospatial Sciences & Technology, Ardhi University, Dar es Salaam, Tanzania  
+2 Dept of Geomatics and Land Management, Makerere University, Kampala, Uganda  
+3 Dept of Geotechnical Engineering, University of Dar es Salaam, Dar es Salaam, Tanzania 
+4 Ability First Tanzania (AFTA), Dar es Salaam, Tanzania  
+ 
+ 
+Keywords: Climate, Climate-Smart Application, Web GIS, Multi-Hazard Early Warning, Disaster Risk Reduction 
+ 
+ 
+Abstract 
+ 
+Floods and drought are one of the most recurring and devastating natural hazards threatening life and economy. Early warning of the 
+likely occurrence of flood and drought disaster risks and impacts could assist in decision making to support proper disaster risk 
+responses, management and formulation of informed Climate Change adaptation and mitigation strategies for enhanced resilience  
+and disaster risk reductions. Globally and across Africa various initiatives and innovations of multi -hazard early warning systems 
+based on web and mobile information platforms have been developed, however, none fit in the Tanzanian and East African 
+environment. Developing a localized multi -hazard early warning for climate related hazards is essential in reducing loss of life and 
+damage to property. This study aimed at developing an innovative multi -hazard early warning Web based Geographical Information 
+System (GIS) App for flood and drought disaster risks in East Africa, Case of Tanzania. We used Palmer Drought Severity Index 
+(PDSI) and deep learning neural networks based on geospatial weather data using a convolution long -short-term memory 
+(ConvLSTM) model to predict drought in Dodoma. Global Flood Awareness System (GloFAS) flood prediction data were streamed 
+to show the flood occurrence forecasted for Dar es Salaam. The Web based GIS App was designed and developed using the Rapid 
+Application Development (RAD) methodology in Microsoft .NET framework to capture and disseminate information on flood and 
+drought disaster risks. From analysis we identified areas which are highly prone to flooding. The results were validated usin g 
+observed flood points identified and mapped using the participatory approach by vulnerable community members.  On the other 
+hand, the analysis of drought conditions in Dodoma region depicts Chamwino, Bahi and Central Dodoma to be highly prone to 
+drought risks. Thereafter, the Web -based GIS App for dissemination of climate related early warning information for flood and 
+drought disaster risks was successfully developed. We recommend integration of GIS and Early Warning Tools into Existing 
+Policies, Establish Monitoring and Evaluation Frameworks and further Improvement of the Developed App for enhanced Disaster 
+Risk reductions (DRR). 
+ 
+ 
+1. Introduction 
+Disasters resulting from climate change related natural hazards 
+like floods and droughts accounts for casualties, human 
+displacement and property damage are on an appalling scale 
+around the world (Thomas, 2017). At g lobal level, flooding is 
+one of the most significant natural disasters  among 
+meteorological hazards leaving widespread devastation in its 
+wake ( Dewan, 2013; G rimaldi et al., 2016; Blöschl, 2022; 
+Olanrewaju & Reddy, 2022 ; Alsahhan et al., 2023 ). In many 
+parts of the world, about 1.81 billion people , which is 23% of 
+world population are straightforwardly exposed to 1-in-100-year 
+floods (Rentschler et al., 2022). East Africa is burdened by the 
+dual pressures of climate change and the rapid, uncontrolled 
+transformation of its cities and megacities  (Gosset et al., 2023) . 
+For instance, in March 2020 more than 1.3 million people were 
+affected by floods in East Africa. In 2024, severe flooding in 
+East Africa caused several casualties while destroying 
+infrastructure, crops and killing livestock and wildlife. Tanzania 
+experiences the highest incidence of flooding in East Africa 
+(Erman et al., 2019). Between 2013 and 2020, Tanzania 
+reported 34 natural disasters such as floods and storms. Such 
+weather hazards led to destruction, deaths, and thousands of 
+people forced to leave their homes (World bank Group, 2022). 
+The cost of flooding has been increasing over the years, and its 
+effects are felt by everyone to varying degrees (Cruz -Bello & 
+Alfie-Cohen, 2022), causing disruption, displacement and 
+endangering of properties. Besides causing damage to 
+infrastructure and threatening  lives, floods cause decline of the 
+economy (Mioc et al., 2008; Motta et al ., 2021; Ajibade et al., 
+2021; Li et al., 2023 ; Zao et al., 2023 ). Floods are the main 
+natural hazard that the country experiences on regular bases 
+(Olorunfemi, 2011).  Specifically, Dar es Salaam region is 
+highly vulnerable to floods, coastal erosion, water scarcity, and 
+disease outbreaks (Kebede & Nicholls, 2012). Each year, the 
+region faces severe flooding that devastates roads and destroys 
+homes posing significant risks to both lives, infrastructure and 
+economy. 
+ 
+On the other hand , droughts rank among the most destructive 
+and expensive natural disasters with a profound impact on 
+agriculture, water resources, the economy, society and the 
+environment (Mckee et al., 1993; Li et al., 2019; Pei et al. 2020; 
+Hoque et al.,  2020). Economic losses from drought -related 
+disasters and their negative effects on human society surpass 
+those of any other meteorological disaster (Hoque  et al., 2020). 
+Globally, drought-related disasters cause an estimated economic 
+loss of $6 –8 billion annually ( Pei et al. 2020 ). Frequently 
+droughts in Tanzania cause devastating impacts on economy, 
+agricultural output, food security, hydropower generation and 
+domestic water supply (World bank Group, 2022).  
+ 
+Despite the effects of flood and drought hazards on the 
+Tanzanian population, still the majority do not have enough 
+information about the changes in weather, climate and 
+associated hazards (Garcia -Aristizabal et al., 2017). Many 
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume XLVIII-4/W16-2025 
+9th International Conference on Smart Data and Smart Cities (SDSC), 2–5 September 2025, Kashiwa, Japan
+This contribution has been peer-reviewed. 
+https://doi.org/10.5194/isprs-archives-XLVIII-4-W16-2025-59-2025 | © Author(s) 2025. CC BY 4.0 License.
+ 
+59
+
+ 
+people do not have access to clear, correct, reliable and up -to-
+date information about the possibility of flood or drought 
+disasters occurrences. This underlines the need for Early 
+Warnings for all.  
+ 
+Considering the availability of early warning climate related 
+multi-hazard tools  or platform  in the world (for instance , the 
+World Meteorological Organization (WMO) and Global Multi-
+hazard Alert System (GMAS)) and the tools utilized for climate 
+related information dissemination in Tanzania  (like radio, TV  
+and newspaper) , there is still no reliable multi -hazard early 
+warning tool that can easily inform the vulnerable communities 
+with precise details about some natural disaster about to happen 
+shortly or soon. The actual spatial information about areas 
+vulnerable to flood and drought disaster risks are also unknown. 
+Therefore, in order  to address th ese challenges, an innovative 
+Web Geographical Information System (GIS) App  to enable 
+accessibility to and dissemination of multi-hazard related risks 
+information particularly flood and drought  is vital . This 
+information will support local government officials , 
+community-based disaster management committees , residents 
+and farmers by providing  timely alerts and actionable 
+information for preparedness, response, reduction and 
+formulation of sound climate change adaptation and mitigation 
+plans. 
+ 
+Consequently, the objectives of our study were to:  (1) identify 
+and map flood and drought prone areas , (2) predict occurrences 
+of flood and drought  events and (3) design and develop a  
+Climate-Smart Web GIS App for Multi -Hazard Early Warning 
+against Climate-Based Disaster Risks. 
+ 
+2. Materials & Methods 
+2.1 Description of the Study Area 
+The study was conducted in Dodoma ( latitude 04°18'55"S to 
+07°22'46"S and longitude 35°03'13"E to 36°57'54"E) a drought-
+prone region and Dar es Salaam (latitude 06°33'59"S to 
+07°10'54"S and longitude 39°00'26"E to 39°33'09"E) a flood -
+prone region in Tanzania (Figure 1).  
+ 
+ 
+ 
+ 
+Dodoma covers an area of 41,941km 2 and the population of 
+Dodoma Region was approximately 3.1 million according to the 
+2022 national census. The region experiences a semi -arid 
+climate with irregular rainfall patterns, primarily concentrated 
+between November and April. Average annual precipitation 
+ranges from 500 to 800 mm, and temperatures can vary 
+significantly between day and night. Dodoma region was 
+selected for this study based on its semi-arid nature and it is one 
+of the regions in Tanzania with high risk of drought. 
+ 
+In contrast, Dar es Salaam region covers an area of about 1630 
+square kilometres and has a population exceeding five million, 
+making it one of the fastest -growing cities in the world. The 
+climate is hot and humid, with annual rainfall averaging 
+between 1,000 to 1,400 mm, primarily occurring from March to 
+May. Flood events in Dar es Salaam city are recursive and 
+affect many places. In most cases the effects include deaths, loss 
+of properties and many people abandoning their settlements. 
+Major service delivery systems such as roads, water and sewage 
+systems are also impacted. The city is prone to regular flooding 
+and that is why the region was selected for this study. 
+ 
+2.2 Data Acquisition 
+We collected both GIS and RS based datasets (Table 1) that 
+were used for flood and drought risk assessment and prediction. 
+The GIS datasets were critical for mapping exposure and 
+vulnerability while remote sensing datasets provided dynamic 
+environmental variables necessary for climate-based hazard 
+detection and monitoring. These datasets were then pre -
+processed and integrated within a spatial database to support 
+multi-hazard analysis workflows. Additionally, temporal 
+datasets were analysed to detect seasonal and inter -annual 
+variations relevant to flood inundation and drought severity. 
+ 
+2.3 Identification and mapping of flood and drought prone 
+areas 
+A geospatial based Height Above Nearest Drainage (HAND) 
+model was used to translate elevation data from height above 
+mean sea level to height above the nearest river (Aristizabal et 
+al. 2023). This was done in the QGIS software with GRASS 
+plugin and the processing step involved the generation of DEM 
+derivatives, particularly the height above the nearest drain, 
+generation of the hand map, cartographic manipulation and 
+changing the style of a hand map to generate the 10m flood 
+extent. Then, an overlay and proximity analysis of buildings 
+was done to show the extent of community and infrastructure 
+vulnerability. To check the performance of the HAND model, a 
+Participatory Community mapping was conducted to identify 
+and map areas vulnerable to flooding in Hananasifu and 
+Msasani wards. We printed Landsat satellite images and people 
+living in areas vulnerable to floods marked the areas where 
+flood events recur. To identify drought prone areas we  used the 
+Vegetation Condition Index (VCI). VCI was computed by 
+comparing the current NDVI with the historical minimum and 
+maximum NDVI values (Equation 1). This index indicates how 
+healthy the vegetation is relative to its historical range. 
+VCI = (NDVI - NDVI_min) / (NDVI_max - NDVI_min) (1) 
+2.4 Flood and Drought Prediction  
+We employed a predictive modelling approach to forecast flood 
+levels by utilizing the API that integrates reanalysis and forecast 
+data from the Global Flood Awareness System (GloFAS). 
+Specifically, we utilized GloFAS version 4, which offers 
+seamless river discharge data spanning from 1984 and provides 
+forecasts extending up to seven months into the future. The 
+methodology began with establishing a connection to the Global 
+Flood API to collect the necessary historical river discharge 
+data. 
+The Palmer Drought Severity Index (PDSI) was then used as a 
+drought indicator to identify areas with drought conditions. The 
+     
+(
+a
+) 
+(
+b
+) 
+Figure 1: Location of the Project Area 
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume XLVIII-4/W16-2025 
+9th International Conference on Smart Data and Smart Cities (SDSC), 2–5 September 2025, Kashiwa, Japan
+This contribution has been peer-reviewed. 
+https://doi.org/10.5194/isprs-archives-XLVIII-4-W16-2025-59-2025 | © Author(s) 2025. CC BY 4.0 License.
+ 
+60
+
+ 
+PDSI values were downloaded from TerraClimate using Google 
+Earth Engine . The datasets were from 1958 to 2023. During 
+model training, a threshold value of -2 was used to create a 
+binary classification of those areas affected by drought. Drought 
+prediction was done using deep neural networks based on 
+geospatial weather data using a convolution long -short-term 
+memory (ConvLSTM) model (Alexander, et al., 2023). The  
+ppConvLSTM model blended Recurrent Neural Networks 
+(RNNs) with Long -Short-Term Memory (LSTM) to capture 
+temporal dependencies. For drought prediction we used 12 
+months history length and a  horizon period of 3 months, 
+whereby, the ConvLSTM model was trained with (i) PDSI data 
+range from January 1958 to October 2022 and predict drought 
+condition for January 2023, and (ii) PDSI data from January 
+1958 to march 2023 to predict drought conditions for June 
+2023.
+ 
+SN Data Source Format Spatial 
+resolution 
+1 
+Dar es Salaam and Dodoma region 
+administrative boundary and river 
+network 
+Ministry Lands Housing and Human Settlement 
+Development Shapefile  
+2 Buildings Open Street Map Shapefile  
+3 SRTM DEM (30 m) https://earthexplorer.usgs.gov/  Raster 30 
+4 Drone DTM for Dar es Salaam Climate Risk Database (CRD), Resilience Academy. 
+https://geonode.resilienceacademy.ac.tz/ Raster 20 
+5 
+Flood validation data Climate Risk Database, Resilience Academy 
+https://geonode.resilienceacademy.ac.tz/ and Wami -
+Ruvu Basin Water board 
+shapefile  
+6 Sentinel-1 SAR https://scihub.copernicus.eu/ Raster 10m 
+7 Terra Vegetation Indices 16 -Day 
+Global (MODIS) 
+MODIS, https://lpdaac.usgs.gov/ 
+MODIS/006/MOD13Q1 Raster 250m 
+8 Terra Land Surface Temperature and 
+Emissivity Daily Global (MODIS) 
+MODIS, https://lpdaac.usgs.gov/ 
+MODIS/061/MCD12Q1 Raster 1km 
+9 
+Climate Hazards Group InfraRed 
+Precipitation with Station data 
+(CHIRPS) 
+https://www.chc.ucsb.edu/data/chirps 
+Raster 5km 
+10 TerraClimate http://www.climatologylab.org/terraclimate.html Raster 4km 
+11 Landcover MODIS, https://lpdaac.usgs.gov/ 
+MODIS/061/MCD12Q1 Raster 500m 
+12 Landsat satellite images United States Geological Survey (USGS) website  
+https://glovis.usgs.gov/ GeoTIFF 30m 
+13 Flood prediction (River Discharge) GloFAS https://open-meteo.com/en/docs/flood-api# CSV 5km 
+Table 1: Data and Sources
+ 
+2.5 Web based GIS App Architecture 
+The development of web-based GIS App architecture was based 
+on the Three -tier client -server architecture as illustrated in 
+Figure 2. This architecture logically partitions major functions 
+into three layers. These three layers are: 
+I. Presentation layer – which provides the user interface. 
+To provide an interactive dashboard for data 
+visualization, this layer was developed using web -
+mapping libraries. APIs were used for communication 
+between this layer and the processing module hence 
+enabling real time updates and interactive map 
+exploration. 
+II. Application layer – which performs data processing 
+and information generation rules. It’s in this layer 
+where the hydrological models and drought prediction 
+models are run. It included geospatial tools (e.g., 
+GDAL) for data analysis and supported algorithm 
+execution for multi-hazard risks assessment. 
+III. Data access layer – composed of the OpenStreetMap 
+provider which provides the background of the 
+application, Web data, Weather APIs and local 
+database. 
+ 
+ 
+Figure 2: Three-tier client-server architecture 
+2.6 Development of the Web GIS App 
+Development of the web -based GIS App was based on the 
+Rapid Application Development (RAD) Methodology. This 
+approach is crucial for developing a web -based GIS App for 
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume XLVIII-4/W16-2025 
+9th International Conference on Smart Data and Smart Cities (SDSC), 2–5 September 2025, Kashiwa, Japan
+This contribution has been peer-reviewed. 
+https://doi.org/10.5194/isprs-archives-XLVIII-4-W16-2025-59-2025 | © Author(s) 2025. CC BY 4.0 License.
+ 
+61
+
+ 
+multi hazard early warning against climate -based disaster risks . 
+This is due to its emphasis on quick prototyping and iterative 
+development, allowing different developers (same time) to build 
+the core functionalities of the GIS App, such as data integration, 
+hazard modelling, and real-time visualization. However, early in 
+the processing stage, developers can incorporate user feedback 
+from disaster stakeholders , hence enabling adjustments and 
+enhancements to the App’s features based on practical needs. 
+On the other hand, RAD facilitates integration of advanced 
+analytical models and diverse data sources while ensuring the 
+system remains adaptable to the evolving requirements of 
+climate risk monitoring, hence a robust, user-centred application 
+that can provide timely and ef fective early warnings. Figure 3  
+illustrates the Web based GIS App development based on RAD 
+methodology 
+ 
+ 
+Figure 3: Web based GIS App development based on RAD 
+approach 
+2.6.1 App Development: The Web based GIS App was 
+developed within the Microsoft cross -platform framework 
+“.NET MAUI (Multi-Platform App UI)”.  C# (C-Sharp) and 
+XAML (Extensible Application Markup Language) were 
+used to program the App. This included creating a full 
+functional User Interface that was interactive and 
+responsive, allowed for internal computations of data, and 
+display of outputs. The App’s early warning/alerts module 
+used algorithms to analyse special  (Spatial?) and climate 
+data to predict potential flood /drought hazards. Push 
+notifications and alarms systems were used to notify users 
+about the potential hazards. It was designed such that 
+regular users wouldn’t need to register/login to access the 
+app.   
+2.6.2 Data Visualization : The App used a dashboard, 
+labels, images and interactive maps to show overview 
+status, real -time and historical hazard data, weather 
+conditions and risk areas, warnings and risk levels. Other 
+visualization tools such as graphs and charts were used to 
+display temporal data, trends and prediction models. With 
+the help of various visualization tools, the user could easily 
+access past/historical, current and future predictions data 
+related to weather conditions and related hazard warnings. 
+ 
+2.6.3 Testing: Upon completion the App’s components 
+including location precision, data integration and 
+processing, response and visualization, and alert mechanism 
+were tested. This stage involved various stakeholders 
+including users, developers and administrators. Also, 
+simulations using multiple users to access the App 
+simultaneously (Load testing) to ensure its handling of high 
+traffic especially during emergency situations was 
+performed. Thereafter, the provided feedback on use and 
+performance was used to improve the App before final 
+release. 
+2.6.4 Deployment: After testing and bug fixing the app 
+was deployed for public consumption in various platforms 
+such as online Android markets  and websites. It involved 
+creation of installer packages that could be distributed to 
+users. This was done by adding a Setup project to the App’s 
+solution. To install, the user was able to run the setup file 
+from the installer package and follow all steps through a 
+wizard to install the application. Thereafter, the application 
+would be ready for use. 
+3. Results 
+3.1 Identified Flood and Drought prone areas 
+The identified flood risk areas for the Dar es Salaam region are 
+presented in Figure 4. It was observed that, Magomeni, Kigogo, 
+Mchikichini, Mburahati, Mabibo, Ndugumbi, Kijitonyama 
+Makumbusho, Mikocheni, Kipawa, kiwalani, Kawe, Kunduchi, 
+Mbweni, Chanika, Pembamnazi, Kisarawe II and Mjimwema, 
+Somangila, Hananasifu, Tandale and Msasani wards have 
+higher flooding risks. Also, the area s marked by residents as 
+flood affe cted corresponded closely with the HAND model 
+results revealing a  strong spatial agreement . Likewise, the 
+identified drought risk areas using the vegetation condition 
+index are presented in Figure 5  where we observed that many 
+districts experience significant drought conditions. In the 
+drought year of 2019, central Dodoma (Dodoma Urban), the 
+western region (Bahi), and the southwest (Chamwino) were 
+severely affected by moderate to extreme drought. Meanwhile, 
+the eastern part of Dodoma (Kongwa) experienced light to 
+severe drought conditions. In contrast, northern Dodoma 
+(Kondoa), the northwest (Chemba), and the southeast 
+(Mpwapwa) were largely unaffected and fell within the no -
+drought category.  
+ 
+ 
+Figure 4: Identified flood vulnerable areas and Validation using 
+observed flood events in Tandale ward in Dar es Salaam region. 
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume XLVIII-4/W16-2025 
+9th International Conference on Smart Data and Smart Cities (SDSC), 2–5 September 2025, Kashiwa, Japan
+This contribution has been peer-reviewed. 
+https://doi.org/10.5194/isprs-archives-XLVIII-4-W16-2025-59-2025 | © Author(s) 2025. CC BY 4.0 License.
+ 
+62
+
+ 
+ 
+Figure 5: Drought risk areas in Dodoma region 
+3.2 Drought Events Prediction and Validation 
+The results from model validation show ed that the ConvLSTM 
+model has a good median Receiver Operating Characteristic - 
+Area Under the Curve (ROC AUC) score of 0.87 and median F1 
+score of 0.81  showing how good its predictive capabilities are 
+over long -term drought predictions . Additionally, the drought 
+conditions in the region are spatially variable with the predicted 
+drought areas (B and D) closely aligning with the original 
+reclassified PDSI data (A and C), showing persistent drought in 
+northern and southern districts, particularly in June 2023  (refer 
+Figure 6a) . The monthly drought prediction (refer Figure 6b) 
+show that drought severity fluctuated across the region from 
+January to August, with higher drought risk (yellow areas) 
+becoming more prominent in the northern and southern districts, 
+particularly in May, June, and August 2025. 
+ 
+Figure 6: Spatial distribution of the predicted drought 
+conditions in Dodoma region. A and C are the original 
+reclassified PDSI values. B and D are drought predictions for 
+January and June 2023 respectively. 
+Longitude
+Latitude
+7°S
+6.5°S
+6°S
+5.5°S
+5°S
+4.5°S
+January February March April
+35.5°E 36°E 36.5°E
+May June
+35.5°E 36°E 36.5°E
+July August
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+Drought Affected
+No Drought
+Drought Forecasts (2025)
+ 
+Figure 6b. Spatial distribution of the predicted drought 
+conditions in Dodoma region for January to August 2025 
+3.3 The Web based GIS App 
+The main objective of this study was to design, develop and 
+finally implement a web-based GIS App, using Microsoft cross-
+platform framework “.NET MAUI (Multi -Platform App UI)” , 
+C# (C -Sharp) and XAML .The app consiststs of a  presentation 
+layer (user interface), application layer and the data access 
+layer. The web -based GIS App interface initially requests 
+permission to access a user’s location (refer Figure 7 (A)) 
+thereafter, displays three major layers which are Weather 
+Forecast layer, Flood Forecast layer and Drought monitor layer  
+as described below:  
+I. The weather forecast layer  is the first layer to open. 
+This layer displays the weather condition (like Day, 
+date and data request time, City name, Location 
+(latitude & Longitude), Temperature, Humidity, Wind 
+speed, Min & Max Temperature, What the 
+temperature feels like, Pressure, Visibility) and 
+forecast (Weather forecast for three days with 3 hours 
+interval time) of the user's location as in Figure 9(B). 
+The App user can also type in the name of a place 
+he/she wants to access the weather condition and 
+forecast. For example, Figure 7(B) the user has typed 
+in Dodoma to view/access weather conditions and 
+forecast at Dodoma. 
+II. The Flood forecast layer, provides a user with a range 
+of visualizations that aid in understanding flood risks, 
+dynamics, and potential impact areas like Flood Risk 
+Zones, Real -time and Forecasted Water Levels, 
+Rainfall Intensity and Accumulation, Terrain and 
+Flow Path Analysis, Vulnerable Areas, Flood 
+Forecast Timeline and Flood Alerts and Warning 
+Zones. Figure 7 (C) Displays OpenStreetMap of Dar 
+es Salaam city in the Flood forecast layer which is 
+used as a background layer for flood prediction, the 
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume XLVIII-4/W16-2025 
+9th International Conference on Smart Data and Smart Cities (SDSC), 2–5 September 2025, Kashiwa, Japan
+This contribution has been peer-reviewed. 
+https://doi.org/10.5194/isprs-archives-XLVIII-4-W16-2025-59-2025 | © Author(s) 2025. CC BY 4.0 License.
+ 
+63
+
+ 
+user could also explore and see the flood prone areas 
+in their vicinity. 
+III. The Drought monitor layer  provides users with 
+information of Drought Severity Index, Soil Moisture 
+Levels, Precipitation Deficit, Vegetation Health and 
+Stress (Vegetation condition Index), Temperature 
+Anomalies, Drought Risk Zones, Temporal Changes 
+& Forecasts and Drought Alerts. Figure 7(D) displays 
+drought monitor layer with initially loaded VCI layer 
+for Dodoma. 
+ 
+Figure 7. Web-based GIS App (A) First time launch description layer (B) Weather forecast layer (C) Dar es Salaam 
+Flood forecast layer (D) Dodoma Drought Prediction layer 
+ 
+4. Discussion 
+4.1 Flood and Drought Hazard Risk Areas Identification 
+Our analysis provided critical insights into the specific patterns 
+of flood and drought risks affecting Dar es Salaam and Dodoma 
+respectively. Based on the analysis of flood prone areas, we 
+mapped areas which are likely to experience flooding during 
+extreme rainfall events. The results reveal that severe flooding 
+is most likely to occur in low -lying areas, poor drainage 
+facilities and rapid urbanization as a result major disruptions to 
+road networks occur which significantly affects transportation 
+and other business activities. In Dodoma specifically at 
+Chamwino, Bahi and Central Dodoma, our data indicated a 
+recurring trend of drought conditions characterized by 
+prolonged dry spells and diminished rainfall. Dodoma region 
+relies heavily on agriculture for its economic stability and food 
+security hence the study suggests that even slight fluctuations in 
+precipitation can have severe repercussions for farmers, 
+threatening their livelihoods and exacerbating food shortages. In 
+understanding how climate change is influencing extreme 
+weather events, both regions serve as important case studies 
+highlighting the urgent need for comprehensive risk 
+assessments and targeted interventions. 
+4.2 Dynamic Risk Monitoring  
+The importance of dynamic risk monitoring in enhancing 
+resilience to climate-based disasters was another key theme that 
+emerged from this analysis. The Web based GIS App was 
+designed to integrate real -time data making it capable of 
+monitoring evolving hazard conditions. Residents and local 
+authorities can timely be updated on flood forecasts and drought 
+severity on a near real time basis in Dar es Salaam and Dodoma 
+respectively. Similarly, the dynamic risk assessment tool 
+supports formulation and adoption of proactive decision-making 
+in climate adaptation strategies as it enhances situational 
+awareness that fosters community engagement. Additionally, 
+this proactive approach is vital for minimizing the impacts of 
+climate-related disasters and improving overall community 
+resilience (Khan, 2013; Jiang et al., 2024). 
+4.3 Design and Development of the Application 
+The design and development of the web -based GIS App for 
+Multi-hazard Early Warning against climate-based disaster risks 
+represented an invention in Tanzania. The RAD approach used 
+to design and develop the App played a critical role in shaping 
+the application’s features, ensuring that it is not only functional 
+but also accessible. However, the Web based GIS App was 
+designed to fit the Tanzanian environment, but it can be used in 
+areas with an environment similar to Tanzania. Additionally, its 
+dynamic monitoring nature is particularly crucial for regions 
+that experience rapid weather changes, where timely 
+information can be the difference between safety and disaster. 
+5. Conclusion  
+This study focused on the development of a web -based GIS 
+App for Multi -hazard Early Warning against climate -based 
+disaster risks. The study integrated historical data, real -time 
+data and geospatial analysis seeking to provide critical early 
+warning information, ultimately enabling communities to make 
+informed decisions that mitigate their vulnerability to climate -
+related risks. The application transformed complex climate data 
+into user -friendly visualizations that are accessible to local 
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume XLVIII-4/W16-2025 
+9th International Conference on Smart Data and Smart Cities (SDSC), 2–5 September 2025, Kashiwa, Japan
+This contribution has been peer-reviewed. 
+https://doi.org/10.5194/isprs-archives-XLVIII-4-W16-2025-59-2025 | © Author(s) 2025. CC BY 4.0 License.
+ 
+64
+
+ 
+stakeholders hence serving as a vital tool for enhancing risk 
+communication and hence a significant contribution to DRR. 
+Furthermore, this addresses a significant gap in current climate 
+risk management, where technical data often remains 
+inaccessible to those who need it most.  
+The identification of high-risk zones and recurring vulnerability 
+patterns supports data-driven decision-making. Local authorities 
+can utilize these insights to allocate resources effectively, 
+prioritize intervention areas, and plan climate adaptation 
+strategies leading to more resilient communities in the face of 
+climate change . Lastly, the study underscores the need for 
+inclusive policies that integrate GIS -based early warning 
+systems into national and regional disaster management 
+frameworks, addressing the socio -economic vulnerabilities 
+faced by marginalized communities.  
+Acknowledgements 
+This research was funded by USAID through the Climate 
+Adaptation Research Program (CARP)  under the Periperi U 
+consortium. We sincerely thank the Department of Geospatial 
+Sciences and Technology at Ardhi University  for hosting the 
+project, and gratefully acknowledge the collaborative support 
+received from the University of Arizona  and Stellenbosch 
+University, whose guidance and technical input significantly 
+contributed to the success of this work.  We thank all the 
+organizations and stakeholders for sharing their ideas and data 
+with us. We are  grateful to the people from Tandale, Msasani,  
+Hananasif and Chamwino  for allowing us to enter their 
+communities and helping us to conduct the much -needed 
+fieldworks and arrange community workshops. We appreciate 
+two anonymous reviewers for their valuable comments and 
+suggestions in improving the quality of the manuscript. 
+References 
+Ajibade, F. O., Ajibade, T. F., Idowu, T. E., Nwogwu, N. A.,  
+Adelodun, B., Lasisi, K. H., Opafola, O. T., Ajala, O. A., 
+Fadugba, O. G., & Adewumi, J. R. (2021). Flood -prone area 
+mapping using GIS -based analytical hierarchy frameworks for 
+Ibadan city, Nigeria. Journal of Multi -Criteria Decision 
+Analysis, 28(5–6), 283–295. https://doi.org/10.1002/mcda.1759 
+Al-Sabhan, W., Mulligan, M., & Blackburn, G. A. (2023). A 
+real-time hydrological model for flood prediction using GIS and 
+the WWW. www.elsevier.com/locate/compenvurbsys 
+Blöschl, G. (2022). Three hypotheses on changing river flood 
+hazards. In Hydrology and Earth System Sciences  (Vol. 26, 
+Issue 19, pp. 5015 –5033). Copernicus Publications. 
+https://doi.org/10.5194/hess-26-5015-2022 
+Cruz-Bello, G. M., & Alfie -Cohen, M. (2022). Capturing flood 
+community perceptions for social vulnerability reduction and 
+risk management planning. Environmental Science and Policy , 
+132, 190–197. https://doi.org/10.1016/j.envsci.2022.02.029 
+Dewan, A. M. (2013). Floods in a megacity: Geospatial 
+techniques in assessing hazards, risk and vulnerability. In 
+Floods in a Megacity: Geospatial Techniques in Assessing 
+Hazards, Risk and Vulnerability . Springer Netherlands. 
+https://doi.org/10.1007/978-94-007-5875-9 
+Erman, A., Tariverdi, M., Xiaomeng, M. O., Rose, C., Vincent, 
+C., Malgioglio, S., Rentschler, J., Hallegatte, S., & Yoshida, N. 
+(2019). Wading Out the Storm The Role of Poverty in Exposure, 
+Vulnerability and Resilience to Floods in Dar Es Salaam . 
+http://www.worldbank.org/prwp. 
+Garcia-Aristizabal, A., Capuano, P., Russo, R., & Gasparini, P. 
+(2017). Multi-hazard risk pathway scenarios associated with 
+unconventional gas development: Identification and challenges 
+for their assessment. Energy Procedia , 125,116–125. 
+https://doi.org/10.1016/j.egypro.2017.08.087 
+Grimaldi, S., Li, Y., Pauwels, V. R. N., & Walker, J. P. (2016). 
+Remote Sensing -Derived Water Extent and Level to Constrain 
+Hydraulic Flood Forecasting Models: Opportunities and 
+Challenges. In Surveys in Geophysics  (Vol. 37, Issue 5, pp. 
+977–1034). Springer Netherlands. 
+https://doi.org/10.1007/s10712-016-9378-y 
+Gosset, M., Dibi -Anoh, P. A., Schumann, G., Hostache, R., 
+Paris, A., Zahiri, E. P., Kacou, M., & Gal, L. (2023). 
+Hydrometeorological Extreme Events in Africa: The Role of 
+Satellite Observations for Monitoring Pluvial and Fluvial Flood 
+Risk. In Surveys in Geophysics (Vol. 44, Issue 1, pp. 197 –223). 
+Springer Science and Business Media B.V. 
+https://doi.org/10.1007/s10712-022-09749-6 
+Hoque, M. A. A., Pradhan, B., & Ahmed, N. (2020). Assessing 
+drought vulnerability using geospatial techniques in 
+northwestern part of Bangladesh. Science of the Total 
+Environment, 705. 
+https://doi.org/10.1016/j.scitotenv.2019.135957. 
+Jiang, J., Chen, C., Zhou, Y., Berretti, S., Liu, L., Pei, Q., Zhou, 
+J., & Wan, S. (2024). Heterogeneous Dynamic Graph 
+Convolutional Networks for Enhanced Spatiotemporal Flood 
+Forecasting by Remote Sensing. IEEE Journal of Selected 
+Topics in Applied Earth Observations and Remote Sensing , 17, 
+3108–3122. https://doi.org/10.1109/JSTARS.2023.3349162 
+Kebede, A. S., & Nicholls, R. J. (2012). Exposure and 
+vulnerability to climate extremes: Population and asset exposure 
+to coastal flooding in Dar es Salaam, Tanzania. Regional 
+Environmental Change , 12(1), 81 –94. 
+https://doi.org/10.1007/s10113-011-0239-4 
+Khan, N. (2013). Flood Prediction and Disaster Risk Analysis 
+using GIS based wireless sensor Networks,A Review . 
+https://www.researchgate.net/publication/257356474 
+Li, F., Li, H., Lu, W., Zhang, G., & Kim, J. C. (2019). 
+Meteorological drought monitoring in Northeastern China using 
+multiple indices. Water (Switzerland) , 11(1). 
+https://doi.org/10.3390/w11010072 
+Li, J., Chen, Y., Zhu, Y., & Liu, J. (2023). Study of Flood 
+Simulation in Small and Medium -Sized Basins Based on the 
+Liuxihe Model. Sustainability (Switzerland) , 15(14). 
+https://doi.org/10.3390/su151411225 
+Mckee, T. B., Doesken, N. J., & Kleist, J. (1993). The 
+relationship of Drought frequency and duration to time scales. 
+In Eighth Conference on Applied Climatology . 
+https://www.droughtmanagement.info/literature/AMS_Relation
+ship_Drought_Frequency_Duration_Time_Scales_1993.pdf 
+Mioc, D., Nickerson, B. G., Anton, F., Fraser, D., MacGillivray, 
+E., Morton, A., Tang, P., Arp, J. P., & Liang, G. (2008). Web -
+GIS application for flood prediction and monitoring. WIT 
+Transactions on Ecology and the Environment , 118, 145 –154. 
+https://doi.org/10.2495/FRIAR080151 
+Motta, M., de Castro Neto, M., & Sarmento, P. (2021). A mixed 
+approach for urban flood prediction using Machine Learning 
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume XLVIII-4/W16-2025 
+9th International Conference on Smart Data and Smart Cities (SDSC), 2–5 September 2025, Kashiwa, Japan
+This contribution has been peer-reviewed. 
+https://doi.org/10.5194/isprs-archives-XLVIII-4-W16-2025-59-2025 | © Author(s) 2025. CC BY 4.0 License.
+ 
+65
+
+ 
+and GIS. International Journal of Disaster Risk Reduction , 56. 
+https://doi.org/10.1016/j.ijdrr.2021.102154 
+Olanrewaju, C. C., & Reddy, M. (2022). Assessment and 
+prediction of flood hazards using standardized precipitation 
+index—A case study of eThekwini metropolitan area. Journal 
+of Flood Risk Management , 15(2). 
+https://doi.org/10.1111/jfr3.12788 
+Olorunfemi, F. B. (2011). Paper presented at NISER Research 
+Seminar Series. 
+Pei, Z., Fang, S., Wang, L., & Yang, W. (2020). Comparative 
+analysis of drought indicated by the SPI and SPEI at various 
+timescales in inner Mongolia, China. Water (Switzerland) , 
+12(7). https://doi.org/10.3390/w12071925 
+Rentschler, J., Salhab, M., & Jafino, B. A. (2022). Flood 
+exposure and poverty in 188 countries. Nature 
+Communications, 13(1). https://doi.org/10.1038/s41467-022-
+30727-4 
+Thomas, V. (2017). Climate Change and Natural Disasters: 
+Transforming Economies and Policies for a Sustainable Future. 
+In Climate Change and Natural Disasters: Transforming 
+Economies and Policies for a Sustainable Future . Taylor and 
+Francis. https://doi.org/10.4324/9781315081045 
+Worldbank Group. (2022). Climate and Development: An 
+Agenda for Action 2 Climate and Development: An Agenda for 
+Action. www.worldbank.org 
+Zhao, Y., Chen, Y., Zhu, Y., & Xu, S. (2023). Evaluating the 
+Feasibility of the Liuxihe Model for Forecasting Inflow Flood 
+to the Fengshuba Reservoir. Water (Switzerland) , 15(6). 
+https://doi.org/10.3390/w15061048 
+ 
+The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume XLVIII-4/W16-2025 
+9th International Conference on Smart Data and Smart Cities (SDSC), 2–5 September 2025, Kashiwa, Japan
+This contribution has been peer-reviewed. 
+https://doi.org/10.5194/isprs-archives-XLVIII-4-W16-2025-59-2025 | © Author(s) 2025. CC BY 4.0 License.
+ 
+66

@@ -1,0 +1,29 @@
+SOURCE: 1. FLOODSENSE-MAIN\QUESTIONNAIRES\FloodSense_BDRRMO_Interview_and_Dataset_Request_Letter.docx
+PARAGRAPHS: 11
+TABLES: 2
+
+P0000 [Normal] DEPARTMENT OF COMPUTER STUDIES
+P0001 [Normal] September 6, 2026
+P0002 [Normal] Hon. Strike B. Revilla
+City Mayor
+City Government of Bacoor
+City Hall, Bacoor City, Cavite
+P0003 [Normal] SUBJECT: Request for Permission to Conduct a BDRRMO Key Informant Interview and Preliminary Dataset Availability Inquiry for FloodSense
+P0004 [Normal] Dear Hon. Mayor Strike B. Revilla:
+P0005 [Normal] We, the undersigned undergraduate researchers from the Department of Computer Studies of Cavite State University - Bacoor City Campus, respectfully request permission to conduct a key informant interview with an authorized representative or designated staff member of the Bacoor Disaster Risk Reduction and Management Office (BDRRMO). We propose a session lasting approximately 90 to 120 minutes, or two shorter sessions if preferred, at a schedule convenient to the office.
+P0006 [Normal] The interview supports our undergraduate thesis, FLOODSENSE: AN ANDROID-BASED EXPERT SYSTEM FOR FLOOD SUSCEPTIBILITY ASSESSMENT AND PRE-EVENT PREPAREDNESS IN BACOOR CITY. The study proposes an Android-based expert system that presents explainable flood susceptibility results, preparedness guidance through a separate Decision Support System, and verified evacuation center information. A Django-based web workspace will allow authorized administrators to review, validate, approve, publish, and update the information shown to residents.
+P0007 [Normal] Using the attached BDRRMO Key Informant Interview and Data Availability Guide, we seek to document current flood-information practices, identify the data and expert knowledge that may support the system, and determine the requirements for validation and public release. The discussion will cover, as applicable, historical flood records and affected locations; flood depth, duration, and severity; hazard or susceptibility maps and geographic boundaries; rainfall and related observations; evacuation center records; preparedness materials; and available metadata, legends, or data dictionaries.
+P0008 [Normal] We also request a preliminary indication of which records are maintained by BDRRMO or another city office and which may be considered for academic use. If permitted, we would appreciate access to non-confidential metadata, blank forms, data dictionaries, sample records, or publicly releasable datasets that the office may provide. This inquiry does not presume that any dataset is approved for release. After the interview, we will submit a specific written request only for records identified by the proper custodian as potentially releasable and will comply with all required endorsements, data-sharing conditions, and approval procedures.
+P0009 [Normal] We will not request personally identifiable incident records, passwords, or restricted operational details. Participation and audio recording will be subject to the representative's consent. Any information or data authorized for the study will be used only for academic purposes, stored securely, properly attributed, and handled according to the conditions set by the City Government and the responsible office.
+P0010 [Normal] We respectfully ask for your approval to coordinate this activity with BDRRMO and any appropriate data custodian. We are willing to adjust the scope, schedule, and documentation requirements to the office's guidance. Thank you for considering our request.
+
+TABLE 1 (1x3)
+R000		Republic of the Philippines CAVITE STATE UNIVERSITY CvSU Bacoor City Campus City of Bacoor, Cavite (046) 476-5029 www.cvsu.edu.ph	
+
+TABLE 2 (6x2)
+R000	Respectfully yours,	Respectfully yours,
+R001	Reymart V. Goc-ong Martin Lorenz D. Juanites Romar T. Pulao Researchers	Reymart V. Goc-ong Martin Lorenz D. Juanites Romar T. Pulao Researchers
+R002	Noted by:	Approved by:
+R003	________________________________	________________________________
+R004	Clarissa V. Rostrollo	Hon. Strike B. Revilla
+R005	Instructor	City Mayor

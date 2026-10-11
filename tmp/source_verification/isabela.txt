@@ -1,0 +1,449 @@
+International Journal of Multidisciplinary Research and Publications 
+ ISSN (Online): 2581-6187 
+ 
+ 
+13 
+ 
+Claire O. Carpio , Muhsin U. Asnaul , Abeir H. Said , and Binladen Y. Amerin , “Isabela City Flood Monitoring System Using Arduino and 
+GSM Module,” International Journal of Multidisciplinary Research and Publications (IJMRAP), Volume 5, Issue 6, pp. 13-17, 2022. 
+Isabela City Flood Monitoring System Using Arduino 
+and GSM Module 
+ 
+Claire O. Carpio1, Muhsin U. Asnaul2, Abeir H. Said3, Binladen Y. Amerin4 
+ 1, 2, 3, 4CICTT, Basilan State College, Sumagdang, Isabela City, Basilan, Philippines, 7300  
+Email address: clairecarpio0114@gmail.com  
+ 
+ 
+Abstract— Flood is  considered as a calamit y which poses serious 
+problems on most communities of the world. This surfaces the need 
+for reinventing the disaster risk management schemes of 
+governments, giving special points to telemet ry instruments for 
+providing early warning information to the public.   Relevant studies 
+in the past discussed the concepts of flood monitoring and warning 
+systems with certain specifications. This st udy points to th e concept 
+of flood warning signs as key t o saving more communities  from the 
+devastations that floods and other calamities . Agile development was 
+used to descri be the methodologies for incremental software 
+development. Quantitative-survey design was ad ministered to 
+evaluate the device in terms of its functionality, reliab ility, usability, 
+efficiency, maintainability and portability.  Salient findings of the 
+study as supported by th e initial ground test conducted have shown 
+how the Flood -Monitoring System prov ides effective and accurate 
+warning signals given the condition 
+ 
+Keywords— Flood Monitoring; Calamity; Warning Signs. 
+I. INTRODUCTION  
+Amidst the continuously shifting climate conditions brought 
+about by various ecological factors, the range of calamities fo r 
+years have risen to cert ain extents whic h resulted to high 
+casualties and property loss amon g citizens. More so often, 
+these calamities were rooted from devastations caused by 
+environmentally destructive human activities. Flood is but 
+among the calamitie s which poses serious prob lems on most 
+communities of the world. This surfaces the need for 
+reinventing the disaster risk management schemes of 
+governments, giving special points to telemetry instruments 
+for providing early warning information to the public.   
+Most of the damages caused by natural  disasters might 
+have been prevented if communities were given early 
+warnings on the approaching calamity. Readiness would have 
+saved hundreds of lives and thousands of properties alike. This 
+stirred governments an d other institutions to d evelop 
+instruments that would provide early warning information on 
+the calamity strike.  
+There were many studies in the past which discussed the 
+concepts of flood monitoring and warning systems within the 
+specifications provided th erein. Short Message Ser vice (SMS) 
+is comm only used to deliver warning information to 
+concerned citizens. In a relevant study, online database was 
+integrated to the commonly used SMS -based flood monitoring 
+scheme.    This study has used the water level mon itoring reed 
+relays and Zigbee module for data transmission. This allows 
+convenience for peopl e to check the flood water level of their 
+area. On a separate study, the use of barometric pressure 
+sensor to detect flood water level was highlighted. An SMS 
+will be sent to users if the water overtakes the level as defined.   
+In the context of the Philip pines, the government has 
+undertaken various initiatives to develop effective flood 
+monitoring systems like the Project Noah by the Department 
+of Science and Tech nology (DOST) which use s LiDAR 
+technology that directs the data gathered to a server and to 
+access this data, internet is necessary. 
+Notwithstanding these standing systems, still many aches 
+and grieves from these destructive flood strikes – worsen by 
+the spur-of-the-moment. In this response, the p roponents of 
+this study aims to develop a flood moni toring systems 
+anchored on prevailing concepts of SMS -based notifications 
+and microcontroller – crafted specifically for the target locale.  
+The Philippines for the longest time has suffered from the 
+strikes of natural calamities which cost the lives of th ousands 
+of people and billions of properties. In response, the 
+government in partnership wi th other institutions has 
+continuously sought to develop technical ins truments that 
+could prevent communities fro m shattering. Relevant studies 
+in the past discussed  the importance of early warning 
+information to prevent destructions at large. Flood was kn own 
+as one of the common calamities experienced by most 
+communities in the country and worldwide. Should there ha ve 
+been earlier information on the calamities to com e, there 
+might have lesser fatalities to count.  
+Despite the  existing concepts on flood-monitoring, there 
+have been few among all the others who made good use of  
+these systems to lessen the adverse impact s of flood across 
+societies. Specifically, for the p urpose of this study, Isabela 
+City as the target research locale has not used any flood-
+monitoring system in the past. Only when we see houses 
+buried underneath,  cars and other properties washed away; 
+strong outcries from those who lost their families are heard 
+that we know that there is calamity. All of these may be 
+prevented if proper , accurate and reliable information were 
+provided beforehand. Hence, the ration ale of this study points 
+to the concept of flood warning signs as key to saving more 
+communities from the devastations that floods and other 
+calamities might shower upon. 
+The re searchers of this study aimed to develop a Flood 
+Monitoring System with SMS not ification using Arduino Uno 
+and Sim 800l v2.0 for Isabela City.  It specifically sought to,  
+▪ To develop a device that can monitor the flood water level; 
+▪ To develop a device  that automatically sends warning 
+information through SMS upon detecting water reach ing 
+the maximum level; 
+
+International Journal of Multidisciplinary Research and Publications 
+ ISSN (Online): 2581-6187 
+ 
+ 
+14 
+ 
+Claire O. Carpio , Muhsin U. Asnaul , Abeir H. Said , and Binladen Y. Amerin , “Isabela City Flood Monitoring System Using Arduino and 
+GSM Module,” International Journal of Multidisciplinary Research and Publications (IJMRAP), Volume 5, Issue 6, pp. 13-17, 2022. 
+▪ To design a device that is cost effective; and 
+This project is motivated  for the use of the City Disaster 
+Risk Reduction Management Office (CDRRMO) personnel of 
+Isabela City, Basilan.  The initial version of the device is 
+capable of sending unlimited number of SMS notificatio ns per 
+day. It is capable of detecting high water -levels and sending 
+warning signals. 
+However, the limitations of the study are as follows: 
+▪ The system is developed solely for purposes of monitoring 
+water level and sending warning signals. 
+▪ Since the device is powered by lithium battery, the device 
+can only last up to 10 hours. 
+The conceptual framework as referred in Figure 1 outlines 
+the necessary inputs needed, the main processes undertaken as 
+well as the re sulting system. This study has considered some 
+key points in developing the system includes but is lim ited to 
+the design and architecture, development and coding, software 
+testing, maintenance and support.  These are evidently 
+significant to attain the opt imal ef fectiveness of the system 
+device. 
+ 
+Fig. 1. Conceptual Framework 
+ 
+The researchers used the Agile Development Model 
+following a series of development phases running from the 
+requirement specifications down to the implementation and 
+maintenance support. Agile development is a phrase use d in 
+software development to describe  methodologies for 
+incremental software development. 
+ 
+ 
+Fig. 2. Agile Development Model 
+ 
+Requirements 
+This stage the researchers will conduct on-site visit to  the 
+target community to determine  the neede d requirements for 
+the project and to gather  information to create the target 
+outcome of the flood monitoring system  given the 
+geographical conditions.  
+Hardware and Software Requirements: 
+• Arduino Uno 
+• Sim 800l v2.0 
+• 9v battery 
+• Dupon wires 
+• LCD 
+• Breadboard 
+• Adapter 
+• Water sensor 
+• LED 
+• 330 ohm resistor 
+• Python Programming Language 
+• Arduino IDE 
+Plan 
+In this phase, the collected  first and second hand data will 
+be filtered according to their relevance to the study being 
+conducted. Relevant data will further be subjected for analysis 
+to determine their significance in the d evelopment of the 
+device. 
+Research Respondents 
+The researchers will invite twenty (20) personnel from the 
+City Disaster Risk Reduction Management Office 
+(CDRRMO) for the initial device test to be conducted at 
+Riverside Barangay, Isabela City, Basilan. 
+Research Locale 
+The researchers will conduct  the system testing at 
+Riverside Barangay, Isabela City, Basilan. 
+Research Tools 
+The researchers will employ  survey q uestionnaires with 
+integrated unstructured int erviews for data gathering. The 
+questionnaire will adopt the Five Point Likert Scale consists of 
+four basic responses as shown in Table 1.  To further 
+supplement the findings of the study, second -hand data will  
+likewise be utilized. 
+ 
+TABLE 1. Five Point Likert Scale 
+• Score • Corresponding Mark 
+• 4.50 – 5.0 • Highly Acceptable 
+• 3.5 – 3.59 • Acceptable 
+• 2.5 – 2.59 • Fair 
+• 1.5 – 2.49 • Unacceptable 
+• 1.0 – 1.49 • Poorly acceptable 
+Design 
+This research study will use a quantitative – survey design. 
+Check-list questionnaire w ill be used  by the researcher with 
+Likert scale resp onses in gathering information ab out the 
+evaluation of the device. 
+
+
+International Journal of Multidisciplinary Research and Publications 
+ ISSN (Online): 2581-6187 
+ 
+ 
+15 
+ 
+Claire O. Carpio , Muhsin U. Asnaul , Abeir H. Said , and Binladen Y. Amerin , “Isabela City Flood Monitoring System Using Arduino and 
+GSM Module,” International Journal of Multidisciplinary Research and Publications (IJMRAP), Volume 5, Issue 6, pp. 13-17, 2022. 
+Development 
+The development of the system shall be done using the 
+Python programming language  and Arduino IDE . The system 
+is integrated u sing Arduino Uno board. It is a microcontroller 
+board based on the ATmega328. It has a 16 MHz ceramic 
+resonator, 14 digital input/outpu t pins (of which 6 can be used 
+as PWM outputs), 6 analog inputs, a USB connection, a power 
+jack, an ICSP header, and a reset button. 
+ 
+Fig. 3. Arduino Uno Board 
+ 
+Sim 800l v 2.0 will be used as the GSM module. It is a 
+QUAD BAND GSM/GPRS module which com patible with 
+Arduino.  
+ 
+Fig. 3. SIM 800l V2.0 
+ 
+TABLE 2. Arduino Uno Specification 
+ 
+Release 
+After considering the user’s f eedback, the researchers will 
+evaluate the system ’s overall operation to detect if there are 
+still errors or bugs occurring while the system is being tested 
+by the researchers. The researchers did a demonstration of the 
+system in order for the respondents to know the functions of  
+the system and how to oper ate it. The system was deployed in 
+Riverside Barangay, Isabela City, Basilan. 
+Track and Monitor 
+The researchers on this stage are satisfied with the result o f 
+the performance of the system. Here the resear chers gave 
+some instruction on how to use and maintain the system. 
+II. RESULTS AND DISCUSSIONS 
+Result for End User Evaluation 
+This study used quantitative -survey design to evaluate the 
+device in terms of its functionality, reliability, usability, 
+efficiency, m aintainability and portability. Twenty (20) 
+CDRRMO p ersonnel were taken as respondents of the study 
+who were subject to su rvey. The evaluation results provided 
+valuable inputs in determining the weak points of the device. 
+Requirements 
+The software and hard ware requirements of the device 
+were determined and consequently matched for compatibility 
+with the device.  
+Plan 
+ 
+The rese archers have conducted subsequent textual 
+analysis of available secondar y references to form the 
+supporting literatures of the study.  These literatures 
+contributed key points for the de velopment of the device. In 
+the same manner, survey questionnaires were  likewise 
+administered to target respondents to determine the areas for 
+improvement. The salient findings of the survey conducted 
+have similarly identified the prospects of the device i n 
+contributing solutions to prevalent societal concerns brought 
+by natural calamities.  
+Design 
+The researcher decided on the design specifications of the 
+device based from the determined software and hard ware 
+requirements. In this phase , the design of the device were 
+finalized based from the perceived performance output. The  
+portability and maintainability aspects were essentially 
+considered in the determining the project specifications. The 
+researchers de signed the device with optimal effectiveness, 
+efficiency and usability.  
+Development 
+The d evelopment of the system is don e in two stages: 
+integrated module construction stage and programming . 
+Generally, the construction of integrated component or 
+module is designed using the use - case diagram as shown in 
+Figure 4. The system begins with a water  sensor and the GPS 
+module sen ds water level data and to Arduino Uno as data 
+processor. Both data are sent in the form of SMS data received 
+by the end - user.  
+The s ystem generates a flooded information of the w ater 
+level. The prototype system circuit has been construct 
+successfully as shown in Figure 5 . The prototype system 
+consists of water sensors, Arduino Uno and GSM module. 
+Release 
+The initial ground test conduct ed on the device provided 
+the researchers with the aspects to be reconsidered for 
+
+International Journal of Multidisciplinary Research and Publications 
+ ISSN (Online): 2581-6187 
+ 
+ 
+16 
+ 
+Claire O. Carpio , Muhsin U. Asnaul , Abeir H. Said , and Binladen Y. Amerin , “Isabela City Flood Monitoring System Using Arduino and 
+GSM Module,” International Journal of Multidisciplinary Research and Publications (IJMRAP), Volume 5, Issue 6, pp. 13-17, 2022. 
+improvement. The respondents’ feedbacks were similarly 
+utilized to determine how effective the device was in terms of 
+providing early floo d-warning signals. The initial test was 
+conducted at Riverside Barangay, Isabela City with the 
+CDRRMO as respondents. 
+ 
+ 
+Fig. 4: Use Case Diagram of the Isabela City Flood Monitoring System 
+ 
+ 
+Fig. 5. Flood Monitoring System Circuit 
+Track and Monitor 
+The key findings of the initials test  conducted were overall 
+acceptable in terms of its functionality, reliability , usability, 
+efficiency, maintainability and portability. In this p hase, the 
+researchers considered  the maintenance of  the device so as it 
+can sustain optimal performance. 
+Testing 
+The researchers had successfully gathered the data  from 
+the respondents during the evaluation. 
+Research Respondents 
+The researchers invited twenty (20) personnel  of the City 
+Disaster Risk Reduction  Management Office (CDRRMO)  to 
+participate in the system demonstration and e valuation at the 
+same time. 
+Research Locale 
+The researchers conducted this evaluation at Riverside 
+Barangay, Isabela City, Basilan. 
+Research Tools 
+The researchers used evaluation sheets for data gathering. 
+The researchers also used the Li kert Scale for data treatment 
+and the formula below: 
+Formula:((Total*5)+(Total*4)+(Total*3)+(Total*2)+(Total*1)
+)/ Total number of Respondents = Weighted Mean 
+Criteria: 4.50 – 5.0 (Highly Acceptable ) , 3.5 – 4.49 
+(Acceptable), 2.5 – 3.49 (Fair), 1.5 – 2.49 (Unacceptable), 1.0 
+– 1.49 (Poorly acceptable) 
+ 
+FUNCTIONALITY QUESTION 
+1.) The system can detect water level 
+2.) The system can sending warning signal through SMS 
+ 
+ 
+DESIGN QUESTION 
+3.) The design of the system is good 
+4.) The system is clear and simple 
+5.) The system is user friendly 
+ 
+SECURITY QUESTION 
+1.) The security of the system is good 
+2.) The system is secured 
+3.) The system is free from security malfunction 
+ 
+EFFICIENCY QUESTION 
+1.) The system can sends real – time warning signal 
+2.) The system does not lag 
+3.) The system provides accurate and good results 
+ 
+RELIABILITY QUESTION 
+1.) The reliability of the system is good 
+2.) The system has no error 
+3.) The system is provides fast  notification 
+Evaluation for the System 
+  Mean Descriptive Rating 
+Functionality 
+Questions 
+Q1 3.62 Acceptable 
+Q2 4.64 Highly Acceptable  
+Design Question 
+Q1 4.25 Acceptable 
+Q2 3.22 Fair 
+Q3 3.48 Fair 
+Security 
+Question 
+Q1 3.71 Acceptable 
+Q2 4.55 Highly Acceptable 
+Q3 2.66 Fair 
+Efficiency 
+Question 
+Q1 3.50 Acceptable 
+Q2 2.54 Fair 
+Q3 3.75 Acceptable 
+Reliability 
+Question 
+Q1 4.15 Acceptable 
+Q2 3.87 Acceptable 
+Q3 3.91 Acceptable 
+Overall Mean 3.70 Acceptable 
+ 
+Table shows the Overall mean in Functionality, Design, 
+Security, Efficiency and Reliability is 3.70 which means the 
+system is Acceptable. 
+III. CONCLUSION AND RECOMMENDATION 
+Conclusion 
+The salient findings of the study as supported by the initial 
+ground test conducted have shown how the Flood -Monitoring 
+System provides effective and accurate warning signals given 
+the condition. This implies that the devi ce can be used to save 
+more communities from the de structions that sudden floods 
+
+International Journal of Multidisciplinary Research and Publications 
+ ISSN (Online): 2581-6187 
+ 
+ 
+17 
+ 
+Claire O. Carpio , Muhsin U. Asnaul , Abeir H. Said , and Binladen Y. Amerin , “Isabela City Flood Monitoring System Using Arduino and 
+GSM Module,” International Journal of Multidisciplinary Research and Publications (IJMRAP), Volume 5, Issue 6, pp. 13-17, 2022. 
+might bring. Similarly, with its portable and cost -effective 
+design, users would have ease of time in maintaining its 
+components. Howev er, to achieve optimal performance, the 
+need to further improve its efficiency and design a spects have 
+surfaced from the results obtained.  
+On the other hand, the device was designed specifically for 
+the use of the City Disaster Risk Reduction Management 
+Office (CDRRMO) personnel as the frontlin e responders to 
+calamities and emergencies in the c ity. In the survey 
+conducted, most of the respondents considered the device 
+functional, secured, efficient and reliable. Hence, this study 
+pointedly concludes that the Flood -Monitoring System could 
+stem po sitive implications to the society it will serve in  the 
+future.  
+Recommendation 
+This study has outlined the strength and weak points of the 
+device, so as to have a holistic view on how to further improve 
+its performance in terms of detecting flood and subs equently 
+sending warning –signals to the users via SMS. The initial 
+version of t he device is not final as it may have more 
+refinements in terms of the system and hardware requirements. 
+For further studies, future researchers may consider studying 
+the possi ble shift from the use of  lithium/dry cell to solar  
+power. In this case, users n o longer need to replace the battery 
+every now and then which may save the cost for maintenance. 
+Similarly, future relevant researches may also consider 
+developing monitoring devices that would be able to detect not 
+only floods but other calamities alike.   
+REFERENCES 
+[1] Azid, S., Sharma, B., Raghuwaiya, K., Chand, A., Prasad, S., & 
+Jacquier, A.  (2015). SMS based flood monitoring and early warning 
+system. ARPN J. Eng. Appl. Sci, 10(15), 6387-6391. 
+[2] Sunkpho, J., & Ootamakorn, C. (2011). Real-time flood monitoring and 
+warning system. Songklanakarin Journal of Science & Technology, 
+33(2). 
+ 
+ 

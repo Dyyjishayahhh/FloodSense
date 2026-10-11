@@ -1,0 +1,613 @@
+SOURCE: 1. FLOODSENSE-MAIN\QUESTIONNAIRES\FloodSense_Requirements_Gathering_Questionnaires.docx
+PARAGRAPHS: 558
+TABLES: 5
+
+P0000 [Title] FloodSense Requirements Gathering Questionnaires
+P0001 [Normal] Resident Survey and BDRRMO Interview and Data Availability Guide
+P0002 [Normal] FloodSense An Android-Based Expert System for Flood Susceptibility Assessment and Pre-Event Preparedness in Bacoor City
+P0003 [Normal] Draft for Thesis Adviser Review
+P0004 [Normal] Prepared by
+P0005 [Normal] Reymart V. Goc ong
+Martin Lorenz D. Juanites
+Romar T. Pulao
+P0006 [Normal] Department of Computer Studies
+Cavite State University Bacoor City Campus
+P0008 [Heading 1] Purpose and Use of the Instruments
+P0009 [Normal] This package contains two requirements gathering instruments for FloodSense. Questionnaire 1 is a survey for adult Bacoor City residents. Questionnaire 2 is a key informant interview and data availability guide for an authorized representative of the Bacoor Disaster Risk Reduction and Management Office. The instruments gather current experiences, information needs, available institutional data, expert knowledge, preparedness guidance, and system requirements before full implementation.
+P0010 [Normal] The questions examine present practice before the proposed FloodSense concept is disclosed. This order reduces the chance that respondents will shape their answers around the proposed application. The concept review appears near the end of each instrument so respondents can then judge value, risks, priorities, and appropriate limits.
+P0011 [Heading 2] Instrument Overview
+P0014 [Title] Questionnaire 1 Bacoor Resident Survey
+P0015 [Normal] Title: Flood Information Experience, Preparedness Needs, and FloodSense Requirements Survey
+P0016 [Normal] Target respondent: A Bacoor City resident aged 18 or older
+P0017 [Normal] Estimated time: 10 to 15 minutes
+P0018 [Normal] Purpose: To understand how residents receive and use flood information, what problems they experience, what preparedness support they need, and which proposed FloodSense capabilities should be prioritized.
+P0019 [Normal] Participation is voluntary. Do not write your name, exact address, telephone number, email address, or account credentials. You may skip any optional question or stop at any time. Responses will be summarized for academic research. Questions marked with an asterisk are required for consent or eligibility.
+P0020 [Heading 1] Section 0 Consent and Eligibility
+P0021 [Normal] S0. I have read the information above and voluntarily agree to participate. *
+P0022 [Normal] ☐ Yes I agree        ☐ No I do not agree  End survey
+P0023 [Normal] S1. Are you 18 years old or older? *
+P0024 [Normal] ☐ Yes        ☐ No  End survey
+P0025 [Normal] S2. Do you currently live in Bacoor City? *
+P0026 [Normal] ☐ Yes        ☐ No  End survey
+P0027 [Heading 1] Section A Resident and Household Context
+P0028 [Normal] Choose the answer that best describes your situation. You may select Prefer not to say where provided.
+P0029 [Normal] A1. What is your age range?
+P0030 [Normal] ☐ 18 to 24        ☐ 25 to 34        ☐ 35 to 44
+P0031 [Normal] ☐ 45 to 54        ☐ 55 to 64        ☐ 65 or older        ☐ Prefer not to say
+P0032 [Normal] A2. In which Bacoor City barangay do you currently live?
+P0033 [Normal] For a digital survey, use the official Bacoor City barangay list as a dropdown.
+P0034 [Normal] ________________________________________________________________________________
+P0035 [Normal] A3. How long have you lived in Bacoor City?
+P0036 [Normal] ☐ Less than 1 year        ☐ 1 to 3 years        ☐ 4 to 6 years
+P0037 [Normal] ☐ 7 to 10 years        ☐ More than 10 years
+P0038 [Normal] A4. What best describes your current main activity?
+P0039 [Normal] ☐ Employed full time        ☐ Employed part time        ☐ Self employed or business
+P0040 [Normal] ☐ Student        ☐ Not currently employed        ☐ Retired
+P0041 [Normal] ☐ Homemaker or caregiver        ☐ Other        ☐ Prefer not to say
+P0042 [Normal] A5. Which household considerations may affect flood preparation?
+P0043 [Normal] Select all that apply. Do not provide names or medical details.
+P0044 [Normal] ☐ Young children        ☐ Older adults        ☐ Person needing mobility assistance
+P0045 [Normal] ☐ Person requiring regular medicine or essential care        ☐ Pregnant household member
+P0046 [Normal] ☐ Animals or pets        ☐ None of these        ☐ Prefer not to say        ☐ Other
+P0047 [Normal] A6. Do you have regular access to an Android smartphone?
+P0048 [Normal] ☐ Yes my own device        ☐ Yes a shared device
+P0049 [Normal] ☐ No        ☐ Not sure whether it is Android
+P0050 [Normal] A7. How reliable is your mobile data or Wi Fi during heavy rain?
+P0051 [Normal] ☐ Usually reliable        ☐ Sometimes unavailable        ☐ Often unavailable
+P0052 [Normal] ☐ I rarely use mobile data or Wi Fi        ☐ Not sure
+P0053 [Heading 1] Section B Flood Experience and Current Information Practices
+P0054 [Normal] Answer from your own experience in Bacoor City. When a time period is requested, use the stated period.
+P0055 [Normal] B1. During the past five years, have you personally experienced flooding that affected your home, street, usual route, workplace, or school?
+P0056 [Normal] ☐ Yes        ☐ No        ☐ Not sure        ☐ Prefer not to say
+P0057 [Normal] B2. What was the highest floodwater level you personally experienced during that period?
+P0058 [Normal] Choose Not applicable if you did not experience flooding.
+P0059 [Normal] ☐ Below ankle        ☐ Ankle to below knee        ☐ Knee to below waist
+P0060 [Normal] ☐ Waist to below chest        ☐ Chest or higher        ☐ Could not estimate
+P0061 [Normal] ☐ Not applicable        ☐ Prefer not to say
+P0062 [Normal] B3. During the past 12 months, how often did flooding or possible flooding affect your plans or movements?
+P0063 [Normal] ☐ Never        ☐ Rarely        ☐ Sometimes        ☐ Often        ☐ Very often
+P0064 [Normal] B4. Where do you usually obtain flood or heavy rainfall information?
+P0065 [Normal] Select all that apply.
+P0066 [Normal] ☐ BDRRMO social media or website        ☐ PAGASA advisories
+P0067 [Normal] ☐ Barangay announcement or public address system        ☐ SMS or text message
+P0068 [Normal] ☐ Television or radio        ☐ News or weather application
+P0069 [Normal] ☐ Family friends or neighbors        ☐ Community group chat
+P0070 [Normal] ☐ Personal observation        ☐ I usually receive no information        ☐ Other
+P0071 [Normal] B5. How early do you usually receive useful information before flooding affects your area or route?
+P0072 [Normal] ☐ Early enough to prepare        ☐ Sometimes early enough        ☐ Usually too late
+P0073 [Normal] ☐ Only after flooding has started        ☐ I usually receive none        ☐ Not applicable
+P0074 [Normal] B6. How well informed do you currently feel about which places in Bacoor City are susceptible to flooding?
+P0075 [Normal] ☐ Very well informed        ☐ Well informed        ☐ Somewhat informed
+P0076 [Normal] ☐ Not well informed        ☐ Not informed at all
+P0077 [Normal] B7. When checking flood information, what do you usually try to determine?
+P0078 [Normal] Select all that apply.
+P0079 [Normal] ☐ Whether my home area may be affected        ☐ Whether my route may be affected
+P0080 [Normal] ☐ Rainfall severity or duration        ☐ Expected flood depth or extent
+P0081 [Normal] ☐ What to prepare        ☐ Whether officials issued an advisory
+P0082 [Normal] ☐ Where evacuation centers are located        ☐ Whether a center is open or verified
+P0083 [Normal] ☐ Other
+P0084 [Normal] B8. Which flood preparation activities do you currently perform?
+P0085 [Normal] Select all that apply.
+P0086 [Normal] ☐ Prepare a go bag        ☐ Protect documents and valuables
+P0087 [Normal] ☐ Monitor official advisories        ☐ Discuss a family communication plan
+P0088 [Normal] ☐ Prepare medicines or essential needs        ☐ Identify an evacuation option
+P0089 [Normal] ☐ Plan for household members needing assistance        ☐ Avoid known flood prone routes
+P0090 [Normal] ☐ I do not prepare regularly        ☐ Other
+P0092 [Heading 1] Section C Problems and Consequences
+P0093 [Normal] Think about heavy rainfall and flood situations during the past 12 months. Choose Not applicable when an item did not apply.
+P0094 [Normal] C1. How often did each situation happen?
+P0096 [Normal] C2. During that period, which outcomes did you experience because useful flood information was unavailable, late, unclear, or too general?
+P0097 [Normal] Select all that apply.
+P0098 [Normal] ☐ Delayed preparation or evacuation        ☐ Took or nearly took a flooded route
+P0099 [Normal] ☐ Misjudged flood conditions        ☐ Could not protect belongings in time
+P0100 [Normal] ☐ Missed work or school unnecessarily        ☐ Experienced stress or uncertainty
+P0101 [Normal] ☐ Relied on unverified information        ☐ No listed outcome
+P0102 [Normal] ☐ Prefer not to say        ☐ Other
+P0103 [Normal] C3. Which three problems from C1 most need improvement in your community?
+P0104 [Normal] Write the three situation names or numbers.
+P0105 [Normal] ________________________________________________________________________________
+P0106 [Normal] ________________________________________________________________________________
+P0107 [Normal] C4. Describe one recent situation when flood information was difficult to use. What happened, and what information or support would have helped?
+P0108 [Normal] Do not include names, exact addresses, or other identifying details.
+P0109 [Normal] ________________________________________________________________________________
+P0110 [Normal] ________________________________________________________________________________
+P0111 [Normal] ________________________________________________________________________________
+P0112 [Normal] ________________________________________________________________________________
+P0113 [Normal] Thank you for your participation.
+P0115 [Title] Questionnaire 2 BDRRMO Key Informant Interview and Data Availability Guide
+P0116 [Normal] Target participant: An authorized BDRRMO representative whose work involves flood information, disaster operations, preparedness, geographic information, records, or data management
+P0117 [Normal] Estimated time: 90 to 120 minutes, or two approved sessions, depending on the number of datasets discussed
+P0118 [Normal] Purpose: To document current practice, identify available and releasable data, acquire expert knowledge for the Rule-Based Expert System and Decision Support System, and define administration, validation, and publication requirements.
+P0119 [Normal] The participant may decline any question, stop the interview, or identify information that cannot be disclosed. The interviewer must not request personally identifiable incident records, passwords, restricted operational details, or data that the participant is not authorized to discuss or release.
+P0120 [Heading 1] Interview Consent
+P0121 [Normal] IC1. Do you voluntarily agree to participate?
+P0122 [Normal] ☐ Yes        ☐ No  End interview
+P0123 [Normal] IC2. May the researchers take written notes during the interview?
+P0124 [Normal] ☐ Yes        ☐ No
+P0125 [Normal] IC3. May the researchers audio record the interview for accurate transcription?
+P0126 [Normal] ☐ Yes        ☐ No  Continue with written notes only
+P0127 [Normal] IC4. May short anonymized quotations be used in the thesis manuscript?
+P0128 [Normal] ☐ Yes        ☐ No  Summarize the response without a direct quotation
+P0129 [Normal] IC5. May the researchers contact the office for clarification after the interview through an officially approved channel?
+P0130 [Normal] ☐ Yes        ☐ No        ☐ Subject to office approval
+P0131 [Heading 1] Part A Role and Institutional Context
+P0132 [Normal] Goal: Establish the participant's relevant responsibilities without collecting unnecessary personal information.
+P0133 [Normal] I1. Please describe your current role and the parts of your work related to flood monitoring, incident documentation, preparedness, public information, evacuation centers, geographic information, or data management.
+P0134 [Normal] ________________________________________________________________________________
+P0135 [Normal] ________________________________________________________________________________
+P0136 [Normal] ________________________________________________________________________________
+P0137 [Normal] ________________________________________________________________________________
+P0138 [Normal] I2. Which BDRRMO units, positions, or partner offices are responsible for the information relevant to this study?
+P0139 [Normal] ________________________________________________________________________________
+P0140 [Normal] ________________________________________________________________________________
+P0141 [Normal] ________________________________________________________________________________
+P0142 [Normal] ________________________________________________________________________________
+P0143 [Normal] I3. What geographic areas and types of rainfall related flooding fall within your office's normal information or operational responsibilities?
+P0144 [Normal] ________________________________________________________________________________
+P0145 [Normal] ________________________________________________________________________________
+P0146 [Normal] ________________________________________________________________________________
+P0147 [Normal] ________________________________________________________________________________
+P0148 [Heading 1] Part B Current Workflow and Public Information Problems
+P0149 [Normal] Goal: Understand existing practice and information gaps before discussing FloodSense.
+P0150 [Normal] I4. Please walk us through how BDRRMO receives or monitors rainfall and flood information, assesses possible impacts, and communicates with barangays and residents before flooding occurs.
+P0151 [Normal] ________________________________________________________________________________
+P0152 [Normal] ________________________________________________________________________________
+P0153 [Normal] ________________________________________________________________________________
+P0154 [Normal] ________________________________________________________________________________
+P0155 [Normal] ________________________________________________________________________________
+P0156 [Normal] I5. Which information sources, records, maps, reports, observations, or staff judgments are used during that process?
+P0157 [Normal] ________________________________________________________________________________
+P0158 [Normal] ________________________________________________________________________________
+P0159 [Normal] ________________________________________________________________________________
+P0160 [Normal] ________________________________________________________________________________
+P0161 [Normal] I6. How does the office currently identify or describe flood prone or flood susceptible locations in Bacoor City?
+P0162 [Normal] ________________________________________________________________________________
+P0163 [Normal] ________________________________________________________________________________
+P0164 [Normal] ________________________________________________________________________________
+P0165 [Normal] ________________________________________________________________________________
+P0166 [Normal] I7. Which channels are used to communicate flood and preparedness information to the public, and what determines when each channel is used?
+P0167 [Normal] ________________________________________________________________________________
+P0168 [Normal] ________________________________________________________________________________
+P0169 [Normal] ________________________________________________________________________________
+P0170 [Normal] ________________________________________________________________________________
+P0171 [Normal] I8. What difficulties do residents commonly experience when interpreting or acting on available flood information?
+P0172 [Normal] ________________________________________________________________________________
+P0173 [Normal] ________________________________________________________________________________
+P0174 [Normal] ________________________________________________________________________________
+P0175 [Normal] ________________________________________________________________________________
+P0176 [Normal] I9. Please describe a generalized case in which information was late, incomplete, misunderstood, or unavailable. What information could have reduced the problem?
+P0177 [Normal] Do not identify affected persons.
+P0178 [Normal] ________________________________________________________________________________
+P0179 [Normal] ________________________________________________________________________________
+P0180 [Normal] ________________________________________________________________________________
+P0181 [Normal] ________________________________________________________________________________
+P0182 [Normal] ________________________________________________________________________________
+P0183 [Normal] I10. How does BDRRMO coordinate relevant information with barangays, PAGASA, CPDCO, or other offices? Which responsibilities or data holdings belong to another office?
+P0184 [Normal] ________________________________________________________________________________
+P0185 [Normal] ________________________________________________________________________________
+P0186 [Normal] ________________________________________________________________________________
+P0187 [Normal] ________________________________________________________________________________
+P0188 [Normal] ________________________________________________________________________________
+P0190 [Heading 1] Part C Dataset and Record Availability
+P0191 [Normal] Goal: Identify what information exists, who controls it, what form it takes, and whether it may support FloodSense. Availability does not mean that release has been approved.
+P0192 [Normal] I11. Which of the following datasets or records are maintained by BDRRMO or can be accessed through an official partner office?
+P0194 [Normal] I12. For every dataset marked Yes or Partial, what is its official title and purpose?
+P0195 [Normal] ________________________________________________________________________________
+P0196 [Normal] ________________________________________________________________________________
+P0197 [Normal] ________________________________________________________________________________
+P0198 [Normal] ________________________________________________________________________________
+P0199 [Normal] ________________________________________________________________________________
+P0200 [Normal] I13. What geographic coverage and resolution does each dataset support, such as city, barangay, sub barangay, zone, road segment, point, or another unit?
+P0201 [Normal] ________________________________________________________________________________
+P0202 [Normal] ________________________________________________________________________________
+P0203 [Normal] ________________________________________________________________________________
+P0204 [Normal] ________________________________________________________________________________
+P0205 [Normal] ________________________________________________________________________________
+P0206 [Normal] I14. What time period does each dataset cover, and how often is it updated?
+P0207 [Normal] ________________________________________________________________________________
+P0208 [Normal] ________________________________________________________________________________
+P0209 [Normal] ________________________________________________________________________________
+P0210 [Normal] ________________________________________________________________________________
+P0211 [Normal] I15. In what formats is each dataset available, such as paper records, PDF, spreadsheet, database, image, map print, GIS shapefile, GeoJSON, KML, or another format?
+P0212 [Normal] ________________________________________________________________________________
+P0213 [Normal] ________________________________________________________________________________
+P0214 [Normal] ________________________________________________________________________________
+P0215 [Normal] ________________________________________________________________________________
+P0216 [Normal] I16. For spatial data, which coordinate reference system, location identifiers, boundaries, coordinates, or mapping standards are used?
+P0217 [Normal] ________________________________________________________________________________
+P0218 [Normal] ________________________________________________________________________________
+P0219 [Normal] ________________________________________________________________________________
+P0220 [Normal] ________________________________________________________________________________
+P0221 [Normal] I17. Which variables, units, categories, codes, and definitions are included? Is a data dictionary or legend available?
+P0222 [Normal] ________________________________________________________________________________
+P0223 [Normal] ________________________________________________________________________________
+P0224 [Normal] ________________________________________________________________________________
+P0225 [Normal] ________________________________________________________________________________
+P0226 [Normal] I18. How are the records collected, checked, corrected, approved, and versioned? What known gaps, uncertainties, or inconsistencies should be documented?
+P0227 [Normal] ________________________________________________________________________________
+P0228 [Normal] ________________________________________________________________________________
+P0229 [Normal] ________________________________________________________________________________
+P0230 [Normal] ________________________________________________________________________________
+P0231 [Normal] ________________________________________________________________________________
+P0232 [Normal] I19. Does any dataset contain personal, confidential, security sensitive, or legally restricted information? If so, could an aggregated, anonymized, redacted, or view only version be considered?
+P0233 [Normal] ________________________________________________________________________________
+P0234 [Normal] ________________________________________________________________________________
+P0235 [Normal] ________________________________________________________________________________
+P0236 [Normal] ________________________________________________________________________________
+P0237 [Normal] ________________________________________________________________________________
+P0238 [Normal] I20. Which datasets may potentially be shared for academic research, and under what conditions, permissions, acknowledgements, storage controls, or return and destruction requirements?
+P0239 [Normal] ________________________________________________________________________________
+P0240 [Normal] ________________________________________________________________________________
+P0241 [Normal] ________________________________________________________________________________
+P0242 [Normal] ________________________________________________________________________________
+P0243 [Normal] ________________________________________________________________________________
+P0244 [Normal] I21. What formal request, endorsement, data sharing agreement, approving authority, or processing period would apply to each potentially releasable dataset?
+P0245 [Normal] ________________________________________________________________________________
+P0246 [Normal] ________________________________________________________________________________
+P0247 [Normal] ________________________________________________________________________________
+P0248 [Normal] ________________________________________________________________________________
+P0249 [Normal] ________________________________________________________________________________
+P0250 [Normal] I22. Could the office provide a sample record, blank form, metadata sheet, legend, or data dictionary before a complete request is finalized?
+P0251 [Normal] ________________________________________________________________________________
+P0252 [Normal] ________________________________________________________________________________
+P0253 [Normal] ________________________________________________________________________________
+P0254 [Normal] ________________________________________________________________________________
+P0255 [Normal] I23. Which relevant records are not held by BDRRMO, and which office should the researchers approach instead?
+P0256 [Normal] ________________________________________________________________________________
+P0257 [Normal] ________________________________________________________________________________
+P0258 [Normal] ________________________________________________________________________________
+P0259 [Normal] ________________________________________________________________________________
+P0261 [Heading 1] Dataset Detail Sheet
+P0262 [Normal] Complete one copy for each dataset that may be relevant. Duplicate this page as needed.
+P0263 [Normal] Official dataset or record title ________________________________________________________________
+P0264 [Normal] Responsible office or custodian ________________________________________________________________
+P0265 [Normal] Purpose and description ________________________________________________________________
+P0266 [Normal] ________________________________________________________________________________
+P0267 [Normal] Geographic coverage and finest reliable resolution ________________________________________________________________
+P0268 [Normal] ________________________________________________________________________________
+P0269 [Normal] Time period and update frequency ________________________________________________________________
+P0270 [Normal] Available format and approximate volume ________________________________________________________________
+P0271 [Normal] Important variables units categories and identifiers ________________________________________________________________
+P0272 [Normal] ________________________________________________________________________________
+P0273 [Normal] Spatial format and coordinate reference system if applicable ________________________________________________________________
+P0274 [Normal] Collection validation and approval method ________________________________________________________________
+P0275 [Normal] ________________________________________________________________________________
+P0276 [Normal] Known missing values limitations or quality concerns ________________________________________________________________
+P0277 [Normal] ________________________________________________________________________________
+P0278 [Normal] Access classification and sharing conditions ________________________________________________________________
+P0279 [Normal] ________________________________________________________________________________
+P0280 [Normal] Available supporting files such as data dictionary legend or sample ________________________________________________________________
+P0281 [Normal] Potential use in FloodSense ________________________________________________________________
+P0282 [Normal] Required next step and approving authority ________________________________________________________________
+P0284 [Heading 1] Part D Expert Knowledge for Flood Susceptibility Assessment
+P0285 [Normal] Goal: Determine how authorized knowledge could be represented as traceable facts and rules. Do not treat illustrative questions as approved flood rules.
+P0286 [Normal] I24. What is the most precise geographic unit that available evidence can reliably support for public susceptibility assessment? Why?
+P0287 [Normal] ________________________________________________________________________________
+P0288 [Normal] ________________________________________________________________________________
+P0289 [Normal] ________________________________________________________________________________
+P0290 [Normal] ________________________________________________________________________________
+P0291 [Normal] ________________________________________________________________________________
+P0292 [Normal] I25. How should Low, Moderate, High, and Very High flood susceptibility be defined in plain language for Bacoor City residents?
+P0293 [Normal] ________________________________________________________________________________
+P0294 [Normal] ________________________________________________________________________________
+P0295 [Normal] ________________________________________________________________________________
+P0296 [Normal] ________________________________________________________________________________
+P0297 [Normal] ________________________________________________________________________________
+P0298 [Normal] ________________________________________________________________________________
+P0299 [Normal] I26. Which approved geographic, historical, rainfall, environmental, or operational facts should be considered when assessing rainfall-related flood susceptibility?
+P0300 [Normal] ________________________________________________________________________________
+P0301 [Normal] ________________________________________________________________________________
+P0302 [Normal] ________________________________________________________________________________
+P0303 [Normal] ________________________________________________________________________________
+P0304 [Normal] ________________________________________________________________________________
+P0305 [Normal] I27. How should rainfall intensity and duration affect an area's susceptibility assessment? Which combinations are supported by available evidence?
+P0306 [Normal] ________________________________________________________________________________
+P0307 [Normal] ________________________________________________________________________________
+P0308 [Normal] ________________________________________________________________________________
+P0309 [Normal] ________________________________________________________________________________
+P0310 [Normal] ________________________________________________________________________________
+P0311 [Normal] I28. Please describe one generalized expert decision as an IF conditions THEN susceptibility conclusion rule. What evidence supports it?
+P0312 [Normal] This answer is a candidate for later review and is not automatically an approved production rule.
+P0313 [Normal] ________________________________________________________________________________
+P0314 [Normal] ________________________________________________________________________________
+P0315 [Normal] ________________________________________________________________________________
+P0316 [Normal] ________________________________________________________________________________
+P0317 [Normal] ________________________________________________________________________________
+P0318 [Normal] ________________________________________________________________________________
+P0319 [Normal] I29. What exceptions or rapidly changing conditions could make a rule inappropriate, incomplete, or unsafe to apply?
+P0320 [Normal] ________________________________________________________________________________
+P0321 [Normal] ________________________________________________________________________________
+P0322 [Normal] ________________________________________________________________________________
+P0323 [Normal] ________________________________________________________________________________
+P0324 [Normal] ________________________________________________________________________________
+P0325 [Normal] I30. When several rules apply, how should geographic specificity, condition specificity, recency, evidence strength, or documented priority be considered?
+P0326 [Normal] ________________________________________________________________________________
+P0327 [Normal] ________________________________________________________________________________
+P0328 [Normal] ________________________________________________________________________________
+P0329 [Normal] ________________________________________________________________________________
+P0330 [Normal] ________________________________________________________________________________
+P0331 [Normal] I31. When should the system return Uncertain, Insufficient Data, Outside Supported Area, or another limitation instead of a normal susceptibility level?
+P0332 [Normal] ________________________________________________________________________________
+P0333 [Normal] ________________________________________________________________________________
+P0334 [Normal] ________________________________________________________________________________
+P0335 [Normal] ________________________________________________________________________________
+P0336 [Normal] ________________________________________________________________________________
+P0337 [Normal] I32. What historical or hypothetical cases could be used to test whether candidate rules produce the expected result?
+P0338 [Normal] ________________________________________________________________________________
+P0339 [Normal] ________________________________________________________________________________
+P0340 [Normal] ________________________________________________________________________________
+P0341 [Normal] ________________________________________________________________________________
+P0342 [Normal] ________________________________________________________________________________
+P0343 [Normal] I33. What explanation should accompany a public result so residents understand the basis, geographic resolution, source, update date, and limitations?
+P0344 [Normal] ________________________________________________________________________________
+P0345 [Normal] ________________________________________________________________________________
+P0346 [Normal] ________________________________________________________________________________
+P0347 [Normal] ________________________________________________________________________________
+P0348 [Normal] ________________________________________________________________________________
+P0349 [Normal] I34. Who should review candidate facts and rules, and what evidence or approval is required before publication?
+P0350 [Normal] ________________________________________________________________________________
+P0351 [Normal] ________________________________________________________________________________
+P0352 [Normal] ________________________________________________________________________________
+P0353 [Normal] ________________________________________________________________________________
+P0354 [Normal] ________________________________________________________________________________
+P0355 [Normal] I35. How should revised knowledge be versioned, published, superseded, corrected, or rolled back?
+P0356 [Normal] ________________________________________________________________________________
+P0357 [Normal] ________________________________________________________________________________
+P0358 [Normal] ________________________________________________________________________________
+P0359 [Normal] ________________________________________________________________________________
+P0360 [Normal] ________________________________________________________________________________
+P0361 [Heading 1] Part E Preparedness Decision Support Knowledge
+P0362 [Normal] Goal: Identify approved pre-event guidance that may be maintained in a deterministic Decision Support System.
+P0363 [Normal] I36. Which pre event preparedness actions are appropriate for Low Moderate High and Very High susceptibility, while preserving the authority of official advisories?
+P0364 [Normal] ________________________________________________________________________________
+P0365 [Normal] ________________________________________________________________________________
+P0366 [Normal] ________________________________________________________________________________
+P0367 [Normal] ________________________________________________________________________________
+P0368 [Normal] ________________________________________________________________________________
+P0369 [Normal] ________________________________________________________________________________
+P0370 [Normal] ________________________________________________________________________________
+P0371 [Normal] I37. Which situational questions may help tailor preparedness guidance, such as go bag readiness, documents, medicine, household assistance, transportation, or evacuation awareness?
+P0372 [Normal] ________________________________________________________________________________
+P0373 [Normal] ________________________________________________________________________________
+P0374 [Normal] ________________________________________________________________________________
+P0375 [Normal] ________________________________________________________________________________
+P0376 [Normal] ________________________________________________________________________________
+P0377 [Normal] ________________________________________________________________________________
+P0378 [Normal] I38. Which approved help topics should residents be able to search or select directly?
+P0379 [Normal] ________________________________________________________________________________
+P0380 [Normal] ________________________________________________________________________________
+P0381 [Normal] ________________________________________________________________________________
+P0382 [Normal] ________________________________________________________________________________
+P0383 [Normal] ________________________________________________________________________________
+P0384 [Normal] I39. What guidance requires a source, review date, limitation, or referral to an official authority?
+P0385 [Normal] ________________________________________________________________________________
+P0386 [Normal] ________________________________________________________________________________
+P0387 [Normal] ________________________________________________________________________________
+P0388 [Normal] ________________________________________________________________________________
+P0389 [Normal] ________________________________________________________________________________
+P0390 [Normal] I40. What should the Decision Support System explicitly refuse to decide, guarantee, or instruct?
+P0391 [Normal] ________________________________________________________________________________
+P0392 [Normal] ________________________________________________________________________________
+P0393 [Normal] ________________________________________________________________________________
+P0394 [Normal] ________________________________________________________________________________
+P0395 [Normal] ________________________________________________________________________________
+P0396 [Normal] I41. Who should maintain and approve preparedness questions, branches, actions, and public wording? How often should they be reviewed?
+P0397 [Normal] ________________________________________________________________________________
+P0398 [Normal] ________________________________________________________________________________
+P0399 [Normal] ________________________________________________________________________________
+P0400 [Normal] ________________________________________________________________________________
+P0401 [Normal] ________________________________________________________________________________
+P0402 [Heading 1] Part F Evacuation Center Information
+P0403 [Normal] I42. Which office or record is authoritative for evacuation center names, locations, addresses, coordinates, contacts, capacity, verification date, and operating status?
+P0404 [Normal] ________________________________________________________________________________
+P0405 [Normal] ________________________________________________________________________________
+P0406 [Normal] ________________________________________________________________________________
+P0407 [Normal] ________________________________________________________________________________
+P0408 [Normal] ________________________________________________________________________________
+P0409 [Normal] I43. What minimum information and validation are required before a center may be displayed as verified and active?
+P0410 [Normal] ________________________________________________________________________________
+P0411 [Normal] ________________________________________________________________________________
+P0412 [Normal] ________________________________________________________________________________
+P0413 [Normal] ________________________________________________________________________________
+P0414 [Normal] ________________________________________________________________________________
+P0415 [Normal] I44. How often should center information be revalidated, and what should happen when a center is outdated, closed, moved, or replaced?
+P0416 [Normal] ________________________________________________________________________________
+P0417 [Normal] ________________________________________________________________________________
+P0418 [Normal] ________________________________________________________________________________
+P0419 [Normal] ________________________________________________________________________________
+P0420 [Normal] ________________________________________________________________________________
+P0421 [Normal] I45. Which warnings should accompany distance ranking and external navigation so users do not interpret nearest as safest, open, or passable?
+P0422 [Normal] ________________________________________________________________________________
+P0423 [Normal] ________________________________________________________________________________
+P0424 [Normal] ________________________________________________________________________________
+P0425 [Normal] ________________________________________________________________________________
+P0426 [Normal] ________________________________________________________________________________
+P0427 [Heading 1] Part G Web Administration Requirements
+P0428 [Normal] Goal: Define how authorized administrators may maintain FloodSense without allowing unreviewed information to reach residents.
+P0429 [Normal] I46. Which administrative roles are needed, and which records or actions should each role be allowed to view, create, edit, review, approve, publish, deactivate, or roll back?
+P0430 [Normal] ________________________________________________________________________________
+P0431 [Normal] ________________________________________________________________________________
+P0432 [Normal] ________________________________________________________________________________
+P0433 [Normal] ________________________________________________________________________________
+P0434 [Normal] ________________________________________________________________________________
+P0435 [Normal] ________________________________________________________________________________
+P0436 [Normal] I47. Please describe the preferred workflow for adding or changing geographic zones, map points, Expert System rules, DSS content, rainfall parameters, evacuation centers, and public text.
+P0437 [Normal] ________________________________________________________________________________
+P0438 [Normal] ________________________________________________________________________________
+P0439 [Normal] ________________________________________________________________________________
+P0440 [Normal] ________________________________________________________________________________
+P0441 [Normal] ________________________________________________________________________________
+P0442 [Normal] ________________________________________________________________________________
+P0443 [Normal] I48. Which validations should block publication, such as invalid geometry, missing source information, unsupported rainfall references, conflicting rules, or broken DSS branches?
+P0444 [Normal] ________________________________________________________________________________
+P0445 [Normal] ________________________________________________________________________________
+P0446 [Normal] ________________________________________________________________________________
+P0447 [Normal] ________________________________________________________________________________
+P0448 [Normal] ________________________________________________________________________________
+P0449 [Normal] I49. Which changes and security events must appear in an audit history? Who may review the audit history?
+P0450 [Normal] ________________________________________________________________________________
+P0451 [Normal] ________________________________________________________________________________
+P0452 [Normal] ________________________________________________________________________________
+P0453 [Normal] ________________________________________________________________________________
+P0454 [Normal] ________________________________________________________________________________
+P0455 [Normal] I50. Which resident account support actions may an administrator perform, and which personal information or security credentials must remain inaccessible?
+P0456 [Normal] ________________________________________________________________________________
+P0457 [Normal] ________________________________________________________________________________
+P0458 [Normal] ________________________________________________________________________________
+P0459 [Normal] ________________________________________________________________________________
+P0460 [Normal] ________________________________________________________________________________
+P0461 [Normal] I51. Which exports, backups, version records, review evidence, or recovery procedures are needed for continuity and thesis documentation?
+P0462 [Normal] ________________________________________________________________________________
+P0463 [Normal] ________________________________________________________________________________
+P0464 [Normal] ________________________________________________________________________________
+P0465 [Normal] ________________________________________________________________________________
+P0466 [Normal] ________________________________________________________________________________
+P0467 [Normal] I52. Which security, privacy, retention, and access controls are essential for institutional use?
+P0468 [Normal] ________________________________________________________________________________
+P0469 [Normal] ________________________________________________________________________________
+P0470 [Normal] ________________________________________________________________________________
+P0471 [Normal] ________________________________________________________________________________
+P0472 [Normal] __________________________________________ ______________________________________
+P0473 [Heading 1] Part H FloodSense Concept Review and Feasibility
+P0474 [Normal] Read this concept statement only after Parts A to G are complete. FloodSense is a proposed Android application supported by a Django web administration system. Residents select an approved rainfall intensity and duration and choose a supported area or manually position a pin. GeoDjango and PostGIS resolve the location, and a Rule-Based Expert System applies approved facts and rules to return an explainable susceptibility result. A dynamic map displays scenario-based classifications. A separate Decision Support System provides approved pre-event preparedness guidance, and verified evacuation centers may be displayed and ranked by straight-line distance. Authorized administrators maintain draft records, validate them, and publish approved versions. FloodSense does not provide a live flood forecast, current road-safety guarantee, or independent evacuation order.
+P0475 [Normal] I53. How should the student team treat each capability for a usable first version?
+P0477 [Normal] I54. If the team can perfect only three end to end user or administrator journeys during the first implementation, which three should be chosen and why?
+P0478 [Normal] ________________________________________________________________________________
+P0479 [Normal] ________________________________________________________________________________
+P0480 [Normal] ________________________________________________________________________________
+P0481 [Normal] ________________________________________________________________________________
+P0482 [Normal] ________________________________________________________________________________
+P0483 [Normal] ________________________________________________________________________________
+P0484 [Normal] I55. Which capability should be delayed, limited, or excluded because of data quality, safety, policy, privacy, technical difficulty, or low value?
+P0485 [Normal] ________________________________________________________________________________
+P0486 [Normal] ________________________________________________________________________________
+P0487 [Normal] ________________________________________________________________________________
+P0488 [Normal] ________________________________________________________________________________
+P0489 [Normal] ________________________________________________________________________________
+P0490 [Normal] I56. What should Floo dSense explicitly refuse to do or warn residents about?
+P0491 [Normal] ________________________________________________________________________________
+P0492 [Normal] ________________________________________________________________________________
+P0493 [Normal] ________________________________________________________________________________
+P0494 [Normal] ________________________________________________________________________________
+P0495 [Normal] ________________________________________________________________________________
+P0496 [Normal] I57. What minimum evidence validation or safeguard would you require before residents test the prototype?
+P0497 [Normal] ________________________________________________________________________________
+P0498 [Normal] ________________________________________________________________________________
+P0499 [Normal] ________________________________________________________________________________
+P0500 [Normal] ________________________________________________________________________________
+P0501 [Normal] ________________________________________________________________________________
+P0502 [Normal] I58. Would the office or an authorized representative be willing to review proposed rules test cases preparedness content or map records in a later approved activity?
+P0503 [Normal] ☐ Yes        ☐ Possibly subject to approval        ☐ No        ☐ Another office should review
+P0504 [Heading 1] Part I Data Request Follow Up
+P0505 [Normal] I59. Based on this discussion, which datasets or supporting records are appropriate for a formal written request?
+P0506 [Normal] ________________________________________________________________________________
+P0507 [Normal] ________________________________________________________________________________
+P0508 [Normal] ________________________________________________________________________________
+P0509 [Normal] ________________________________________________________________________________
+P0510 [Normal] ________________________________________________________________________________
+P0511 [Normal] ________________________________________________________________________________
+P0512 [Normal] I60. For each proposed request, what exact dataset title, period, geographic coverage, format, and supporting documentation should be named?
+P0513 [Normal] ________________________________________________________________________________
+P0514 [Normal] ________________________________________________________________________________
+P0515 [Normal] ________________________________________________________________________________
+P0516 [Normal] ________________________________________________________________________________
+P0517 [Normal] ________________________________________________________________________________
+P0518 [Normal] ________________________________________________________________________________
+P0519 [Normal] I61. To whom should the request be addressed, and which endorsement approval agreement or acknowledgement is required?
+P0520 [Normal] ________________________________________________________________________________
+P0521 [Normal] ________________________________________________________________________________
+P0522 [Normal] ________________________________________________________________________________
+P0523 [Normal] ________________________________________________________________________________
+P0524 [Normal] ________________________________________________________________________________
+P0525 [Normal] I62. Which restrictions should the researchers state in the request concerning storage, access, citation, publication, retention, return, or destruction?
+P0526 [Normal] ________________________________________________________________________________
+P0527 [Normal] ________________________________________________________________________________
+P0528 [Normal] ________________________________________________________________________________
+P0529 [Normal] ________________________________________________________________________________
+P0530 [Normal] ________________________________________________________________________________
+P0531 [Normal] I63. What is the appropriate next step after the interview?
+P0532 [Normal] ________________________________________________________________________________
+P0533 [Normal] ________________________________________________________________________________
+P0534 [Normal] ________________________________________________________________________________
+P0535 [Normal] ________________________________________________________________________________
+P0537 [Heading 1] Researcher Follow Up Record
+P0538 [Normal] Complete after the interview. Do not treat a verbal indication as final release approval.
+P0540 [Normal] F1. Interviewer's summary of the most important confirmed information needs and institutional constraints
+P0541 [Normal] ________________________________________________________________________________
+P0542 [Normal] ________________________________________________________________________________
+P0543 [Normal] ________________________________________________________________________________
+P0544 [Normal] ________________________________________________________________________________
+P0545 [Normal] ________________________________________________________________________________
+P0546 [Normal] ________________________________________________________________________________
+P0547 [Normal] F2. Items requiring clarification before a formal dataset request is submitted
+P0548 [Normal] ________________________________________________________________________________
+P0549 [Normal] ________________________________________________________________________________
+P0550 [Normal] ________________________________________________________________________________
+P0551 [Normal] ________________________________________________________________________________
+P0552 [Normal] ________________________________________________________________________________
+P0553 [Normal] F3. Proposed follow up contact or office channel approved by the participant
+P0554 [Normal] ________________________________________________________________________________
+P0555 [Normal] ________________________________________________________________________________
+P0556 [Normal] ________________________________________________________________________________
+P0557 [Normal] End of interview guide.
+
+TABLE 1 (3x3)
+R000	Instrument	Respondent	Primary purpose
+R001	Questionnaire 1	Bacoor City resident aged 18 or older	Document flood experience, current information practice, problems, preparedness needs, and priorities for a resident facing system.
+R002	Questionnaire 2	Authorized BDRRMO representative	Document current workflows, available datasets, release conditions, expert rules, preparedness content, evacuation information, and administration requirements.
+
+TABLE 2 (11x7)
+R000	Situation	Never	Rarely	Sometimes	Often	Very often	N A
+R001	Useful information arrived too late for me to prepare.	☐	☐	☐	☐	☐	☐
+R002	I could not tell whether my specific area or route might be affected.	☐	☐	☐	☐	☐	☐
+R003	Information from different sources was unclear or conflicting.	☐	☐	☐	☐	☐	☐
+R004	I found rainfall categories or technical terms difficult to understand.	☐	☐	☐	☐	☐	☐
+R005	I was unsure what actions to take before conditions worsened.	☐	☐	☐	☐	☐	☐
+R006	I did not know where verified evacuation centers were located.	☐	☐	☐	☐	☐	☐
+R007	I could not tell whether evacuation center information was current.	☐	☐	☐	☐	☐	☐
+R008	Internet or mobile signal problems prevented me from checking information.	☐	☐	☐	☐	☐	☐
+R009	I worried about sharing my location or personal information with an application.	☐	☐	☐	☐	☐	☐
+R010	I could not tell when information was last updated or who provided it.	☐	☐	☐	☐	☐	☐
+
+TABLE 3 (14x4)
+R000	Dataset or record category	Availability	Known format	Custodian or notes
+R001	Historical flood event or incident records	☐ Yes ☐ Partial ☐ No ☐ Unknown	________________	________________
+R002	Affected barangay zone street or landmark records	☐ Yes ☐ Partial ☐ No ☐ Unknown	________________	________________
+R003	Recorded or estimated flood depth duration frequency or severity	☐ Yes ☐ Partial ☐ No ☐ Unknown	________________	________________
+R004	Flood hazard exposure susceptibility or inundation maps	☐ Yes ☐ Partial ☐ No ☐ Unknown	________________	________________
+R005	Barangay boundaries or other geographic zone boundaries	☐ Yes ☐ Partial ☐ No ☐ Unknown	________________	________________
+R006	Geographic coordinates, polygons, shapefiles, GeoJSON, or map layers	☐ Yes ☐ Partial ☐ No ☐ Unknown	________________	________________
+R007	Rainfall observations classifications advisories or accumulated rainfall records	☐ Yes ☐ Partial ☐ No ☐ Unknown	________________	________________
+R008	River water level drainage blockage or related observations	☐ Yes ☐ Partial ☐ No ☐ Unknown	________________	________________
+R009	Evacuation center names locations coordinates and status records	☐ Yes ☐ Partial ☐ No ☐ Unknown	________________	________________
+R010	Preparedness protocols checklists advisories or public education materials	☐ Yes ☐ Partial ☐ No ☐ Unknown	________________	________________
+R011	Situation reports after action reports or response summaries	☐ Yes ☐ Partial ☐ No ☐ Unknown	________________	________________
+R012	Data dictionaries legends classification methods or validation records	☐ Yes ☐ Partial ☐ No ☐ Unknown	________________	________________
+R013	Other flood related records relevant to susceptibility assessment	☐ Yes ☐ Partial ☐ No ☐ Unknown	________________	________________
+
+TABLE 4 (16x6)
+R000	Capability	Must have	Helpful	Later	Risky	Not appropriate
+R001	Resident rainfall scenario selection	☐	☐	☐	☐	☐
+R002	Dynamic public susceptibility map	☐	☐	☐	☐	☐
+R003	Manual Check My Area pin and zone resolution	☐	☐	☐	☐	☐
+R004	Rule-Based Expert System with explanation	☐	☐	☐	☐	☐
+R005	Uncertain and Insufficient Data outputs	☐	☐	☐	☐	☐
+R006	Results summary with source and version information	☐	☐	☐	☐	☐
+R007	Preparedness Decision Support System	☐	☐	☐	☐	☐
+R008	Approved help topics and keyword search	☐	☐	☐	☐	☐
+R009	Verified evacuation center map and proximity list	☐	☐	☐	☐	☐
+R010	Email and password resident accounts	☐	☐	☐	☐	☐
+R011	Admin geographic polygon and point editor	☐	☐	☐	☐	☐
+R012	Expert rule manager and test workspace	☐	☐	☐	☐	☐
+R013	DSS content editor and path preview	☐	☐	☐	☐	☐
+R014	Rainfall parameter and source management	☐	☐	☐	☐	☐
+R015	Draft review publication rollback and audit history	☐	☐	☐	☐	☐
+
+TABLE 5 (7x5)
+R000	No	Dataset or record	Responsible office	Required request or approval	Next action
+R001	1				
+R002	2				
+R003	3				
+R004	4				
+R005	5				
+R006	6				

@@ -1,0 +1,3737 @@
+lOT-BASED FLOOD ALERT SYSTEM FOR NARVACAN,
+STO. TOMAS, LA UNION
+CARL ANTHONY V. DELA CRUZ
+JINKY ROSE L. DELA CRUZ
+JUSTINE O. ESTOLERO
+BRENDA J. LACHICA
+REV JOHN E. PINEDA
+ANDREA P. VIDUYA
+DON MARIANO MARCOS MEMORIAL STATE UNIVERSITY
+SOUTH LA UNION CAMPUS
+COLLEGE OF COMPUTER SCIENCE
+AGOO, LA UNION
+BACHELOR OF SCIENCE IN COMPUTER SCIENCE
+---
+{. , ,,;~! .'
+'. '• t.
+I . ,. - ' . i
+Da~o: ~_ ~_ --_ [~~ __ I
+--. :::J. . -'--_ --.~_..-~-.
+--
+MAY 2024
+
+
+ACKNOWLEDGMENTS
+The thesis would not have been possible without the direction and aid of numerous
+people who, in various ways, contributed and extended their priceless assistance towards
+the completion of this work. The following are acknowledged by the researchers with
+sincere gratitude:
+To the University President, Dr. Jaime 1. Manuel, Jr., for his exemplary leadership
+in participating in the development of quality education in the University;
+To the Chancellor of DMMMSU South La Union Campus, Dr. Joanne C. Rivera,
+for the inspiration and motivation that she has provided during their four-year leaming stay;
+To the Dean of CCS, Prof. Enrico G. Dacanay, for his enthusiastic supervision in
+leading the college to the improvement of services as well as detailed suggestions and
+comments for the improvement of the research study;
+To the CCS Chairperson, Dr. Raymund E. Dilan, for the assistance he provided,
+intelligent pieces of advice, and guidance in the completion of the study;
+To the Thesis Instructor, Dr. Floribeth P. Cuison, for her invaluable guidance,
+unwavering support, exceptional expertise, remarkable patience, and constant
+encouragement throughout this study;
+To their Thesis Adviser, Prof. Jocelyn 1. Ancheta, who generously contributed her
+time, thoughts, and labor-intensive efforts that improved the manuscript-writing process,
+as well as unwavering support and guidance of all kinds;
+To the Thesis Committee Chair, Dr. Jerome P. Songcuan, for the guidance,
+expertise, and unwavering support from the inception to the completion of this study;
+III
+
+
+To all members of the panel, Prof. Charlie S. Marzan, Prof. Emely A. Munar and
+Prof. Enrico G. Dacanay, for their valuable insight, constructive feedback, and advice,
+which improved the quality of this thesis output;
+To the Faculty and Staff ofCCS, whose friendship, assistance and words of wisdom
+inspired the researchers to work diligently to complete this study;
+To Dr. Leilani M. Ibay-Pamo, the English Critic, for the valuable contributions and
+insightful feedback on the thesis study.
+To Barangay Narvacan, Sto. Tomas, La Union, and MDRRMO, for their invaluable
+contributions as respondents in the research. Their willingness to share insights is
+anticipated to greatly enrich the study, and the collaborative spirit they have demonstrated
+is appreciated, making this research possible.
+Friends and contemporaries who provided them with a haven and remained by their
+sides even through their lofty moments;
+Their families and loved ones, who encouraged and provided strength to the
+researchers throughout this project;
+Above all, thanks to the Lord Jesus Christ, who enabled the researchers to complete
+this study by giving them perseverance, courage, wisdom, strength and hope in relation to
+their physical, mental, social, and emotional well-being.
+CAnC
+JRDC
+JOE
+BJL
+RJP
+APV
+IV
+
+
+DEDICATION
+The researchers would like to dedicate this research study to their families for
+their unwavering support during this research endeavor, to their teachersfor their
+assistance and guidance in producing a final product, and to other researchers in the
+future who may find this study to be useful as a guide or resource.
+Above all, to Almighty God, we offer the success of this study.
+CADC
+JRDC
+JOE
+BJL
+RJP
+APV
+v
+-
+
+
+TABLE OF CONTENTS
+Page
+TITLEPAGE i
+APPROVAL SHEET ii
+AKNOWLEDGMENTS iii
+DEDICATION v
+TABLE OF CONTENTS vi
+LIST OFTABLES ix
+LIST OF FIGURES x
+LIST OF PLATES xi
+ABSTRACT xiii
+CHAPTER
+1 INTRODUCTION
+Situation Analysis 1
+Statement of Objectives 18
+Time and Placeof the Study 19
+Definition of Terms 19
+2 METHODOLOGY
+Research Design 23
+Sources of Data 24
+Materials and Procedures 26
+VI
+
+
+Data Gathered 30
+Data Analysis 31
+Ethical Consideration 33
+3 RESULTS AND DISCUSSION
+Development of an lOT-Based Flood Alert System 35
+Acceptability Evaluation of the loT-Based Flood
+Alert System 82
+4 SUMMARY, CONCLUSIONS AND RECOMMENDATIONS
+Surnmary 9 I
+Conclusions 92
+Recommendations 93
+LITERA T'ORES CITED 94
+APPENDICES
+A. Interview Guide Questionnaire 101
+B. Sample Response Interview Guide Questionnaire 102
+C. User Technology Acceptability Questionnaire 103
+D. Sample Response User Technology Acceptability Questionnaire 106
+E. Matrix of Acceptability Result 108
+F. Letter of Request to Thesis Adviser III
+G. Letter of Request to Panel Members 112
+H. Letter of Request to Research Ethics Committee 116
+1. Application for Ethics Review 117
+Vll
+
+
+1. Informed Consent Form (English Version) 120
+K. Informed Consent Form (Tagalog Version) 126
+L. Ethical Clearance 133
+'M'. Pictorials 135
+N. Source Code 138
+O. Certificate of Proofreading 144
+CURRICULUM VTTAE
+Carl Anthony V. Dela Cruz 145
+Jinky Rose L. Dela Cruz 148
+Justine O. Estolero 150
+Brenda J. Lachica 152
+Rey John E. Pineda 155
+Andrea P. Viduya 157
+Vlll
+
+
+LIST OF TABLES
+Table
+No.
+Page
+Distribution of Respondents 25
+2 Hardware and Software Components Used in Prototype
+Devel opmen t 48
+3 Errors Encountered by the Researchers in Alpha Testing 75
+4 Errors Encountered by the IT Experts in Alpha Testing 75
+5 Test Cases Performed by the Head ofMDRRMO in
+Beta Testing 76
+6 Test Cases Performed by the Barangay Official Councils and
+Residents in Beta Testing 77
+7 Level of Acceptability in terms of System Usefulness 84
+8 Level of Acceptability in terms of Information Quality 86
+9 Level of Acceptability in terms of Interface Quality 88
+10 Summary of Acceptability , ,..90
+IX
+
+
+LIST OF FIGURES
+Figure
+No.
+Page
+Agile Methodology (Harris, 2020) 27
+2 Use Case Diagram (Website) 39
+3 Use Case Diagram (Prototype) .40
+i
+!
+I
+I
+{
+4 Flowchart of the Developed Prototype .42
+5 Schematic Diagram Structure of an loT-Based Flood Alert
+System 43
+6 Prototype of an loT-Based Flood Alert System .44
+7 External Interface of an ToT-Based Flood Alert System .46
+I
+I
+i
+J
+x
+
+
+LIST OF PLATES
+Plate
+No.
+Page
+Arduino Uno r3 Drip Type 50
+2 Male to Female Jumper wires 51
+3 Circuit Rocks Breadboard 400 52
+4 Male to Male Jumper wires 53
+5 Ultrasonic Ranging Sensor. 54
+6 J2V Active Buzzer 55
+7 ESP-Ols WiFi Module 56
+8 GSM Module SIM900A 57
+9 18650 Battery 3.7v Li-Ion 58
+10 Login Page 59
+11 Reset Password Page 60
+12 Verify Email Address 61
+13 Account Registration Page 62
+14 Successfully Login 63
+15 Dashboard Page 64
+16 Notification Alert 65
+17 SMS Notification 66
+18 Data Analytic Graph Page 67
+19 History Reports Page 68
+Xl
+
+
+..
+20 Sample Print Generated Report 69
+21 Sample PDF Generated Report 70
+22 Sample Excel Generated Report 71
+23 Manual Page 72
+24 Logout Page 73
+25 Successfully Logged Out. _ 74
+XlI
+
+
+ABSTRACT
+:
+DEL A CRUZ, CARL ANTHONY V., DELA CRUZ, JINKY ROSE L.,
+ESTOLERO, JUSTINE 0., LACHICA, BRENDA J., PINEDA, REY JOHN E., AND
+VIDUYA, ANDREA P. (2'024). loT-Based Flood Alert System for Narvacan, Sto.
+Tomas, La Union. Bachelor of Science in Computer Science. Don Mariano Marcos
+Memorial State University South La Union Campus, College of Computer Science, Agoo,
+La Union.
+Adviser: Ancheta, Jocelyn I., MIT
+This study aimed to develop an Io'I-based flood alert system for Narvacan, Sto.
+Tomas, La Union. Specifically, the study sought to achieve the following objectives: 1)
+develop a prototype of the loT-Based Flood Alert System adopting the agile methodology,
+and 2) assess the system's level of acceptability using the User Technology Acceptability
+Questionnaire. Throughout the study, descriptive and developmental research methods
+were employed to accomplish its objectives. It focused on water level monitoring and an
+early warning system via SMS that alerted individuals to potential flood events, giving time
+to evacuate and abate the impact of flooding. The loT-Based Flood Alert System for
+Narvacan, Sto. Tomas. La Union, was perceived as extremely high acceptance in terms of
+system usefulness, information quality, and interface quality with a grand mean of6.87.
+Keywords: agile methodology, Io'I-Basedflood alert system, prototype, user technology
+acceptability questionnaire, water level
+Xlll
+-
+
+
+Chapter 1
+INTRODUCTION
+Situation Analysis
+Technological advancement has led the emergence of loT-Based solutions that
+paved the way for a new chapter of innovation. This study embarked on a comprehensive
+exploration of the 'loT-Based Flood Alert System', delving into its development,
+functionality, and critical role in mitigating the devastating impact of floods. The loT-
+Based system comprised various components, including sensors that monitored water
+levels in real-time, a cloud-based platform that stored and processed the data, and a mobile
+application that alerted users of the current flood situation while providing them with
+evacuation routes and safety tips.
+Cicek and Kantarci (2023) emphasized in disaster management, the massive
+amount of heterogeneous data that was generated through ubiquitous sensors paved the
+way for fast and informed decisions in the case of disasters. Utilization of the big "sensed"
+data led to effective and efficient management of disaster situations to prevent human and
+economic losses. The advancement of built-in sensing technologies in smart mobile
+devices enabled crowdsourcing of sensed data, which was known as mobile crowdsensing
+(MCS), highlighting the numerous benefits of incorporating teclmology into emergency
+response, including better tracking and locating individuals needing assistance.
+The study of Shah et al. (2018) proposed a flood warning system that could detect
+the water level and measure the speed of the rise of water level. To give the society an
+earlier notification to evacuate before the water rose to the dangerous level, the
+
+
+2
+measurement results were sent as alerts to mobile pbones through Short Message Service
+(SMS). This project was designed on the loT-based platform, where data from the sensor
+was collected at the mini-processor, and alerts were generated and transmitted as SMS to
+smartphones.
+The motivation behind the development of a flood monitoring system arose from
+the critical need of communities residing in flood prone areas, local disaster management
+agencies, or even government bodies responsible for public safety. Through surveys and
+discussions, it was evident that such stakeholders sought an efficient system that could
+provide timely flood alerts, enabling them to make informed decisions and take necessary
+precautions (Byali et aI., 2022).
+As climate-related challenges became increasingly evident, the need for effective
+flood monitoring and alert systems became more crucial than ever. This research paper
+delved into the development of flood detectors using loT Arduino technology, aiming to
+provide a comprehensive solution to monitor flood situations and send timely alerts via
+text messages (Liang et aI., 2023).
+Likewise, the reports from reputable agencies consistently highlighted the urgency
+of improved flood monitoring and alert systems. The escalating frequency of extreme
+weather events, often linked to climate change, further accentuated the relevance of this
+contemporary issue (Radhika et al., 2022). The researchers aimed to contribute to resolving
+this issue by developing a practical loT -based solution that not only identified flood
+situations through data analysis but also communicated the potential risks effectively,
+ultimately minimizing the impact of floods on lives and properties.
+
+
+3
+According to Sharma (2023), it was explored that the existing dam reservoir
+monitoring systems in India heavily relied on water gauges to identify potentially
+hazardous water levels indicative of floods. In addition, these systems faced challenges due
+to the remote locations of dams, resulting in high costs and significant human resources
+needed for continuous monitoring and maintenance. However, the primary objective of the
+study was to address these issues by offering a reliable, cost-effective, low-maintenance,
+and energy-efficient approach to intelligent flood detection and dam reservoir monitoring
+(Keith, 2018).
+On the other hand, the advancements in computer systems revolutionized flood risk
+management, reducing manual efforts and enhancing coordination. With climate change
+and socioeconomic developments escalating flood severity, recent studies showed a
+transition from traditional flood control to a more adaptive and resilient approach. A
+comprehensive bibliornetric analysis spanning from 2000 to 2021 revealed this shift in
+flood research trends, emphasizing a move from mitigation-focused strategies to adaptive
+measures and, ultimately, resilient and sustainable disaster coping plans. The integration
+of resilience into risk management frameworks emerged as a crucial strategy, underscoring
+the importance of informed decisions and proactive measures throughout the disaster
+management continuum (Wang et al., 2022).
+The rapid pace of technological change presented challenges for users, notably in
+specialized fields such as coastal management and disaster preparedness. However, it
+concurrently engendered transformative advancements. The transition from manual,
+resource-intensive processes to computer-assisted monitoring and decision-making
+
+
+4
+signified a paradigm shift. The implications highlighted the pivotal role of technology in
+addressing intricate problems, emphasizing the paramount importance of adaptability and
+innovation within the realms of coastal management and disaster preparedness (Almutairi
+et aI., 2020).
+A real-time monitoring system, for instance, allowed for immediate updates on
+coastal conditions, allowing for swift decision-making. Using a computer, an operator
+could select vulnerable areas to determine if rescue efforts were necessary. This real-time
+data visualization assisted in efficiently identifying afflicted regions (Advanced
+Environmental Monitoring, 2024). These technological advancements significantly
+enhanced people's capacity to respond to coastal disasters, sparing lives and minimizing
+property loss.
+Tn relation to this phenomenon, De Los Santos et a1. (2020) designed a system
+leveraging a range of technologies, including mobile apps, online applications, SMS, and
+geolocation services, to aid individuals during crises such as fires, medical emergencies,
+accidents, earthquakes, floods, and storms. The primary objective of the system was to
+harness smartphones to enhance disaster risk mitigation and streamline incident response
+operations, with the ultimate goal of preserving lives.
+In addition, Hoangdien (2022) developed an application called SagipPinoy that
+could locate the nearest emergency units, send location details to the emergency units, and
+broadcast an alarm to at least five closest emergency teams. The app helped regular people
+request help using their Android phones while also allowing emergency services to respond
+quickly. SagipPinoy provided a free registration service for both ordinary people and
+
+
+5
+emergency services. The researchers behind the app hoped it proved to be a secure and
+"
+dependable application that could benefit emergency services and everyday people in times
+of need.
+Similarly, Alampay et al. (2018) delved into the nature of social media and its
+technological affordances, shedding light on the communication needs of people at risk
+that were met by social media and identifying the critical functions of social media during
+times of crisis. However, the purpose of their study was to investigate how local
+government units (LGUs) had employed various information and communication
+technologies (ICf s), such as broadband connectivity, mobile applications, web
+applications, client-server network architecture, SMS, and geolocation technology, for
+disaster risk mitigation services. The study focused on the model local governments used
+to organize and manage their operations.
+As stressed by Nwufoh et al. (2021), during a crisis, citizens could provide valuable
+support to the operation centers involved in response activities. Based on a study of relevant
+existent contributions in this area and their personal direct experience in developing and
+evaluating emergency management solutions, one of the core objectives was to provide
+secure and comfortable learning environments. It was essential to have better emergency
+alarm systems in place.
+Goyal (2024) study discussed that floods were a conunon natural disaster that
+occurred almost every year in our country. Floods not only destroyed agricultural fields
+and produce, but they also caused significant damage to vast stretches of area and property.
+This was why early flood detection was extremely vital to prevent the loss of life and
+
+
+6
+valuable assets. The loT-based flood detection system was built to monitor and track
+different natural factors (humidity, temperature, water level, etc.) to predict a flood, thereby
+allowing us to take the necessary measures to minimize the damage caused.
+Flooding was considered one of the most destructive natural catastrophes that could
+cause serious harm to people, property, and infrastructure. According to Technology
+(2022), early warning systems were increasingly essential to reduce flood damage. One
+creative idea that offered early warning of impending floods and real-time monitoring was
+an Arduino-based system. These systems mainly identified floods and notified local
+authorities and communities to reduce damage and save lives. The sensor was an essential
+part of an Arduino-based system that measured water level precisely using ultrasonic
+technology.
+By using this technology, people could help prevent the loss of life and property
+caused by flooding. Early warning systems like this could give people the time to evacuate
+and move to safety. They also allowed local authorities to make necessary preparations and
+take action to minimize the damage caused by floods. Overall, using an Arduino-based
+system with an ultrasonic sensor was an innovative and effective way to monitor water
+levels and provide early warning of impending floods, ultimately leading to a safer and
+more secure environment for everyone.
+A study conducted by Gacu et al. (2022) highlighted the benefits of using mobile
+computing in emergency response scenarios, such as real-time tracking of individuals in
+need of assistance. The study found that utilizing mobile devices could significantly
+improve emergency response times as it allowed for accurate and timely monitoring of
+
+
+7
+individuals in need of help.
+According to Wang et al. (2020), they examined the assessment of the pros and
+cons of various emergency response systems and suggested potential avenues for future
+research in this area. Their primary conclusion highlighted the importance of utilizing
+technology in emergency response situations to enhance the efficiency and promptness of
+identifying and tracking individuals in real-time using mobile phone data. The results
+underscored that integrating technology into emergency response systems could help
+conserve vital time and resources, which were particularly crucial during life-threatening
+emergencies. Similarly, McDermid (2022) delved into the advantages and limitations of
+diverse emergency response systems and proposed potential future research trajectories.
+The findings echoed the notion that employing technology in emergency response
+scenarios could augment the precision and swiftness of locating individuals in real-time, a
+critical aspect in urgent situations. The study suggested that the incorporation of technology
+into emergency response systems had the potential to preserve essential time and resources.
+Additionally, the study highlighted that technology could improve user experience
+and safety by providing accurate information about disaster warnings via their devices.
+This real-time information could help individuals make informed decisions and take
+necessary precautions to protect themselves and others. Overall, Wang's (2020) study
+emphasizes the importance oftechnology in emergency response scenarios and its potential
+to enhance the effectiveness and efficiency of emergency response systems with the use of
+mobile phone data.
+Shi et al. (2023) discussed the preventive allocation and post-disaster cooperative
+
+
+8
+dispatch of emergencymobile resources for improved distribution system resilience. The
+study focused on the distribution system's resilience against extreme weather events in
+both the preventive and post-disaster stages. The resource allocation problem was
+described as a two-stage stochastic programming problem in the preventative stage to
+minimize the anticipated load-shedding cost right after the disaster, taking the uncertainty
+of the fault site into account.
+Furthermore, Zhang et al. (2023) studied coastal emergency response management
+and developed an integrated framework that included a decision support system, a risk
+assessment model, and a simulation system. The framework utilized various data sources,
+such as satellite imagery, GIS, and remote sensing, to provide decision support for
+emergency managers. The authors aimed to provide a comprehensive approach to coastal
+emergency response planning that integrated data from multiple sources and provided real-
+time decision support during emergencies. Likewise, Kim and Hastak (2018) explained the
+development of a coastal disaster inforrnation management system based on GIS that
+integrated various data sources, such as coastal monitoring data, weather forecasts, and
+disaster reports, providing real-time information to emergency managers and supporting
+decision-making during coastal disasters. The authors aimed to develop an integrated
+system to monitor coastal conditions in real-time and provide decision support to
+emergency managers during coastal disasters.
+The need for a storm monitoring system is also stressed in the study of Moradi et
+a1. (2020) where they proposed integrating Geographic Information System and system
+dynamics to assess the impacts of storm damage on coastal communities. A mobile-based
+
+
+9
+emergency response system enhanced the effectiveness of emergency response teams. The
+authors highligbted the benefits of using technology in emergency response scenarios, such
+as accurate and real-time tracking of individuals. Wang et a1. (2020) discussed the
+development of a real-time emergency response system that utilized mobile devices. They
+highlighted the benefits of using technology for emergency response, such as real-time
+tracking and locating of individuals.
+Hu et a1. (2022) implemented a system with open specifications to facilitate
+interoperability. The typhoons and floods in Hainan Province, China, were typical
+scenarios to verify the system's applicability and effectiveness. The system improved the
+automation level oftbe natural disaster emergency response service and provided technical
+support for regional remote-sensing-based disaster mitigation in China.
+Zhang et a1. (2023) published a study in the Journal of Hazardous Materials on a
+system that integrated several components, including a geographic information system
+(GIS), a meteorological model, a dispersion model, and a decision support system (DSS).
+One possible approach to addressing these challenges involved the development of a
+comprehensive platform that leveraged state-of-the-art technologies to monitor coastal
+conditions continuously, forecast emerging hazards, and facilitate efficient commlmication
+among various stakeholders. By completing these essential gaps, the advocates envisioned
+a prospective scenario wherein coastal communities were enhanced in their preparedness,
+resources were distributed more efficiently, and protection of lives and property was
+ensured against the severe consequences of coastal disasters (Glupker, 2023). Aside from
+this, the Flood Alert System aimed to substantially contribute to improving resilience and
+
+
+I'
+10
+disaster response capacities in coastal areas susceptible to vulnerability.
+In 2022, Rankin conducted a thorough study to address coastal storm risks along
+the Atlantic Ocean shoreline in Miami-Dade County, Florida. The study, with Miami-Dade
+County as the non-federal sponsor, focused on vulnerabilities related to erosion, flooding,
+and wave attacks during coastal storms. While concentrating solely on the Atlantic Ocean
+shoreline, the analysis strived to provide an alternative plan that not only mitigated risks
+but also identified opportunities for recreation and habitat preservation. The study
+acknowledged the region's high vulnerability to sea level change, anticipating its
+exacerbation of existing damaging forces. However, this collaborative Coastal Storm Risk
+Management (CSRM) initiative underscored the importance of a comprehensive strategy
+to safeguard structures and infrastructure, balancing immediate risk mitigation with long-
+term adaptation to evolving challenges, especially in the context of climate change and sea
+level rise (Almar et aI., 2021).
+Nevertheless, in formulating the feasibility study plan, meticulous attention was
+devoted to developing a comprehensive strategy that integrated both structural and
+nonstructural measures to mitigate storm damage risks within the study areas. As part of
+this comprehensive plan, the Coastal Storm Risk Management measures not only addressed
+identified problems but also strategically capitalized on opportunities outlined in the
+primary report. In the specific context of the Rhode Island Coastline, this Coastal Storm
+Risk Management Generallnvestigation was dedicated to achieving the twin objectives of
+presenting a Total Project Cost, encompassing both construction and non-construction
+expenses, for the Tentatively Selected Plan (TSP) at the current price level. This financial
+
+
+11
+assessment was pivotal for project justification and authorization, including future cost
+projections for effective budgeting (Nae, 2022). Moreover, in integrating cutting-edge
+solutions, such as an loT-Based flood alert system, into the nonstructural measures, the
+cost estimation process considered the implementation and maintenance expenses
+associated with this technology.
+Conducted by Imani et al. (2021), the study provided a comprehensive examination
+of the capability of the least resilient cities in Taiwan, including Tainan, Kaohsiung, Chiayi,
+Taoyuan, New Taipei, and Yunlin. The research revealed diverse coping strategies
+employed by residents, with Kaohsiung prioritizing structural and technological
+approaches, while Yunlin relied more on behavioral and spiritual mechanisms. The
+economic vulnerabilities in Yunlin, compounded by factors such as an aging farming
+population and long-term labor outrnigration, underscored the region's susceptibility to
+climate change. The analysis incorporated the impact of single and multiple disasters on
+coping strategies, highlighting an increased reliance on financial, behavioral, and structural
+approaches with the prolonged duration and heightened frequency of disasters. Notably,
+the study proposed a comprehensive conceptual framework for disaster management
+termed the 4R package Resource, Reason, Roadmap, and Respond aligning with the
+interconnectedness of resilience, capability, and effective disaster response (Huemer &
+Wang, 2021). The analysis suggested prioritizing flood mitigation measures in vulnerable
+regions and underscored the need for further research incorporating social aspects and
+higher spatial resolution for accurate risk assessment and management strategies.
+This study focused on addressing the significant impact of flooding, a major
+
+
+12
+disaster disrupting the normal lifestyle of communities. In accordance with Mamat et al.
+(2021), recognizing the imperative for comprehensive environmental analysis, the research
+adopted a forward-looking approach by leveraging Internet of Things (loT) technology and
+embedded systems. Specifically, the flood alerting system integrated loT and Wireless
+Sensor Network (WSN) to facilitate real-time calculations, computational processing,
+prediction, and analysis. Employing the Waterfall model algorithm as the methodology,
+the study utilized Arduino uno connected to water flow sensors for water level analysis and
+temperature sensors for predicting humidity levels. The collected data was then processed
+through Arduino, programmed in Java and C++, to generate alert messages (Bhatt, 2023).
+The seamless integration of loT in this real-time prediction and alerting system
+demonstrated its effectiveness in enhancing risk reduction by providing timely warnings to
+the surrounding areas. This research contributed to understanding the practical
+implementation of loT in flood prediction and response, showcasing its potential impact
+on reducing response times and improving overall disaster preparedness by Nandhini et a1.
+(2021).
+Siddique and Qadri's (2018) study addressed the critical issue of flood control in
+many cities of Pakistan, where water, while essential, posed a life-threatening risk,
+particularly for communities residing near riverbanks. The primary focus of the research
+was to propose a solution using Wireless Sensor Network (WSN) technology to monitor
+and warn nearby villages about impending flood situations, aiming to prioritize the safety
+of residents. The key features of the study included the introduction of four nodes
+strategically placed at different river locations, constantly monitoring river water flow and
+
+
+13
+level. These nodes communicated vital information to a master node, which aggregated the
+data and triggered warnings in the event of a flood. The significance of this research lay in
+its practical approach to leveraging technology, specifically WSNs, to address the
+challenges posed by poor flood management and the absence of dams. By providing a
+systematic and technologically driven solution, the study contributed to the potential
+mitigation of flood-related risks and underscored the vital role technology could play in
+safeguarding lives and properties in flood-prone areas by M uaz (2021).
+The study by Guo et a1. (2021) addressed a critical challenge 111 geohazard
+assessment by focusing on mountainous regions characterized by intricate topography and
+dense vegetation cover. Geohazard recognition and inventory mapping were pivotal
+components for the creation of reliable susceptibility and hazard maps, yet their effective
+implementation in such challenging terrains had been limited. The research underscored
+the potential breakthrough offered by Light Detection and Ranging (LiDAR) technology.
+The utilization of airborne LiDAR data presented a novel approach to overcoming the
+complexities associated with mountainous landscapes. By employing LiDAR technology,
+the study aimed to enhance the accuracy and efficiency of geohazard recognition and
+inventory mapping, ultimately contributing to more robust hazard assessments in regions
+where traditional methods faced limitations (Bantounos et al., 2022). This research
+signified a noteworthy advancement in the field, leveraging technological innovation to
+address the unique challenges posed by complex topography and vegetation in
+mountainous areas.
+In parallel efforts, the DOST -Philippine Institute of Volcanology and Seismology
+
+
+14
+(PHIVOLCS) had taken significant strides in geobazard recognition and inventory
+mapping through its participation in the multi-agency GeoRisk Philippines Initiative. A
+pivotal aspect of this initiative was the introduction of tbe HazarciHunterPH mobile
+application tailored for Android users. Notably, the application expanded its utility beyond
+geological hazards to encompass weather-related threats, including floods, strong winds,
+and storm surges, as evidenced by Philippines (2018). This comprehensive approach not
+only enhanced the accessibility of hazard information but also reflected a strategic
+integration of geohazard recognition and inventory mapping into a user-friendly,
+technology-driven platform, thereby fostering a more informed and resilient community
+response to diverse environmental risks.
+The study by Valenzuela et al. (2020) revealed a discrepancy between perceived
+low risk and actual vulnerability in coastal communities, particularly exemplified by Puerto
+Princesa City, Palawan, Philippines. Despite the existence of an extensive disaster risk
+database and risk maps, residents in seemingly low-risk zones may have harbored a false
+sense of safety. The historical storm tracks and tsunami data from IBTrACS and the United
+States' NGDC/WDS Global Historical Tsunami Database challenged this perception,
+indicating Palawan's exposure to storms and potential risks from nearby tsunami sources.
+This incongruity underscored the need for a nuanced and adaptive risk assessment
+approach that considered dynamic factors and incorporated targeted community education
+initiatives. The study's findings emphasized the imperative for proactive disaster
+management strategies, urging a reevaluation of risk criteria to ensure the resilience of
+coastal communities in the face of evolving natural hazards. The study of Rubio et al.
+
+
+15
+(2020) focused on index-based flood risk assessment in Metro Manila, the capital region
+of the Philippines and the most densely populated region in the country. Its objective was
+to properly address urban characteristics in flood risk assessment by introducing a specific
+urban-type set of physical, social, economic, and ecological indicators.
+The escalating frequency of emergency and disaster situations globally, particularly
+in highly vulnerable nations like the Philippines, underscored the critical need for effective
+response mechanisms. Despite this urgency, there was a noticeable gap in the literature
+regarding the representation of emergency and disaster response applications on
+smartphones in the context of the Philippines. To address this gap, the study conducted by
+Orong and Hernandez (2019) endeavored to assess the acceptance level of recently
+launched smartphone applications designed for emergency and disaster response among
+citizens. Employing the Unified Theory of Acceptance and Use of Technology model as a
+framework, the survey aimed to delve into the factors influencing the adoption of these
+applications. This research not only contributed to the understanding of technology
+acceptance in the specific domain of emergency response but also held the potential to
+enhance the effectiveness of such applications, fostering a more resilient and responsive
+community in the face of emergencies in the Philippines.
+The escalation of population density and consequent urban expansion into hazard-
+prone regions heightened the vulnerability of settlements. This increased exposure was
+compounded by a notable deficiency in pre-impact awareness among residents in these
+communities, potentially leading to an underestimation of the severity and impact of
+potential hazards. It was observed that hazard knowledge disseminated through media
+
+
+16
+channels might prove inadequate, as it often failed to directly influence comprehensive
+planning and evacuation strategies (World Bank Group, 2023). Furthermore, individuals
+lacking prior disaster experience might have misconstrued the risks they faced, particularly
+when confronted with hazards characterized by return periods surpassing an individual's
+lifetime. This underscored the imperative for targeted awareness campaigns and
+educational initiatives to bridge the informational gap between hazard exposure and
+community preparedness, constituting a pivotal aspect of comprehensive disaster risk
+reduction strategies (Dimitrova & Snair, 2024).
+Floods are undoubtedly one of the most devastating natural calamities that ravage
+millions worldwide yearly. The extent of the damage they could cause ranges from the
+destruction of infrastructure and property to the loss of human lives and agriculture. Due
+to its geographic location, climate, and topography, the Philippines is especially prone to
+floods. In La Union the areas that are highly susceptible to flooding include Barangay
+Narvacan, Sto. Tomas, La Union, a coastal municipality in the northern part of Luzon
+Island. The inhabitants of this region faced constant threats from heavy rainfall, storm
+surges, and river overflow during the rainy season by Muaz (2021).
+During an interview, Barangay Captain Ricardo Collado ofNarvacan, Sto. Tomas,
+La Union, expressed concern over the recurring high tide events that occurred quarterly in
+the area. These high-tide incidents required prompt action to mitigate potential risks to
+coastal communities. He also discussed the impact of high tides on the community
+biannually, with a seasonal occurrence in the months of February to April and from
+September to December. Furthermore, weekly instances of high tides extended over three
+
+
+17
+nights and encompassed at least two days. It was imperative to address these patterns
+comprehensively to ensure the resilience and safety of the community (Collado, 2023).
+However, the barangay was intricately divided into seven sectors, and recent data
+unveiled a concerning trend. Sectors five to seven, inhabited by 233 individuals, grappled
+with the impact of severe high tides, whi Ie sectors one to four, housing 338 out of the total
+571 residents, faced moderately high tides. The tangible repercussions on the affected
+population's lives and livelihoods underscored the urgent need for intervention. Delving
+into the broader context, the Municipality of Santo Tomas had a historical backdrop of
+contending with the challenges posed by tidal fluctuations, a recurrent phenomenon in this
+coastal locale. The residents ofNarvacan, Sto. Tomas, La Union had traditionally relied on
+manual monitoring techniques, encompassing recording high tide date and time, predicting
+water levels, measuring water levels, and discerning the conclusion of high tide.
+Additionally, they employed a calendar-based method to track tidal cycles and a manual
+process to monitor rising water levels. The vulnerability of the barangay to flooding was
+accentuated by its low-lying topography and close proximity to rivers and the sea (Collado,
+2023). In light of these complexities, implementing strategic measures became paramount
+to mitigate the impacts, ensuring the protection and resilience of the community against
+imminent harm.
+Due to the aforementioned scenario and problems encountered by the residents, the
+researchers developed the loT-Based Flood Alert System for Narvacan, Sto. Tomas, La
+Union. To avert such situations, it was important to monitor and receive timely alerts about
+the water level situation. The system would assist in evaluating emergency preparedness
+
+
+18
+and trace the affected households in the focus area from the':seven sectors of the said
+barangay. The function of this system provided an alert message through SMS informing
+the residents of the status of water level in the vicinity and to evacuate their place if
+necessary.
+The developed loT-Based Flood Alert System stood as a comprehensive solution,
+offering real-time data on water levels. This innovative system went beyond conventional
+monitoring technologies by incorporating features like text messages and calls,
+establishing a robust alert system that significantly enhanced coastal risk management and
+emergency response. The prototype, equipped with advanced sensors and integrated with
+weather stations, served as a proactive too] for tracking water levels, tides, and weather
+conditions. The system's core functionality lay in its ability to deliver timely alerts and
+warnings to 30 participants, ensuring heightened preparedness in the face of high tide or
+flood events. The implementation of this study not only addressed the immediate needs of
+the Municipality of Santo Tomas but also envisioned extending its benefits to other flood-
+prone areas in the Philippines, particularly empowering local communities in the province
+to mitigate the impact of coastal risks through effective communication networks and
+technologically-driven response mechanisms.
+Statement of Objectives
+The study aimed to develop the loT-Based Flood Alert System for Narvacan, Sto.
+Tomas, La Union.
+Specifically, the study sought to achieve the following objectives:
+
+
+19
+1. develop the prototype of the loT-Based Flood ~lert System for Narvacan,
+Sto. Tomas, La Union; and
+2. assess the system's level of acceptability usmg a user technology
+acceptability questionnaire.
+Time and Place of Study
+This study was conducted from August to April, in the school year 2023-2024, at
+Barangay Narvacan, Sto. Tomas, La Union, where the researchers conducted personal
+interviews with the residents and actual observations.
+Definition of Terms
+For a better understanding of this research report, the following terms were
+operationally defined:
+Alert System is one of the features of the proposed system used to notify residents
+of the area of the risk of flooding. The alert notification is sent through SMS.
+Alpha Testing was the phase of software testing carried out by internal teams, often
+the developers themselves and IT experts, to evaluate the quality, functionality, and overall
+performance of a software product before it was released to external users. This identified
+and addressed any issues or defects in the software to ensure a smooth and error-free
+experience for end-users.
+Beta Testing was a phase of software testing conducted by real users, including
+external/end-users, in an unstructured environment. The software was released to a limited
+
+
+20
+audience outside the development team, allowing for real-world usage and feedback
+collection.
+Central Server is used to store and analyze data from the sensors. The central server
+also generates alerts and sends them to residents of the area.
+Coastal Risk Management is a strategy and process to assess, mitigate, and manage
+risks associated with coastal areas.
+Communication Network is used to transmit data from the sensors to the central
+server. The communication network can be a wired or wireless network.
+lOT stands for Internet of Things. The Internet of Things is a network of devices
+that are embedded with sensors, software, and network connectivity to collect and
+exchange data. Tnthis case, the ToT-Based flood alert system likely used sensors to monitor
+water levels and other conditions that could indicate a potential flood. The data collected
+by these sensors would then be transmitted over the internet to a central location where it
+could be analyzed and used to issue flood alerts.
+lOT-Based Flood Alert System was the proposed system that used the Internet of
+Things (loT) to monitor and predict water levels. It consisted of a network of sensors that
+were deployed in areas at risk of flooding. The sensors collected data on water levels,
+rainfall, and other factors that could contribute to flooding. This data was then transmitted
+to a central server, where it was analyzed to generate flood alerts. The alerts could be sent
+to residents and authorities via SMS. This could give people time to evacuate or take other
+precautions to protect themselves and their property.
+Monitoring Technologies were the advanced tools and systems used to monitor the
+
+
+21
+coastal environment, including potential hazards and changin&_conditiol1s.
+Real-time monitoring was a method for instantly assessing the current status of
+queues and channels within a queue manager, providing accurate information at the time
+of command execution. It involved querying real-time data using specific commands,
+facilitating prompt decision-making. Additionally, it extended to the collection of real-time
+data from physical entities, such as water levels, using prototypes or sensors, enabling
+proactive response strategies.
+Sensors were used to collect data on water levels and rainfall. The sensors were
+installed in strategic locations throughout the area.
+User Technology Acceptability Questionnaire (UTAQ) was a measure of how likely
+users were to adopt a new technology. UTA was influenced by a number of factors,
+including the perceived usefulness of the technology, the perceived ease of use of the
+technology, and the perceived compatibility of the technology with the user's existing
+values and beliefs.
+Weather Forecast was a prediction of future atmospheric conditions. Weather
+forecasts were typically based on computer models that took into account a variety of
+factors, including current weather conditions, atmospheric pressure, temperature,
+humidity, and wind patterns. Weather forecasts could be issued for a variety of time
+periods, from a few hours to several days or even weeks in advance. One of the features
+that would be integrated in the web system.
+Web-Based System was a software application that was designed to operate over
+the internet or an intranet. It was typically hosted on a remote server, and users accessed it
+
+
+22
+through a web browser using an internet connection. This was connected to the developed
+prototype as a means of displaying the status of water levels in the area and included a
+weather forecast.
+
+
+Chapter 2
+METHODOLOGY
+Research Design
+The researchers employed descriptive and developmental research designs III
+conducting the study.
+A descriptive survey research design was used to describe the characteristics of a
+population, phenomenon, or situation (Chaudhari, 2021). This design aimed to collect data
+on the variables of interest and provide a detailed description. In the case of the loT-Based
+Flood Alert System for Narvacan, Sto. Tomas, La Union, a descriptive survey research
+design was used to collect data based on the user's response to the system's level of
+acceptability using the User Technology Acceptability Questionnaire (UTAQ).
+Additionally, descriptive studies attempted to define, describe, or identify what was
+essential in developing the loT-Based Flood Alert System for Narvacan, Sto. Tomas, La
+Union. This was accomplished by designing an interview guide questionnaire and survey
+that captured various variables of interest, such as water level rise, coastal erosion, and
+storm surge. The approaches for water level estimation and the use of sensors for collecting
+flood-related data were analyzed to provide functionality for the loT-Based Flood Alert
+System.
+In addition, Cruz and Dizon (2021) defined developmental research as a method
+that involved designing, developing, and evaluating instructional programs, processes, and
+products while adhering to specific standards and criteria. This approach held significant
+relevance in the realm of technology, especially for crafting prototype designs and
+
+
+24
+theoretical frameworks. They helped in analyzing and examining the design and helped to
+prepare to launch the idea. Mainly conducted by the designer, they made iterations and
+improved the quality of the design. They were usually progressive research based on the
+designs, making it easier for the designer to compile data and develop (Kumar, 2023). This
+study was crucial as it aimed to develop a prototype for the loT-Based Flood Alert System
+for Narvacan, Sto. Tomas, La Union. Additionally, it sought to design and develop a web
+system specifically for the Municipal Disaster Risk Reduction and Management Office
+(MDRRMO). Correspondingly, the researchers used Agile methodology to serve as a guide
+in developing the said system.
+Sources of Data
+The study aimed to develop the prototype of an loT-Based Flood Alert System for
+Narvacan, Sto. Tomas, La Union, enriched by a comprehensive range of data sources.
+Drawing from academic literature on loT applications in flood monitoring and disaster
+management, as well as case studies in flood-prone regions, the research integrated
+established best practices and technological advancements into the system's design.
+Primary data were gathered through field surveys and interview questionnaires conducted
+with local authorities, including the barangay official councils and the head ofMDRRMO,
+as well as residents from each of the seven sectors of Barangay Narvacan, and stakeholders.
+These interactions provided valuable insights into the region'S topography, historical flood
+patterns, and community-specific challenges. This contextual data served as a foundational
+element, enabling the construction of a flood alert system that not only incorporates
+
+
+25
+cutting-edge technology but is also tailored to the unique characteristics ofNarvacan, Sto.
+Tomas, La Union. Subsequently, the system's level of acceptability was assessed using a
+user technology acceptability questionnaire while the performance of the water level sensor
+implemented through arduino technology was evaluated ensuring its practical suitability
+for the community. Purposive sampling was employed to select the sample population. The
+researchers administered the questionnaire to a sample population of thirty (30)
+respondents, including nine (9) barangay council officials and twenty-one (21) residents
+from various sectors in Barangay Narvacan, Sto. Tomas, La Union, as reflected in Table I.
+Table 1. Distribution of Respondents
+Respondents N
+Barangay Official Councils 9
+Sector 1 3
+Sector 2 3
+Sector 3 3
+Sector 4 3
+Sector 5 3
+Sector 6 3
+Sector 7 3
+Total 30
+
+
+26
+Materials and Procedures
+The researchers used a variety of materials and procedures to achieve the objectives
+of the study.
+Researchers utilized the Agile Methodology (see Figure 1 on page 27) as their
+guiding framework in developing the prototype of the loT -Based Flood Alert System for
+Narvacan, Sto. Tomas, La Union.
+Agile software development comprised a set of values, principles, and practices
+that could be effectively applied to software development projects. This methodology
+strongly emphasized process adaptability and customer satisfaction by rapidly delivering
+functional software products. Additionally, it promoted collaborative decision-making,
+ensuring customer satisfaction throughout the development process of the ToT-Based Flood
+Alert System. Agile had gained popularity due to its flexibility and adaptability,
+streamlining software development by eliminating unnecessary barriers and maximizing
+flexibility, quality, and user involvement. It facilitated the performance at the speed of
+relevance (Harris, 2020).
+This approach ensured a comprehensive and user-centric system creation process
+by incorporating well-defined phases such as requirements, design, development, testing,
+deployment, and review. This iterative approach ensured continuous user feedback and
+system improvement, resulting in a more effective and user-centric flood alert system.
+Additionally, Agile methodology emphasis on collaboration and flexibility enabled the
+team to swiftly address and resolve issues, ensuring a high-quality and reliable system.
+
+
+-r
+27
+AGILE
+Fig. I. Agile Methodology (Harris, 2020)
+Requirements. The first phase was dedicated to requirement gathering and
+analysis. During this phase, the researchers conducted personal interviews with the head of
+MDRRMO and the captain of Barangay Narvacan, Sto. Tomas, La Union. Through tills,
+the researchers determined the tools they used when floods came, as well as the present
+problems they encountered. These requirements served as features to be included in
+developing the loT-Based Flood Alert System.
+Design. In this phase, the researchers meticulously crafted a detailed plan for the
+structure, prototype, interface, and strategies. Additionally, they thoroughly examined the
+system's features and prototype. This phase defined the roadmap for development, ensuring
+that the system met the intended objectives and user requirements. It served as a bridge
+between the planning and development phases, including the implementation of use case
+diagrams and flowcharts, setting the stage for the actual coding and implementation of the
+system.
+
+
+28
+Develop. In this phase, all the components of the designed software were
+implemented, and the source code was created. After the required information had been
+collected, the focus shifted from planning and design to the actual implementation of the
+system prototype. In the construction of the loT-Based Flood Alert System, the researchers
+employed various software and hardware tools. Arduino Uno r3 Drip was utilized as a
+hardware tool connected to ultrasonic sensor to analyze the water level and a temperature
+sensor in predicting the water depth level the Circuit Rocks Breadboard served as a spark
+for hobbyists. Then, these analyzed values were passed to the Arduino Uno. Additionally,
+several software tools and frameworks were maximized, including C/C+t-, HTML, CSS,
+PHP, MySQL, and JavaScript, for an intuitive user interface and efficient data
+management. Consequently, the Arduino passed the alert message to the loT module.
+These analyses showed how the prototype was embedded in real-time for prediction and
+sending alerts.
+Test. This phase involved checking any faulty parts of the code and their fixes. It
+focused on evaluating the system's usefulness, information quality, and interface quality.
+Various testing activities ensured that the product met the desired quality standards and
+aligned with user requirements. The developers themselves performed alpha testing by
+using the system as if it were being used in a work environment. After successful alpha
+testing, the software underwent beta testing, where it was released to a selected group of
+end-users/IT experts to be used in their production environment. Beta testing aimed to
+thoroughly assess the software and hardware product's quality, functionality, and
+perfonnance under real-world conditions. Using the User Technology Acceptability
+
+
+29
+Questionnaire (UT AQ), the loT -Based Flood Alert System was thorougbly examined, and
+any remaining defects were identified. Verification was conducted to ensure that the
+product met the specified requirements and delivered value to the intended users.
+Deploy. After complete testing, the loT-Based Flood Alert System was ready for
+implementation in this phase. The goal was to ensure the system implemented real-time
+water level monitoring and continuously tracked the high-water level risk. The primary
+objective was establishing the system's functionality within the target location. This
+involved setting up the system for real-time water level monitoring. Sensors were
+meticulously installed in strategic locations to ensure comprehensive area coverage. These
+sensors continuously collected data, which were analyzed to track water levels and identify
+potential flood risks in Barangay Narvacan, Sto. Tomas, La Union.
+Review. After deployment and system implementation, there were circumstances
+where errors OCCUlTed. This phase involved close monitoring of the system's performance.
+Data quality, functionality, and any error messages were continuously reviewed. If errors
+were identified, the developers stepped in to diagnose and fix the problems. This might
+have involved troubleshooting hardware or software issues. The developers resolved any
+problems. In the ongoing development and operations of the system, continuous support
+was provided to ensure it operated effortlessly. The researchers established clear
+communication channels with the stakeholders in Barangay Narvacan, Sto. Tomas, La
+Union, including the local government and residents. This allowed users to report any
+issues they encountered or suggest improvements. The developers then analyzed this
+feedback and adjusted to optimize the system's performance and user experience.
+
+
+30
+For the second objective, the researchers used the User Technology Acceptability
+Questionnaire (UTAQ) through purposive sampling to assess system's level of
+acceptability and user satisfaction. This method involved carefully selecting participants
+with direct experience or knowledge in flood monitoring, disaster management, or the
+implementation of loT-based systems in the target area. This ensured valuable feedback
+from users who understood the context and could effectively assess the system's
+effectiveness. Purposive sampling was a non-probability method for obtaining a sample
+where researchers used their expertise to choose specific participants that helped the study
+meet its goals. These subjects had particular characteristics that the researchers needed to
+evaluate their research question. In other words, the researchers picked the participants "on
+purpose" (Frost, 2023).
+Data Gathered
+Throughout the development life cycle, the researchers gathered the following
+information needed to achieve their objectives in the study. In the requirement phase, the
+data gathered included the intended purpose of the prototype, features, and user
+requirements specification, as well as the material requirements to develop the prototype.
+In the design phase, data gathered comprised user requirements, user interface design, and
+user experience design. The data gathered in the develop phase encompassed coding,
+debugging, and testing in the various tools and applications. In the test phase, data gathered
+included the outcomes of functional testing, performance testing, and acceptance testing.
+
+
+31
+Whereas, in the deploy phase, data gathered included user feedback for ongoing refinement
+and optimization of the prototype.
+Lastly, after the deployment of the loT-Based Flood Alert System, the users
+evaluated the technology acceptabi!ity in terms of a) system usefulness, b) information
+quality, and c) interface quality. This was utilized as an input to assess the level of
+acceptability of the prototype that had been developed.
+Data Analysis
+To evaluate and analyze the data gathered from respondents, it was tallied,
+classified, and analyzed. Results from the survey questionnaire were computed using
+frequency counts and average weighted mean, and interpreted using the seven-point scale
+in the User Technology Acceptability Questionnaire.
+The AWM formula is:
+LWMAWM= --
+N
+L = denotes the summation
+WM = is the weighted mean
+N = is the total respondents
+As posited by Vaidya (2024), the weighted mean equation was a statistical method
+used to calculate the average by multiplying the weights with their respective means and
+taking their sum. It was a type of average in which weights assigned individual values to
+
+
+32
+determine the relative importance of each. Respondents were asked to rate their agreement
+with the statements, ranging from strongly disagree to strongly agree, using the Likert Scale
+for the user technology acceptance of the prototype.
+Scale Statistical Descriptive Equivalent Descriptive Interpretation
+Range Rating
+6.16 -7.00 Strongly Agree Extremely High Acceptance
+5.30 - 6.15 Agree Very High Acceptance
+4.44 - 5.29 Somewhat Agree Moderately High Acceptance
+3.58 - 4.43 Neutral Neutral Acceptance
+2.72 - 3.57 Somewhat Disagree Moderately Low Acceptance
+1.86 - 2.71 Disagree Low Acceptance
+1.00 - 1.85 Strongly Disagree Extremely Low Acceptance
+7
+6
+5
+4
+3
+2
+Mean responses were interpreted depending on each characteristic. Responses with
+a mean ranging from 1.00 - 1.85 were interpreted as Extremely Low Acceptance,
+indicating that the loT-Based flood alert system did not conform to its intended functions
+and objectives. Moreover, responses with a mean rating ranging from 1.86 - 2.71 were
+interpreted as Low Acceptance, denoting that the respondents were quite satisfied with the
+features offered by the system. The interpretation was Moderately Low Acceptance if the
+responses had a mean rating of2.72 - 3.57, indicating that the respondents may have had
+concems about the teclmology's usefulness, ease of use, compatibility, or affordability.
+While the mean rating ranging from 3.58 - 4.43 was interpreted as Neutral Acceptance,
+suggesting that respondents thought the system fulfilled its features. The researchers
+
+
+33
+interpreted responses with a mean rating range of 4.44 - 5.29 as Moderately High
+Acceptance, meaning the respondents agreed that the system performed well and met the
+indicated criteria in each indicator. While the mean rating ranging from 5.30 - 6.15 was
+interpreted as Very High Acceptance, indicating that users found the technology useful,
+easy to use, compatible with their values, and affordable. Lastly, the responses were
+interpreted as Extremely High Acceptance if the mean rating fell between 6.16 - 7.00,
+signifying that the respondents strongly agreed that the proposed prototype performed all
+the required features and functionalities in which it achieved satisfactorily all the different
+criteria.
+Ethical Consideration
+The researchers applied the principles of ethical considerations following the
+framework developed by Bhandari (2021). The framework underscored the critical
+importance of upholding a precise code of ethics in gathering data from individuals. This
+commitment ensured the protection and rights of all research participants, bolstered the
+credibility of the research, and upheld the integrity of the scientific and academic process.
+In this study's context, utmost care was taken to avoid any harm to participants.
+Before commencing the study, comprehensive consent was sought from all participants of
+Barangay Narvacan, Sto. Tomas, La Union. Additionally, preserving the confidentiality
+and security of personal information and the identities of all research participants was a top
+priority. Their privacy was rigorously safeguarded throughout the study, and all data
+collected was handled with the highest level of discretion.
+
+
+34
+Throughout the entire research process, ethical considerations remained of the
+utmost importance. The researchers prioritized participant safety and well-being by
+obtaining approval from the DMMMSU-Research Ethics Committee (as described in
+Appendix H) and receiving informed consent forms from all participants (as described in
+Appendix J and K). These consent forms provided comprehensive information about the
+study, including its goals, methods, possible advantages and disadvantages, and participant
+rights.
+The principle of voluntary participation served as the bedrock of this research
+effort. Each respondent involved in the study possessed the inherent right to engage
+willingly and retained the freedom to withdraw from the study at any stage, should they
+choose to do so. This unwavering emphasis on voluntariness reaffirmed the researchers'
+dedication to conducting research that was not only methodologically robust but also
+deeply respectful of the autonomy and choices of those who contributed to its success.
+
+
+Chapter 3
+RESUL TS AND DISCUSSION
+Development of an lOT-Based Flood Alert System
+The Arduino was deemed appropriate for the system referencing the work ofMuaz
+(2021), who conducted research on sampling and analyzing water river flow conditions
+and characteristics using the agile methodology and applying the same model.
+The researchers constructed the prototype using a combination of hardware
+components and electronic modules. At its core, the Arduino Uno r3 Drip Type served as
+the central processing unit, governing various functions based on input from sensors and
+modules. Facilitating wireless connectivity, the ESP-01 s WiFi module enabled the system
+to comm~nicate with other devices or access the internet. Male to Male Jumper Wires and
+Male to Female Jumper wires were employed to establish electrical connections between
+different components on the breadboard and between components to the Arduino board.
+The Ultrasonic Ranging Sensor utilized ultrasonic waves to accurately measure distances
+between the sensor and objects. These sensors, likely ESP-Ol microcontrollers, transmitted
+data to the Blynk cloud platform which acted as an intermediary for processing and storage
+before forwarding it to the designated recipient or application for further analysis and
+action. A Circuit rocks Breadboard 400 provided a platform for prototyping and connecting
+electronic components without soldering. Ultimately, a 12V Active Buzzer served as an
+output device, producing audible sound signals to provide feedback or alerts based on
+detected conditions or events. Together, these components formed the foundation of the
+
+
+36
+system, enabling it to sense its environment, wirelessly communicate, process data, and
+-provide feedback through sound signals. The researchers adopted the following phases in
+the development of the system.
+Requirements. In the initial phase of the research, the researchers engaged in
+personal interviews following unstructured questions (see Appendix A) with key
+stakeholders, including the captain of Barangay Narvacan, Sto. Tomas, La Union, as well
+as all the barangay officials and three residents in each of the seven sectors of the barangay.
+These interviews were crucial for understanding the challenges associated with the manual
+processes of flood and high tide monitoring. The researchers prioritized ethical
+considerations in selecting their participants, ensuring that those involved were genuinely
+impacted by the issues at hand and had a vested interest in the proposed solution.
+Through these interviews, it became apparent that the current approach to
+monitoring water levels relied heavily on manual and traditional methods. The researchers
+maintained constant communication with the stakeholders, allowing them to delve deeply
+into the intricacies of the existing monitoring practices. One significant revelation was that
+high tide and low tide occurrences were manually predicted, an approach susceptible to
+human error and limited by the availability of resources. This discovery underscored the
+urgency of modernizing the monitoring process to enhance accuracy, efficiency, and
+timeliness in responding to flood and high tide events.
+Furthermore, through these interactions, the researchers gleaned insights into the
+specific functionalities required of the developed system. Understanding the stakeholders'
+needs and challenges guided the development process, ensuring that the system would
+
+
+37
+address critical pam points effectively. The researchers identified the need for
+complementary tools and prototypes to augment the functionality of the monitoring system,
+thereby enhancing its overall effectiveness in mitigating the impact of natural disasters.
+By integrating ethical considerations into their approach and actively involving
+stakeholders in the process, the researchers laid a solid foundation for the development of
+a tailored solution to the challenges posed by manual flood and high tide monitoring. This
+collaborative effort not only facilitated a deeper understanding of the issues at hand but
+also fostered a sense of ownership and investment among the stakeholders, paving the way
+for meaningful and sustainable change.
+Design. Upon gathering the necessary information, the researchers embarked on
+the task of translating their insights into tangible system designs. They initiated this process
+by drawing use case diagrams and flowcharts, crucial tools for illustrating the
+organizational structure of the system. With a detailed plan for the structure, prototype,
+interface, and strategies, the researchers used iterative cycles of designing, prototyping,
+and refining the system components, ensuring continuous feedback and improvements to
+meet the project requirements.
+Parallel with the design phase, the researchers began developing prototypes to
+validate their conceptual designs and demonstrate key functionalities. These prototypes
+served as tangible representations of the envisioned system, allowing stakeholders to
+interact with and provide feedback on its usability and effectiveness. Utilizing materials
+such as wireframes, mockups, and simulation software, the researchers iteratively refined
+the prototypes based on user input, ensuring that the final product would meet the
+
+
+38
+requirements and expectations of its intended users. Moreover, these diagrams served as
+invaluable conversation starters during engagements with stakeholders. They facilitated
+discussions around system requirements, eliciting feedback that was instrumental in
+refining the design and enhancing the user experience.
+Using user views as their primary focus, the researchers created a use case diagram
+as a visual aid for outlining the functional needs of the system. This figure depicted the
+dynamic interactions between users (actors) and the system, presenting several use cases
+or situations in which users interacted with the system to achieve particular goals. Clear
+communication and understanding among stakeholders were facilitated by the use case
+diagram, which provided interactions and a thorough overview of the system's functionality
+and user interactions.
+As illustrated in Figure 2, the diagram displays the various use case scenarios of
+flood alert system designed to keep residents and barangay official councils informed about
+potential flooding. It includes actors namely residents/users, barangay official councils and
+the head ofMDRRMO. Residents and barangay official councils could access the system
+through a website that retrieved real-time water level data from sensors deployed near
+waterways, receive SMS notifications and monitor the water level. The head ofMDRRMO
+(Municipal Disaster Risk Reduction and Management Office) can log in to the website to
+view recorded water levels, generate reports, access the website manual, utilize printing
+functions, and log out of the web system. Additionally, monitoring of water levels is being
+integrated to collect real-time data. The website could then visualize historical water level
+information, potentially presented as monthly reports, for residents and barangay officials.
+
+
+39
+When water levels reached a critical threshold, the system generated alerts. In essence, this
+system aimed to provide residents and barangay official councils with timely information
+and critical flood warnings through a web-based interface.
+lOT -BASEn FLOOD ALERTSYSmi
+(WEBSITE)
+rJ
+fl ~ .... ,
+Rcidem:;.'
+Uses
+LD~Om
+-----__,_____.....
+Fig. 2. Use Case Diagram (Website)
+
+
+40
+The diagram in Figure 3 illustrates the flow or process how the barangay official
+councils, residents/users and arduino as in formed about impending flooding. Residents
+and barangay official councils might receive SMS message and access real-time water level
+data collected by strategically placed sensors near water bodies using an easy-to-use online
+interface. Arduino send SMS message and acting as a conduit between the sensors and the
+web interface, these sensors most likely transmitted data to Blynk Cloud. Most importantly,
+the system alerted locals when water levels rose to dangerous levels, enabling them to take
+precautions against impending flooding. Although the precise purpose of the third-party
+programs was not specified, it is possible that the website integrated with them. The overall
+goal of this system was to employ an intuitive web interface to deliver critical flood alerts
+and timely information to barangay official councils and residents of Barangay Narvacan,
+Sto. Tomas, La Union.
+lOT - BASED FLOQD _.;LERT SYSTE)'l
+(PRO TOT1t'FE}
+1 _
+I
+I ~
+I
+RecE;i!:;; SI-.l$
+No tifi 1:etien
+BEIang,a:_· Official
+Co=ils
+:;.:n.d S1-.13
+l" otlficatron
+:ttP-sLi2nJ:3 ..
+U32G
+Fig. 3. Use Case Diagram (Prototype)
+
+
+41
+The diagram in Figure 4 showcases a more complex flood alert system, designed
+to keep residents and local government informed about potential flooding threats,
+compared to a previously proposed system. This system utilized various components to
+collect, process, and deliver water level data. Sensors, likely ultrasonic (HC-SR04),
+deployed near waterways measured water levels and transmitted data to an Arduino Uno
+board. This board might have performed some initial processing before potentially using
+an ESP8266 chip for wireless transmission. The Blynk cloud platform acted as a central
+hub, potentially receiving processed data from the ESP8266 chip over Wi-Fi. This data was
+stored for later access and analysis. While the specific role of Node-Red, an open-source
+programming tool, was involved in data processing and web interface visualization, the
+system generated critical flood alerts when water levels reached pre-defined thresholds of
+1 to 3.
+However, the researchers had integrated a localized water level scale based on the
+observation and measurement of the water level in Barangay Narvacan, Sto. Tomas, La
+Union, while the SMS text notifications were being adapted to the localized format of the
+MDRRMO, consisting of three levels: Alert Levell represented by yellow, indicating a 1
+feet water level; Alert Level 2 represented by orange, indicating a 2 feet water level; and
+Alert Level 3 represented by red, indicating a 3 feet water level. This system enables timely
+alerts to be sent to residents based on the observed water levels, allowing them to make
+informed decisions and take necessary precautions in response to potential flooding risks.
+Additionally, a database system like MySQL could have potentially been used for long-
+term data storage and analysis. In essence, this intricate system aimed to collect real-time
+
+
+water level data, transmit it wirelessly, store it in the cloud, potentially analyze trends, and
+generate critical flood alerts. By providing timely information, this system could have been
+a valuable tool for flood preparedness in the community.
+Ardumo Uno
+\.Vatcr le ....·e1
+nJ Ievcl I
+[1.t.u.rJ..:.rUti
+I !...HL
+AI""L
+($MS)
+.r
+I::.Sf'S2bf.
+w:II \~lll.lILk
+\\'31C'r level
+at Ie\.:!.!
+U lllL.l.L"1 ... ua
+21..11.2
+BI1LL~"T Oil
+3 kj'iL
+Alcr1
+CStl.1S\
+~
+[ APf .1
+~
+Nod~ Rt.-O
+Fig. 4. Flowchart of the Developed Prototype
+42
+
+
+43
+The Schematic Diagram of Flood Alert System Prototype in Figure 5 comprises an
+Arduino Uno as the control center, interpreting data from a downward-positioned
+ultrasonic sensor via jumper wires on a breadboard. Upon water detection, the Arduino
+triggers a buzzer alarm. Integration of an ESP-O 1S WiFi module allows for remote
+notifications or cloud-based data logging through WiFi connection. Additionally,
+incorporating a battery for power supply ensures system reliability and autonomy, crucial
+for continuous monitoring in flood-prone areas. While the schematic outlines basic
+functionality, specific connections, and programming may vary depending on the chosen
+guide or tutorial for building this prototype, allowing for customization based on individual
+needs and preferences.
+AldutnOIII"() (21
+(WM. W ,.)VccSV
+(91.1("·.~o1Ir)(tNOGnD
+(G'I'tnvoJlolFb! pJn9
+(01"'2' w",II, p" 10
+(Wl1itr ~"tl vee )lV
+(\Vbltto~tttl tu . 3 J\I
+(BU,~ r,.e) GI,D· GilD
+(c... , Wlei p". Pin1
+{()fb~(, WHtP.I pm]
+(\\'hl~,!"'W '~)I,,'CC pn8
+(Blac' .... ".) Q~D Grill
+IW1' t~ Wlre)V(C . ~\I
+IllIuk w".IGNO {1ND
+1s,O'Wny,-'~)ttlb ~n 1
+l~d\\'I"lr.11O pinG.
+i
+1\"litf[t'wlF~)VC{ DonS
+t8t.'k' .... nrjG:NO (PID
+IWhlt. "'''fjvct ·IV
+(lI.d(k "w)G'1D ·GII)
+IBlown \V'ltltnl pm 1
+(R"(I~ll('I(,"f..ho Ptf'IG
+(tNh>I~wife) ':(( ~. 4
+iBI;!{kw"'1GIlD GM
+Fig. 5. Schematic Diagram Structure of an loT-Based Flood Alert System
+
+
+44
+Figure 6 shows an loT-based flood alert system p~ototype. In this setup, an
+ultrasonic sensor is responsible for detecting water levels, transmitting data to the Arduino
+Uno microcontroller. Upon detecting water, the Arduino triggers a buzzer to sound an
+alarm and relayed the data to a monitoring platform accessible by the MDRRMO, which
+is likely a disaster response agency, for viewing. This integration of hardware components
+with data transmission capabilities exemplifies the versatility and potential applications of
+loT systems in addressing environmental challenges and enhancing disaster preparedness
+and response efforts.
+. _.)
+Monitoring Platform
+ro, Data viewing terminal
+' .
+.
+", ,
+'., ,
+.,, c:2:=11 ] : Arduino
+fI'liiM--=-~'T=,=~-7 Sensor
+n
+"
+[J
+,3ft· level 3
+..-2ft . level 2
+. 1ft· level 1
+Flood Monitoring Platform
+Fig. 6. Prototype of an loT-Based Flood Alert System
+
+
+45
+In Figure 7, the external interface of the loT-Based Flood Alert System reveals the
+.,
+utilization of key materials including a Pole, Mesh Net, and Handle. Notably, the
+customized housing of an Arduino was prominently positioned atop the pole,
+approximately 6 feet from the ground. This strategic placement ensured optimal data
+collection from the environment while safeguarding the device from potential water
+damage.
+Additionally, the figure illustrates the incorporation of three distinct alert levels, as
+shows in Figure 4 on page 42. When the water level rises to l-foot, Alert Level I is
+triggered, sending a text notification to residents and barangay council officials. This
+notification provided a warning along with the corresponding water level percentage,
+ensuring that everyone was informed about the initial rise in water level. As the water level
+increases to 2 feet, Alert Level 2 is activated, prompting another text notification. This
+notification advises residents to prepare to move to higher ground, emphasizing the need
+for heightened awareness and readiness. When the water level reached 3 feet, Alert Level
+3 mandated an evacuation, directing residents, especially those in affected areas, to the
+nearest evacuation center (see Plate 17 on page 66). This level of alert underscores the
+seriousness of the situation, prioritizing the safety and well-being of the community by
+ensuring timely and organized evacuation procedures. These alert levels serve to provide
+detailed notifications to users, enabling them to gauge the severity of the flood situation
+and take appropriate action accordingly.
+To effectively implement this system, several strategies are employed.
+Collaboration with the Barangay Official Councils ofNarvacan, Sto. Tomas, La Union and
+
+
+the Municipal Disaster Risk Reduction and Management Office (MDRRMO) of Santo
+46
+Tomas ensured that the system aligned with existing emergency protocols. Community
+engagement programs were conducted to educate residents about the system's benefits and
+usage. Data redundancy and backup mechanisms were established to maintain system
+reliability during power outages or network failures. Engaging with community leaders,
+such as barangay captains and councils, helped ensure effective dissemination of
+information and encouraged community participation. Regular maintenance and
+calibration of sensors were planned to ensure accuracy and longevity. Additionally, the
+system was continuously evaluated and improved based on feedback from stakeholders,
+including local authorities, disaster management teams, and community members. This
+iterative process led to enhancements in system functionality, user experience, and overall
+effectiveness in mitigating flood-related risks.
+LEGENDARY
+!Pole
+....(( .., Mesh net
+9 J
+~ Arduino11111
+0.'.1')
+0 Hondle ~ Sensor
+J nn .~.1)
+1 J U :H.n .~]]
+1 ~ . II I
+I 10 I I II
+I J .if j .1)
+J
+\
+U
+j :J
+, ~
+I .H :~ -"-- ,
+I UJ J 1 I "',
+.J I I
+I .0 ".,i. - ,.
+II II J I
+J ,J! :l
+-: I J H
+3ft" level J
+2ft ~ level 2
+1ft· level 1
+Fig. 7. External Interface of an loT-Based Flood Alert System
+
+
+47
+Develop. The researchers implemented the functions and features that were needed
+by the client. They utilized an Arduino Uno to establish a connection for monitoring water
+flow alongside sensors to analyze water parameters. Furthermore, they simulated Arduino
+behavior, conducted real-time data collection, and integrated these data streams into a
+developed website. In the develop phase of the loT-Based Flood Alert System, the
+researchers utilized various hardware and software tools. This website, crafted with C/C++,
+HTML, CSS, PHP, MySQL, and JavaScript, not only facilitated an intuitive user interface
+but also ensured efficient data management. As part of this integration, analyzed values
+were transmitted to the Arduino, which played a pivotal role in passing alert messages to
+the loT module.
+Moreover, the researchers demonstrated the practicality and reliability of their
+solution by incorporating functionalities such as text message alerts. They extended the
+system's reach by implementing a website for the Head of MDRRMO, Barangay Official
+Councils, and residents of Barangay Narvacan, Sto. Tomas, La Union, enabling them to
+monitor live water levels. This comprehensive approach, which included assembling the
+Arduino, simulating its behavior, real-time data collection, website implementation, and
+targeted user access, underscored the effectiveness and applicability of their solution in
+addressing water monitoring challenges. Moreover, the integration of modem technologies
+with practical field deployment showcased the researchers' commitment to developing a
+holistic and user-friendly solution. Furthermore, the website's accessibility enabled
+widespread dissemination of critical information, fostering a collaborative effort toward
+proactive flood management and community preparedness.
+
+
+48
+Table 2. Hardware and Software Components Used in Prototype Development
+Hardware Description
+Arduino Uno r3 Drip Type
+Circuit Rocks Breadboard
+400
+Ultrasonic Ranging Sensor
+ESP-OJ S WiFi Module
+Active Buzzer
+Male to Male Jumper Wire
+Male to Female Jumper Wire
+GSM Module SIM900A
+is used to monitor water levels and trigger warnings
+when potential flooding is detected. It collects data from
+water level sensors and activates alerts like buzzers,
+lights, or notifications based on predefined thresholds to
+warn residents and authorities.
+is used for prototyping and testing electronic circuits. It
+allows researcher to assemble and connect components
+like ultrasonic ranging sensors, Arduino Uno R3
+microcontrollers, and alert mechanisms.
+it measures water levels in flood-prone areas by emitting
+ultrasonic waves and calculating the time. It provides
+real-time data for flood alert systems to issue timely
+warnings and preventive actions.
+are wireless communication for flood alert systems,
+allowing them to send real-time alerts and data to remote
+servers and devices during flood events.
+is a flood alert system emitting audible alarms when
+water levels surpass predefined thresholds, signaling
+residents and authorities for immediate action.
+establish connections between electronic components,
+enabling data transmission and signal communication
+for monitoring water levels and triggering alerts during
+flood events.
+connect male pins on sensors or modules to female
+ports, enabling seamless integration and communication
+between components.
+transmits real-time water level data from sensors to a
+central server and sends SMS alerts to authorities and
+residents when flood thresholds are reached.
+
+
+49
+Continuation of Table 2
+Hardware Description
+18650 Battery 3.7v li-ion is a high energy density and long cycle life, are ideal for
+loT-based flood alert systems, ensuring reliable, long-
+lasting power.
+Software Description
+Blynk Cloud (API) is used to remote monitoring and control of a flood
+alert system through the Blynk mobile app or web
+dashboard, allowing users to access real-time data and
+trigger actions from anywhere with internet access.
+Node GS (Red) is a ground station in a flood alert system, receiving
+and processing data from remote sensors to monitor
+water levels and terrain data, enhancing flood
+prediction and response capabilities.
+Arduino IDE is used in a flood alert system to program Arduino
+microcontrollers, enabling control of sensors,
+actuators, and communication modules essential for
+system operation.
+The components listed were essential elements of a flood alert system designed to
+monitor water levels, transmit data, and issue timely warnings to residents and barangay
+official councils of Barangay Narvacan, Sto. Tomas, La Union. The Arduino Uno R3
+controlled the system, collecting sensor data and triggering alerts based on thresholds. The
+Circuit Rocks Breadboard and jumper wires enabled prototyping and interconnecting
+components. The 18650 Battery supplied power backup. Blynk Cloud API, Node GS, and
+Arduino IDE enabled remote monitoring, data processing, and programming for efficient
+flood prediction and response.
+
+
+50
+Plate 1. Arduino Uno r3 Drip Type
+Plate 1 shows the arduino uno rev3 at the core of an obstacle detection system. It
+received data from an ultrasonic sensor, interpreting distance using sound waves and
+reacting to object proximity. Through its digital and analog pins, the Uno connected to the
+sensor, allowing for alarms or other actions to be triggered when an object came too close.
+The Arduino Uno Rev3's widespread adoption stemmed from its robust feature set and
+user-friendly design, making it accessible to both beginners and experienced developers.
+Its open-source platform fostered a vibrant community contributing to a vast repository of
+code libraries, tutorials, and project ideas. The Arduino's ability to handle digital and
+analog inputs and outputs made it particularly suited for managing a wide range of sensors
+and output devices. Its compatibi.lity with various progranuning languages and integration
+with other hardware components further enhanced its capabilities, allowing for seamless
+expansion and customization in countless applications.
+
+
+51
+Plate 2. Male to Female Jumper Wires
+Plate 2 presents the male to female jumper wires, which were likely utilized to
+connect various components, forming the backbone of the system's interconnectivity.
+These versatile wires, typically featuring a male pin on one end and a female connector on
+the other, facilitated straightforward connections between the Arduino Uno's pins, the
+ultrasonic sensor, and the battery pack. This design ensured secure and reliable connections
+for both data transmission and power flow within the obstacle detection system. The use
+of jumper wires offered several advantages, particularly in proto typing and development,
+by providing flexibility and reusability, saving time, and allowing for rapid iteration
+without the need for soldering. The color-coded insulation of jumper wires also helped in
+identifying and organizing connections, reducing wiring errors and enhancing the overall
+clarity of the circuit layout.
+
+
+52
+Plate 3. Circuit Rocks Breadboard 400
+Plate 3 showcases the circuit rocks breadboard 400, which was more than just a
+standard grid of boles; it served as a spark for hobbyists and electronics enthusiasts to
+express their creativity. This multipurpose tool revolutionized experimentation and
+prototyping by doing away with the necessity for soldering. One could just picture putting
+integrated circuits (ICs), resistors, and capacitors on the breadboard and connecting them
+with jumper wires. This flexibility made it possible to quickly construct and test various
+circuit configurations. It gave users the ability to quickly troubleshoot problems and refine
+their designs before committing to a permanently soldered board. The breadboard's
+modular nature allowed for a level of experimentation that was previously unattainable,
+opening up new avenues for innovation and learning. Its user-friendly design encouraged
+beginners to dive into the world of electronics without feeling overwhelmed, while
+seasoned professionals appreciated the convenience and efficiency it offered.
+---...- ......
+
+
+53
+Plate 4. Male to Male Jumper Wires
+Plate 4 illustrates the male-to-male jumper wires, which played a crucial role in
+connecting various components on the breadboard, featuring male connectors on both ends
+that made it convenient to establish connections between sensors, the Arduino board, and
+other. modules. In an Arduino-based obstacle detection system, these wires facilitated the
+connection of the ultrasonic sensor to the Arduino Uno, enabling the sensor to receive
+power and send data signals back to the microcontroller for processing. The versatility of
+male-to-male jumper wires extended beyond simple connections, allowing for easy
+modifications and debugging by quickly moving or replacing wires without significant
+disruption. Additionally, their color-coded insulation helped organize and identify different
+connections, reducing assembly errors and making the development process more efficient.
+
+
+54
+"
+Plate 5. Ultrasonic Ranging Sensor
+Plate 5 displays the ultrasonic ranging sensor, commonly known as an ultrasonic
+distance sensor, which functioned by emitting ultrasonic waves and calculating the time
+taken for the waves to return after bouncing off an object. In a flood alert system, this
+sensor was instrumental in monitoring water levels, accurately determining water depth or
+the proximity of water to critical levels. As the water rose, the sensor detected changes in
+distance and triggered alerts once predefined thresholds were crossed. Integrated with a
+central processing unit like an Arduino, the sensor sent real-time data to activate alert
+mechanisms such as SMS notifications. These alerts were crucial for informing both the
+head of the Municipal Disaster Risk Reduction and Management Office (MDRRMO) in
+the Municipality of Santo Tomas and residents of Barangay Narvacan, Sto. Tomas, La
+Union, enabling timely evacuation and preparation.
+
+
+55
+"
+Plate 6. 12V Active Buzzer
+Plate 6 presents the active buzzer, which served as an integral component for
+producing audible alerts in a flood alert system. Upon detection of a potential flood, the
+system could activate the buzzer to promptly warn nearby residents or authorities. The
+buzzer's 12V rating ensured that it emitted loud enough alerts to be heard effectively even
+in noisy environments, enhancing its effectiveness as an alarm device. This audible alert
+capability provided a crucial layer of notification in flood-prone areas, supplementing other
+communication methods and ensuring that individuals without access to digital alerts could
+still receive timely warnings. Additionally, the use of an active buzzer allowed for quick
+and direct activation by the system's central processing unit, enabling rapid response to
+changing flood conditions and potentially mitigating the impact of disasters.
+
+
+56
+Plate 7. ESP-O] S WiFi Module
+Plate 7 illustrates the ESP-O 1S WiFi module, which played a crucial role as a
+component in an Arduino-based loT Flood Alert System. By connecting the Arduino to the
+internet via WiFi, it facilitated the transmission of water level data from sensors in real-
+time. This capability enabled the Arduino to send flood alerts containing accurate water
+level information directly to smartphones or computers, offering timely warnings to
+residents and authorities. Such alerts were invaluable in providing early detection and
+response to potential flood threats, potentially saving lives and minimizing property
+damage. The integration of the ESP-OIS WiFi module exemplified the power of loT
+technology in enhancing disaster preparedness and response efforts, demonstrating how
+connectivity and data transmission could be leveraged to mitigate the impact of natural
+disasters.
+
+
+mr ;:-
+57
+"
+Plate 8. GSM Module STM900A
+Plate 8 displays the SIM 900A GSM module, facilitating communication over
+cellular networks within a flood alert system. By leveraging this module, the system could
+send SMS messages or make calls to notify relevant authorities or residents about potential
+flooding, ensuring timely alerts. Additionally, the GSM module could send SMS alerts
+upon detecting an increase in water level, providing critical real-time information.
+However, for the module to function correctly, it was essential to have a valid SIM card
+and an active mobile network subscription. This requirement ensured seamless
+connectivity and reliable communication, enabling the flood alert system to effectively
+fulfill its purpose of providing early warnings and enhancing disaster preparedness and
+response efforts.
+
+
+58
+Plate 9. 18650 Battery 3.7v Li-Ion
+Plate 9 presents the 18650 3.7V Li-Ion battery, which was essential in an loT-based
+flood alert system, providing reliable power to various components including the GSM
+Module STM900A, ESP-01 S WiFi Module, Ultrasonic Ranging Sensor, Circuit Rocks
+Breadboard 400, and Arduino Uno R3. This battery's high capacity and stable voltage
+ensured continuous operation of the GSM module for sending alert notifications, the WiFi
+module for network connectivity, and the ultrasonic sensor for accurate water level
+measurements. The Arduino Uno R3 orchestrated these components, processing data and
+triggering alerts, while the breadboard allowed for efficient and flexible circuit assembly.
+The 18650 battery's longevity and rechargeability made it ideal for sustaining the system
+in remote or power outage-prone areas, ensuring uninterrupted flood monitoring and timely
+alerts.
+
+
+Login
+Plate 10. Login Page
+Plate 10 presents the login screen, serving as the secure entry point for users to
+access the system's features. This critical screen features email and password fields,
+ensuring user identity verification through safe and encrypted credentials. The inclusion of
+a "Forgot Password" feature further enhanced security, providing users with an easily
+accessible means to retrieve access in case of forgotten passwords. Beyond its basic
+function, the login page serves as the system's initial line of defense, implementing strict
+security protocols to safeguard against unauthorized access. By enforcing robust
+authentication measures, the system-maintained integrity and protected sensitive data from
+potential threats. Adclitionally, user-friendly features such as the "Forgot Password" option
+contributed to a seamless user experience, reinforcing trust and usability within the system.
+59
+
+
+60
+"
+Reset Password
+Plate 11. Reset Password Page
+Plate ] 1 displays the reset password interface, designed to aid users who had
+forgotten their passwords and needed to regain access to their accounts. This feature
+comprises two primary sections. The first section features an email address field,
+prompting users to input the email address associated with their account. The second
+section includes a "Verify" button, which, when clicked, initiated the password reset
+process. Additionally, a "Cancel" button may have been available, providing users with the
+option to abort the password reset attempt if necessary. This user-friendly interface not
+onJy facilitates the password recovery process but also ensures a seamless experience for
+Users encountering login difficulties. By offering clear instructions and intuitive
+navigation, the reset password features enhanced usability and user satisfaction within the
+system.
+
+
+61
+Verify your email
+address
+Plate 12. Verify Email Address
+Plate 12 displays a website's past interaction with a user, guiding them through
+email verification as a security measure to ensure only authorized users accessed their
+accounts. The process was straightforward: the user entered their email address.itriggering
+the generation and dispatch of a unique, temporary code, likely a One-Time Password
+(OTP), to that email. To complete verification, the user retrieved the code and entered it in
+the designated "OTP Code" field. Clicking "Verify" then confirmed their identity and
+granted access to their account. This two-step verification mechanism served as a robust
+safeguard against unauthorized access, adding an additional layer of security by requiring
+users to prove ownership of the email associated with their account.
+
+
+62
+Register
+Plate] 3. Account Registration Page
+Plate 13 illustrates the account registration page, enabling users to create an account
+and access the system's features. The email address and password fields were pivotal for
+providing accurate information during the registration process. Once registered, users
+could quickly log in by clicking the "Sign In" button to access all the system's
+functionalities. Upon entering their information, the login button triggered a pop-up
+message confirming "Login Successful!". This streamlined login process enhanced user
+interaction with the system, offering immediate reassurance of access and reinforcing user
+confidence in the system's functionality.
+
+
+63
+'"
+I OfIm
+(0
+Login Successful!
+v/ctcomo bock cdrnn
+_,
+•• 1 • ... .
+OOnt_OI'IC>CC1D<r't'~
+Plate 14. Successfully Login
+Plate 14 indicates a button labeled "Go to Dashboard" appeared, allowing the admin
+to seamlessly navigate. This streamlined process facilitated user engagement and
+encouraged administrators to explore the system's dashboard promptly. By incorporating
+intuitive design elements and clear feedback mechanisms, the account registration page
+enhanced user experience and fostered a sense of efficiency and satisfaction within the
+system. The seamless transition to the dashboard emphasized user-centric design
+principles, ensuring that administrators could quickly access and utilize the system's core
+functionalities without encountering unnecessary obstacles or delays. However, the user-
+friendly interface and intuitive navigation contributed to a positive user experience,
+promoting user adoption and satisfaction with the system.
+
+
+64
+Centimeter of Water level
+6cm
+Percentage of Water level
+-
+Plate 15. Dashboard Page
+Plate 15 displays the user's dashboard which typically displays comprehensive
+flood alert monitoring system. It showcases real-time water level data through a digital
+display, indicating the levels in both centimeters and percentages. The interface is visually
+appealing and features a designated button that provides access to a graph that displays
+historical water level trends. This graph visually represents the fluctuating water levels,
+allowing users to monitor the situation effectively. The dashboard includes additional
+functionalities, including detailed reports and a manual input option, which can be accessed
+through buttons labeled "Reports" and "Manual," respectively. Finally, a log-out button is
+included so users can sign out of the system. Overall, this dashboard provides a clear
+snapshot of current water levels and offers options to delve deeper into historical data and
+even input manual readings.
+
+
+65
+Percentage of Water Level
+15.
+1~6
+ISl
+CD
+152
+ISO
+Il8
+lU
+WARNING!
+141
+1.41 The Water Level reached 15%!
+1115111I'l0l
+III
+Cenifmet.er of Water Level
+I~
+104
+In
+102
+101
+Plate 16. Notification Alert
+Plate 16 presents the flood alert system, equipped with a range of notification
+methods, including pop-up messages from Alert Levell to Alert Level 3, alert sounds, and
+attention-grabbing visual indicators. These features enabled the system to swiftly detect
+critical flood situations or significant changes in water levels. By providing timely and
+multi-faceted alerts, the system kept users informed, empowering them to take necessary
+actions and precautions in real-time and ensuring their safety and preparedness. This
+comprehensive approach to flood monitoring and notification underscored the system's
+effectiveness in enhancing community resilience and mitigating the impact of floods on
+vulnerable areas.
+
+
+66
+Plate 17. SMS Notifications
+Plate 17 presents the SMS notifications, equipped with a range of notification
+methods, including pop-up messages from Alert Levell to Alert Level 3. The alert levels
+were clearly defined: Level 1 warned with the exact measurement of water level and its
+equivalent percentage, Level 2 instructed residents to move to higher ground, and Level 3
+mandated evacuation, especially in affected areas. This comprehensive approach ensured
+timely communication of flood risks and appropriate response actions to users.
+Furthermore, the integration of these notification methods showcased the system's
+adaptability and responsiveness to evolving user needs, contributing to its overall
+functionality and usability in flood alert scenarios.
+
+
+67
+Monthly Average of Water level
+I I
+n
+- - -- - -
+Plate 18. Data Analytic Graph Page
+Plate 18 showcases the users that can obtain crucial insights about flood conditions
+through a data analytic graph. The graph page delivers a comprehensive visualization of
+water level fluctuations, featuring advanced analytical tools that pinpoint trends and
+patterns in the data. The graph updates in rea] time, reflecting any changes the flood alert
+monitoring system detects. With this integration, users gain a more comprehensive
+perspective of the flood situation, enabling them to make informed decisions based on data.
+Ultimately, this integration enhances their capacity to monitor, analyze, and respond to
+flood events more effectively.
+
+
+68
+water Level History
+Show 10 v entries secren
+.1111111
+10 J Centimeter' Pereenatge Levels Oate
+294 21cm 63'; 3 May-16-2024 12:00AM
+293 21cm 63% May-IG-2024 12:00AM
+292 26cm 46% May-IG-2024 12:00AM
+291 22cm 60% 0 May-10-2024 12:00AM
+290 22cm 60X 0 May-10-2024 12:00AM
+289 23cm 53% 0 May-10-2024 12:00AM
+288 2Gcm 46X 2 May-10-2024 12:00AM
+287 26cm 46% 2 MaY'10-2024 12:00AM
+286 31cm 30% 0 May-10-2024 12:00AM
+285 34cm 20% 12:00AM
+Plate 19. History Report Page
+Plate 19 displays the monthly water history report which is invaluable for tracking
+and 'analyzing water data. Its well-crafted design offers a comprehensive overview of water
+levels over time, complete with various data points, charts, and graphs that enable users to
+visualize water-level trends and patterns. Presented historical water levels clearly and
+organized, the report allowed users to gain insights into changes, fluctuations, or any
+notable occurrences related to water levels. This feature ensured that users could easily
+access and share the report for analysis, record-keeping, or communication purposes. The
+water history report was an exceptional resource for understanding and monitoring water
+levels over time. This report allowed users to confidently track and analyze water data to
+make informed decisions and take necessary actions.
+
+
+69
+FLOOD ALERT MONITORING SYSTEM
+III c:.~., I'm"'... ......" 0,,,
+JD
+'"
+r- ,J. '~l, :':_.,,' 'lUI
+334 H! .... 1o!.r-.;·2:j.4(I'iAlI
+", :....,
+"
+U'f:~ ::t~'I·.l.1J
+H3 1]1
+"
+a.l'f:j~~C·"11J.1
+I:' S.. - ... 10(1,:.) :::~C~IJAU
+m
+!~'t ~- "",:':':':"":01,1.1
+33; I:. !i<- n Ut,:: :-:"'. '~.w
+r- ~- lol,t•• • .:.:q··}AU
+330 1.:i :,f(-
+"
+141.''''~HI·Jo\U
+]29 ::~ :ic.- "",.: :::~'I':'U
+1:' :<t- ... ("1,,... :-';1(1' ~ o\W
+sza I;J S' - r L'". ••~! r ' '. 4J,T
+fo': ]1· ... ,. U,,::>-1::Hl']W
+327
+1:1 10- fh,;-:::c('
+''''
+326 m ",- ""
+VI";:) ~2t(\ '''.1.1
+J'.' >1,'" "., 'Jr,. :':; .. :1 'CUI
+325
+'"
+U!~ g, YII~' !,Ultt'OAlt
+324
+!P &- .., ¥rr:;';-:;"C'21Ul
+!l"
+-
+~, t.L,r~~:'rl:Jft.1.l
+szs l\~ :'tc:-- e-, t.I,,;jn;4C1jl!MI
+'"
+11{"1' n. LU, :'.~:H;~.w
+m
+10' :1:-''\
+"
+"fl:H'~:H:')jAU
+321 u: 11:-. .n "'1',;:: ,a';'tIOr'-lol
+320
+Plate 20. Sample Print Generated Report
+Plate 20 illustrates that Reports often included a "Print" function even if there was,
+no physical button on the screen. Clicking this digital button triggered an automated
+process. The report was formatted for printing and sent directly to the default printer,
+saving time and ensuring an accurate transfer to paper. This feature streamlined the printing
+process, eliminating the need for manual formatting and reducing the risk of errors.
+Additionally, by directly sending the report to the default printer, users were spared the
+hassle of selecting a printer each time they wanted to print a report. Moreover, the inclusion
+of the "Print" function in digital form enhanced the efficiency and convenience of
+generating hard copies of reports within the system.
+
+
+=: MtlT'.J e ~ Homo £d~ <cmmtnt COf'rltrt "g' F~&S"ln Prct!tt Teel! S.Id! ~
+CI rr ~ ~ ~ ~ !El I> ~'.l
+~ ~~ Q !TIlV J.:.:. J-!. ®
+[6I::Of. 4ddtc.1 Iooddr<1\,11'( to;IO,I.,rd· tC;:t'~c ~I- ~tc~ fooJtSa. ~- OCHe' htlw:lul· ~Uld~., F.-.d tnd~c;I'Uct A.uta ~~,,'1. E)t trc.tKbcn J,kdc:.
+[::J T',,-<:rioil X
+E! rl2 - r:a
+o
+'> rrr--
+~ !~I
+@ ::E-===! §
+~~ 3i3
+~~ ~==~=
+FLOOD ALERT MONITORING SYSTEM
+10 Centimeter Percenatge levels Date
+334 210n 63'4 May-20-2024 01:13 AM
+333 2101' 63'1. May·20-20240113AM
+332 21an 63\ May-20-2024 01 13 AM
+331 Zoan 46'1. May·20-2024 01 13 AM
+330 20an 46\ May· 20- 2024 0 I 13 AM
+329 260"" 46'\ M3"t2l).20240112AM
+32B 26an 46\ May·:zo.20240112AM
+327 26an 46\ May·:zo.2024 0112 AM
+326 zeen 46' Moy-:zo.2024 01:12AM
+325 26an 46\ M3y·Z!l-20240112AM
+324 200n 46\ M3)'·:zo.2024 01·12 AM
+323 31011 30\ May·:zo.202401 IZ AM
+322 31an 30\ M3y·:zo.Z024 01:12 AM
+321 31an JO'l. May-:zo.2024 01 12AM
+J20 34an 20\ May-:zo.2024 01 lOAM
+319 34an 20.. May-:zo.202401·10AM
+318 34,,,, 20\ May-20·2024 01:10AM
+317 26an 46\ May-20·2024 01:09 AM
+316 26cm 4b~ May-:zo.2024 01:09 AM
+u]-
+III!
+) )1 m® ;.:III
+Plate 21_ Sample PDF Generated Report
+Plate 21 indicates that many system reports offered a "Download" option alongside
+the "Print" function. Clicking this digital button initiated a process that converted the report
+into a PDF file, ensuring the layout and formatting remained consistent across different
+devices. This feature provided users with flexibility in accessing and storing reports, as
+PDF files were widely compatible and could be easily shared or archived for future
+reference. Once the conversion was complete, users were prompted to save the PDF file to
+a chosen location on their device, enabling convenient access to the report at any time. This
+seamless integration of the "Download" option enhanced user experience by offering an
+efficient way to access and manage report data, promoting usability and accessibility within
+the system.
+70
+
+
+~ to:J.,
+F,,,,t>! Pr.1,- ~-
+PltmC!
+e J w· .:...
+I§ E§,-
+(,.....,oW IJ-
+formJtting·
+71
+I~n I e....
+AI '9. j, FLOODAl£JH MONrrORI~GSYSTEM
+• A 3 0 H II o
+I ~1~~~~~~~A~~M~~~rllj~oru=U~G~S~~roM=- ___
+1 10 (endOl"" Perc.ILlrge level! Date
+Jl.i zion 63% 1 " .. y-20·2024 GI:U AM
+3ll 2lun
+11221un
+331 26un
+3302£c.11
+319 2Wn
+32B2icm
+10 lZ7 2Wn
+11 3261eun
+II l25 2Wn
+13 JlA l£un
+" 323 ncn
+15 l12n011
+16 l2! non
+17 l20 34un
+18 ll9l-!un
+19 ll834cm
+2!l m 2ficm
+21 3162!;cm
+!l 3!5 2Wn
+B 314 llun
+l,I 313 2lan
+o 312 zion
+631\ 311.~;·20·2J)14 .I:ll AM
+6~ 1 lI .. y':20·202401:13 ~M
+4~ 21/..,·20·2024Ol:ll AM ())
+4c;a 2 "...,.-20-2024 OI:l.lAM
+4616 2 MiIj'·2Jl.20l4 01:12AM e
+4t~ 2 "'.y·2O·2024 Wll AM
+4.;0 1 M~,--2Jl.2024 01:12 AM
+4<iI! 1 ""3,-20·2024 Ql:11 AM
+46~ 2 11..,·20·202401:12 AM
+4~ 2 "' .. y·20·2024 Ol:ll AM
+3{f,j 1 May·2jl·2014 01:12AM
+3ef.! 1 "~y·20·1024 01:12AM
+lOiO I May·lO-20l4 01:12AM
+lW: o May·2D·2024!l1:!DAM
+1!f,; o M"y·20·2024 Ql:l0 AM
+~ o M.y·20-2024 01:10AM
+461(, 21kl',-·20·2024 01:09 AM
+4<iI! 2 M3'1-20·2024 DillS AM
+4~ 2 M"y·20·2024 01:09AM
+63'.- 3 MiIj'·20·2024 01:00 AM
+63l.\ 3 11.".,.·20·202401:00 AM
+63% 1 " .....·20·2024 01:00AM
+Silo." t
+~- !J IB OJ QJ 0- I(~ll· - _. t
+Plate 22. Sample Excel Generated Report
+Plate 22 shows that some reports might also have offered a "Download (Excel)"
+option- Selecting this digital button triggered a conversion process where the report data
+was transformed into a well-organized Excel spreadsheet. This format enabled easy
+manipulation, analysis, and integration with other spreadsheets, enhancing the usability
+and versatility of the report data. The inclusion of both PDF and Excel download options
+provided users with flexibility in accessing and utilizing report information according to
+their specific needs and preferences. Whether users preferred a static, universally
+accessible format like PDF or a dynamic, data-rich format like Excel, they could easily
+obtain the report in their preferred format, allowing for seamless data management and
+analysis within the system.
+
+
+~
+I 72
+Plate 23. Manual Page
+Plate 23 illustrates that the system remained incomplete in the absence of manuals.
+It featured two manuals alongside a "Start" button, enabling users to access or view the
+system's manual upon clicking. These manuals served as essential resources for users,
+providing comprehensive guidance on system functionalities, usage instructions,
+troubleshooting tips, and other relevant information. By offering easy access to manuals
+directly within the system interface, users could quickly reference and navigate through the
+documentation as needed, enhancing their understanding and proficiency in utilizing the
+system effectively. The inclusion of manuals not only facilitated user training and
+onboarding but also promoted self-service support, reducing the need for external
+assistance and empowering users to resolve issues independently.
+
+
+73
+Percontage of Water Lovel
+em.Hii
+100cm
+I"
+Are you sure you want to log out'
+1<2
+" lAlli'll
+Cont motor of Wator Lovol
+Plate 24. Logout Page
+Plate 24 showcases that the alert box in the image was a confirmation prompt asking
+the user if they were sure they wanted to log out. This type of confirmation dialog was a
+common security measure to prevent accidental Iogouts. The box contained two buttons:
+"Yes, Log Out!" and "Cancel". The text in the alert box read: "Are you sure you want to
+log out? You were logged out of the system." This message clearly informed the user of
+the action they were about to take and its consequences (see Plate 25 on page 74). If users
+were unsure about the consequences of logging out, it was best to en on the side of caution
+and click "Cancel". They could always log out later if they were sure, it was safe to do so.
+This simple yet effective confirmation dialog helped prevent unintended logouts and
+ensured that users could make informed decisions about their actions within the system,
+enhancing overall usability and security.
+
+
+74
+Percentage of Water level
+1st
+15a
+15<
+(0
+IS2
+'-50
+141
+145
+Logged Out!
+144
+10 vo, "),e be,,~ IC((f~ltU:I)' 1J9ged c ..t
+"lUI PII
+III
+Centimeter of Water Level
+105
+101
+'ill 100cm
+'!!2
+Plate 25, Successfully Logged Out
+Test. After developing the prototype, the researchers undertook a comprehensive
+testing phase consisting of alpha and beta testing to ensure the system's quality and
+readiness for full-scale deployment. Alpha testing involved internal testing by the
+developers and IT experts within the development environment to identify and address
+major issues or bugs. This phase was crucial for uncovering and resolving critical flaws,
+performance bottlenecks, and usability concerns before exposing the system to external
+users. The meticulous documentation of errors encountered by researchers in Table 3 and
+Table 4 during alpha testing facilitated a systematic problem-solving approach, allowing
+for targeted improvements and bug fixes. Table 5 documented errors provided by
+external/end-users, respectively, during the beta testing phase.
+
+
+75
+Table 3. Errors Encountered by the Researchers in Alpha Testing
+No. Erro~
+0] Conflict between GSM module and ESP 0 I S for TX and RX pins of Arduino.
+02 Unsuccessful attempts to allocate separate pins for each module.
+03 When sending SMS alerts and notifications to locals and the head of MDRRMO,
+researchers adapted the local format rather than the conventional Philippine water
+level standard.
+04 The researchers found that sending alert texts notification to registered numbers
+was a lengthy process.
+Table 4. Errors Encountered by the IT Experts in Alpha Testing
+01 The microcontrollers and modules were not properly built In and were
+disorganized.
+02 The report menu for the water level history showed multiple identical entries with
+no variations in the data.
+03 In the dashboard, the use of colors to show level status (Warning/Danger).
+04 The prototype had an adequate power supply from the battery.
+05 Other components, such as transistors and resistors for circuit safety, were not
+included.
+Errors identified during alpha testing highlighted areas for improvement. Resolving
+hardware issues like pin conflicts and disorganized components enabled proper
+functionality. Fixing reporting errors and color-coding enhanced accuracy and user
+
+
+76
+expenence. Adapting to local standards and optimizing alerts ensured community
+alignment and timely notifications. By systematically fixing these errors, the team
+delivered a more robust and user-friendly flood alert system.
+Table 5. Test Cases Performed by the Head ofMDRRMO in Beta Testing
+Test Case
+Type
+Description Test Step Expected Result Status
+System Evaluate the ease Provide end-users Interfaces should Passed
+Usefulness of use and user- with tasks or be intuitive and
+friendliness of the scenarios involving user-friendly,
+system's interfaces. monitoring sensor enabling easy
+data and navigation.
+responding to
+alerts.
+Information Evaluate system Simulate different The system should Failed
+Quality reliability under failure scenarios, maintain accurate
+extreme conditions such as sensor and reliable data,
+and failures. malfunctions, or despite failures or
+system component interruptions.
+failures.
+Verify flood Simulate a flood When the water Failed
+detection and condition by level exceeds the
+alerting based on increasing the threshold, the
+sensor data. water level. system should
+nigger alerts like
+SMS notifications.
+Interface Verify the system's Attempt to gain The system should Failed
+Quality security against unauthorized detect and mitigate
+unauthorized access to the security threats.
+access. system's
+components.
+
+
+78
+Continuation of Table 6
+Test Case
+Type
+Description Test Step Expected Result Status
+Interface The system's The system's The system's Failed
+Quality security against security against security against
+unauthorized unauthorized unauthorized
+access was access has been access was verified
+verified. verified through using OTP,
+OTP. ensurmg secure
+access.
+Overall Verified ease of End-users User-friendly Passed
+System use, user- evaluated flood interfaces triggered
+Testing friendliness, alert usability. alerts and notified
+informed decision Flood simulation residents and
+safety for flood conducted. System barangay officials
+alerts, accuracy of security verified of exceeded water
+flood detection, with OTP. levels, with
+alerting, and security verified
+system security. via OTP, passing
+the test.
+In addition to the rigorous alpha and beta testing phases, the researchers presented
+the prototype to selected respondents within Barangay Narvacan, Sto. Tomas, La Union,
+to conduct system testing and gather feedback for further refinement. The primary
+objective was to identify any areas for improvement or potential issues that needed
+addressing in the real-world environment where the system wouLd be deployed.
+Throughout this process, the researchers actively solicited comments and suggestions from
+the respondents, aiming to incorporate their perspectives into the system enhancement
+process.
+
+
+79
+After successful alpha testing, the software underwent beta testing, where it was
+released to a selected group of end-users (refer to Table l onpage 25) to be used in their
+production environment. Beta testing aimed to thoroughly assess the software and
+hardware product's quality, functionality, and performance in a real-world setting. Utilizing
+the User Technology Acceptability Questionnaire, the loT-Based Flood Alert System was
+rigorously examined, and any remaining defects were identified, ensuring that the product
+met the specified requirements and delivered value to the intended users before its final
+deployment. During the beta testing phase, the researchers closely monitored the system's
+performance and gathered valuable feedback from the end-users. This feedback played a
+crucial role in identifying potential issues, areas for improvement, and user experience
+challenges that may have been overlooked during the initial development stages. By
+involving the actual users in a real-world environment, the beta testing process provided
+insights into how the system would perform under various conditions and usage scenarios.
+Deployment. After the testing of the system and satisfaction with the outcomes,
+the deployment phase of the agile methodology marked a critical step in implementing the
+developed system. Following thorough testing and confirmation that the system met the
+desired outcomes, it was ready for deployment to Barangay Narvacan, Sto. Tomas, La
+Union, and the Municipal Disaster Risk Reduction and Management Office (MDRRMO)
+of the Municipality of Santo Tomas. During this phase, it was crucial to facilitate a
+seamless transition from the testing environment to the live production environment.
+This phase involved several key activities to ensure a smooth and successful
+implementation. The necessary infrastructure, such as setting up servers, configuring
+
+
+80
+networks, and ensuring reliable connectivity, was established to enable the system to
+function seamlessly and provide real-time flood alerts. The system was configured
+according to the specific requirements of the target areas, including customizing user
+interfaces, integrating with existing systems, and fine-tuning alert thresholds and
+notification mechanisms, which was crucial for alignment with local needs. Additionally,
+comprehensive training was provided to end-users, including local authorities, disaster
+management personnel, and community members, to ensure effective utilization of the
+system's capabilities. Engaging with stakeholders, including local authorities, community
+representatives, and disaster heads, was vital for gathering feedback and fine-tuning the
+system to align with their specific needs and ensuring their satisfaction with the final
+product.
+The implementation team worked closely with local partners to understand the
+unique challenges and requirements of each target area. Rigorous testing and simulations
+were conducted to identify and address any potential issues or vulnerabilities before the
+system went live. Regular maintenance and update schedules were established to keep the
+system running optimally and incorporate any necessary improvements. A dedicated
+support team was set up to address any technical issues or user queries that might arise.
+Continuous monitoring and evaluation mechanisms were put in place to assess the system's
+performance and impact over time. Screenshots served as the representation of the 10T-
+Based flood alert system, as shown on the following pages. The researchers had recognized
+the importance of providing comprehensive support and maintaining open communication
+channels with end-users to ensure the successful adoption and sustained use of the system.
+
+
+81
+Additionally, the continuous monitoring and evaluation processes allowed for data-driven
+improvements and adaptations to be made, ensuring that the system remained effective and
+relevant in addressing the evolving needs of the community.
+Review. After deployment and system implementation, it was not uncommon for
+errors or issues to have arisen during continued usage. While the Agile methodology
+emphasized iterative development and testing, the final phase did not always encompass
+ongoing maintenance and support.
+Ongoing maintenance and support were essential aspects of any technology
+implementation, ensuring that the system continued to operate effectively and met the
+evolving needs of users. This included addressing software bugs, hardware failures, user
+support queries, and implementing updates or enhancements to improve system
+performance and functionality. However, due to the dynamic nature of technology and the
+unpredictability of user behaviors and external factors, ongoing maintenance and support
+could not always be fully covered within the timefrarne of a research study.
+Furthermore, the sustainability of the system relied heavily on the availability of
+resources, including funding, personnel, and infrastructure, beyond the duration of the
+research study. Establishing partnerships with local authorities, community organizations,
+or industry stakeholders could have helped ensure ongoing support and maintenance.
+Collaboration with these entities could also have facilitated the development of sustainable
+funding models and the establishment of mechanisms for user feedback and system
+improvement over time. Overall, while the Agile methodology provided a structured
+
+
+82
+approach to system development, the sustainability of technology implementations often
+required broader considerations and strategic planning beyond the initial project phases.
+Acceptability Evaluation of the loT-Based Flood Alert System
+The utilization of the User Technology Acceptability Questionnaire (UTAQ) to
+measure the level of acceptability of the loT-Based Flood Alert System for Narvacan, Sto.
+Tomas, La Union was a valuable approach. By administering the survey questionnaire to a
+significant number of respondents, which included 9 barangay council officials and 21
+residents from various sectors, the researchers were able to gather thorough feedback on
+the proposed system. The researchers developed standards to improve system usefulness,
+information quality, and interface quality based on the results, thereby ensuring that the
+system effectively met the needs and expectations of its intended users. Through this
+iterative process of evaluation and refinement, the researchers addressed potential issues
+and optimized the system for maximum effectiveness in supporting flood preparedness and
+response efforts in the community.
+Furthermore, the inclusion of diverse stakeholders, including barangay council
+officials and residents from various sectors, provided a comprehensive understanding of
+the system's acceptability from multiple perspectives. This inclusive approach helped to
+address potential concerns or barriers to adoption, ensuring that the system was accessible,
+user-friendly, and capable of effectively disseminating critical information during flood
+events. By iteratively refining the system based on user feedback, the researchers increased
+the likelihood of successful adoption and sustained use within the community, ultimately
+strengthening flood preparedness and response capabilities.
+
+
+83
+Based on the results shown in Table 7, it is evident that respondents assessed the
+developed system's usefulness with a high level of acceptability. Indicator 1 emerged as
+the most positively rated, with a mean score of 6.93, while the second indicator received a
+slightly lower mean score of 6.77. This indicates that users find the system quite intuitive
+and easy to navigate. The overall computed Average Weighted Mean of 6.87 further
+reinforced the system's remarkable acceptance among users. Such a high rating implied
+that the system was not only easy to use but also highly user-friendly, meeting the needs
+and expectations of its intended users effectively. This level of user satisfaction was a
+testament to the system's well-designed interface and intuitive functionality, which likely
+contributed to its successful adoption and widespread utilization at the time.
+The system's exceptional performance was particularly noteworthy in the context
+of emergency response, where efficient and effective communication and monitoring could
+have life-saving implications. As highlighted by Gacu et al. (2022), such systems played a
+crucial role in improving emergency response times by enabling accurate and timely
+monitoring of individuals in need of assistance. By streamlining the process of identifying
+and locating those requiring immediate aid, the developed system contributed significantly
+to enhancing overall emergency management strategies. Consequently, the high level of
+user acceptance and satisfaction with the system's usefulness held profound implications
+for the field of emergency response, potentially translating into more lives saved and
+improved public safety outcomes.
+
+
+84
+Table 7. Level of Acceptability oftbe loT-Based Flood Alert System in terms of System
+Usefulness
+Indicators Mean Descriptive Descriptive
+Equivalent Rating Interpretation
+1. How often do you use the 6.93 Strongly Agree Extremely High
+system to check for flood alerts? Acceptance
+2. Do you find the system helpful 6.77 Strongly Agree Extremely High
+in making informed decisions Acceptance
+about your safety during flood
+events?
+3. Does the system provide enough 6.87 Strongly Agree Extremely High
+information to prepare for floods Acceptance
+effectively?
+4. Has the system helped you feel 6.87 Strongly Agree Extremely High
+more secure and prepared for Acceptance
+flood emergencies?
+5. Do you fmd tbe system a 6.90 Strongly Agree Extremely High
+valuable tool for managing flood Acceptance
+risks in your community?
+6. Overall, how satisfied are you 6.87 Strongly Agree Extremely High
+with the usefulness of the Acceptance
+system?
+Weighted Mean 6.87 Strongly Agree Extremely High
+Acceptance
+Legend:
+Statistical Range
+6.16-7.00
+5.30-6.15
+4.44-5.29
+3.58-4.43
+2.72-3.57
+1.86-2.71
+1.00-1.85
+Descriptive Equivalent Rating
+Strongly Agree
+Agree
+Somewhat Agree
+Neutral
+Somewhat Disagree
+Disagree
+Strongly Disagree
+Descriptive Interpretation
+Extremely High Acceptance
+Very High Acceptance
+Moderately High Acceptance
+Neutral Acceptance
+Moderately Low Acceptance
+Low Acceptance
+Extremely Low Acceptance
+
+
+85
+Table 8 presents an assessment of the level of acceptability regarding information
+quality within the developed system. This assessment provided valuable insights into the
+system's strengths and areas for potential improvement. Indicator number 9 emerged with
+the highest mean score of 6.90, indicating an extremely high acceptance level of
+performance. This suggested that the system excelled in presenting information in a clear,
+concise, and easily understandable manner, enabling users to comprehend and utilize the
+provided data effectively. On the other hand, indicator number 11 obtained the lowest mean
+score of 6.77, which, although still reflecting a high acceptance level, may have indicated
+opportunities for improvement in how information was structured and presented within the
+system.
+The overall calculated Average Weighted Mean of 6.83 implied that the
+information provided by the system was well-structured and arranged at an extremely high
+acceptance level. This aligned with the findings of research conducted by Hu et a1.(2022),
+which emphasized the importance of data preparation, assessment report generation, and
+efficient integrated visualization for decision-ready information. By addressing the
+potential areas for improvement identified in indicator number 11, the researchers could
+further enhance the system's ability to convey information in a structured and intuitive
+manner, ultimately increasing its effectiveness and acceptability among end-users.
+
+
+86
+Table 8. Level of Acceptability of the loT-Based Flood Alert System in terms of
+Information Quality
+Indicators Mean Descriptive
+Equivalent Rating
+Descriptive
+Interpretation
+7. Do you believe the information 6.83 Strongly Agree
+provided by the system IS
+accurate and reliable?
+8. Is the information provided by 6.80 Strongly Agree
+the system timely and up-to-
+date?
+9. Do you find the information 6.90 Strongly Agree
+provided by the system to be
+clear and easy to understand?
+10. Does the information the 6.80 Strongly Agree
+system provides address your
+community's specific needs?
+11. How confident are you in the 6.77 Strongly Agree
+accuracy of the information
+provided by the system?
+12. Overall, how satisfied are you 6.87 Strongly Agree
+with the system's quality of
+information?
+Extremely High
+Acceptance
+Extremely High
+Acceptance
+Extremely High
+Acceptance
+Extremely High
+Acceptance
+Extremely High
+Acceptance
+Extremely High
+Acceptance
+Weighted Mean 6.83 Strongly Agree Extremely High
+Acceptance
+Legend:
+Statistical Range
+6.16-7.00
+5.30-6.15
+4.44-5.29
+3.58-4.43
+2.72-3.57
+1.86-2.71
+1.00-1.85
+Descriptive Equivalent Rating
+Strongly Agree
+Agree
+Somewhat Agree
+Neutral
+Somewhat Disagree
+Disagree
+Strongly Disagree
+Descriptive Interpretation
+Extremely High Acceptance
+Very High Acceptance
+Moderately High Acceptance
+Neutral Acceptance
+Moderately Low Acceptance
+Low Acceptance
+Extremely Low Acceptance
+
+
+87
+Table 9 shows the user's perception and acceptance of the developed system's
+interface, functions, and capabilities. The findings revealed both strengths and potential
+areas for further improvement. Indicator number 13 achieved the highest mean score of
+6.93, indicating that the functions and capabilities of the developed system were extremely
+well-received and highly accepted by the users. This strong positive response suggested
+that the system successfully delivered the intended functionalities and met the users'
+expectations, enabling them to effectively utilize the system for its intended purpose. On
+the other hand, indicator number 14 obtained the lowest mean score of 6.77, although still
+suggesting an extremely high acceptance level regarding the likelihood and satisfaction of
+using the system's interface. This slight deviation from the highest score may have
+indicated potential opportunities for enhancing the user interface's intuitiveness or ease of
+use.
+The calculated Average Weighted Mean of 6.87 implied that the overall interface
+quality, functions, and capabilities of the developed system were perceived as extremely
+high by the users. This high level of acceptance supported the assertion made by the
+Philippines (2018) that the system significantly enhanced the accessibility of hazard
+information, presenting it in a user-friendly format that fostered a more informed and
+resilient community response. The high mean scores across all indicators highlighted the
+system's effectiveness in meeting user needs and expectations, suggesting that such a
+system could serve as a model for future developments in hazard information
+dissemination.
+
+
+88
+Table 9. Level of Acceptability of the loT-Based Flood Alert System in terms of
+Interface Quality
+Indicators Mean Descriptive
+Equivalent Rating
+Descriptive
+Interpretation
+13. Do you find the system easy to
+navigate and use?
+]4. Do you find the system
+interface visually appealing
+and user-friendly?
+15. Is the system accessible to
+users with different levels of
+technical expertise?
+] 6. Does the system provide users
+with clear instructions and
+belpful feedback?
+17. How intuitive do you find the
+system's design and layout?
+18. Overall, how satisfied are you
+with the system interface?
+6.93
+6.77
+6.87
+6.87
+6.90
+6.87
+Strongly Agree
+Strongly Agree
+Strongly Agree
+Strongly Agree
+Strongly Agree
+Strongly Agree
+Extremely High
+Acceptance
+Extremely High
+Acceptance
+Extremely High
+Acceptance
+Extremely High
+Acceptance
+Extremely High
+Acceptance
+Extremely High
+Acceptance
+Weighted Mean 6.87 Strongly Agree Extremely High
+Acceptance
+Legend:
+Statistical Range
+6.16-7.00
+5.30-6./5
+4.44-5.29
+3.58-4.43
+2.72-3.57
+1.86-2.7/
+1.00-1.85
+Descriptive Equivalent Rating
+Strongly Agree
+Agree
+Somewhat Agree
+Neutral
+Somewhat Disagree
+Disagree
+Strongly Disagree
+Descriptive Interpretation
+Extremely High Acceptance
+VelY High Acceptance
+Moderately High Acceptance
+Neutral Acceptance
+Moderately Low Acceptance
+Low Acceptance
+Extremely Low Acceptance
+
+
+89
+Table 10 presents a summary of the developed system's acceptability level based
+on evaluations from barangay official councils and residents per sectors of Barangay
+Narvacan, Sto. Tomas, La Union. The table consisted of three indicators: system
+usefulness, information quality, and interface quality. The system usefulness indicator
+received the highest mean score of 6.87, indicating that the system provided clear and easy-
+to-use functionalities. The interface quality indicator also garnered a high mean score of
+6.82, suggesting that the interface was pleasant and likable. The overall calculated Grand
+Mean of 6.87 implied that the developed system provided clear, effective, and easily
+accessible information with a likable and pleasant interface. This suggests that, despite
+minor areas for improvement, the developed system excelled in meeting user expectations
+and requirements, demonstrating its effectiveness in addressing the needs of the
+stakeholders.
+With an overall grand mean of6.87, the developed system achieved an exceptional
+level of acceptability among its target users. This score implied that the system not only
+provided clear, effective, and easily accessible information but also offered a likable and
+pleasant interface. While there may have been minor areas for improvement, the high grand
+mean score suggested that the system excelled in meeting user expectations and addressing
+the needs of stakeholders. The positive feedback from both barangay officials and residents
+across different sectors further reinforced the system's effectiveness and its potential to
+significantly contribute to the community's development and progress.
+
+
+Table 10. Summary of Acceptability
+90
+Indicators Mean Descriptive
+Equivalent Rating
+Descriptive
+Interpretation
+System Usefulness 6.87 Strongly Agree
+Information Quality 6.83 Strongly Agree
+Interface Quality 6.82 Strongly Agree
+Extremely High
+Acceptance
+Extremely High
+Acceptance
+Extremely High
+Acceptance
+Grand Mean 6.87 Strongly Agree Extremely High
+Acceptance
+Legend:
+Statistical Range
+6.16-7.00
+5.30-6.15
+4.44-5.29
+3.58-4.43
+2.72-3.57
+1.86-2.71
+1.00-1.85
+Descriptive Rating
+Strongly Agree
+Agree
+Somewhat Agree
+Neutral
+Somewhat Disagree
+Disagree
+Strongly Disagree
+Descriptive Equivalent
+Extremely High Acceptance
+Very High Acceptance
+Moderately High Acceptance
+Neutral Acceptance
+Moderately Low Acceptance
+Low Acceptance
+Extremely Low Acceptance
+
+
+Chapter 4
+SUMMARY, CONCLUSIONS AND RECOMMENDATIONS
+Summary
+This research aimed to develop an loT-Based Flood Alert System for Narvacan,
+Sto. Tomas, La Union. The motivation behind the study was the vulnerability of the area
+to flooding due to its low-lying topography and proximity to rivers and the sea. The system
+was designed to monitor water levels in real-time and provide timely alerts to residents
+through SMS, enabling them to evacuate or take necessary precautions in case of potential
+flood events.
+The researchers employed descriptive and developmental research methods,
+utilizing Agile methodology to guide the system's development. The system components
+included Arduino Uno, ultrasonic sensors, ESP-Ols WiFi Module, Active Buzzer, and a
+web-based interface including C/C++, HTML, CSS, JavaScript, PHP, and MySQL, for an
+intuitive user interface and efficient data management. The system was designed to analyze
+water levels, predict potential floods, and send SMS alerts to residents.
+To assess the system's acceptability, the researchers administered the User
+Technology Acceptability Questionnaire (UTAQ) to a sample of30 respondents, including
+9 barangay council officials and 21 residents from each of the seven sectors of Barangay
+Narvacan, Sto. Tomas, La Union. The user survey for the loT -Based Flood Alert System
+painted a very positive picture.
+
+
+92
+The following are the sal ient findings of the study:
+1. Through an interview questionnaire, the researchers were able to ascertain the
+prototype techniques used in the development of the system, which enabled
+them to successfully develop an loT -based flood alert system using the Agile
+methodology model.
+2. The IoT-Based Flood Alert System received overwhelming endorsement from
+users, with a grand mean score of 6.87 (Strongly Agreed). This reflected
+extremely higb acceptance across all categories: usefulness (6.87), information
+quality (6.83), and interface quality (6.82). These scores indicated users found
+the system both valuable and informative, with nearly 98% rating it as such,
+and user-friendly and easy to interact with, with nearly 97% agreement. This
+strong user perception suggested the system had high potential for successful
+community adoption.
+Conclusions
+Based on the findings of the study, the following conclusions were drawn:
+I. The Agile Methodology proved suitable for the development of the loT-Based
+Flood Alert System. This software development utilized components that were
+highly helpful and applicable in developing the prototype. A prototype 10T-
+Based Flood Alert System was deployed in Narvacan, Sto. Tomas, La Union,
+using loT to gather real-time data on water levels and environmental factors. It
+aimed to offer timely flood warnings, empowering residents to safeguard lives
+
+
+93
+and property.
+2. To assess community adoption potential, a User Technology Acceptability
+Questionnaire evaluated the system's usefulness, information quality, interface,
+and overall acceptability. Based on the gathered data, loT-Based Flood Alert
+System for Narvacan, Sto. Tomas, La Union was extremely high acceptance.
+Recommendations
+Based on the findings and conclusions, the researchers recommended the
+following:
+I. To implement the developed prototype, which was intended to be adapted easily
+in Narvacan, Sto. Tomas, La Union, and other places within the Municipality
+of Santo Tomas, was recommended.
+2. The researcher suggests that the Agile Methodology could be a valuable tool
+for future researchers developing loT-based flood alert systems.
+3. The implementation of loT-Based Flood Alert System may be extended to the
+flood prone areas in the Philippines such as targeting coastal and low-lying
+regions.
+4. The User Technology Acceptability Questionnaire (UTAQ) is highly
+recommended to assess system's acceptability in future researchers.
+5. To aid future researchers, it is recommended to implement hardware monitoring
+tools in prototype development.
+
+
+LITERATURES CITED
+Advanced Environment Monitoring. (2024, January 15). Flood warning system - real-time
+monitoring & alerts. AEM. https://aem.eco/solution/flood-risk-management!
+Alampay, E. A., Asuncion, X. V., & Santos, M. D. (2018). Management of social media
+for disaster risk reduction and mitigation in philippine local government units.
+Social Media Disaster Risk Reduction Mitigation Philippines LGU, 18(l), 183-
+190. https:l/doi.org/l0.1145/3209415.3209452
+Almar, R., Ranasinghe, R., Bergsma, E. W. J., Diaz, H., Melet, A., Papa, F., Vousdoukas,
+M., Athanasiou, P., Dada, o. A., Almeida, L. P., & Kestenare, E.(2021). A global
+analysis of extreme coastal water levels with implications for potential coastal
+overtopping. Nature Communications, 12(1), 1-9. https://doi.org/l0.1038/s41467-
+021-24008-9
+Almutairi, A., Mourshed, M., & Ameen, R. F. M. (2020). Coastal community resilience
+frameworks for disaster risk management. Natural Hazards, 101(2), 595-630.
+https:l/doi.org/lO.1007/s11069-020-03875-3
+Bantounos, K., Smeeton, T. M., & Underwood, I. (2022). Towards a solid-state light
+detection and ranging system using holographic illumination and time-of-flight
+image sensing. Journal of the Society for Information Display, 30(5), 363-372.
+https://doi.org/10.1002/jsid.1118
+Bhandari, P. (2021, October 18). Ethical considerations in research I types & examples.
+Scribbr. https:/ /www.scribbr.comlmethodology /research-ethicsl
+Bhatt, A. (2023, June 29). Wireless sensor network example using arduino, Engineers
+Garage- World Online Resources. https://www.engineersgarage.comlwireless-
+sensor-network -exampl e-using -ard uino/
+Byali, R., Divya, P. B., Maskika~·, S. V:' Chitrashree, N., & Bhonsle, S. H. (2022). lOT
+based early flood detection usmg machine learning. International Journal of
+Research publication and Reviews, 3(7), 3780-3783.
+https://doi.org/l0.55248/gengpi.2022.3.7.30
+Chaudhari, A. (2021, October 4). What is descriptive survey design. Decoding the Charm
+of Descriptive Surveys- Voxco. https:/lwww.voxco.com/blog/descriptive-survey-
+design/
+Cicek, D., & Kantarci, B. (2023). Use of mobile crowdsensing in disaster management: A
+
+
+95
+systematic review, challenges, and open Issues. Sensors, 23(3), 1-8.
+https:lldoi.org/10.3390/s23031699
+Collado, R. (2023, August 31). Ricardo Collado discusses the process of monitoring the
+levels in Narvacan, Sto. Tomas, La Union [Interview). The manual and automated
+water level monitoring.
+https:lldrive.google.com/drive/folders/lIf4s6FC6i_eg7VYS_IWA51 OxOHJG lXQ
+y
+Cruz, M. E., & Dizon, A. (2021). Proposed natural science e-instructional systems design
+(E-ISD) for the mendiola consortium. Bedan Research Journal, 6(1), 56-80.
+https://doi.org/JO.58870/berj.v6il.22
+De Los Santos, J. R. N., De Los Santos, M. G., Copino, R. c., & Loyaga, L. (2020).
+Bandilyo app: A disaster risk reduction monitoring and incident reporting system
+with geolocation and sms technology. App Disaster Risk Reduction Monitoring and
+Incident Reporting System Geolocation Technology, 1-4.
+https:lldoi.org/) O.J 109/hnicem51456.2020.9400138
+Dimitrova, M., & Snair, M. (2024). Classifying disaster risk reduction strategies:
+Conceptualizing and testing a novel integrated approach. Globalization and Health,
+20( I), ]-15. https://doi.org/IO.I ] 86/s12992-023-0 1006-8
+Frost, J. (2023, October 6). Weighted average: Formula & calculation examples. Statistics
+by Jim. https:llstatisticsbyjim.comlbasics/weighted-average/
+Gacu, J. G., Monjardin, C. E. F., Senoro, D. B., & Tan, F. J. (2022). Flood risk assessment
+. using gis-based analytical hierarchy process in the municipality of Odiongan,
+Romblon, Phi lippines. Applied Sciences (Basel), 12(19), 1-31.
+https:lldoi.orgIl0.3390/appI2199456
+Glupker, R. (2023, August 30). Advancing climate adaptation and coastal community
+resilience. Climate Program Office. https:llcpo.noaa.gov/advancing-climate-
+adaptation-and-coastal-community-resiliencel
+Goyal, K. (2024, April 21). 24 Exciting Io'T project ideas & topiCS. for ?eginner~ 2024.
+up Grad blog. https://www.upgrad.com/blogliot-proJect-ldeas-toplcs-for-
+beginnersl?fbclid=IwARI5xLAd?qZy-
+IS9gRGHlucRoNmG5XvmLWLjpYbPyVn3IymEdxlGQfKtZd4
+C., Xu, Q., Dong, X., Li, W., Zhao, K., Lii, H., & Ju, Y. (2021). Geohazard
+recognition and inventory mapping using airborne LiDAR data in complex
+mountainous areas. Journal of Earth Science, 32( 5), 1079-1091.
+https://doi.org/10.1007/s12583-021-1467-2
+Guo,
+
+
+96
+Harris, L. H. (2020, March 18). Agile organizations: Seven steps for excellence. Linkedin
+Forbes. https:/lwww.lillkedin.com/pulse/agi!e-organizations-seven-steps-
+excellence-lori-harris
+Hoangdien. (2022, October 4). Sagipl'inoy: A web and mobile-based Philippine emergency
+quick response portal. Web And Mobile-Based Philippines Emergency Response.
+https:l/vdocuments.mxlsagippinoy-a-web-and-mobile-based-uceduphjournalswp-
+contentuploads20 1605jr-it-paper-7 .html?page= 1
+Hu, L., Fang, Z., Zhang, M., Jiang, L., & Yue, P. (2022). Facilitating typhoon-triggered
+flood disaster-ready information delivery using SDI services approacb-a case
+study in hainan. Remote Sensing, 14(8), 1832. https:lldoi.org/l 0.3390/rs 14081832
+Huemer, L., & Wang, X. (2021). Resource bundles and value creation: An analytical
+framework. Journal of Business Research, J34, 720-728.
+https:/ldoi.orgIlO.l 0 16/j.jbusres.2021.06.0 18
+Imani, M., Lo, S., Fakour, H., Kuo, C. Y., & Mobasser, S. (2021). Conceptual framework
+for disaster management in coastal cities using climate change resilience and coping
+ability. Atmosphere, 13(1),1-16. https:lldoi.orgIl0.3390/atmosI3010016
+lustinlawrence, 0., & Hudson, D. (2022, August 25). Technology acceptance model
+questionnaire. Diana Hudson.
+https://maadianahudson.blogspot.coml2022/08/technology-acceptance-
+model.html
+Keith, 1. (2018, September 25). Flood warning systems: A cost-effective, essential
+solution. Freese and Nichols. https:llwww.freese.comlflood-waming-systems-a-
+cost-effective-essential-solutionl
+Kim, J., & Hastak, M. (2018). Social network analysis: Characteristics of online social
+networks after a disaster. International Journal of Information Management, 38( 1),
+86-96. https:lldoi.org/10.l016/j.ijinfomgt.2017.08.003
+Kumar, A. (2023, April 3). What ar~ d~velopmental research designs. RTF I ~ethinking
+the Future. https:l/www.re-thmkingthefuture.comlarchitectural-commumty/a8662-
+what_are-developmental-research-designsl
+Liang, Y., Li, X., Tsai, B., Chen, Q., & Jafari, .N. H. (2023): V-~loodNet.: A video
+segmentation system for urban flood detection and quantification. Environmental
+Modelling and Software, 160,1-5. https:l/doi.orgIl0.l016/j.envsoft.2022.105586
+Mamat, N. H., Othman, M. H. D., Othman, W. Z., & Noor, M. F. M. (2021). Internet of
+things in flood warning system: An overview on the hardware implementation.
+
+
+98
+Rankin, M. (2022, September 29). USACE signs chief's report for Miami-Dade coastal
+storm risk management project. Jacksonville District.
+bttps://www.saj.usace.army.mil/Media/News-Stories/Article/3186662/usace-
+signs-chiefs-report-for-miami-dade-coastal-stOim-risk-management-project/
+Rubio, C. J. P., Yu, I., Kim, H. Y., & Jeong, S. (2020). Index-based flood risk assessment
+for metro manila. Water Science & Technology: Water Supply, 20(3), 851-859.
+https://doi.org/10.2166/ws.2020.010
+Shah, W. M., Arif, F., Sbabrin, A., & Hassan, A. (2018). The implementation of an iot-
+based flood alert system. International Journal of Advanced Computer Science &
+Applications (Online), 9(11),620-623. https://doi.org/lO.14569/ijacsa.2018.091187
+Sharma, K. (2023, March 8). FLODAREM: Intelligent flood detection and dam reservoir
+monitoring system. IEEE Conference Publication IEEE Xplore.
+https://scholar.google.com/citations?view_op=view _ citation&hl=en&user=ktN9R
+OOAAAAJ&citatlon_for_ view=ktN9ROOAAAAJ: UeHWp8XOCEIC
+Sbi, Q., Wan, H., Liu, W., Han, H., Wang, Z., & Li, F. (2023). Preventive allocation and
+post-disaster cooperative dispatch of emergency mobile resources for improved
+distribution system resilience. International Journal of Electrical Power & Energy
+Systems, 152, 1-26. https://doi.org/1 0.1016/j.ijepes.2023.1 09238
+Siddique, A. A., & Qadri, M. Y. (2018). Wireless sensor network (WSN) based early flood
+warning system. International Journal of Information Technology, 12(2), 567-570.
+https://doi.org/l0.1007/s41870-018-0125-0
+Technology, E. (2022, September 29). Earlyflood detection system using Arduino =source
+code. Electrical Technology. https://www.electricaltechnology.org/2021103/early-
+flood-detection-system.html
+Vaidya, D. (2024, March 15~. Weight~d mean formula. WallStreetMojo Team.
+https://www.wallstreetmojo.com/welghted-mean-
+[ormulal?fbclid=IwARlSBSAUsT4qLL9m4sNmeDncya6jArhiDvuIYp-
+yygKM49kZAgqWlSLE_9c
+Valenzuela, V. P., Esteban, M., Takagi, H., Thao, N. D., & Onuki, M. (2020). Disaster
+awareness in three low risk coastal communities in puerto princesa city, palawan,
+philippines. Internatio~~l Journal of Disaster Risk Reduction, 46, 1-39.
+https://doi.org/1O.l016/j.ljdrr.2020.101508
+Wang, L., Cuia, S., Lid, Y., Huang, H., Manandhar, B., Nitivattananon, V., Fang, X., &
+Huang, W. (2022). A review of the flood management: From flood control to flood
+resilience. Heliyon, 8(11), 1-9. https://doi.org/l0.1016/j.beliyon.2022.eI1763
+
+
+99
+Wang, Y., Li, i, Zhao, X., Feng, G., & Luo, X. (2020). Using mobile phone data for
+emergency management: A systematic literature review. Information Systems
+Frontiers (Print), 22(6), 1539-1549. https://doi.org/lO.1007/s10796-020-10057-w
+World Bank Group. (2023). Towards a comprehensive disaster risk management system
+for the Philippines.
+https://www.worldbank.org/en/coliDtJy/philippines/brief/towards-a-
+com prehensi ve-disaster- risk-managemen t-system -for-the-phi lipp ines
+Zhang, R., Dai, J., Bai, Y., Barone, D., & Hill-Beaton, L. (2023). Risk-based transportation
+infrastructure management: An integrated framework and casestudy in usvi against
+coastal flood and sea level rise. The Hong Kong University of Science and
+Technology, 233(1), 1-33. https://doi.org/l 0.2139/ssl11.4386044
+
+
+APPENDICES
+
+
+101
+APPENDIX A
+Interview Guide Questionnaire
+Don Mariano Marcos Memorial State University
+South La Union Campus
+COLLEGE OF COMPUTER SCIENCE
+Agoo La Union
+Name: ___
+l.What methods, both manual and automated, are used to predict flooding in different
+areas?
+2.What solutions and preparations has your organization put in place as part of its flood
+preparedness plan?
+3.What strategies can affect areas and organizations employ to overcome this situation?
+
+
+102
+APPENDIXB
+Sample Response Interview Guide Questionnaire
+Don Mariano MarcosMemorial SrateUniversity
+South La Union Campus
+COLLEGE or COMPUTER SClENCE
+Agoo La Union
+Name: ____:R_I_W------=-D_'D __C,_·_Ct_b..::.~~!;A_;rJD;.__ _
+1.What methods, both manual and automated, are used to predict flooding in different
+areas?
+'hit DOrJ1 tfA.\?t AN'f In1TGMt\:i!,,'l?M!illtDp$ 0>\,>,1 WE lA,(tD D\J.
+()\I-~DAR - I!:>Me::O lY\f:rtml2 lb 1RAll:. TlDI'-L C--!u,es:.
+2. What solutions and preparations bas your organization put in place as part of its flood
+preparedness plan?
+\?Af:1 or '{JUlY, PRE'f~WNt.sS ¥'IN'' I! ~ INf()f-M Dtrfv) wlttfJ
+\0 E:"AClAAtE- AhllJ toNOvIc.1 .fE"MINf'cK -rob~R OJm~\~\\?\',RIV\1)·
+3.Whal strategies can affect areas and organizations employ to overcome this situation?
+
+
+103
+APPENDIX C
+User Technology Acceptability Questionnaire
+(Justin lawrence & Hudson, 2022)
+Republic of the Philippines
+DON MARIANO MARCOS MEMORIAL STATE UNVERSITY
+South La Union Campus
+College of Computer Science
+Consolacion, Agoo, La Union
+Name: __
+Address: _
+Direction: Please read each of the items carefully. Using the scale below, please check (f)
+the appropriate column that best describes your answer regarding on the usability "IOT-
+BASED FLOOD ALERT SYSTEM FOR NARVACAN, STO. TOMAS, LA UNION".
+Scale
+7
+6
+5
+4
+3
+2
+1
+Descriptive Equivalent Rating
+Strongly Agree
+Agree
+Somewhat Agree
+Neutral
+Somewhat Disagree
+Disagree
+Strongly Disagree
+System Usefulness 1 2 3 4 5 6 7 NA
+1. How often do you use the system to check
+for flood alerts?
+2. Do you find the system helpful in making
+informed decisions about your safety during
+flood events?
+3. Does the system provide enough
+information to prepare for floods effectively?
+
+
+104
+4. Has the system helped you feel more secure
+and prepared for flood emergencies?
+5. Do you find the system a valuable tool for
+managing flood risks in your community?
+6. Overall, how satisfied are you with the
+usefulness of the system?
+Information Quality 1 2 3 4 5 6 7 NA
+7. Do you believe the information provided by
+the system is accurate and reliable?
+8. Is the information provided by the system
+timely and up-to-date?
+9. Do you find the information provided by the
+system to be clear and easy to understand?
+10. Does the information the system provides
+address your community'S specific needs?
+1 I. How confident are you in the accuracy of
+the information provided by the system?
+12. Overall, how satisfied are you with the
+system's quality of information?
+Interface Quality 1 2 3 4 5 6 7 NA
+13. Do you find the system easy to navigate
+and use?
+14. Do you find the system interface visually
+appealing and user-friendly?
+15. Is the system accessible to users with
+different levels of technical expertise?
+16. Does the system provide users with clear
+instructions and helpful feedback?
+17. How intuitive do you find the system's
+design and layout?
+18. Overall, how satisfied are you with the
+system interface?
+
+
+105
+Thank you very much.
+"
+Respondent's Signature Date
+
+
+108
+APPENDIXE
+Matrix of Acceptability Results
+1. System Usefulness
+NO. Ql Q2 Q3 Q4 Q5 Q6
+RESPONDENTS-- 01 7 7 7 7 7 7
+02 7 6 6 7 7 7
+03 7 6 6 7 6 6
+04 5 7 7 5 7 7
+05 7 7 7 7 7 7
+06 7 7 7 7 7 7
+07 7 5 6 5 6 6
+08 7 7 7 7 7 7
+09 7 7 7 7 7 7
+10 7 7 7 7 7 7
+11 7 7 7 7 7 7
+12 7 7 7 7 7 7
+13 5 6 7 7 7 7
+14 7 7 7 7 7 7
+15 7 6 7 6 6 6
+16 7 7 7 7 7 7
+17 7 7 7 7 7 7
+18 7 7 7 7 7 7
+19 7 7 7 7 7 7
+20 7 6 7 7 7 7
+21 7 7 7 7 7 7
+22 7 7 7 7 7 7
+23 7 7 7 7 7 7
+24 7 7 7 7 7 6
+25 7 7 7 7 7 7
+26 7 7 6 6 7 7
+27 7 7 7 7 7 7
+28 7 7 7 7 7 7
+29 7 7 7 7 7 7
+30 7 7 7 7 7 7
+TOTAL: 6.93 6.77 6.87 6.87 6.90 6.87
+Total Grand Mean: 6.87
+
+
+109
+2. Information Quality
+NO. QI Q2 Q3 Q4 Q5 Q6
+RESPONDENTS- - - - -- ---
+01 7 7 7 7 7 7
+02 7 6 7 7 6 7
+03 7 7 6 7 6 6
+04 5 7 7 7 7 7
+05 7 7 7 7 7 7
+06 7 7 7 7 7 7
+07 6 7 6 6 5 6
+08 6 7 7 7 7 7
+09 7 7 7 7 7 7
+10 7 7 7 7 7 7
+11 7 7 7 7 7 7
+12 5 6 7 5 6 7
+13 7 7 7 7 7 6
+14 7 6 7 7 7 7
+15 6 6 7 6 6 7
+16 7 7 7 7 7 7
+17 7 7 7 7 7 7
+18 7 7 7 7 7 7
+19 7 7 6 6 7 7
+20 7 6 7 6 7 6
+21 7 7 7 7 7 7
+22 7 7 7 7 7 7
+23 7 7 7 7 7 7
+24 7 7 7 7 6 7
+25 7 6 7 7 7 7
+26 7 7 7 7 7 7
+27 7 7 7 7 7 7
+28 7 7 7 7 7 7
+29 7 7 7 7 7 7
+30 7 7 7 7 7 7
+TOTAL: 6.83 6.80 6.90 6.80 6.77 6.87
+Total Grand Mean: 6.83
+
+
+3. Interface Quality
+NO. Ql Q2 Q3 Q4 Q5 Q6
+RESPONDENTS
+01 7 7 6 7 7 6
+02 7 6 6 6 7 7
+03 7 7 7 7 7 7
+04 5 6 7 5 6 7
+05 7 7 7 7 7 7
+06 7 7 7 7 7 7
+07 7 7 7 7 7 7
+08 7 7 7 7 7 7
+09 7 7 7 7 7 7
+10 6 6 6 6 7 6
+11 7 7 7 7 7 7
+12 7 7 7 7 7 7
+13 7 7 7 7 7 7
+14 7 6 6 5 6 7
+15 7 7 6 7 6 7
+16 7 7 7 7 7 7
+17 7 7 7 7 7 7
+18 7 7 7 7 7 7
+]9 7 6 7 7 7 7
+20 6 7 6 7 7 7
+21 7 6 7 6 6 7
+22 7 7 7 7 7 7
+23 7 7 7 7 6 7
+24 7 7 7 7 7 7
+25 7 7 7 7 7 7
+26 7 7 7 7 7 7
+27 7 7 6 7 7 6
+28 7 7 7 7 7 7
+29 7 7 7 7 7 7
+30 7 7 7 7 7 7
+TOTAL: 6.93 6.77 6.87 6.87 6.90 6.87
+TotalGrand Mean: 6.87
+110
+
+
+APPENDIX I
+Application for Ethics Review
+Application for Ethics Review of a New
+Protocol
+Instructions to the Researcher: Please accomplish this form and ensure that you
+hove included in your submission the documents that you checked below (in
+Section J. Checklist of Documents).
+1. General Information
+"Title of Study lOT-BASED FLOOD ALERT SYSTEM FOR NARVACAN, STO.
+TOMAS, LA UNION
+·RETC Code 'Study Site Narvncnn, Sto. Tomas,
+(To be provided Lu Union
+byRETC)
+'Name of Carl Anthony V. Dela Cruz Contact "Tel No:
+Researcher) Information 'Mobile No: +63963-987-
+337
+Jinky Rose L. Deb Cruz Fax No:
+'Co-researcher Justine O. Estolcro
+(if any) Brenda J. Lachicu 'Email:
+Rey John E. Pineda cadclncru7,@SIUdcl1l.d,nllll1ml.
+Andrea P. Viduya cclll.ph
+"Institution Don Mariano Marcos Memorial State University-South La Union
+Campus
+"Address of Barangay Consolacion, Agoo, La Union, 2504
+Institution
+o Clinical Trial (Sponsored) o Biomedical Research
+(Retrospective, Prospective and
+diagnostic studies)
+o Clinical Trials (Researcher- o Stem Cell Research
+initiated)
+o Health Operations Research o Genetic Research
+"Type of Study (Health Prqgrams and Policies)
+o Public Health / o Social/Behavioral Research
+Epidemiologic Research
+I8lOthers:
+Descriptive nnd Developmental Research
+o Multicenter
+I
+o Multicenter
+I o Single Site(International) (National)
+® s-ir-funded o Sponsored by a
+Pharmaceutical Comean~
+·Source of OGovernment-Funded Specify;
+Funding o Scholarship/Research Grant
+o Institution-Funded
+----
+D~SU-RETC-F013
+Rev.OO (06.01_2021)
+117
+
+
+APPENDIXJ
+Informed Consent Form (English Version)
+College of Computer Science
+This informed conscnt form is for' the l)llnlnga), councils, lind residents of Banlngay
+Narvacuu, Sto. Tomas, Ln Union who we nrc inviting to participate in this capstone
+research project, titled" 101'- BASED FLOOD ALERT SYSTEM FOR NARVACAN,
+STO. TOMAS, LA UNION 11
+Name of Principal Investigator: Carl Anthony V. Dcln Cruz. Jinky Rose L. Dcla Cruz, Justine
+O. Estolero, Brenda J. Lachica, Rey John E. Pineda, Andren 1'. Viduya,
+Name of Organization: Don Mnri:rno Mnrcos Memorial State University - South La Union
+Campus
+Name of Sponsor (if applicable):
+Name of Project and Version: IOT- BASED [OLOOn ALERT SYSTEM FOR
+NARVACAN, STO. TOMAS, LA UNION
+Part I: Inforrnution Sheet
+Introduction
+flooding is a major natural hazard in the country causing significant damage to property.
+infrastructure, and even people's lives, Bnrnngoy Narvacan, Sto. Tomns, La Union is vulnerable
+10 flooding due 10 low-lying topography and proximity to rivers and sen. To avert such situation,
+it is important 10 monitor and receive timely alerts about the water level situation. This study
+aims to develop an loT-based flood alert system for Narvucnn, Sto. Tomas, La Union.
+Specifically, the study seeks to achieve the following objectives: I) develop 11 prototype orthe
+loT-Bused Flood Alert System adopting the Agile methodology ancl2) assess the system's level
+of acccplObilily using the User Technology Acceptability Qucstionnuirc. Throughout the study,
+descriptive and developmcnlal research methods will be employed to accomplish its objectives.
+It focuses on the water level monitoring and curly warning system via SlVIS that alerts
+individuals for p01ential flood event, giving time to evacuate nnd ubntcimpact orflooding.
+Purpose of the rcsellrch
+The purrose ofthc research is to dcvclup nu 10T-hused 1100d alert system till'Nurvacun,
+S '1'0 las La Union.Throughout the study. descriptive lind devclllpmcntul research mcthudsto. n , I' I' hi . ., Iwill he employed to ncc?l1l p ISI us ~ ~~Cl.lvcs. It. fllcuses on the wntcr h::VC~ 1~'lIl\1~orrng nne curly
+, 'ystclll viu SMS ihat alcrts individual, hll' potential Iloud event, gIvIng tunc ro cvncuutcwarning s
+DNVAMSU.RETC-F039
+Rev.DO (12.15.2021)
+120
+
+
+College of Computer Science
+and abate impact of flooding particularly in arcus vulnerable to the effects of climate change anti
+human activities.
+Type of Research Intervention
+The research intervention is related to develop a prototype of the loT-Based Flood Alert
+System adopting the Agile methodology and assess the system's level of acceptability. Without
+additional information, it's challenging to determine the specific details of the intervention.
+However, it's possible that the system may involve the use of data collection tools such as
+decision support or satellite imagery to monitor changes in the coastal environment, including
+changes in water level, erosion, or sedimentation patterns. The system could also involve the
+development of a database or visualization tool that allows users to track and analyze these
+trends over time. The research intervention appears to be aimed at providing valuable
+information to stakeholders in the coastal areas of Narvacan Sto. Tomas, La Union, such as local
+governmentS, environmental groups, and researchers, to help them make informed decisions and
+plan for the future.
+Participant Selection
+As researchers in the field of Computer Science, we would like to invite you 10
+participate in our research project. We believe that your expertise in evaluating model
+performance would be a valuable addition to our team, as we work on developing our own
+model.
+Voluntary Participation
+Your involvement in this study is entirely voluntary, and you have the freedom to choose
+whether or no! to participate. Declining to participate will not impact the cure. services, or
+benefits lllal you are entitled to receive.
+Procedures
+A. The researchers will be collecting relevant datu 011 coastnl trends in Nurvacnn, SIO.
+Tomas, La Union, such us historical water levels, erosion rates. sedimentation patterns.
+and other enviroOlnel1ll11 indicators and with the proper practicing ot'sociul distancing and
+wcaring f<lce mosk will gathering interview to the respondents.
+13. In developing the system with designing and building a system 10 develop lII\ lol-buscd
+flood alert system lor Narvacan, Sto. Tomas, La Union. The rescnrchcrs could involve
+DMMMSU-RETC-F039
+Rev.OO(12.15.2021)
+121
+
+
+College of Computer Science
+selecting appropriate data collection tools, such as sensors or remote sensing techniques,
+and developing :1 database or visualization tool to process and display the data.
+C. The researchers will be testing the system which evaluates the performance of tile system
+by comparing its results to the baseline data and other established measures loT-based
+flood alert system. As part of the henlth protocol in testing the researchers sanitize and
+observe proper disinfection.
+D. The researchers will also be refining the system based on the results of the testing,
+making adjustments and refinements to the system 10 improve its accuracy and
+effectiveness.
+E. The researchers will implement the system once the system is fully developed and
+refined: it can be deployed in the field to collect ongoing data on loT-based flood alert
+system for Narvacan. Sto. Tomas, La Union with proper safety and health care protocols.
+Duration
+The duration of the research study is nine (9) months frOI11August 2023 to April 2024.
+Risks
+Participants in this study will not be required to disclose any confidential information,
+such as their email address, password, records, birtlldote. or phone number. The study will
+involve face-to-face testing, and both the researchers and participants will adhere to minimum
+health protocols and standards. The equipment that participants will lise during testing will ulso
+be sanitized to ensure safety.
+Benefits
+Taking part in this research will be highly beneficial in cvnlunting the c:-:pcrilllcnt's
+outcomes. Participation is expected to assist the researchers in guining u deeper lIndcl'st;lllding 0['
+the factors that significantly influence the study, leading to improved results.
+Reimhursemenl:;
+PU(1iciponts will nOI, be charged lor participating in this research. l lowcvcr, their time und
+work will be greatly apprcchucd.
+Confidcnlialif)'
+D~SU-RETC-F039
+Rev.OO (12.15.2021)
+122
+
+
+College of Computer Science
+All data collected (IS part of this study that could potentially identify participants will be
+kept confidential and shared only with their consent. Participation in the study may draw
+attention from other parties interested in the project, but the researcher will not share any
+personal information of participants with anyone outside the research team, The researcher will
+maintain strict confidentiality of all information gathered, with access to the data limited only to
+authorized members of the research team. No confidential protocol information will be made
+public in this research.
+Sharing the Results
+The researchers will ensure that any information collected as part of the study that could
+be used to identify participants will be kept confidential and shared only with their consent.
+Personal data will only be accessible to authorized members of the research team, and all
+collected data will be treated with strict confidentiality. The researchers will follow the
+prohibition of disclosing details about the study technique. Participants' information will be
+accessible only to the research team, and no one outside of the team will have access to it.
+Right to Refuse or Withdraw
+Participants have the right to withdraw their participation at any time without losing any
+legal claims, rights, or remedies. They arc not obligated to participate and may decline to do so at
+any point. Participation in the research project is voluntary, and participants may choose not to
+answer survey questions without any negative consequences. They arc not under any pressure to
+give their permission and can decide not to participate if they do not want to.
+Who to Contact
+This proposu! has been reviewed and upprovud by DMMMSU Research BIllies Committee.
+which is a mll/Illil/et! whose tusk n ls to make sure that research participants an' prutectedfnun
+/1(1"/11,IfY/)/1 wish (0 fi/ld about more about tlu: ('(/1/11/1;(/('1!, contaet:
+Joel C Es(aci()
+Chair, /}MMMSU tu«:
+D~SU-RETC-F039
+Rev.OD (12.15.2021)
+l23
+
+
+College of Computer Science
+Do YOII kilo", that you do 1101 have 10 take purl ill this .\·III(~)1 {(YOII do not wish 10? YOII COIl so)'
+No {f.\"I)IIwish 10? Do )'011 know that yUII can ask me questions later. lf ),011 wish 10? Do YOII
+know that I have given the contact details of thu person 11'110call give ),011 1II0re information
+about the study?
+You can ask me any more questions about any part of the research study. if you wish to. Do you
+hove any questions? You can contact me through the following:
+Dcla Cruz, Carl Anthony V.
+Group Leader,
+Enwi I: cndeI3crll7:lWstlJdcllt.<imrnlllslI.ctiu.ph
+Contact Number: 09639874337
+Part l l: Certificate of Consent
+I have read the foregoing information, or it has been read 10 me. J have had the
+opportunity to ask questions about it and any questions I have been asked have been
+answered (0 my satisfaction. I consent voluntarily to be a participant in this study
+Name ofPnrticip::mt:
+Signature of Participant:
+Date:
+Day/month/year
+Statement by the researcher/person luldng consent
+J have accurlltcly read out the illforll~a~ion sheet to Ihe potential purticipnut, and to the best
+of my ability made sure that the parhClplllllllnderslllnds thnl the following will be "one:
+J. __ ~_---------------
+2. ------------------------------------
+D~SU-RETC·F039
+Rev.OO (12.15.2021)
+124
+
+
+"
+College of Computer Science
+3. __
+I confirm that the participant was given an opportunity to ask questions about the
+study, and all the questions asked by the participant have been answered correctly and to
+the best of my ability. I confirm that the individual has not been coerced into giving
+consent, and the consent has been given freely and voluntarily.
+A copy of this ICF has been provided to the participant.
+Name of Researcher/person taking the consent
+Signature of Researcher /person taking the consent
+Date
+Day/lnontlt/year
+D~SU-RETC-f039
+Rev.OO (12.15.2021)
+125
+
+
+126
+APPENDIX K
+Informed Consent Form (Filipino Version)
+College of Computer Science
+Ih!lh:lndog sa inyo ang pubuyug ng pahintulot para sa Olga konseho at rcsidcntc sa
+Burunguy N:Jn':Jcan, Sto. Tomas, La Union na iniirnbitahan naming rnakilahok sa
+proycktoug pnnunaliksik na ito, 11:\ muy pamugat 11a "lOT- BASED FLOOD ALERT
+SYSTEM PARA SA NARVACAN, STO. TOMAS, LA UNION."
+Pungunnhing In\'cstigudor: Carl Anthony V. Dela Cruz, Jinky Rose L Dela Cruz, Justine O.
+ESI01cro. Brenda J. Lachica. Rey John E. Pinedo. Andrea P. Viduya.
+P:mgalan ng Organisa~yon: Don Mariano Murcos Memoria! State University - South La
+Union Campus
+Pangalan ng Sponsor (kung mayroon):
+Pangalan ng Proycktc at Bcrsyon: lOT- BASED FLOOD ALERT SYSTEM PARA SA
+NARVACAN, STO. TOIVL-\S, LA UNION
+Buhagi 1: Irnpormasyun Sheer
+1n trod u ksyon
+Ang pagbaha :1)' isang P,lJ1gunahing natural no panganib sa bansn na nagdudulot ng
+Olalaking pinsala sa ari-arian, illlpraslruktllra. at maging sa buhay ng Olga tao. Ang Barangay
+Narv3call. SIO. Ton~as. La ~nion til' maaaring mapinsaln sa pagbaha dahil sa mababang
+lopogrnpiya at rnalapit sa mga ilog at dagat, Upung maiwasan ang gunitong sitwasyon, mahalega
+na bantayan 01 mukarauggap ng timely no ruga obiso tungkol sa kalagayan ng antas Ill; tubig.
+Lo),unin Ilg pag-aaral no ito .no m:Jg-devclop ns isang lo'Ivbnscd flood alert system para sa
+Narvacan, Sto. Tomas. La Union. Panikular. ans pag-aaral ay naglalnyon no mnknmit ong mga
+sumusunod na layunin: I) mag-dcvclop ng isang prototype ng lo'I-Bnscd Flood Alert System na
+gumogarnit ng Agile ml!lhod?~og)' at 2) suriin ang antas ng pugtnnggup ng sistema gnmit ang
+User Technology Acceptability Qucstionnaire. Sa buong pug-aural. gugumitin aug mgu
+deskriptibo at dl!wlopmcnwl na mgu pamillllarOlan ng panannliksik upang maknmit ang rngn
+layunin nito. Nnkntuou ito su pugmnmannum ng nntns ng tubig lit sistema ng muagong bnbaln sa
+pamarnagitan Ilg SMS O;Jnog,ulll~lso :>.1mgu indibidwul para sa potcnsynl na pangyaynring bnha,
+n ...nagbibigay nIl O"'J~ upang lumikus 1I1bnwasun Hng cpckto Ill; pngbnhu.
+DMMMSU·RETC·F039
+Rev,DO (12.15.2021)
+
+
+127
+College of Computer Science
+Ang layunin ng pannnaliksik ay mag-develop ng isang Io'I-bascd flood alert system para
+sa Narvacan, SIO. Tomas, La Union. Sa buong pag-aaral, gagamitin ang mga dcskriptibo at
+developmental no mga pamumaraan ng pananaliksik upung makamit :mg mga layunin nito.
+Nnkntuon ito sa pagmarnanmnn ng OIllOS ng tubig at sistema ng mangang babnla sa pamarnagitan
+ng SMS na nag-aablso 5:1 mga indibidwal para 53 potcnsyal 113 pangyayaring baha, na nagbibigay
+ng oras upung lurnikas :1\ bawasun ang cpckto ng pagbaha 1010na sa rnga luger no vulnerable sa
+epckto ng pagbabago ng klima <II gawain ng 1:.10.
+Uri IIg l'ananalil(~ik nu Intcrvcnsyon
+Ang intcrbcnsyon sa pananaliksik ay may kinalaman sa pug-develop ng isang prototype
+ng lo'I-Buscd Flood Alert System na gurnagarnit ng Agile methodology at suriin aug antas ng
+paglanggap ng sistema, Nang walang karagdagang impormasyon, mahirup malamun ang mga
+parlikular na dctalyc ng iruerbcnsyon. Gayunparnan, posible na ang sistema ay kasama ang
+paggamit ng mga 1001 sa pagtitipon I1g datos tulad ng dcsisyon na suporta 0 mga larawang
+satellite upang
+bantayan nng rnga pagbabago sa kapaligiran sa baybayin, kasarna ang mga pagbabago sa
+antas ug tubig, erosion, 0 ruga pattern I1g scdimento. Manari ring isarna ng sistema ang pag-
+develop ng isang dctabasc 0 1001 sa pngpapakita na nagpapahintulot sa mga tagagamit na
+magsubaybay at mag-analisa ng mgn trend no ito so pnglipas ng panahon. Aug iuterbensyon sa
+panan;Jliksik ay lila Ilaglalayong rnagbigay ng mahologang impormnsyon sa mga stakeholder so
+mga baybayin ng Narvacan SIO. Tomas, La Union, tulad ng lokal na parnahalaan, mga grupo sa
+kalikasan, at mga mananaliksik. upang iulungan silang gumawa ng mga maunawaang desisyon at
+magplano para sa hinuharap.
+Pagpili ng mgu Kalahok
+Bilang rnga mananaliksik sa larangan ng Compuler Science, nais naming imbitahan ka na
+makilahok sa arning proyeklong pananaliksik. Noniniwola karni no ang iyong kaalarnan so
+pagtatasa ng pagganap ng modelo ay magiging l11ahalagong dagdag sa aruing kopouan, habang
+gumagawa karni ng aming sariling modele.
+Bolunfaryong Pakikilahok
+Allg iyong paglahok sa pog.aurol no ito cy lubes no bolul1lnryo, (It mn)' knlnynon kang
+pumili kung nais mo~g makililhok 0 hindi. Ang paglanggi na mnkilnhok ny hindi mnknkonpcklo
+sa pangangalaga, serblsyo, 0 mga benepisyo na iyong knrapnt-dnpUl na f1101llnggnp.
+D~SU·RETC·F039
+Rev.OO (12..15.2021)
+
+
+128
+"
+College of Computer Science
+Proscso
+A. 1\ng ruga mananaliksik ny magkokolcktn ng kaukulang datos sa mga trend sa baybayin sa
+Narvacan Sto. Tomas, La Union, tulad ng rnga nakaraang antas ng tubig, rate ng erosion,
+mga pattern ng scdimcnto, at ibn pang mga indikador sa kapaligiran.
+B. Sa pag-dcvclop ng sistema, kasama ang pagdidiscnyo HI pagtntayo ng isang sistema para
+sa peg-develop ng isang lo'I-based flood alert system para sa Narvacan, Sto. Tomas, La
+Union. Manuring isama ng Olga mananuliksik ang pagpili ng angkop na rngn tool sa
+pagtitipon ng datos, tulad ng rnga sensor 0 mga teknik Sa malayong pag-aaral, at pag-
+develop ng isang dntabuse 0 1001 sa pug-visualize upang iproscso at ipakita ang mga
+datos.
+C. Ang mga mananaliksik ay magic-test ng sistema na nagtatasa ng pagganap ng sistema sa
+parnamagitan ng paghahambing ng mga rcsulia nito sa batayan na datos at ibn pang rnga
+nakatalagang sukat ng loT-based flood alert system.
+D. Ang rnga mananaliksik ay rnagrerefine din ng sistema batay sa rnga resulta ng testing,
+gagawo ng rnga pag-aayos at pagpapainam sa sistema upang mapabuti ang kanyang
+katiyakan at kahusuyan .
+. E. Ang rnga mananaliksik ay ipapatupad ang sistema kapag ang sistema ay ganap no
+nadevelop at na-refine; manari itong ilunsad sa field upang magkolekta ng patuloy no
+datos sa lo'I-based flood alert system para SR Narvacan, Sto, Tomas, La Union.
+Tagal
+Ang tagal ng pag-aaral ng pananaliksik oy limnng (5) buwan.
+P;HlgUDilJ
+Ang mga kalahok su pug-uurnl na ito ay hindi hinihillngung ibunyng ung nnumang
+kumpidclIsyol na imporrnosyon, tulad ng kunilang cmnil address. password. rckord, pe~sn ng
+k<Jpnnganuklln,0 numero ng.lC!~cpl)no. Ang pag-uurnl"1mngpnpakirnng face-to-face testing, at
+parchong ullg mga munannllk:;lk nt rn~lt kaluhok ny. ~l1SUIH)(J sa minimum na mgn proloc.o~ lit
+pumnntuyan su kulusugun. An,g ko.gurmtun no gugurmun ng I1)g<lkulnhok su testing Ily mugigmg
+sanitized din upung siguroduhlllg ligtus,
+D~SU·RETC-F039
+Rev.DD (12.15,2021)
+
+
+129
+College of Computer Science
+lkncpisyo
+:\ng pnglahok sa panunuliksik na ito uy lubhang maknkatulong so pagtatasu ng mgo
+rcsulia ng ckspcrimcnto. lnaasahan na ang pngtuhok ay rnnkokatulong sa mga mananaliksik na
+111:1gk:lroon ng111:l~ malalirn na pnng-unnwu S;1 mga snlik IW lubos na nakakaapckto sa pag-aaral,
+na rnugdaduln sa rn ns mahusay na mgn result ....
+Rei III bu 11»),0
+Hindi sisingilin ang mga knlahok p a ra sa paglahok sa pannnaliksik na ito. Gnyunpaman,
+nng k:mil:mg eras ai trabaho ny lubes na pinahahalagahan.
+Pagiging Kumpidcnsyal
+Ang lahat ng datos no kolcktado bilang bahagi ng pag-aaral na ito na maaaring potcnsyal
+na makaknkilnl:l sa ruga kalahok ay mununntiling kurnpidensyal al ibabahagi lamang sa kanilang
+pahinlulol. Ang pnglahok sa pag-aaral ay manuring magdulot ng atensyon mula sa ibn pang rnga
+p:lrtido nn intcrcsndo sa proyckto, ngu~it hindi ibabahagi ng mananaliksik ang anumang personal
+na impomwsyon ng mga kulahok sa sinumang labas ng koponan ng pananaliksik. Panatilihin ng
+m:l11:l11:lliksikaug striktong kurnpidcnsyalidad ng lahar ng irnponnnsyong nakuha, na may access
+S3 men datos limitado larnang sa ruga nwtorisadong miycmbro ng koponan ng pananaliksik.
+Wala~g kumpidensY31 na irnpormasyon Ilg protocol nil ibibigay sa publiko sa pananaliksik no ito.
+PaglJ:'l uahugi ng Mgn Rcsulta
+Tiyakin ng ruga rnanunaliksik na allg :lI1umang impormnsyong nnkuha bilang bahagi ng
+pag-33ml na manuring gom_ilin upan~ makilala aug mga kalnhok ay mananaiiling kumpidensyal
+;II lbuhahugi larnong sa kanilang pahintulot. Aug personal no data ny ma£iging accessible lamnng
+sa rnga uwiorisadong miycn~br~ ng koponD~lng pnr~analiksik. at ang lahat ng kolekradong datos
+a)' trinato nang m:JY mahigpit na kumpidcnsynlidad. Susundan ng mga manannliksik ang
+irinagbnhawal na pagbi~i~i1Y ng mg~ dcralyc tungkol sa tcknik ng pag-aarnl. ,\ng impormnsyon
+nz mga kalahok "y magrgrng nccessiblc lamnng s~ koponan ng pnnannliksik. nl wnlnng sinurnan
+s; lubes ng kopcnan :.lIlg mugkakuroou ng access dito.
+KarurU1;J1I IIa TUnl!1nJ.:gi () MaJ.:wilhdnlw
+May k:m.lpatall ailS mgu kuluhok nn flHlglVitIHJrt~\v flg kliflilllflg purtlsipusyon t~nU~ltl~lg.
+111.,1.1.,11·1WI1\\,ala ang:Intl1lWflg legal 1111chum. knrnlllililil II I<:nWdYll. HlI1dl ~,tt1
+IlrJ~ nang U ' • • . • - •
+bl ... 1 • nnkill1hnk :11 Il1UllUl'I ~lIl1llghl111l.lllggl Ol1lll11llllg 01"l1S. Ang pllglnhok sn prlly~ktllng
+I) JI!:JUO na , . ·1·· I.
+. )"k ··k :I)' holunluryo, ill nlUnllring pi 1111 ng Illgil ,;nluhuk 1111 hiJl(1i sugUlill nngmgo lmumg
+panano I 51. 1 ' w.,);JIl" antllll:lllg negnlihllng kahihinl11nlln. Ilimii silu pinipilil lH11l1:1!!higuy ngsa ~ur\lcy naf g • C' . 1 ' ~··1 I ',ulIlnl :Jl rnaaari silang nwgpl1s)'nl111 llndi 1llukilllhuk kung hindi niln nllis.kanl ang fln 11
+D~SU-RETC·F039
+Rev.OO (12.15.2021)
+
+
+-------------------~-------------------------------------,
+College of Computer Science
+Sino ang Kukontakin
+Ang proposal na ito ay na-rcvicw at na-aprubahan I1g DMMMSU Research Ethics
+Commiucc, na isang komitc na ang tungkulin ay tiyakin nu ang rnga kalahok sa panannliksik ay
+protckiado mula sa pinsala. Kung nais mons malarnan ang higit pa tungkol sa Komitc, mukipag-
+ugnayan kay:
+Joel C. Estacio
+Chair, DMMMSU REC
+1",,<"'(,.<1111111111 \II. (1(/'1. ph
+Alam mo ba na hindi mo kailangung rnakilahok sa pag-aaral na ito kung hindi mo nais? Manari
+kang rnag-sabi ng Hindi kung nais mo? Alarn 1110 ba na manari mong ako tanungin ng mga
+tanong rnarnaya, kung nais mo? Alam mo ba na ibinigay ko aug rnga detalye ng kontak ng taong
+rnaaaring rnagbigay sa iyo ng karagdagang impormasyon tungkol sa pag-aaral?
+Maaari mong itanong sa akin ang anurnang ibn piing mga tanong tungkol so anurnang bnhagi ng
+pag-aaral na pananaliksik, kung nais mo? Mayroon ka bang anumang mga tanong?Maaari mong
+makipag-ugnayan sa akin sa mga surnusunod:
+Dela Cruz, Carl Anthony Y.
+Tagaparnahala ng Grupo,
+l.mail: cac.Jclacru~I('I.')tudcl1t.tlmmmsll.cdll.ph
+Numcro: 09639874337
+J1l1hagi 11: Scrtipiko ngPuhintulor
+Aking binaslI ang nasabing impormasyon, 0 ito ay binusn sa akin. Aking nngkuroou ng
+pagkakalaon na magta.nong tungkol dito at anumang mga tunong no 11IIiInnons ko 0)' .nnsllgot sa
+aking kusiyohan. Ako ay kusangpumapayug na rnnging isung kalahok sa png-nnralnn 110.
+DMMM5U·RETC-F039
+Rev.DO (12.15.2021)
+130
+
+
+College of Computer Science
+Pangulun ng Kalnhck:
+Lagda ng Knhalok:
+Pctsu:
+Araw/Buwan/Taon
+Pahayng ng mananaliksik/pcrsonal na kumukuha ng pnhintulot
+Aking na-basa ng 13m a ang imporrnasyon sheet su potcnsyal na knlahok, at sa abet ng aking
+kakayahan na ginawa ang mga ito upang tiyakin no ang kalahok ay nauunawaan na ang Olga
+sumusunod ang mangyayari:
+1. __
+z. __
+3. __
+Kinukumpinna 1;0na binigyan ng pagkakatnon ang kalahok na magtanong tungkol sa png-aaral,
+at ang lahar ng mga lanong na itanong ng kalahok ay nusngot ng tam a at sa abot ng eking
+kakayahan. Kinukumpirma ko no :1Ogindibidwal ay hindi napilitnng mngbigay ng pnhinrulot. nt
+ang pahintulot ay ibinigay ng rnalaya at kusang-Ioob. lsnng kopya ng leF nn ito ny ibinigny so
+kalohok.
+Isung kopyu ng lef. 1111110uy ibinigay sn knlnhok.
+I':tngalun ng 1lI11uunulil{.llilu
+personal nu IWJllulwhu fig pahlntulot
+D~SU-RETC-F039
+Rev.OO (12.15.2021)
+131
+
+
+Lagdu ng mnnnnnlikslk/
+personal nu kurnukuhu ng pahintulnt
+Pctsa _
+Araw/Buwan/Taon
+DMMMSU· RETe· FO)9
+Rev.DO (12.15.2021)
+College of Computer Science
+132
+
+
+APPENDIXM
+Pictorials
+"
+The researchers conducted beta testing with 2 IT experts from
+the College of Computer Science.
+135
+
+
+The researchers conducted beta testing and surveyed barangay
+official councils and residents in Narvacan Sto. Tomas, La Union.
+136
+
+
+The researchers conducted beta testing in the office ofMDRRMO
+at the Municipality of Santo Tomas.
+137
+
+
+138
+APPENDIXN
+Source Code
+#include <SoftwareSerial.h>
+SoftwareSerial SIM900A(1O, 11); II RX, TX
+const int trigPin = 7;
+const int echoPin = 6;
+const int numPhoneNumbers = 4;
+const char* phoneNumbers[] = {"+6399]5867972", "+6395]30836]4",
+"+639639874337", "+639385367087" };
+II Timing constants
+II Variables to control SMS sending for each distance trigger
+boo I canSendSMSLeveli = true;
+boo I canSendSMSLevel2 = true;
+boo I canSendSMSLevel3 = true;
+void setupt) {
+SIM900A.begin(9600);
+Serial.begin(9600);
+pinMode(trigPin, OUTPUT);
+piriMode( echoPin, INPUT);
+Serial.println("System ready");
+}
+void 100pO {
+sendordatat);
+}
+void sendordatat) {
+long duration, distance;
+II Trigger the ultrasonic sensor
+digitalWrite(trigPin, LOW);
+delay Microseconds(2);
+digitalWrite(trigPin, HIGH);
+dela yMicroseconds( 10);
+
+
+139
+digitaIWrite(trigPin, LOW);
+II Read the echo pulse
+duration = pulseln( echoPin, I-llGH);
+distance = duration * 0.034 I 2; II Calculate distance in centimeters
+II Check distance and take action
+if (distance >= 30 && distance <= 31) {
+if (canSendSMSLevell) {
+sendTextAlertCAlerto ti Emergency!(Level 1) Ti lebel ti danum ket dumanon iti 30-
+32cm.");
+canSendSMSLevell = false;
+} else {
+Serial.print("Level 1 SMS is already triggered");
+}
+}
+if (distance >= 25 && distance <= 26) {
+if (canSendSMSLeve12) {
+sendTextAlert("Alerto ti Emergency!(Level 2) Maipakaammo iti bumarangy nga
+umakar ti nangato a lugar. ");
+canSendSMSLevel2 = false;
+} else {
+Serial.print("Level 2 SMS is alredy triggered ");
+}
+}
+if (distance >= 20 && distance <= 21) {
+if (canSendSMSLeveI3) {
+sendTextAlert("Alerto ti Emergency!(Level 3) Pwersaan nga agbawit dagiti apektado
+nga bumarangay iti naidisignar a balay pagbakwisan. ");
+canSendSMSLevel3 = false;
+} else { .. II
+Serial.print(tlLevel 3 SMS IS already triggered );
+}
+}
+II Re-enable SMS sending after cool down period for each trigger
+if (!canSendSMSLevell && distance <= 10) {
+canSendSMSLevell = true;
+Serial.println("Level 1 SMS is re-enabled.");
+}
+if (!canSendSMSLeveI2 && distance <= 10) {
+
+
+canSendSMSLevel2 = true;
+Serial.println("Level 2 SMS is re-enabled.");
+}
+if (! canSendSMSLeve13 && distance <= 10) {
+canSendSMSLeve13 = true;
+Serial.println("LeveI3 SMS is re-enabled.");
+}
+Serial.print("Water Level: ");
+Serial.print( distance);
+Serial.printlnO;
+delay( 400);
+}
+void sendTextAlert( const char* message) {
+for (int i = 0; i < numPhoneNumbers; itt) {
+Serial.println("Sending text message");
+SIM900A.println(IAT+CMGF=1"); II Sets the GSM Module in Text Mode
+delay(IOOO);
+SIM900A.println("AT+CMGS=\"" + String(phoneNumbers[i]) + "\"\r"); II Set
+recipient number
+deJay(2000);
+SIM900A.println(message); II Message content
+delay( 100);
+SIM900A.println((char)26); II ASCII code ofCTRL+Z
+delay( 1000);
+Serial.println("Message has been sent");
+delay(2000);
+}
+}
+#define BLYNK TEMPLATE _ ill "TMPL69XW oPOEb"
+#defme BL YNK- TEMPLATE_NAME "Water level"
+#define BLYNK=AUTH_TOKEN "UOzMtz99b6Mp-Kml YIKzrJTYSPWcf49D"
+1* Comment this out to disable prints and save space *1
+#define BL YNK_PRINT Serial
+#include <ESP8266 Lib.h>
+#include <BlynksU;pleShieldEsp8266.h>
+140
+
+
+141
+II Your WiFi credentials.
+II Set password to "" for open networks.
+char ssid[] = "Argylle";
+char pass[] = "DuinoUno";
+II or Software Serial on Uno, Nano ...
+#include <SoftwareSerial.h>
+SoftwareSerial EspSerial(2, 3);
+#defme trigPin 5
+#define echo Pin 6
+#define speakerPin 8
+#defme speakerPin2 9
+II Your ESP8266 baud rate:
+#define ESP8266_BAUD 9600
+ESP8266 wifi(&EspSerial);
+BlynkTimer timer;
+long duration;
+int distance;
+int percent;
+int IvI;
+bool isDebounced = false;
+void myTimerO {
+II This function describes what will happen with each timer tick
+II e.g. writing sensor value to datastrearn V5
+Blynk. virtuaIWrite(VO, distance);
+Blynk.virtualWrite(Vl, percent);
+Blynk.virtuaIWrite(V2,lvl);
+}
+void setupt) {
+Serial.begin(9600);
+EspSerial.begin(ESP8266_BAUD);
+delay(100);
+pinMode(trigPin, OUTPUT);
+pinMode( ecboPin, INPUT);
+
+
+pinMode(speakerPin, OUTPUT);
+pinMode(speakerPin2, OUTPUT);
+Blynk.begin(BLYNK_AUTH_TOKEN, wifi, ssid, pass, "blynk.cloud", 80);
+timer.setlnterval(IOOOL, myTimer);
+}
+void loopf) {
+Blynk.ruut};
+sensordatat),
+timer.ruru);
+if (Iv I = 1 IIlvl = 2 IIlvl = 3) {
+delay(IOOOO);
+} II Reset debounce flag
+lvl = 0;
+isDebounced = false;
+}
+void sensordataO {
+if(!isDebounced) {
+digitaIWrite(trigPin, LOW);
+delayMicroseconds(2);
+digitaIWrite(tIigPin, HIGH);
+delayMicroseconds( 10);
+digitaIWrite(trigPin, LOW);
+duration = pulseIo( echoPin, HIGH);
+distance = duration * 0.034 I 2;
+percent = map(distance, 40,0,0, 100);
+percent = constrain(percent, 0, 100);
+if (distance >= 30 && distance <= 32) {
+lvl = 1;
+tone(speakerPin, 1000); II Playa 3kHz tone
+delay(3000); II Play for 1 second
+noTone(speakerPin);
+delay(3000);
+} else if (distance >= 25 && distance <= 27) {
+142
+
+
+143
+Ivl = 2;
+tone(speakerPin2, 2000); II Playa 2kHz tone
+delay(3000); II Play for 1 second
+noTone(speakerPin2);
+delay(3000);
+} else if (distance >= 20 && distance <= 22) {
+Ivl = 3;
+tone(speakerPin, 1000); II Playa 3kHz tone
+delay(3000); II Play for 1 second
+noTone( speakerPin);
+delay(3000);
+}
+seria1.pri_nt("Percentage: ");
+SeriaLprint(percent);
+Seria1.print("% Distance: ");
+Seria1.print( distance);
+Serial.printlnO;
+isDebounced = true;
+delay(300);
+}
+}

@@ -1,0 +1,204 @@
+SOURCE: interviews\TA consultation Transciption V.2. 9_24_2026.pdf
+PAGES: 6
+
+===== PAGE 1 =====
+TA: Pwede na yung Agile tsaka yung Iterative at Incremental approach niyo as SDLC pero pwede 
+na yung Agile, pero general parin siya, pero anong klaseng agile yung gamit niyo don? 
+Researcher 1: Ahh so ang ilalagay po namin sir s a SDLC namin ay yung pinakaspecific na gamit 
+naming SDLC model? 
+TA: Yes, kase po doon niyo, if ever kung anong specific na Methodology niyo, SDLC methodology, 
+doon po kayo kukuha ng mismong app roach kung paano niyo i -dedevelop yung inyong syste m 
+and with those app raoch matutulong kayo pano i -research yung mga  tool na kailangan, like 
+CanvanBoard, Trelo, Slack for something . Bakit hindi ano dito yung mga status ng buhay nila , 
+anong klaseng household meron sila, anong klaseng pamumuhay ang meron sila, nasa medium, 
+di ko alam kung anong mga terminology. 
+Research 1: Ang iniisip po kase namin sir kung marerelate po ba namin sa system namin na kapag 
+sinabi po naming middle class po ba sila, marerelate po ba namin yon for example sa introduction 
+or kung magagamit po namin siya sa ibang part ng manuscript. Kase iniisip po namin bakit po 
+namin ilalagay sa manuscript po namin na kungwari middle class po ako, ang naiisip ko po sir, sa 
+part nayon, ay kung kaya po ba ng mga devices nila, kung meron po ba silang mga devices na 
+magagamit or may pambili po ba sila.  
+TA: So if ever ay ang maraming sumasagot dito ay low income earner, tapos wala naman palang  
+mga cellphones, anong use.  
+Researcher 1: Ayon po yung isa sa mga limitations namin sir, pero a ng alam ko po, dito sa 
+questionnaires po na min sa survey may nil agay po akong question di to kung ano po yung mga 
+gadgets or technologies na gamit nila eh.  
+TA: Eto ang atin, necessary ba na if ever for requirements gathering lang naman ang survey ninyo, 
+necessary ba na dapat ay may mga technology talaga silang gamit.  
+Researcher 1: Baka pwede po namin siya magamit sa results and summary? 
+TA: Sa tingin niyo ba, if ever na kukunin natin, kukunin lang naman natin yung data nila, because 
+of the sense na, ang mangyay ari is kung gusto niyo lang na min kung ano  yung problema nila, 
+regarding sa baha, kahit wala nam an silang t echnology or have an access to a technology  okay 
+lang kaya?  
+Researcher 1: Wala po silang idea about sa baha? 
+TA: Hindi, may idea sila about sa baha, kase nga problemado sila sa baha, pero ang problema, 
+they can’t use your technology, kase w ala silang ganon, okay lang ba kaya yon?  Ipagpapatuloy 
+niyo parin ba yung pag collect ng data sa kanila? Kahit di sila makakagamit in the future use?  
+===== PAGE 2 =====
+Researcher 1: Magagamit po namin yan sir kase po, for example sa meron na po kaming Survery 
+Results sa Results and Summary na halimbawa 60% po ng sumagot sa survey namin kung meron 
+ba silang mga available gadgets and technologies, then the other 40% ay wala, we can see po na 
+most of the people in the Flood Prone area can use our system in the future. Kase po sir mostly 
+po sa mga binabaha ay wala pong information about the current happening about sa baha. 
+TA: Pero may technology sila, may devices sila? 
+Researcher 1: May devices po sir, pero may some instances po na limited po yung connections 
+nila  
+TA: So ano palang toh, initi al palang toh, yung Survey quetionnaires niyo , okay? S o marami pa 
+tayo, based dito sa quetionnaire niyo. So kung may mag come-up na like ano ba pwedeng example 
+wait, siguro like need ba natin n g additional functionality, na hinihingi ng BDRRMO, na w ala pa 
+tayong proof na kailangan pala ng mga users, na if ever dito, like di naman pala nila kailangan, like 
+for example makikita ng user yung mapa. Baka ano kase di naman pala nila kailangan yon.  
+Researcher 1: So kung yung pinakamain namin sir yung mapa, tatangalin po namin if di po namin 
+mabigay yung proof na kailangan ng users and BDRRMO yung mapa? 
+TA: Yun na nga ang iproprove naten, with your interview and your surve ys, okay? So iproprove 
+niyo ito, so dapat ganon 
+Researcher 1: So dapat sa interview sir, iproprove po namin sa kanila na kailangan ito? 
+TA: Hindi, hindi niyo ipipilit. Eto ah, if ever meron kayong simulations about sa baha, mas maaware 
+ba kayo? Mas matatakot ba kayo?  
+TA: Yes, eto kase hindi ito dapat one time gathering, dapat series of requirements gathering, para 
+progressive yung requirements gathering naten, nalili wanagan po ba? Kase ito initi al palang ito 
+eh, as a ano, nung ini -scan ko itong questionnaires ninyo. Initi al palang ito, ku mukuha tayo ng 
+data anong karanasan mo sa baha. Sa ngayon, wala pa tayong napapatunayan kung kailangan ba 
+talaga nila yung mobile app  or web app, baka kase mas kailangan pala nila ng WEB app, so ano 
+mangyayari, yung mobile app niyo matatangal? Mahina pala internet sa kanila? edi gagawin niyo 
+ngayong offline? So medyo ano, papatunayan niyo sa system niny o via Survey results na ganito 
+dapat, na eto yung mas efficient sa mga users ninyo.  
+Researcher 1: Sa pagpapatunay namin sir, dapat po mas mataas po yung percentage o r greater 
+than 50% po para maging valid yung proof po namin na the user needs this kind of system or the 
+user is experiencing this kind of problem so we come up with this solution, and this solution would 
+also need to prove, that this solution was needed by the user?  
+TA: Yes, dapat major of your respondents. 
+===== PAGE 3 =====
+Researcher 1: Pano sir kapag google Forms po? 
+TA: Pwede ang Google Form sa Survey 
+Researcher 1: Yung mga proof sir, pwede po yung mga images or screenshots? 
+TA: Yes po. Ganon, ganon lang naman yon, tapos, progressive toh, di pa tayo tapos dito. Tapos sa 
+BDRRMO, ipagtutugma niyo po kase. Eto kase we’re assuming lang na eto yung kailangan natin, 
+pero papatunayan niyo pa talaga na kailangan talaga toh. Wala pa kayong napapatunayan diba. 
+Pero since ang Chapter 2 niyo, lipat tayo, di ko pa nakikita yung ano niyo Fishbon e Diag ram, 
+complete Interview reports , di ko pa nakikita. So hopefully, magbanggan tala ga sila, magiging 
+align sila , okay po?  
+Researcher 2: Pano sir kung di nagtutugma? 
+TA: Anong gagawin niyo? eto ah , Halimbawa, may sampu kayong nakitang literature revi ew, 
+studies, na pumapayag sainyo, ibig sabihin sa community ang may problema, hindi yung system. 
+Na based on the studies, based on the journals, ay okay yung data sa inyo, pwede niyong 
+ipagbangga yon. 
+Researcher 1: So pwede po pala namin gamitin yung s urvey results and reports ng ibang system 
+po na related sa system namin and i-citate nalang po namin? 
+TA: Oo, yes, base kase ganito sa mga ininterview ng mga Related System or studies na kinuha niyo 
+sa RRL niyo, for example, napakaimportante ng visualization sa isang user para mas maintindihan 
+nila. Ganito, sabihin natin, 4 0% percent lang po sa Survey Results po namin na nag agr ee na 
+makaktulong po itong feature sa kanila, but in General studies, kailangan na kailangan po talaga, 
+so I think po kailang an pa po namin mag ga ther pa po ng more data or results from the 
+respondents para tumaas pa po yung percentage  or mali lang po y ung nakuha namin 
+respondents. So ganun lang siguro, diba. Nagegets po ba? Literature Reviews combined with your 
+Data Gathering, mas maproprove niyo yong point. 
+Researcher 1: Kung sa R elated Literature sir ang ilalagay ay y ung m ga related literatures, ang 
+ilalagay po ba sa Related studies ay yung mga System po n a ginawa ng mga Foreign Studies and 
+Local Studies? 
+TA: Ganito, yung sa literature, magigive kayo ng related ideas na mag prorove or like sasabihin na 
+yung isa sa mga feature ng system niyo ay makakatulong sa mga users. For example, si 2d mapping 
+pala ay  makakatulong sa user na maunderstand very quickly yung isang mapa kesa sa 3d. Pero di 
+naman mandatory ang mag compare, this literature will just help you to prove your system. Sa 
+Related Studies naman po, for example kukuha kayo ng Expert System as your related studies, na 
+kapag kumukuha talaga ng mga interview sa mga experts, talagang nakakapag develop ng totoong 
+===== PAGE 4 =====
+scenaries for that sense. Di naman normally na p areho kayong mobile app, ay ganun na, ang 
+kailangan ko, yung related studies ay may discussion, may results, merong ganyan dalawa.  
+TA: Yung survey niyo naman okay nayan, pero pano niyo mapapatunayan na di iisang tao  yung 
+sumasagot, kaya magisip kayo, pero ang loop hole jan ay yung Data Privacy Act, give them th at, 
+and kapag nag agree sila, you can use na your information, oh diba sinabi ko na sainyo di na kayo 
+nag isip. 
+TA: Dito naman tayo sa system. Wala pa kayong WEB application?  
+Researcher 1: Meron na po sir pero more on admin side siya, not more, about po tlaaga sa admin 
+side. May ililinaw lang po kami sir, sa DSS po, kase po yung samin s ir diba may m ga ibibgay si 
+system na tanong that can be answer by yes or no or like option-based, ang sabi po samin ng 
+Technical Critique po namin , parang nagiging recommendation system na daw po ito a t medyo 
+lumalayo na siya maging DSS  at nagiging mababaw. And based po sa sinabi sa min ng a ming 
+Technical Critique po, and kailan gan daw po ni user after po lumabas y ung inenter ni user for 
+example, heavy and 6 hours, meron po doong Check my Area, ipipin po ni user yung location niya, 
+after po nun meron daw po dapat doong lalabas na pwede siya mag type or inp ut ng kanyang 
+questions, For exa mple po tinanong ni user “What are the thing s I need to prepa re with this 
+Susceptibility level”, doon na po may lalabas na results, para po siyang magiging model, or  para 
+po siyang magiging AI model na may sasagot sayo.  
+TA: Okay naman toh ah, dere-deretso, anong problema? 
+Researcher 2: Yung ano kase, sir, yung logic ba ng DSS ay naapply ba based doon sa ginawa natin 
+sir? 
+TA: Well san niyo ba kinuha yung Data?  
+Researcher 2: Wala pa sir, mga placeholder palang po yan sir. 
+TA: Pero kukunin sa isang expert diba? Oh anong problema? 
+Researcher 1: Yung currently po kase sir, etong system natin  po, igui -guide po yung user sa 
+kanyang desisyon. Yung kay Technical Critique naman po namin, based po sa aming consultation 
+po namin sa kanya, si DSS daw po, si System daw po ang magdedecide para kay User.  
+TA: So diba ang D ecision Support, diba d iniscuss ko yan, anong sinabi ko? Magbibigay si system 
+ng support, or decision support pero ang final decision ay nakay User?  
+Researcher 1: Pero okay naman sir yung ganitong way n amin sir, yung ganitong function ng DSS 
+namin sir? 
+===== PAGE 5 =====
+TA: Okay naman eh, it’s an expert system/decision support parin, di naman kase tinatawag natin 
+na solely DSS lang ito. It’s an expert system/decision support system den combined. SO ayon, may 
+decision support, ang nangyayari kase, ang decision support niyo kase ang nangyayari sa k anya, 
+one final decision lang naman.  
+Researcher 1: Baka raw po kase sir mabanggit ng mga pan elist namin na bakit po yung Decision 
+Support namin ay mababaw, na bakit pindot-pindot lang po.  
+TA: Kase eto y ung sinasabi ng amin (ng survey and data gathered ng study). Kung ganon yung 
+sinabi pero may tatlong option like, was kayong magadala ng tubig, o ganyan, kung di niyo naman 
+kaya pala wag kayong magdala ng tubig. Ganito, if ever halimbawa di na kaya, you have 2 hours 
+left, or 1 hour to evacuate, eto lang yung mga available choices naten mga kaya lang natin gawin 
+within that time frame, you can check this one, ganon ang mga checklist. It ’s a decision support 
+parin, pero ang final decision pari n niyan ay doon sa user. Kahit checken nila lahat, yan p ero di 
+naman nila dala sa real event, edi napatunayan natin na si User parin yung mag dedecide ng final, 
+we will just support their decisions. This decisions came from the experts, so ibig sabihin, expert 
+system parin siya. Eto kase, di pa kase nakikita ni Technical Critique niyo yung full potential kaya 
+Ganon pala. Pero ang mangyayari kase dito, if ever eto, yung 1 hour, dahil 1 hour na flood or sa 
+scenario na toh magbabaha na, so you nee d to prepare this one, eto yung mga essential items . 
+Pero tatanungin niyo parin yung mga experts, if ever ang scenario po, ay mag -isa lang ako sa 
+bahay, thgen 1 hour nalang po ay tataas na yung baha, ano po yung mga kailangan ko gawin. Pero 
+that information dapat ay galing and validate by the BDRRMO. Eto pa, for example, kapag meron 
+po bang matanda, ano bang dapat na ginagawa. 
+Researcher 1: So bale sir, halimbawa ako po si user, di ko na po tatanungin si FloodSense anong 
+gagawin sa ganitong scen erio, auto matic na pong magbibi gay si FloodSe nse sa akin ng mga 
+kailangan kong gawin depende sa scenario na nilagay ko po. 
+TA: Pwede naman kase g anito, Scen ario 1, Scen arion 2, but this is the best recommended 
+scenario, ganon.  
+Researcher 1: Pano po sir kapag gusto ni User magtanong ng Specific na bagay? 
+TA: Ganito kase yan, meron tayong tinatawag na Vector Algorithm, na yung mga almost same na 
+keyword, magtutugma-tugma, like for example, nag search ka ng ghost, ano pong lalabas, diba 
+mga monsters, mga alien, so ibig sabihin meron dapat kayong ganon, maghanap kayo ng keyword, 
+hopefully, ganito yung lalabas sa kanila. So If ever ganito ng mga k eyword, tas ganito yung pag 
+form ng tanong, ganito yung ilalabas ng system ninyo, so nagiging expert system parin siya pero, 
+Expert System/ Decision Sup port System plus nagka roon kayo ng kaunting Natural  Language 
+Processing, medyo mahirap nga lang yon , pero doon yon sa ganong situation na ganon, kung 
+gusto niyo yung ganong scenario na specific si User.  
+===== PAGE 6 =====
+Researcher 1: Nilagay kase namin sa Concept checklist namin sir yung Chatbot as Optional. 
+TA: Pano kapag hinanap yon? 
+Researcher 2: Meron po kami dito sir, eto na pinakahuling part ng DSS namin, kung baga based 
+doon sa mga Clicked option ni User, and dito naman sir, meron dito na Ipi-pin mo si location mo 
+and  i papakita di to yung mga nearest evacuation center s, kaso sir di pa kase si la (BDRRMO) 
+nagbibigay ng mga coordinates ng mga Evacuation Center po eh pero may placeholder na sila. 
+TA: Okay, tsaka dagdag niyo rin yung mga ano kailangan bitbitin.  
+Researcher 1: pano p o pala sir nasa limitations po nam in yung Chatbots, pano po paghinanap 
+yon? 
+TA: Di naman kase kailangan ng Chatbots, dapat kase for example, Parang ganito sa DSS niyo, mga 
+option-based, tas meron pang additional terms pa na ilalagay or options, like for example, ano pa 
+ba kailangan iprepare, mga kailangan iprepare, ang hirap pa ka se I ano yan, kase di pa namin 
+natutugma.  
+Researcher 1: Pero anong task namin next week sir, para meron kaming goal sir.  
+TA: Yung manuscript, makukuha niyo Monday, tas yung WEB app  niyo, tapos aralin niyo narin 
+yung natural language processing, Tokenizaton yon, sa Python yon, tapos pano siya ilalagay dito, 
+anong gamit kaya? TensorFlow or Python, compiled na siya, para siyang library, pero kayo mismo 
+magcrcreate ng library don, AI Library, tska maghanap kayo sa ano, Hugging Face, maghanap kayo 
+don ng mga ano, mode ls, marami d on. Para dito, ano ba gamit niyo dito, material 3, ano ba 
+ginagamit n iyo? Tapos para dito sa mga ano, ma ghanap siguro sa, yun g mga icon s, widgets, 
+maghanap kayo sa ano, basta magresearch kayo. Kuha kayo mga widgets na maganda, meron 
+talaga eto mga widgets na pwede niyo idownload, tapos para maayos yung versioning. 
+Researcher 1: Sa main defense po ba sir, kahit di pa kumpleto yung data, basta mapakita ninyo an 
+functional na siya okay na po yon? 
+TA: Yes, dapat functional na siya, kahit wala pa yung mga data nayan.  
+Researcher 1: So kahit sir wala pa pong coordinates ng evacuation center, kami po muna gagawa 
+sir para mapakita na functional po siya? 
+TA: yes, para makita at mashowcase.  
+ 
+ 
+ 

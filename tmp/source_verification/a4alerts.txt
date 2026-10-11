@@ -1,0 +1,1477 @@
+SPECIAL ISSUE
+A user experience evaluation of a mobile application for
+disseminating site-specific impact-based flood warnings:
+The A4alerts app
+Erika R. Meléndez-Landaverde | Daniel Sempere-Torres
+Center of Applied Research in
+Hydrometeorology, Universitat
+Politècnica de Catalunya, BarcelonaTech,
+Barcelona, Spain
+Correspondence
+Erika Meléndez-Landaverde, Center of
+Applied Research in Hydrometeorology,
+Universitat Politècnica de Catalunya,
+BarcelonaTech, Barcelona, Spain.
+Email:
+melendez@crahi.upc.edu
+Abstract
+People-centred early warning systems must ensure that their warnings are
+timely, actionable and get to the largest number of exposed individuals in the
+shortest time possible. Due to the increased access to high-bandwidth commu-
+nication, mobile applications have become a valuable complement to tradi-
+tional sources of emergency information. However, there is limited research
+on how useful end-users perceive these apps and their functionalities in the
+context of flood emergencies. This research presents the first online user expe-
+rience evaluation of the A4alerts, a crisis app developed to disseminate the
+flood warnings triggered by the operational impact-based early warning system
+in Catalonia, Spain. Following an interactive experiment using the A4alerts
+app to access emergency information within real-based flood scenarios, partici-
+pants were prompted to measure their experience using statements linked to
+criteria on usefulness, functional appropriateness, and adoption. The evalua-
+tion results suggest that sampled participants considered the A4alerts a useful
+communication tool to support end-users and their emergency actions. In par-
+ticular, the local impact-based flood warnings, regional official warnings and
+self-protection action checklist were ranked as the most useful functionalities
+implemented within the app. These findings justify future iterations of the
+A4alerts for supporting the rapid dissemination of emergency information and
+helping communities reduce the impacts of flood events.
+KEYWORDS
+emergency management, flash flood, forecasting and warning, risk communication
+1 | INTRODUCTION
+Flash floods result from extreme precipitation in an area
+exceeding the natural or drainage system capacities
+(Seneviratne et al.,
+2021). Typically, these affect small to
+medium size catchments characterised by steep
+topography, thus, prone to convective storms (Corral
+et al., 2019; Ritter et al., 2020). As seen during the 2021
+floods in Belgium, Germany, and The Netherlands, flash
+floods can have devastating negative socio-economic
+impacts in communities, including grave danger to
+human lives and economic damages in the range of
+Received: 15 November 2022 Revised: 23 August 2023 Accepted: 15 September 2023
+DOI: 10.1111/jfr3.12951
+This is an open access article under the terms of the Creative Commons Attribution License, which permits use, distribution and reproduction in any medium, provided
+the original work is properly cited.
+© 2023 The Authors. Journal of Flood Risk Management published by Chartered Institution of Water and Environmental Management and John Wiley & Sons Ltd.
+J Flood Risk Management. 2023;e12951. wileyonlinelibrary.com/journal/jfr3 1o f1 5
+https://doi.org/10.1111/jfr3.12951
+
+billion euros for a single event (Netzel et al., 2021).
+Regardless of warnings issued in advance by the national
+meteorological and hydrological services for the 2021
+floods, the message on the potential impacts and mitiga-
+tion actions failed to reach some of the most vulnerable
+communities (Fekete & Sandholz,
+2021). These previous
+events have exposed the significant gap between the
+impact forecasting tools available and the timely warnings
+communities need to effectively mitigate the negative con-
+sequences of floods. Alarmingly, these types of extreme
+floods are only becoming more frequent, with most of the
+recorded events from 1860 and 2016 in Europe categorised
+as flash floods (Bednar-Friedl et al.,
+2022). Hence, due to
+their explosive and rapidly evolving nature (usually not
+more than a few hours), integrating response and effective
+risk communication mechanisms to support communities
+during emergencies is essential and a major challenge
+Aligned with target G of the Sendai Framework for Disas-
+ter Risk Reduction, end-to-end early warning systems
+(EWS) must incorporate the following four interrelated
+pillars: (i) disaster risk knowledge; (ii) detection, monitor-
+ing, analysis, and forecasting; (iii) dissemination and com-
+munication; and (iv) preparedness at all levels. By
+integrating the above key elements, EWS can increase the
+likelihood of issuing warnings that are understandable,
+actionable and get to the largest number of exposed indi-
+viduals in the shortest time possible (UNISDR,
+2015).
+Communities expect hazard and local impact information
+to be readily available and accessible, especially when the
+time window for action during flash flood emergencies is
+limited (Dallo & Marti,
+2021).
+Information and communication technologies (ICT)
+have become promising tools to support the rapid dissem-
+ination of flood warnings; process and share real-time
+emergency information; and establish communication
+channels between authorities, responders and citizens
+during evolving flood emergencies (Grinko et al.,
+2019).
+While the traditional methods of dissemination (e.g., TV
+news and radio) remain essential sources of information,
+the increasing number of people using wireless technolo-
+gies with accessible internet connection allows the explo-
+ration of more flexible and innovative methods for flood
+risk communication (Stanciugelu et al.,
+2017). Within
+crisis-related ICT, mobile hazard crisis apps started to be
+officially implemented in parallel to help facilitate the
+swift distribution of context-specific messages (Reuter,
+Kaufhold, & Knipp,
+2017; Reuter, Kaufhold, Spielhofer, &
+Hahne, 2017). In this regard, the promoted frameworks
+by the World Meteorological Organization for improving
+the response of communities during flood emergencies,
+such as local impact-based EWS, can benefit from these
+advantages hazard crisis apps can offer (Stanciugelu
+et al.,
+2017; WMO, 2021).
+As part of the recently developed and implemented
+community-based“site-specific EWS” (SS-EWS) (Meléndez-
+Landaverde & Sempere-Torres, 2022), a flood crisis mobile
+application named“A4alerts” has been designed to dissemi-
+nate the location-specific flood warnings and associated
+self-protection actions trig gered by an operative impact-
+based EWS. In this context, the A4alerts was developed to
+support the rapid flood risk communication and help
+enable appropriate actions to decrease the negative impacts
+at vulnerable points or community areas. This work pre-
+sents the A4alerts app, its functionalities and the first
+online user experience evaluation performed in Catalonia,
+Spain.
+The paper is structured as follows: Section
+2 provides
+background on the previous work regarding crisis mobile
+apps for emergency communication. Section
+3 presents
+the A4alerts, its functionalities and the operational EWS
+behind the app. Section 4 describes the experimental
+online demo developed for evaluating the A4alerts from
+an end-user perspective within the context of flood emer-
+gencies. Section 5 deals with the results and their impli-
+cations. Section 6 describes the encountered limitations
+and areas for future research. Finally, some concluding
+remarks are presented in Section 7.
+2 | BACKGROUND
+An essential emergency feature of any effective flood
+EWS is the rapid dissemination of relevant information
+and behaviour advice to a broad audience of exposed
+and vulnerable individuals. As part of the four key ele-
+ments of end-to-end EWSs, the dissemination and com-
+munication of warnings in real time are essential to
+enable timely and appropriate mitigation and self-
+protection actions to help r educe the negative impacts
+of flood events (WMO,
+2018). In light of this, various
+t y p e so fh a z a r dc r i s i sa p p s( e . g . ,s p e c i a l i s e do rm u l t i -
+hazard) with specific functionalities (e.g., citizen-
+generated reports) have been used in the past decade to
+facilitate the interactions and information to both
+authorities, responders and potentially affected end-
+users (Colombelli et al.,
+2020;G r i n k oe ta l . ,2019). In
+Germany, the KATWARN and NINA apps developed by
+the Fraunhofer Institute (on behalf of the German pub-
+lic insurance companies) and the Federal Office for
+Civil Protection and Disaster Relief are among the most
+popular crisis apps officially available (Reuter, Kauf-
+hold, & Knipp,
+2017; Reuter, Kaufhold, Spielhofer, &
+Hahne, 2017). While they share similar functionalities,
+the mechanism to trigger and disseminate different
+types of warnings (e.g., weather-induced or for public
+events) varies and, thus, are encouraged to be jointly
+2o f1 5 MEL/C19ENDEZ-LANDAVERDE and SEMPERE-TORRES
+ 1753318x, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/jfr3.12951 by Readcube (Labtiva Inc.), Wiley Online Library on [08/03/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+used during emergencies. In the United States, the
+FEMA app provides flood warnings, behavioural recom-
+mendations and enables users to report incidents
+through GPS photos. Previous qualitative studies com-
+paring these three apps indicate that although they are,
+in general, well-perceived by the group of participants,
+their individual functionalities and strengths could be
+merged to develop an enhanced crisis app version to sat-
+isfy the different needs and requirements of potential
+end-users (Reuter, Kaufhold, & Knipp,
+2017;R e u t e r ,
+Kaufhold, Spielhofer, & Hahne, 2017).
+Until now, the general development of hazard crisis
+apps and flood-specific technological platforms has
+focused on the technical capabilities and their implica-
+tions regarding real-time implementation (Colombelli
+et al.,
+2020; Dallo & Marti, 2021). However, recognising
+the importance of employing people-centred methodolo-
+gies, the work on hazard crisis apps is shifting from the
+traditional technocratic perspective. In this context,
+the latest research has focused on exploring how their
+design and individual features can effectively support the
+decision-making process of end-users to increase
+the probability of continuous usage and social integration
+(Paul et al.,
+2021). The usefulness of hazard crisis apps
+during emergencies from the point of view of potential
+end-users; the functional appropriateness of their fea-
+tures to support their decision-making process; and the
+technical implications on learnability and social adoption
+are elements that have been explored in recent years
+(Dallo & Marti,
+2021; Fischer-Preßler et al., 2021). As
+recognised by the participants in the study performed by
+Tan et al. (
+2020b), end-users will not install or keep using
+a hazard crisis app without any apparent added value
+towards usefulness and appropriate support during emer-
+gencies. In this regard, previous studies have proposed
+guidelines and recommendations for designing general
+hazard crisis apps and their functionalities based on the
+expectations and expressed needs of participants through
+workshops and guided discussions. However, despite
+these existing studies, there is limited research on how
+their results can be applied explicitly to the design of cri-
+sis app prototypes for hydrometeorological hazards.
+Moreover, there is a larger significant knowledge gap
+regarding the specific functionalities end-users require to
+effectively support their preparedness and mitigation
+actions during weather-induced emergencies. Additional
+studies are necessary to identify the requirements of com-
+munities, authorities, and responders regarding innova-
+tive communication technologies to justify the
+functionalities that should be incorporated in crisis apps
+in the context of flood events.
+Finally, these apps have inherent obstacles to wider
+acceptance, adoption, and usage. The long-term effectiveness
+of hazard crisis apps as a communication channel during
+emergencies is strongly influenced by the number of active
+users, as seen in the recent COVID-19 pandemic (Trang
+et al.,
+2020). Although the popularity and public knowl-
+edge of hazard crisis apps have grown, improving the level
+of integration of these specialised apps in society and
+maintaining a stable user base are some of the main chal-
+lenges ICT and authorities currently face (Fischer-Preßler
+et al.,
+2021). Moreover, vulnerable groups such as individ-
+uals with disabilities (e.g., visual or hearing impairments)
+are at risk of being excluded or neglected when consider-
+ing the design and technical requirements of hazard crisis
+apps (Paul et al.,
+2021). Interestingly, though the elderly
+have been categorised as technological-averse, the recent
+study by Appleby-Arnold et al. ( 2019) suggests these
+groups can have a positive attitude towards using hazard
+crisis apps to support their actions during emergencies.
+There is a demand for more focused and context-specific
+research on the factors influencing the acceptance and
+intention to use crisis apps during weather-induced
+events.
+3 | THE A4ALERTS MOBILE
+APPLICATION
+From 2020 to mid-2021, the A4alerts app was designed,
+developed and internally tested alongside a group of stake-
+holders (n = 15) integrated by the responsible civil protec-
+tion authorities, first responders and local experts in
+disaster risk management of Terrassa, Spain, through the
+iterative community-based SS-EWS framework (Meléndez-
+Landaverde & Sempere-Torres,
+2022). Figure 1a presents
+the six sections of the current A4alerts app: (1) main or
+home view; (2) site-specific warnings (SSWs); (3) report an
+event; (4) feedback; (5) official warnings; and (6) informa-
+tion. The description of the warning system behind the
+app, the functionalities and how the app works during
+flood emergencies are presented below.
+3.1 | Operational background: The
+community-based SS-EWS framework
+Developed at the Center of Applied Research in Hydro-
+meteorology of the Polytechnic University of Catalonia
+within the H2020 ANYWHERE project, 1 the SS-EWS
+framework guides communities to co-design, implement
+and co-evaluate impact-based flood warnings (i.e., SSWs)
+alongside self-protection actions for specific vulnerable
+points (e.g., sites in a flood zone area) or community
+1Source: https://tinyurl.com/mr2b4kmf.
+MEL/C19ENDEZ-LANDAVERDE and SEMPERE-TORRES 3o f1 5
+ 1753318x, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/jfr3.12951 by Readcube (Labtiva Inc.), Wiley Online Library on [08/03/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+sectors (e.g., transport). For this purpose, the method pro-
+poses steps to integrate hydrometeorological data
+(e.g., radar-based nowcasting and numerical weather pre-
+diction models) with local vulnerability, exposure and
+impact information to co-develop hazard-impact data-
+bases and establish site or community-specific impact-
+based rainfall thresholds. As seen in Figure
+2, these are
+applied to trigger the two types of grid-based warnings
+within the EWS system, (i) local rainfall accumulations
+and (ii) flash flood warnings using the basin-aggregated
+rainfall concept (Corral et al.,
+2019). The first warning
+deals with the rainfall accumulated within a fixed
+duration at all the neighbouring pixels (1000 m) draining
+to a specific area. Similarly, the second one assumes the
+flash flood hazard in a pixel (200 m) can be characterised
+by the rainfall accumulated upstream (at a duration
+equal to the concentration time of its basin) and
+expressed in terms of the exceeded return period.
+Although these two types of warnings do not consider
+urban drainage, they have proven to be fast and suitable
+for alerting pluvial and flash floods driven by intense pre-
+cipitation (Versini et al.,
+2014). The final warning level of
+a site or community is then determined by the maximum
+level between the two warnings or by applying a set of
+FIGURE 1 The A4alerts mobile app. (a) The home screen view (1) and its different sections: (2) active site-specific early warning system
+(SS-EWS); (3) official warnings; (4) report an event; (5) feedback; and (6) information. The sections are identified with a circle and the
+corresponding number. (b) The SS-EWS section. (c) The self-protection action checklist functionality.
+FIGURE 2 The A4alerts mobile app: The site-specific early warning system (SS-EWS) operational background.
+4o f1 5 MEL/C19ENDEZ-LANDAVERDE and SEMPERE-TORRES
+ 1753318x, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/jfr3.12951 by Readcube (Labtiva Inc.), Wiley Online Library on [08/03/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+logical operators (e.g., AND). More detailed information
+regarding the impact-based and site-specific EWS, the
+overall co-design framework and its evaluation can be
+found in Meléndez-Landaverde and Sempere-Torres
+(
+2022) as part of the series on operational impact-
+based EWS.
+In the context of the SS-EWS, the A4alerts app has
+been created to contribute to the third and fourth key pil-
+lars of end-to-end EWSs, (iii) dissemination and communi-
+cation; and (iv) preparedness at all levels. Consequently,
+the A4alerts works exclusively as the mobile-based dissem-
+ination platform and display for the triggered impact-
+based warnings while the operational site-specific EWS
+performs the real-time monitoring and implementation of
+the logical rules.
+3.2 | A4alerts functionalities
+Table 1 shows the 10 functionalities implemented in the
+current A4alerts prototype version. These have been
+selected based on the recent studies on the needs and
+requirements of end-users for the development of hazard
+crisis apps (Dallo & Marti,
+2021; Tan et al., 2020a). In this
+regard, the A4alerts functionalities have the objective of
+(i) informing about the active site-specific and official
+rainfall warnings; (ii) proposing actions (per warning
+level) from official self-protection plans to mitigate local
+impacts; (iii) helping enhance flood risk understanding;
+and (iv) enabling the participation of end-users to sup-
+port authorities, emergency responders and citizens.
+Due to the complexity of the required validation,
+quality control and privacy measures for their widespread
+public implementation (Imran et al.,
+2015; Reuter &
+Kaufhold, 2018), the “report and event ” and “photo vali-
+dation” functionalities have been included in the A4alerts
+app only as prototypes to exemplify their usage. This
+decision was made to concentrate the initial efforts on
+exploring and understanding the uptake of these func-
+tionalities by the testing group and the participants of the
+online demo within the context of a flood scenario. Thus,
+these sections can always be accessed from the main
+screen. In the report an event section, end-users can
+notify about an incident they have observed by uploading
+an image and a short description to improve the under-
+standing of the situation or facilitate its location. After
+manually validating them through the back-end system,
+these images are shown on the background map of the
+main screen for other testing users to see and verify.
+Finally, since the A4alerts is currently in constant revi-
+sion, a feedback section has been introduced to allow par-
+ticipants to send suggestions or report any problems they
+have experienced while using the app.
+3.3 | Active emergency mode: Local
+impact-based flood warning dissemination
+When a SSW is triggered, the A4alerts app starts working
+in active mode and notifies end-users with a push notifica-
+tion on their phones (i.e. pop-up message). In the “main
+section” of the app (see Figure
+1a), all the active sites are
+displayed with a previously chosen icon and a colour
+representing the severity of the triggered warning levels
+(e.g., orange for SSW level 2). By tapping these icons, end-
+users can access the “SSW section” (Figure
+1b), consisting
+of the co-designed impact-based flood warning text for the
+site, pictures of relevant historical flood events in the area,
+the self-protection actions checklist, and the warning
+TABLE 1 The 10 functionalities implemented in the
+A4alerts app.
+Functionalities of the
+A4alerts app Description
+Impact-based warnings
+for specific sites (i.e.,
+SSWs)
+Local and context-specific alerts
+for vulnerable locations or
+community sectors. Includes
+information about the hazard
+and the potential local impacts
+Official warnings Overview of the active official
+warnings in the region
+Rainfall map visualisation Radar-based (up to 2 h) and NWP
+(up to 24 h) rainfall field map
+Self-protection action
+checklist
+Local and context-specific actions
+coming from self-protection
+plans users can perform at the
+sites during the emergency
+Background map
+visualisation
+Interactive map with different
+layers, which allows end-users
+to select and display specific
+hazard or emergency
+information
+Report an event Allows users to report local
+damages or incidents through
+geo-located photos and text
+messages.
+Photo validation User can validate the reports
+submitted by others.
+Feedback Users can send comments,
+suggestions, or report errors
+about the app and its
+performance
+Warning history timeline A list of the previous active
+warnings at specific locations or
+community sectors.
+Images of previous events Historical analogies through
+photos of past events with equal
+warning levels
+MEL/C19ENDEZ-LANDAVERDE and SEMPERE-TORRES 5o f1 5
+ 1753318x, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/jfr3.12951 by Readcube (Labtiva Inc.), Wiley Online Library on [08/03/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+history timeline. For the last two, separate sections (acces-
+sible through individual icons) are available to monitor
+the development of the emergency and review the actions
+for the current active warning level (Figure
+1c). When no
+warnings are active, the action checklist section displays
+the complete flood self-protection plan per warning level
+to help increase the awareness and familiarisation of end-
+users with these actions. Furthermore, if a warning from
+the authorities is issued, the main section of the app will
+also display a banner on the top of the screen to access the
+“official warning” section. Within it, end-users can review
+the latest warnings by the authorities, their duration, and
+any official weather information.
+Finally, the main screen will show the evolution of
+the event by displaying the rainfall map from the radar-
+based nowcasting (for the first 2 h) and the numerical
+weather prediction models (up to 24 h).
+4 | A4ALERTS USER EXPERIENCE
+EVALUATION
+This study aims to evaluate the current version of the
+A4alerts app from an end-user perspective within
+the context of flood emergencies. Similar to previous
+studies (Meléndez-Landaverde et al.,
+2020; Terti
+et al., 2019), an experimental role-playing demo in an
+online environment was prepared to showcase the func-
+tionalities of the A4alerts app during a previous real-case
+flood scenario. For this purpose, the online demo was
+pre-tested by six members of the stakeholder group from
+Terrassa (see Section
+3) and finalised based on their feed-
+back. The last version of the demo was disseminated
+online via email within the internal communication net-
+work of first responders in Catalonia. The participants
+recruited on a voluntary (anonymous) basis included
+members of civil protection, emergency responders and
+local stakeholder groups of Terrassa and Catalonia.
+4.1 | Materials: Online
+experimental demo
+The five sections of the online demo are presented in
+Table 2. The first section consisted of general instructions
+and an introductory video to help explain the A4alerts
+app and its functionalities to the participants. Section 2
+contained the flood scenario alongside their triggered
+SSWs delivered through a web version of the A4alerts
+app. As in previous studies (Meléndez-Landaverde
+et al.,
+2020; Potter et al., 2018), the information presented
+in the flood scenario introduced participants to their
+assigned role, its responsibilities, and their decision-
+making obligations in case specific protection actions
+should be needed due to the active SSWs. In this regard,
+the warnings were provided within an interactive web
+version of the A4alerts app. This web version was sepa-
+rately prepared and embedded inside the experimental
+demo so participants could explore and understand how
+the app and its functionalities (see Table
+1) would work
+during a flood scenario. Accordingly, the rainfall episode
+used in this study was based on the 16th of August high-
+impact event experienced in 2020 at Terrassa. Although
+short in duration (2 h), it caused surface water accumula-
+tions across Terrassa, flooding of underground parking,
+fallen trees and notable rescue activities by first responders
+(Amores et al.,
+2020; Consejo de Ministros, 2020). The SS-
+EWS was run with the corrected hydrometeorological data
+to produce the warnings presented in the web version of
+the A4alerts app.
+Sections
+3 and 4 were dedicated to evaluating the
+A4alerts app and its functionalities after being used by
+participants in Section 2. Previous studies and guidelines
+have proposed extensive lists of indicators and metrics
+for post-evaluating technological tools (Lewis,
+1995; Tan
+et al., 2020b; Tullis & Albert, 2013). For the first
+section of the A4alerts evaluation, the criteria used in the
+ANYWHERE-H2020 project (Gebhardt et al.,
+2019) were
+applied to assess the value and benefits of EWS platforms
+from an end-user perspective. In this regard, the ANY-
+WHERE co-evaluation approach is based on an adapted
+version of the “Socio-Economic Impact Assessment for
+Research Projects” methodology (Passani et al.,
+2014) and
+TABLE 2 Online experimental demo sections.
+Section Description
+1. Introduction and
+instructions
+Demo guidelines and
+explanatory video of the
+A4alerts and its
+functionalities
+2. Flood scenario and
+A4alerts app trial
+Role-playing experimental flood
+scenario with a web version of
+the A4alerts app
+3. A4alerts app and
+functionalities: Overall
+user evaluation
+Assessment of the A4alerts app
+and its functionalities based
+on the ANYWHERE criteria
+through Likert-scale positive
+statements
+4. A4alerts functionalities:
+Usefulness's ranking
+assessment
+Ten A4alerts functionalities
+ranked from the most to the
+least useful in the context of
+flood emergencies by the
+participants
+5. Participant's profile
+description
+Demographic questions for
+profile characterisation
+6o f1 5 MEL/C19ENDEZ-LANDAVERDE and SEMPERE-TORRES
+ 1753318x, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/jfr3.12951 by Readcube (Labtiva Inc.), Wiley Online Library on [08/03/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+the norms 9126-2/25010 for evaluating software quality
+from the International Organization for Standardization
+(ISO,
+2003; ISO, 2011). Accordingly, Section 3 prompted
+participants to evaluate the A4alerts and its functionali-
+ties through positively framed statements linked to ANY-
+WHERE sub-criteria on variables such as usefulness,
+functional appropriateness, and adoption (see Table
+3).
+For this purpose, a 5-point Likert scale ranging from “I
+completely disagree ” to “I completely agree ” was
+implemented.
+As mentioned in Section 2, past research has identi-
+fied an array of general features and needs end-users
+(e.g., citizens and authorities) have for hazard crisis apps
+(Grinko et al.,
+2019; Kotthaus et al., 2016). However, it is
+essential to uncover the functionalities perceived as the
+most useful in the context of flood emergencies to (i) help
+redirect and justify the future work and resources for
+their development and real-time implementation and
+(ii) develop straightforward structures to facilitate the
+rapid usage of these apps during emergencies (Ahmad
+et al.,
+2017; Asikin-Garmager et al., 2022). Consequently,
+in Section 4, participants were asked to rank the func-
+tionalities from what they perceived to be the most (1st
+place) to the least useful (10th place) during a flood emer-
+gency. A video showcasing the previously explored func-
+tionalities in Section
+1 was played on a loop to assist
+participants during this section. Finally, Section 5 con-
+sisted of questions related to the demographic character-
+istics of participants (e.g., age, gender).
+4.2 | Procedure
+To increase the probability of capturing a significant
+number of responses and due to the ongoing COVID-19
+restrictions, the user experience evaluation was conceived
+in an online environment. In this context, the survey
+application Limesurvey was used to code and publish the
+experimental demo online and to collect the responses.
+After reading the initial instructions and viewing a video
+of the A4alerts app, participants were exposed to the
+flood scenario. In this section, participants had to use
+the web version of the A4alerts app to access the latest
+SSWs, local behavioural guidelines and the other avail-
+able emergency functionalities to decide if self-protection
+actions were needed based on the provided information.
+At the end of the flood scenario, participants were
+directed to the post-evaluation to evaluate the A4alerts
+app and its functionalities based exclusively on their pre-
+vious experience. Finally, general questions to identify
+the demographic characteristics of participants were
+asked as a last step of the online demo.
+5 | RESULTS AND DISCUSSION
+The results of Sections 3 and 4 of the experimental demo
+were analysed using the IBM SPSS Statistics software,
+version 28 (IBM, 2021). Descriptive statistics were calcu-
+lated for the positively framed statements linked to the
+TABLE 3 Statements linked to the ANYWHERE criteria for participants to evaluate the A4alerts app and its functionalities.
+Criteria Sub-criteria Statement Answer scale
+Effects on emergency decisions,
+working routines, and daily
+decisions
+Usefulness The app can be useful during
+emergencies.
+1 = strongly disagree
+2 = disagree
+3 = neither agree nor
+disagree
+4 = agree
+5 = strongly agree
+The app can be useful for first and
+second responders
+Effects on knowledge sharing and
+individual adoption
+User's adoption and
+acceptance
+If available, I would use this app in
+case of emergencies
+If available, I would recommend this
+app to a friend or family member
+Knowledge sharing I would be willing to send photos of
+local impacts through the app
+Understandability Functional
+appropriateness
+The functionalities are well integrated
+to support my protection actions
+The functionalities are easy to
+understand
+Learnability Self-explanatory
+interface
+The app could be used without
+previous training
+The interface is intuitive
+Attractiveness Interface aesthetics The interface has an aesthetically
+pleasing appearance
+MEL/C19ENDEZ-LANDAVERDE and SEMPERE-TORRES 7o f1 5
+ 1753318x, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/jfr3.12951 by Readcube (Labtiva Inc.), Wiley Online Library on [08/03/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+ANYWHERE criteria of Section 3. For the usefulness
+ranking assessment in Section 4, the non-parametric
+Friedman's test was performed to establish whether there
+was a statistically significant mean difference in the
+whole set of functionalities ranked by participants. More-
+over, the Bonferroni post hoc analysis with the Wilcoxon
+signed-rank tests was conducted to explore the existence
+of statistical mean differences in all the possible pairwise
+comparisons (45) of the ranked functionalities
+(Kim,
+2015; Marino, 2018). In this evaluation, the critical
+significance values ( ρ) were set at 0.05 and 0.001 (for the
+post hoc analysis with the Bonferroni correction). A total
+of 76 participants, the majority male (57%) in the range
+of 45 –54 (53%), completed the A4alerts app online evalu-
+ation from January to March 2022. Of those that partici-
+pated, 86% indicated they had been exposed to floods,
+and only 25% currently had a type of crisis or warning
+app installed on their phones.
+5.1 | A4alerts: Overall user experience
+evaluation
+Figure 3 shows the percentage of agreement with the
+statements regarding the A4alerts app and its functionali-
+ties presented in Table
+1. In this article, answers equal or
+below the “disagree” level are considered negative evalu-
+ations; equal and above the “agree” level as positive eval-
+uations; and “neutral” is a state of indecision or lack of
+convincing in participants and, thus, analysed by the
+authors in the context of the total percentage for each
+answer level. Most respondents positively evaluated the
+A4alerts app and its functionalities for most of the state-
+ments linked to the ANYWHERE co-evaluation criteria.
+In this context, many participants considered that the
+current version of the app is well integrated, useful, and
+has functionalities that are understandable enough to
+support the protection actions that might be needed dur-
+ing flood emergencies.
+For the overall A4alerts app evaluation, a significant
+percentage of the participants agreed that it could be a
+useful tool during flood emergencies (97%) and that they
+would use or recommend the app to a friend or family
+member (93%). However, even though the interface of
+the app was considered intuitive (87%) and aesthetically
+pleasing (75%), a large percentage of respondents were
+not confident that someone could use the app without
+prior training or first external guidance (87% equal or
+below neutral level). As mentioned at the beginning of
+Section
+4, the population exposed to the experimental
+demo included active members within the first and sec-
+ond responder groups and official authorities in Terrassa
+and Catalonia. Although the app was considered useful
+to assist these groups during flood emergencies (96%), the
+results suggest that to successfully use the app and its
+functionalities, resources (e.g., time, personnel, and
+material) should be allocated to provide training or demo
+sessions. Non-surprisingly, previous research has found
+FIGURE 3 Percentage of participants agreeing with the statements linked to the ANYWHERE criteria about the A4alerts and its
+functionalities. Frequencies are given within the bars for each response type and statement.
+8o f1 5 MEL/C19ENDEZ-LANDAVERDE and SEMPERE-TORRES
+ 1753318x, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/jfr3.12951 by Readcube (Labtiva Inc.), Wiley Online Library on [08/03/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+this factor as a barrier to broad adoption that new tech-
+nology services commonly face (Dallo & Marti, 2021).
+Hazard and specialised crisis apps such as the A4alerts
+have specific design characteristics (e.g., warning colour
+codes and symbols); functionalities (e.g., radar maps,
+reporting and validation of impacts); and usability con-
+cepts that differ from the general domain of publicly
+available apps. (Fischer-Preßler et al.,
+2021). Moreover,
+irregular exposure to crisis apps emphasises the impor-
+tance of providing resources and opportunities for
+straightforward handling and guidance (Reuter, Kauf-
+hold, & Knipp,
+2017; Reuter, Kaufhold, Spielhofer, &
+Hahne, 2017; Tan et al., 2020a). Thus, to facilitate the
+correct usage of the A4alerts app, it is necessary to con-
+sider learning methodologies (e.g., workshops, tutorials)
+to appropriately train end-users on the specialised flood
+emergency functionalities (WMO,
+2021).
+Regarding the functional appropriateness of the
+A4alerts features, many participants agreed that the indi-
+vidual functionalities were easy to understand (78%) and
+appropriately combined to support emergency actions
+during flood events (81%). As mentioned in Section
+3, the
+functionalities incorporated in the A4alerts app follow
+the recommendations of recent qualitative research on
+the requirements and the preferences in features for
+disaster and hazard crisis apps by potential end-users
+(Dallo & Marti,
+2021; Reuter, Kaufhold, & Knipp, 2017;
+Reuter, Kaufhold, Spielhofer, & Hahne, 2017). In this
+context, integrating functionalities and information
+desired by target end-users can help these technological
+emergency tools and services to be perceived as useful
+and, thus, increase the probability of adoption
+(i.e., installation and continuous use) (Fischer-Preßler
+et al.,
+2021; Grinko et al., 2019). The quantitative results
+of this study indicate that A4alerts app functionalities
+evaluated in the demo are positively perceived by partici-
+pants to support their actions during flood emergencies.
+Finally, due to growing research on innovative func-
+tionalities to support the contribution of end-users and
+enable their communication with emergency responders
+(Finazzi,
+2020;K a u f h o l de ta l . ,2018), the willingness to
+send geo-located photos to report impacts was individually
+evaluated. In this study and as suggested by previous
+research (Appleby-Arnold et al., 2019), most participants
+agreed they would send geo-located impact photos
+through the app (67%). These features have been found to
+help enhance the situational awareness of authorities and
+citizens and enrich the local real-time information for
+emergency actions and future impact validations, a critical
+aspect of impact-based EWSs (Lara Tan et al.,
+2017;
+McCallum et al., 2016). However, their successful real-
+time implementation has some challenges. Data privacy
+and protection concerns can hinder the disposition of end-
+users to trust and share the personal and GPS information
+needed by these functionalities (Fischer et al., 2019;Y a b e
+et al., 2022). Furthermore, awareness among users of the
+correct usage of these tools must be considered to avoid
+the spread of rumours and false information during flood
+emergencies (Alexander,
+2013; Reuter & Kaufhold, 2018).
+In this regard, one possible step to overcome these short-
+comings is recruiting local official volunteers. Limiting
+communication and sharing functionalities to these pre-
+identified groups can help improve the quality and reli-
+ability of collected data (Tavra et al.,
+2021). Additional
+concerns regarding their implementation include the need
+for advanced algorithms and skilled staff to correctly vali-
+date the information generated (Rossi et al.,
+2018).
+Although the results suggest an overall positive evalu-
+ation, this should be seen as an initial exploratory assess-
+ment of the current A4alerts version and its
+functionalities within the context of flood events. Real-
+time evaluations must be performed to move from the
+perceived usefulness and intention of the participants to
+use the A4alerts app and its functionalities towards
+actual behaviour. Moreover, additional research is
+needed to determine the relationships and influence of
+variables such as individual functional appropriateness
+and usefulness of the A4alerts features with the actual
+adoption and acceptance rate of users. Nevertheless, the
+results for the A4alerts prototype and its functionalities
+are promising and serve as a base for validating future
+evaluations and development iterations to support the
+protective actions of end-users during flood emergencies.
+5.2 | A4alerts functionalities:
+Mean ranks
+Figure 4 shows the mean ranks of the 10 A4alerts func-
+tionalities evaluated in the fourth section of the online
+demo. The mean rank values are in descending order;
+hence, the highest-ranked functionality is closer to the
+value number one (i.e., first place). The results of the per-
+formed Friedman's test show an overall strong statisti-
+cally significant difference ( χ
+2 (9) = 437.75; ρ < 0.001) in
+the mean ranks. However, the additional post hoc analy-
+sis reveals a non-significant difference between the four
+functionality combinations in Table
+4. The implications
+of these results are discussed below.
+The functionality ranked as the most useful out of the
+10 implemented was the SSWs. This result agrees with
+recent studies where end-users have reiterated their need
+to receive more targeted and personalised emergency
+content (Kaltenberger et al.,
+2020; Potter et al., 2021). In
+this sense, these local warnings can represent a step for-
+ward in the impact-based flood warnings concept on the
+MEL/C19ENDEZ-LANDAVERDE and SEMPERE-TORRES 9o f1 5
+ 1753318x, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/jfr3.12951 by Readcube (Labtiva Inc.), Wiley Online Library on [08/03/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+assumption that they can help trigger specific protective
+responses and improve local flood warning comprehen-
+sion (Taylor et al.,
+2019;W M O , 2021). The results of the
+work by Meléndez-Landaverde and Sempere-Torres (2022)
+suggest that end-users consider SSWs understandable and
+useful to empower vulnerable communities during emer-
+gencies. However, similar to impact-based warnings, the
+production and implementation of SSWs require signifi-
+cant resources and local information data that might not
+always be available (Harrison et al.,
+2021).
+Due to their non-significant statistical mean differ-
+ence, the following ranks (i.e., second to fifth place) are
+shared between the pairwise combinations in Table
+4.
+For the second position, the official warnings and self-
+protection action checklist non-significant difference sug-
+gest that participants consider both equally useful and
+above the other seven functionalities implemented in the
+A4alerts app. Similarly, these two features have been
+identified in previous hazard crisis app studies as highly
+important for end-users in emergencies (Grinko
+et al.,
+2019; Karl et al., 2015). In the recent work by Dallo
+and Marti ( 2021), participants ( n = 25) were questioned
+about their preference regarding information and useful
+functionalities within multi-hazard crisis apps. The need
+for real-time warnings alongside behavioural recommen-
+dations were the two most mentioned features perceived
+as relevant, congruent with the present evaluation
+results.
+The non-statistical difference between the pairwise
+combinations sharing the third and fourth place can be
+explained by how they are frequently grouped based on
+their technical characteristics. The rainfall and informa-
+tion map visualisation have been categorised in previous
+studies as a unified feature of hazard crisis app require-
+ments (e.g., “maps” or “interactive layers ”). Similarly,
+sending photos of local flood impacts and validating them
+through the A4alerts app have been studied together
+within the concept of tools to support smartphone volun-
+teering and citizen-to-authorities communication
+(Horstmann et al.,
+2018; Turpin & Holderness, 2015). In
+this study, these features are separated to explore and
+identify their individual level of usefulness inside these
+grouping categories and across the 10 implemented
+FIGURE 4 Mean ranks of the 10 evaluated A4lerts functionalities in descending order. The highest-ranked functionality is the one
+closer to the number one.
+TABLE 4 Post hoc results for the non-significant pairwise
+functionality combinations of the usefulness's ranking assessment.
+Functionality pair Rank Z-score Sig ( ρ)*
+Self-protection action checklist
+Official warnings
+Second /C02.788 0.005
+Rainfall map visualisation
+Background map visualisation
+Third /C00.868 0.385
+Photo validation
+Report an event
+Fourth /C00.419 0.675
+Warning history timeline
+Images of previous events
+Fifth /C02.871 0.004
+Note: Sig ( ρ)* < 0.001 with the Bonferroni adjustment.
+10 of 15 MEL/C19ENDEZ-LANDAVERDE and SEMPERE-TORRES
+ 1753318x, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/jfr3.12951 by Readcube (Labtiva Inc.), Wiley Online Library on [08/03/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+features for flood emergencies. However, the non-
+statistical difference indicates that these four functionali-
+ties were indeed perceived by participants as a group of
+app features and thus, resulting in equal levels of useful-
+ness. In this regard, resources, design, and real-time
+implementation efforts should not consider them as sepa-
+rate functionalities but as part of larger thematic groups
+to effectively satisfy the requirements and needs of end-
+users for flood crisis apps.
+The last two rank positions, fifth and sixth, are for the
+“images of past events and warning history timeline ” pair
+and “send feedback ” functionalities. Images and visual
+material have been suggested as an alternative to facili-
+tate the digestion of flood warning information and to
+help increase the understanding of what the forecasted
+hydrometeorological parameters (e.g., intensities or
+return periods) mean based on previous experience in the
+area (Parker et al.,
+2009; Tan et al., 2020a). Furthermore,
+communicating the list of previous active warnings is a
+common practice in EWS to inform users of the evolution
+of weather-induced events (WMO, 2010). However, par-
+ticipants perceived both features as less useful than the
+other A4alerts features. Nevertheless, it is worth noting
+that this rank position is relative to the 10 implemented
+functionalities and does not imply that these are not use-
+ful during flood emergencies. Further studies are needed
+to identify the influence of flood impact images and any
+additional visual material on the risk perception and
+understanding of end-users in the context of ICT
+(Weyrich et al.,
+2019).
+Finally, the sending feedback feature is the only non-
+exclusive functionality of hazard or flood crisis apps
+implemented and evaluated in the A4alerts. However, to
+constantly improve the behaviour of mobile apps, it is
+essential for developers to collect suggestions and com-
+ments from users (Martens & Maalej,
+2019; Scherr
+et al., 2019). Moreover, prior research has identified that
+people tend to uninstall hazard crisis apps if they do not
+notice operational improvements in a long time
+(i.e., inactivity) or if too many handling errors are fre-
+quent (e.g., slow interface) (Tan et al.,
+2020b). Nonethe-
+less, the relevance of this feature might only be apparent
+when errors are observed during real-time emergency
+usage and outside an online evaluation where users can
+directly communicate their feedback.
+6 | LIMITATIONS AND FUTURE
+RESEARCH
+As part of people-centred designs, user experience evalu-
+ations are essential to explore how individuals perceive
+and interact with technological tools (Asikin-Garmager
+et al., 2022). Nevertheless, due to the complexity of pro-
+viding robust prototypes for these evaluations, previous
+research on crisis apps has used limited in-person experi-
+ences with low-fidelity prototypes or paper-based app
+demonstrations (Colombelli et al.,
+2020; Kaufhold
+et al., 2018). To further advance the field of hazard crisis
+apps, this study employed an operational and ready-to-
+be-used prototype of the A4alerts to evaluate the imple-
+mented functionalities from an end-user perspective.
+In the context of the ongoing COVID-19 restrictions in
+early 2022, a strategic decision was made to conduct the
+evaluation within an online experimental environment,
+utilizing a web-based version of the app. This adjustment
+facilitated the broader dissemination of the demo within
+the different groups of stakeholders of Terrassa and Cata-
+lonia. However, the demo was not publicly accessible but
+exclusively distributed via email through the civil protec-
+tion internal communication network of Catalonia. Conse-
+quently, the scope of responses was confined to these
+specific groups ( n = 76). This limited reach, alongside
+inherent technological barriers (e.g., compatibility issues,
+stable internet access), could have resulted in fewer partic-
+ipants accessing and engaging with the demo. Moreover,
+the online experience limited the interaction with the par-
+ticipants to provide extra support or answer any questions
+related to the app or demo. Although a short video about
+the A4alerts was presented (in sections one and three of
+the demo), the restricted communication can also explain
+why most participants considered that additional guidance
+and training must be given to correctly use the app.
+Accordingly, additional workshops and in-person demon-
+strations should be conducted to build upon the existing
+findings. This approach will enable gathering first-hand
+experiences, interactions, and opinions from participants
+as they actively engage with the A4alerts application.
+Finally, evaluating the A4alerts and its functionalities
+within the experimental demo is based on using beha-
+vioural intentions as a proxy for actual behaviours
+(Ajzen,
+1985; Weyrich et al., 2020). Although a positive
+correlation between these two variables has been demon-
+strated in prior studies (Armitage & Conner, 2001), the
+intention to use a crisis app and its functionalities
+(e.g., sharing and validation) during emergencies can be
+influenced by several factors, such as trust in the system,
+risk perception and self-efficacy (Fischer et al.,
+2019).
+Real-time evaluation periods are needed to move from
+the initial exploratory user assessment of the A4alerts
+app and its functionalities to understand how it can be
+operationalised to support emergency responses and
+enable wider community acceptance. In this context,
+operational demonstrations of the A4alerts and its future
+iterations will be carried out in the next five years across
+municipalities in Catalonia (more than 20) and Europe
+MEL/C19ENDEZ-LANDAVERDE and SEMPERE-TORRES 11 of 15
+ 1753318x, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/jfr3.12951 by Readcube (Labtiva Inc.), Wiley Online Library on [08/03/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+(Portugal and Italy) within the framework of RESIST, a
+Horizon EU Mission Climate project. 2 These demonstra-
+tions will provide a notable platform for real-time evalua-
+tions of the A4alerts as an emergency communication
+tool. They will enable the assessment of the timeliness
+(i.e., lead-time) and accuracy of the warnings dissemi-
+nated through the app and support its adaptation to
+regions characterized by diverse levels of vulnerability,
+social landscapes, and risk management governance
+structures. As mentioned previously, recognising that the
+level of social integration of technological tools influ-
+ences their effectiveness, interactive e-learning activities
+and in-person workshops are being co-designed in an
+interdisciplinary and community-based environment
+(i.e., academics, social institutes, first responders) to
+appropriately engage, empower and train end-users while
+considering the requirements of the most vulnerable
+(e.g., elderly, hearing, and visually impair). It is foreseen
+that these long-term activities, alongside the operational
+demonstrations, will enable the A4alerts to evolve
+through iterative loops with the help of real-life experi-
+ences and user feedback. Furthermore, implementing the
+A4alerts in European regions with diverse risk profiles
+and climates offers the opportunity to explore the adapta-
+tion and transferability of the present findings towards
+developing crisis apps for other hydrometeorological
+hazards.
+7 | CONCLUSIONS
+Communities are demanding that risk information be
+quickly available and accessible, especially when the time
+window to perform local protection actions is limited.
+The widespread use of smartphones has opened the door
+for specialised hazard crisis apps to be a valuable comple-
+ment to the rapid dissemination of flood warnings during
+emergencies. This research presents the A4alerts, an
+innovative flood-focused crisis mobile app developed to
+display the information from the community-based
+SS-EWS.
+A first user experience evaluation of the A4alerts app
+and its functionalities within the context of flood scenar-
+ios was performed with Terrassa and Catalonia commu-
+nity representatives through an online experimental
+demo. The overall results suggest that the A4alerts was
+considered a potentially useful tool to effectively support
+users and their actions during flood emergencies. How-
+ever, the results also indicate that resources should be
+allocated to provide supplementary training and guid-
+ance on how to successfully use the app. Furthermore,
+the functionalities implemented in the A4alerts were
+ranked by participants from the most to the least useful
+during emergencies. The SSWs, official warnings, and the
+self-protection action checklist were ranked as the most
+useful functionalities. Although innovative functionali-
+ties to enable the participation of end-users in providing
+and validating impact information were not among the
+first ranked, results suggest participants are willing to
+use them.
+Understanding what and how to efficiently integrate
+technological applications and local needs for emergency
+communication is not a straightforward, one-way recipe.
+Nevertheless, the present evaluation of the A4alerts app
+can contribute to understanding the benefits, limitations,
+and areas of work within the field and as an example of
+good practice for other regions and communities. In this
+sense, the A4alerts app can have a supporting role in dis-
+seminating crucial local and impact-based warning infor-
+mation and breaching the communication gap between
+authorities, responders, and the most vulnerable commu-
+nities during flood emergencies.
+ACKNOWLEDGEMENTS
+The authors extend their gratitude to the municipality of
+Terrassa and Vicenta Villar, the company HYDS, Victor
+Gonz/C19alez, Shinju Park, and the CRAHI team for the sup-
+port in the development of the A4alerts prototype and
+online demo.
+DATA AVAILABILITY STATEMENT
+The data that support the findings of this study are avail-
+able from the corresponding author upon reasonable
+request.
+ORCID
+Erika R. Meléndez-Landaverde
+https://orcid.org/0000-
+0001-5564-3589
+Daniel Sempere-Torres https://orcid.org/0000-0002-
+6378-0337
+REFERENCES
+Ahmad, N., Rextin, A., & Kulsoom, U. E. (2017). Perspectives on
+usability guidelines for smartphone applications: An empirical
+investigation and systematic literature review. Information and
+Software Technology , 94, 130 –149.
+https://doi.org/10.1016/j.
+infsof.2017.10.005
+Ajzen, I. (1985). From intentions to actions: A theory of planned
+behavior. Action Control ,1 1 –39. https://doi.org/10.1007/978-3-
+642-69746-3_2
+Alexander, D. E. (2013). Social media in disaster risk reduction and
+crisis management. Science and Engineering Ethics , 20(3), 717 –
+733. https://doi.org/10.1007/S11948-013-9502-Z
+Amores, A., Marcos, M., Carri /C19o, D. S., & Gomez-Pujol, L. (2020).
+Coastal impacts of Storm Gloria (January 2020) over the North-2https://cordis.europa.eu/project/id/101093968.
+12 of 15 MEL/C19ENDEZ-LANDAVERDE and SEMPERE-TORRES
+ 1753318x, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/jfr3.12951 by Readcube (Labtiva Inc.), Wiley Online Library on [08/03/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+Western Mediterranean. Natural Hazards and Earth System
+Sciences, 20(7), 1955 –1968. https://doi.org/10.5194/NHESS-20-
+1955-2020
+Appleby-Arnold, S., Brockdorff, N., Fallou, L., & Bossu, R. (2019).
+Truth, trust, and civic duty: Cultural factors in citizens' percep-
+tions of mobile phone apps and social media in disasters. Jour-
+nal of Contingencies and Crisis Management , 27(4), 293 –305.
+https://doi.org/10.1111/1468-5973.12282
+Armitage, C. J., & Conner, M. (2001). Efficacy of the theory of
+planned behaviour: A meta-analytic review. The British Journal
+of Social Psychology , 40(Pt 4), 471 –499. https://doi.org/10.1348/
+014466601164939
+Asikin-Garmager, A., Dowd, P., George, S., & Afifi, R. A. (2022).
+Integrating user experience evaluation in the development of a
+web-based community engagement toolkit. Evaluation and Pro-
+gram Planning , 91, 102048.
+https://doi.org/10.1016/J.
+EVALPROGPLAN.2022.102048
+Bednar-Friedl, B., Biesbroek, R., Schmidt, D., Alexander, P.,
+Børsheim, K., Carnicer, J., Georgopoulou, E., Haasnoot, M., Le
+Cozannet, G., Lionello, P., Lipka, O., Möllmann, C.,
+Muccione, V., Mustonen, T., Piepenburg, D., & Whitmarsh, L.
+(2022). Climate change 2022: Impacts, adaptation and vulnera-
+bility. Contribution of Working Group II to the Sixth Assess-
+ment Report of the Intergovernmental Panel on Climate
+Change, Cambridge, UK and New York, NY, USA, 1817 –1927.
+https://doi.org/10.1017/9781009325844.015
+Colombelli, S., Carotenuto, F., Elia, L., & Zollo, A. (2020). Design
+and implementation of a mobile device app for network-based
+earthquake early warning systems (EEWSs): Application to the
+PRESTo EEWS in southern Italy. Natural Hazards and Earth
+System Sciences , 20(4), 921 –931.
+https://doi.org/10.5194/
+NHESS-20-921-2020
+Consejo de Ministros. (2020). Informe sobre el temporal de lluvia,
+nieve, viento y fen /C19omenos costeros acaecido en el este peninsu-
+lar y baleares como consecuencia de la borrasca “Gloria.”
+Secretaría de Estado de Comunicaci /C19on. Retrieved from https://
+www.lamoncloa.gob.es/consejodeministros/referencias/
+documents/2020/refc20200128.pdf
+Corral, C., Berenguer, M., Sempere-Torres, D., Poletti, L.,
+Silvestro, F., & Rebora, N. (2019). Comparison of two early
+warning systems for regional flash flood hazard forecasting.
+Journal of Hydrology , 572, 603 –619.
+https://doi.org/10.1016/j.
+jhydrol.2019.03.026
+Dallo, I., & Marti, M. (2021). Why should I use a multi-hazard app?
+Assessing the public's information needs and app feature pref-
+erences in a participatory process. International Journal of
+Disaster Risk Reduction , 57, 102197. https://doi.org/10.1016/J.
+IJDRR.2021.102197
+Fekete, A., & Sandholz, S. (2021). Here comes the flood, but not
+failure? Lessons to learn after the heavy rain and pluvial floods
+in Germany 2021. Water, 13(21), 3 –5.
+https://doi.org/10.3390/
+W13213016
+Finazzi, F. (2020). Fulfilling the information need after an earth-
+quake: Statistical modelling of citizen science seismic reports
+for predicting earthquake parameters in near realtime. Journal
+of the Royal Statistical Society. Series A: Statistics in Society ,
+183(3), 857–882.
+https://doi.org/10.1111/RSSA.12577
+Fischer, D., Putzke-Hattori, J., & Fischbach, K. (2019). Crisis warn-
+ing apps: Investigating the factors influencing usage and
+compliance with recommendations for action. Proceedings of
+the Annual Hawaii International Conference on System Sci-
+ences, 639–648.
+https://doi.org/10.24251/HICSS.2019.079
+Fischer-Preßler, D., Bonaretti, D., & Fischbach, K. (2021). A
+protection-motivation perspective to explain intention to use
+and continue to use mobile warning systems. Business & Infor-
+mation Systems Engineering , 64, 167 –182.
+https://doi.org/10.
+1007/S12599-021-00704-0
+Gebhardt, O., Kuhlicke, C., Wolf, L., Vitolo, C., Duo, E., van
+Lanen, H. A. J., Rohrer, M., Sutanto, S. J., & Stoffel, M. (2019).
+Results of the co-evaluation of the ANYWHERE tools, products
+and services on the pilot sites. Retrieved from
+http://www.
+anywhere-h2020.eu/wp-content/uploads/docs/D1.4_
+submitted.pdf
+Grinko, M., Kaufhold, M.-A., & Reuter, C. (2019). Adoption, use
+and diffusion of crisis apps in Germany: A representative sur-
+vey. MuC'19: Proceedings of Mensch und Computer 2019.
+https://doi.org/10.1145/3340764.3340782
+Harrison, S. E., Potter, S. H., Prasanna, R., Doyle, E. E. H., &
+Johnston, D. (2021). ‘Where oh where is the data? ’: Identifying
+data sources for hydrometeorological impact forecasts and
+warnings in Aotearoa New Zealand. International Journal of
+Disaster Risk Reduction , 66, 102619.
+https://doi.org/10.1016/j.
+ijdrr.2021.102619
+Horstmann, A. C., Winter, S., Rösner, L., & Krämer, N. C. (2018). S.
+O.S. on my phone: An analysis of motives and incentives for
+participation in smartphone-based volunteering. Journal of
+Contingencies and Crisis Management , 26(1), 193 –199. https://
+doi.org/10.1111/1468-5973.12174
+IBM. (2021). IBM SPSS Statistics. (No. 28). Retrieved from https://
+www.ibm.com/analytics/spss-statistics-software
+Imran, M., Castillo, C., Diaz, F., & Vieweg, S. (2015). Processing
+social media messages in mass emergency. ACM Computing
+Surveys (CSUR), 47(4), 1–38. https://doi.org/10.1145/2771588
+ISO. (2003). Software engineering — Product quality — Part 2:
+External metrics, Pub. L. No. ISO/IEC TR 9126-2:2003.
+Retrieved from
+https://www.iso.org/standard/22750.html
+ISO. (2011). Systems and software engineering —Systems and soft-
+ware Quality Requirements and Evaluation (SQuaRE) —System
+and software quality models, Pub. L. No. ISO/IEC 25010:2011.
+Retrieved from
+https://www.iso.org/obp/ui/#iso:std:35733:en
+Kaltenberger, R., Schaffhauser, A., & Staudinger, M. (2020). “What
+the weather will do”—Results of a survey on impact-oriented and
+impact-based warnings in European NMHSs.Advances in Science
+and Research, 17,2 9–38. https://doi.org/10.5194/asr-17-29-2020
+Karl, I., Rother, K., & Nestler, S. (2015). Crisis-related apps: Assis-
+tance for critical and emergency situations. International Journal
+of Information Systems for Crisis Response and Management ,
+7(2), 19–35. https://doi.org/10.4018/IJISCRAM.2015040102
+Kaufhold, M. A., Rupp, N., Reuter, C., Amelunxen, C., &
+Cristaldi, M. (2018). 112. Social: Design and evaluation of a
+mobile crisis app for bidirectional communication between
+emergency services and citizens. 26th European Conference on
+Information Systems : Beyond Digitization —Facets of Socio-
+Technical Change , ECIS 2018. Retrieved from https://aisel.
+aisnet.org/ecis2018_rp/81
+Kim, H.-Y. (2015). Statistical notes for clinical researchers: Post-hoc
+multiple comparisons. Restorative Dentistry & Endodontics ,
+40(2), 172–176. https://doi.org/10.5395/RDE.2015.40.2.172
+MEL/C19ENDEZ-LANDAVERDE and SEMPERE-TORRES 13 of 15
+ 1753318x, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/jfr3.12951 by Readcube (Labtiva Inc.), Wiley Online Library on [08/03/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+Kotthaus, C., Ludwig, T., & Pipek, V. (2016). Persuasive system
+design analysis of mobile warning apps for citizens. Adjunct
+Proceedings of the 11th International Conference on Persuasive
+Technology, 1817, 1 –12. Retrieved from
+https://ceur-ws.org/
+Vol-1817/paper7.pdf
+Lara Tan, M., Prasanna, R., Stock, K., Hudson-Doyle, E.,
+Leonard, G., & Johnston, D. (2017). Mobile applications in cri-
+sis informatics literature: A systematic review. International
+Journal of Disaster Risk Reduction , 24, 297–311. https://doi.org/
+10.1016/j.ijdrr.2017.06.009
+Lewis, J. R. (1995). IBM computer usability satisfaction question-
+naires: Psychometric evaluation and instructions for use. Inter-
+national Journal of Human-Computer Interaction , 7(1), 57 –78.
+https://doi.org/10.1080/10447319509526110
+Marino, M. J. (2018). Statistical analysis in preclinical biomedical
+research. In M. Williams, M. J. Curtis, & K. Mullane (Eds.),
+Research in the biomedical sciences: Transparent and reproduc-
+ible (pp. 107 –144). Academic Press.
+https://doi.org/10.1016/
+B978-0-12-804725-5.00003-3
+Martens, D., & Maalej, W. (2019). Towards understanding and
+detecting fake reviews in app stores. Empirical Software Engi-
+neering, 24(6), 3316 –3355. https://doi.org/10.1007/s10664-019-
+09706-9
+McCallum, I., Liu, W., See, L., Mechler, R., Keating, A.,
+Hochrainer-Stigler, S., Mochizuki, J., Fritz, S., Dugar, S.,
+Arestegui, M., Szoenyi, M., Bayas, J.-C. L., Burek, P.,
+French, A., & Moorthy, I. (2016). Technologies to support com-
+munity flood disaster risk reduction. International Journal of
+Disaster Risk Science , 7(2), 198 –204.
+https://doi.org/10.1007/
+s13753-016-0086-5
+Meléndez-Landaverde, E. R., & Sempere-Torres, D. (2022). Design
+and evaluation of a community and impact-based site-specific
+early warning system (SS-EWS): The SS-EWS framework. Jour-
+nal of Flood Risk Management , e12860. https://doi.org/10.1111/
+JFR3.12860
+Meléndez-Landaverde, E. R., Werner, M., & Verkade, J. (2020).
+Exploring protective decision-making in the context of impact-
+based flood warnings. Journal of Flood Risk Management , 13(1),
+e12587.
+https://doi.org/10.1111/jfr3.12587
+Netzel, L. M., Heldt, S., Engler, S., & Denecke, M. (2021). The
+importance of public risk perception for the effective manage-
+ment of pluvial floods in urban areas: A case study from
+Germany. Journal of Flood Risk Management , 14(2), 1 –2.
+https://doi.org/10.1111/JFR3.12688
+Parker, D. J., Priest, S. J., & Tapsell, S. M. (2009). Understanding
+and enhancing the public's behavioural response to flood warn-
+ing information. Meteorological Applications , 16(1), 103 –114.
+https://doi.org/10.1002/met.119
+Passani, A., Monacciani, F., van der Graaf, S., Spagnoli, F.,
+Bellini, F., Debicki, M., & Dini, P. (2014). SEQUOIA: A meth-
+odology for the socio-economic impact assessment of software-
+as-a-service and internet of services research projects. Research
+Evaluation, 23(2), 133 –149.
+https://doi.org/10.1093/RESEVAL/
+RVU004
+Paul, J. D., Bee, E., & Budimir, M. (2021). Mobile phone technolo-
+gies for disaster risk reduction. Climate Risk Management , 32,
+100296. https://doi.org/10.1016/J.CRM.2021.100296
+Potter, S., Harrison, S., & Kreft, P. (2021). The benefits and chal-
+lenges of implementing impact-based severe weather warning
+systems: Perspectives of weather, flood, and emergency man-
+agement personnel. Weather, Climate, and Society , 13(2), 303 –
+314. https://doi.org/10.1175/wcas-d-20-0110.1
+Potter, S. H., Kreft, P. V., Milojev, P., Noble, C., Montz, B.,
+Dhellemmes, A., Woods, R. J., & Gauden-Ing, S. (2018). The
+influence of impact-based severe weather warnings on risk per-
+ceptions and intended protective actions. International Journal
+of Disaster Risk Reduction , 30,3 4 –43.
+https://doi.org/10.1016/J.
+IJDRR.2018.03.031
+Reuter, C., & Kaufhold, M. A. (2018). Fifteen years of social media
+in emergencies: A retrospective review and future directions for
+crisis informatics. Journal of Contingencies and Crisis Manage-
+ment, 26(1), 41–57.
+https://doi.org/10.1111/1468-5973.12196
+Reuter, C., Kaufhold, M.-A., & Knipp, H. (2017). Katwarn, NINA or
+FEMA? Multi-method study on distribution, use and public
+views on crisis apps. European Conference on Information Sys-
+tems (ECIS). Retrieved from
+http://www.peasec.de/paper/2017/
+2017_ReuterKaufholdLeopoldKnipp_CrisisApps_ECIS.pdf
+Reuter, C., Kaufhold, M. A., Spielhofer, T., & Hahne, A. S. (2017).
+Social media in emergencies: A representative study on citizen's
+perception in Germany. Proceedings of the ACM on Human-
+Computer Interaction , 1 (CSCW), 1 –19. https://doi.org/10.1145/
+3134725
+Ritter, J., Berenguer, M., Corral, C., Park, S., & Sempere-Torres, D.
+(2020). ReAFFIRM: Real-time assessment of flash flood
+impacts—A regional high-resolution method. Environment
+International, 136, 105375. https://doi.org/10.1016/j.envint.
+2019.105375
+Rossi, C., Falcone, G., Frisiello, A., & Dominici, F. (2018). Best prac-
+tices on public warning systems for climate-induced natural
+hazards. Disaster Risk Management Knowledge Centre.
+Retrieved from
+https://drmkc.jrc.ec.europa.eu/Portals/0/
+innovation/SupportSystem/11_Lithuania/JRC_
+PublicWarningonNaturalHazard_05_PWS_final.pdf
+Scherr, S. A., Polst, S., Müller, L., Holl, K., & Elberzhager, F. (2019).
+The perception of emojis for analyzing app feedback. Interna-
+tional Journal of Interactive Mobile Technologies , 13(2), 19 –36.
+https://doi.org/10.3991/ijim.v13i02.8492
+Seneviratne, S. I., Zhang, X., Adnan, M., Badi, W., Dereczynski, C.,
+Di Luca, A., Ghosh, S., Iskandar, I., Kossin, J., Lewis, S.,
+Otto, F., Pinto, I., Satoh, M., Vicente-Serrano, S. M.,
+Wehner, M., & Zhou, B. (2021). Weather and climate extreme
+events in a changing climate. In Climate change 2021 : The phys-
+ical science basis . Contribution of Working Group I to the Sixth
+Assessment Report of the Intergovernmental Panel on Climate
+Change (Issue United Kingdom and New York, NY, USA).
+https://doi.org/10.1017/9781009157896.013
+Stanciugelu, I., Bilanici, A., & Cameron, I. (2017). Last mile com-
+munication. In K. Poljan ˇsek, M. Marín Ferrer, T. de Groeve, &
+I. Clark (Eds.), Science for disaster risk management 2017:
+Knowing better and losing less (EUR 28034) . Publications Office
+of the European Union. https://doi.org/10.2788/688605
+Tan, M. L., Prasanna, R., Stock, K., Doyle, E. E. H., Leonard, G., &
+Johnston, D. (2020a). Understanding end-users' perspectives:
+Towards developing usability guidelines for disaster apps. Pro-
+gress in Disaster Science , 7, 100118.
+https://doi.org/10.1016/j.
+pdisas.2020.100118
+Tan, M. L., Prasanna, R., Stock, K., Doyle, E. E. H., Leonard, G., &
+Johnston, D. (2020b). Usability factors influencing the
+14 of 15 MEL/C19ENDEZ-LANDAVERDE and SEMPERE-TORRES
+ 1753318x, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/jfr3.12951 by Readcube (Labtiva Inc.), Wiley Online Library on [08/03/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+continuance intention of disaster apps: A mixed-methods study.
+International Journal of Disaster Risk Reduction , 50, 101874.
+https://doi.org/10.1016/J.IJDRR.2020.101874
+Tavra, M., Racetin, I., & Pero ˇs, J. (2021). The role of crowdsourcing
+and social media in crisis mapping: A case study of a wildfire
+reaching Croatian city of split. Geoenvironmental Disasters ,
+8(1), 1–16.
+https://doi.org/10.1186/S40677-021-00181-3
+Taylor, A. L., Kause, A., Summers, B., & Harrowsmith, M. (2019).
+Preparing for Doris: Exploring public responses to impact-based
+weather warnings in the United Kingdom. Weather, Climate,
+and Society , 11(4), 713 –729.
+https://doi.org/10.1175/WCAS-D-
+18-0132.1
+Terti, G., Ruin, I., Kalas, M., L /C19ang, I., Alonso, A. C. I.,
+Sabbatini, T., & Lorini, V. (2019). ANYCaRE: A role-playing
+game to investigate crisis decision-making and communication
+challenges in weather-related hazards. Natural Hazards and
+Earth System Sciences , 19(3), 507 –533.
+https://doi.org/10.5194/
+NHESS-19-507-2019
+Trang, S., Trenz, M., Weiger, W. H., Tarafdar, M., &
+Cheung, C. M. K. (2020). One app to trace them all? Examining
+app specifications for mass acceptance of contact-tracing apps.
+European Journal of Information Systems , 29(4), 415 –428.
+https://doi.org/10.1080/0960085X.2020.1784046
+Tullis, T., & Albert, B. (2013, 2nd ed). Measuring the user experi-
+ence: Collecting, analyzing, and presenting usability metrics. In
+Measuring the user experience: Collecting, analyzing, and pre-
+senting usability metrics . Elsevier. https://doi.org/10.1016/
+C2011-0-00016-9
+Turpin, E., & Holderness, T. (2015). From social media to geosocial
+intelligence: Crowdsourcing civic co-management for flood
+response in Jakarta, Indonesia. In Social media for government
+services (pp. 115 –133). Springer.
+https://doi.org/10.1007/978-3-
+319-27237-5_6
+UNISDR. (2015). Sendai framework for disaster risk reduction
+2015-2030 (Vol. 30). United Nations Office for Disaster Risk
+Reduction Publications Retrieved from https://www.undrr.org/
+publication/sendai-framework-disaster-risk-reduction-2015-2030
+Versini, P. A., Berenguer, M., Corral, C., & Sempere-Torres, D.
+(2014). An operational flood warning system for poorly gauged
+basins: Demonstration in the Guadalhorce basin (Spain).
+Natural Hazards , 71(3), 1355 –1378. https://doi.org/10.1007/
+s11069-013-0949-7
+Weyrich, P., Scolobig, A., & Patt, A. (2019). Dealing with inconsis-
+tent weather warnings: Effects on warning quality and
+intended actions. Meteorological Applications , 26(4), 569 –583.
+https://doi.org/10.1002/met.1785
+Weyrich, P., Scolobig, A., Walther, F., & Patt, A. (2020). Do inten-
+tions indicate actual behaviour? A comparison between
+scenario-based experiments and real-time observations of warn-
+ing response. Journal of Contingencies and Crisis Management ,
+28(3), 240–250.
+https://doi.org/10.1111/1468-5973.12318
+WMO. (2010). Guidelines on early warning systems and application
+of nowcasting and warning operations. WMO/TD No. 1559,
+1559, 25. Retrieved from https://library.wmo.int/doc_num.
+php?explnum_id=9456
+WMO. (2018). Multi-hazard early warning systems: A checklist, out-
+come of the first multi-hazard early warning conference.
+Retrieved from
+https://library.wmo.int/doc_num.php?explnum_
+id=4463
+WMO. (2021). WMO guidelines on multi-hazard impact-based fore-
+cast and warning services —Part II: Putting multi-hazard
+IBFWS into practice. Retrieved from https://library.wmo.int/
+doc_num.php?explnum_id=10965
+Yabe, T., Jones, N. K. W., Rao, P. S. C., Gonzalez, M. C., &
+Ukkusuri, S. V. (2022). Mobile phone location data for disas-
+ters: A review from natural hazards and epidemics. Computers,
+Environment and Urban Systems , 94, 101777. https://doi.org/10.
+1016/J.COMPENVURBSYS.2022.101777
+How to cite this article: Meléndez-Landaverde,
+E. R., & Sempere-Torres, D. (2023). A user
+experience evaluation of a mobile application for
+disseminating site-specific impact-based flood
+warnings: The A4alerts app. Journal of Flood Risk
+Management, e12951.
+https://doi.org/10.1111/jfr3.
+12951
+MEL/C19ENDEZ-LANDAVERDE and SEMPERE-TORRES 15 of 15
+ 1753318x, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/jfr3.12951 by Readcube (Labtiva Inc.), Wiley Online Library on [08/03/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
