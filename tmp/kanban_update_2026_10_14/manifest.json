@@ -1,0 +1,239 @@
+{
+  "target": "E:\\School Downloads-Jiraah\\00 FILES IN SCHOOL\\3RD YEAR 2ND SEM\\DCIT 60\\FLOODSENSE\\1.FLOODSENSE-200A\\FloodSense\\1. FLOODSENSE-MAIN\\KANBAN(WORK-IN-TO-DO-INPROGRESS-DONE)\\FloodSense_Kanban_Board.xlsm",
+  "written": [
+    {
+      "category": "Manuscript and TA requirements",
+      "status": "Not done",
+      "text": "Final Gantt chart: A provisional planning schedule is not a finalized chart tied to confirmed dates.",
+      "original": "Not done — Final Gantt chart: A provisional planning schedule is not a finalized chart tied to confirmed dates.",
+      "cell": "A2",
+      "value": "Manuscript and TA requirements\nNot done — Final Gantt chart: A provisional planning schedule is not a finalized chart tied to confirmed dates."
+    },
+    {
+      "category": "Manuscript and TA requirements",
+      "status": "Deferred",
+      "text": "Cost and operational feasibility sign-off: Actual or approved costs, a complete schedule basis, and evidence of institutional operational acceptance are still needed.",
+      "original": "Deferred — Cost and operational feasibility sign-off: Actual or approved costs, a complete schedule basis, and evidence of institutional operational acceptance are still needed.",
+      "cell": "A3",
+      "value": "Manuscript and TA requirements\nDeferred — Cost and operational feasibility sign-off: Actual or approved costs, a complete schedule basis, and evidence of institutional operational acceptance are still needed."
+    },
+    {
+      "category": "Manuscript and TA requirements",
+      "status": "Deferred",
+      "text": "Post-use evaluation: The instrument, evaluator groups, procedure, and ISO/IEC 25010 results are not finalized; no evaluation findings appear in Chapters 1–3.",
+      "original": "Deferred — Post-use evaluation: The instrument, evaluator groups, procedure, and ISO/IEC 25010 results are not finalized; no evaluation findings appear in Chapters 1–3.",
+      "cell": "A4",
+      "value": "Manuscript and TA requirements\nDeferred — Post-use evaluation: The instrument, evaluator groups, procedure, and ISO/IEC 25010 results are not finalized; no evaluation findings appear in Chapters 1–3."
+    },
+    {
+      "category": "Research evidence and data",
+      "status": "Deferred",
+      "text": "Operational susceptibility and center-data approval: The approved research-data directory contains no established operational susceptibility dataset. Provisional material and data requests do not prove receipt, approval, or integration; current authorized center records also need confirmation.",
+      "original": "Deferred — Operational susceptibility and center-data approval: The approved research-data directory contains no established operational susceptibility dataset. Provisional material and data requests do not prove receipt, approval, or integration; current authorized center records also need confirmation.",
+      "cell": "A5",
+      "value": "Research evidence and data\nDeferred — Operational susceptibility and center-data approval: The approved research-data directory contains no established operational susceptibility dataset. Provisional material and data requests do not prove receipt, approval, or integration; current authorized center records also need confirmation."
+    },
+    {
+      "category": "System development",
+      "status": "Not done",
+      "text": "Fixed-schema parameter CSV: The confirmed export/import requirement lacks the complete ordinary-Admin workflow, validation, and end-to-end evidence needed to call it implemented.",
+      "original": "Not done — Fixed-schema parameter CSV: The confirmed export/import requirement lacks the complete ordinary-Admin workflow, validation, and end-to-end evidence needed to call it implemented.",
+      "cell": "A6",
+      "value": "System development\nNot done — Fixed-schema parameter CSV: The confirmed export/import requirement lacks the complete ordinary-Admin workflow, validation, and end-to-end evidence needed to call it implemented."
+    },
+    {
+      "category": "System development",
+      "status": "Not done",
+      "text": "Assessment history, offline operation, and production deployment: The audit found no completed resident assessment-history function, offline capability, or verified production release.",
+      "original": "Not done — Assessment history, offline operation, and production deployment: The audit found no completed resident assessment-history function, offline capability, or verified production release.",
+      "cell": "A7",
+      "value": "System development\nNot done — Assessment history, offline operation, and production deployment: The audit found no completed resident assessment-history function, offline capability, or verified production release."
+    },
+    {
+      "category": "Manuscript and TA requirements",
+      "status": "In progress",
+      "text": "System Architecture: The combined framework/architecture figure is present, but a separate “[Insert System Architecture]” placeholder still appears below it. This needs a later decision and was outside this Chapter 2 edit.",
+      "original": "In progress — System Architecture: The combined framework/architecture figure is present, but a separate “[Insert System Architecture]” placeholder still appears below it. This needs a later decision and was outside this Chapter 2 edit.",
+      "cell": "B2",
+      "value": "Manuscript and TA requirements\nIn progress — System Architecture: The combined framework/architecture figure is present, but a separate “[Insert System Architecture]” placeholder still appears below it. This needs a later decision and was outside this Chapter 2 edit."
+    },
+    {
+      "category": "Manuscript and TA requirements",
+      "status": "In progress",
+      "text": "Scope and Limitations: Scope precedes a paragraph beginning “However,” but the section has two paragraphs. Sir Dhan’s wording about a single integrated paragraph warrants final confirmation.",
+      "original": "In progress — Scope and Limitations: Scope precedes a paragraph beginning “However,” but the section has two paragraphs. Sir Dhan’s wording about a single integrated paragraph warrants final confirmation.",
+      "cell": "B3",
+      "value": "Manuscript and TA requirements\nIn progress — Scope and Limitations: Scope precedes a paragraph beginning “However,” but the section has two paragraphs. Sir Dhan’s wording about a single integrated paragraph warrants final confirmation."
+    },
+    {
+      "category": "Manuscript and TA requirements",
+      "status": "In progress",
+      "text": "Time and Place: The section identifies Bacoor and the study period, but its dates and brevity need a final evidence check.",
+      "original": "In progress — Time and Place: The section identifies Bacoor and the study period, but its dates and brevity need a final evidence check.",
+      "cell": "B4",
+      "value": "Manuscript and TA requirements\nIn progress — Time and Place: The section identifies Bacoor and the study period, but its dates and brevity need a final evidence check."
+    },
+    {
+      "category": "Manuscript and TA requirements",
+      "status": "In progress",
+      "text": "Chapter 2 source sign-off: The chapter discusses four foreign and four local system studies with methods and reported outputs. A final source-by-source citation and recency check remains prudent, especially for the retained 2020 local study; this formatting-only turn did not revalidate every publication.",
+      "original": "In progress — Chapter 2 source sign-off: The chapter discusses four foreign and four local system studies with methods and reported outputs. A final source-by-source citation and recency check remains prudent, especially for the retained 2020 local study; this formatting-only turn did not revalidate every publication.",
+      "cell": "B5",
+      "value": "Manuscript and TA requirements\nIn progress — Chapter 2 source sign-off: The chapter discusses four foreign and four local system studies with methods and reported outputs. A final source-by-source citation and recency check remains prudent, especially for the retained 2020 local study; this formatting-only turn did not revalidate every publication."
+    },
+    {
+      "category": "Manuscript and TA requirements",
+      "status": "In progress",
+      "text": "Appendices: Fishbone and two resident-flow diagrams are inserted as Appendices A–C. Their embedded captions and final correspondence with the system still need review. Provisional Use Case, DFD, and HIPO files exist but are not finalized in the manuscript.",
+      "original": "In progress — Appendices: Fishbone and two resident-flow diagrams are inserted as Appendices A–C. Their embedded captions and final correspondence with the system still need review. Provisional Use Case, DFD, and HIPO files exist but are not finalized in the manuscript.",
+      "cell": "B6",
+      "value": "Manuscript and TA requirements\nIn progress — Appendices: Fishbone and two resident-flow diagrams are inserted as Appendices A–C. Their embedded captions and final correspondence with the system still need review. Provisional Use Case, DFD, and HIPO files exist but are not finalized in the manuscript."
+    },
+    {
+      "category": "Manuscript and TA requirements",
+      "status": "In progress",
+      "text": "Separate feasibility study: Materials exist, but older feasibility claims include superseded technology and the current budget and operational evidence are incomplete. It remains separate from Chapter 3, as requested.",
+      "original": "In progress — Separate feasibility study: Materials exist, but older feasibility claims include superseded technology and the current budget and operational evidence are incomplete. It remains separate from Chapter 3, as requested.",
+      "cell": "B7",
+      "value": "Manuscript and TA requirements\nIn progress — Separate feasibility study: Materials exist, but older feasibility claims include superseded technology and the current budget and operational evidence are incomplete. It remains separate from Chapter 3, as requested."
+    },
+    {
+      "category": "Research evidence and data",
+      "status": "In progress",
+      "text": "Interview record consolidation: BDRRMO interview records are available. The canonical CPDCO recording/transcript and associated permissions should be confirmed before final evidentiary sign-off.",
+      "original": "In progress — Interview record consolidation: BDRRMO interview records are available. The canonical CPDCO recording/transcript and associated permissions should be confirmed before final evidentiary sign-off.",
+      "cell": "B8",
+      "value": "Research evidence and data\nIn progress — Interview record consolidation: BDRRMO interview records are available. The canonical CPDCO recording/transcript and associated permissions should be confirmed before final evidentiary sign-off."
+    },
+    {
+      "category": "Research evidence and data",
+      "status": "In progress",
+      "text": "Local geographic validation: The 47-barangay layer serves as a technically checked administrative reference, not a City-verified flood-susceptibility dataset.",
+      "original": "In progress — Local geographic validation: The 47-barangay layer serves as a technically checked administrative reference, not a City-verified flood-susceptibility dataset.",
+      "cell": "B9",
+      "value": "Research evidence and data\nIn progress — Local geographic validation: The 47-barangay layer serves as a technically checked administrative reference, not a City-verified flood-susceptibility dataset."
+    },
+    {
+      "category": "Research evidence and data",
+      "status": "In progress",
+      "text": "Alignment tracker: Its September audit predates the October development changes and completed initial survey. It needs a separate evidence-based update, not an automatic status carryover.",
+      "original": "In progress — Alignment tracker: Its September audit predates the October development changes and completed initial survey. It needs a separate evidence-based update, not an automatic status carryover.",
+      "cell": "B10",
+      "value": "Research evidence and data\nIn progress — Alignment tracker: Its September audit predates the October development changes and completed initial survey. It needs a separate evidence-based update, not an automatic status carryover."
+    },
+    {
+      "category": "System development",
+      "status": "In progress",
+      "text": "Verification: The October 11 audit records 389 passing mobile tests and clean Flutter analysis. The 891 backend tests are historical evidence from October 5, not a current rerun; scientific, user, and production validation remain separate.",
+      "original": "In progress — Verification: The October 11 audit records 389 passing mobile tests and clean Flutter analysis. The 891 backend tests are historical evidence from October 5, not a current rerun; scientific, user, and production validation remain separate.",
+      "cell": "B11",
+      "value": "System development\nIn progress — Verification: The October 11 audit records 389 passing mobile tests and clean Flutter analysis. The 891 backend tests are historical evidence from October 5, not a current rerun; scientific, user, and production validation remain separate."
+    },
+    {
+      "category": "Manuscript and TA requirements",
+      "status": "Done",
+      "text": "Introduction: Five opening paragraphs establish context before the detailed problem, following Sir Dhan’s direction.",
+      "original": "Done — Introduction: Five opening paragraphs establish context before the detailed problem, following Sir Dhan’s direction.",
+      "cell": "C2",
+      "value": "Manuscript and TA requirements\nDone — Introduction: Five opening paragraphs establish context before the detailed problem, following Sir Dhan’s direction."
+    },
+    {
+      "category": "Manuscript and TA requirements",
+      "status": "Done",
+      "text": "Statement of the Problem: It begins with the information problem, uses the initial survey as evidence, and does not present the application as the opening solution.",
+      "original": "Done — Statement of the Problem: It begins with the information problem, uses the initial survey as evidence, and does not present the application as the opening solution.",
+      "cell": "C3",
+      "value": "Manuscript and TA requirements\nDone — Statement of the Problem: It begins with the information problem, uses the initial survey as evidence, and does not present the application as the opening solution."
+    },
+    {
+      "category": "Manuscript and TA requirements",
+      "status": "Done",
+      "text": "Objectives: The development objective identifies Flutter and the development approach; major functions are listed, while testing and evaluation objectives remain concise.",
+      "original": "Done — Objectives: The development objective identifies Flutter and the development approach; major functions are listed, while testing and evaluation objectives remain concise.",
+      "cell": "C4",
+      "value": "Manuscript and TA requirements\nDone — Objectives: The development objective identifies Flutter and the development approach; major functions are listed, while testing and evaluation objectives remain concise."
+    },
+    {
+      "category": "Manuscript and TA requirements",
+      "status": "Done",
+      "text": "Theoretical Framework modules: Five function-named modules include Authentication. The database is supporting infrastructure, not a main module; the administrator appears on the right of the combined figure.",
+      "original": "Done — Theoretical Framework modules: Five function-named modules include Authentication. The database is supporting infrastructure, not a main module; the administrator appears on the right of the combined figure.",
+      "cell": "C5",
+      "value": "Manuscript and TA requirements\nDone — Theoretical Framework modules: Five function-named modules include Authentication. The database is supporting infrastructure, not a main module; the administrator appears on the right of the combined figure."
+    },
+    {
+      "category": "Manuscript and TA requirements",
+      "status": "Done",
+      "text": "Chapter 2 organization and tables: Foreign/local literature and studies, synthesis, research gap, and Tables 1–3 are present. This turn completed their visual formatting without adding studies or marks.",
+      "original": "Done — Chapter 2 organization and tables: Foreign/local literature and studies, synthesis, research gap, and Tables 1–3 are present. This turn completed their visual formatting without adding studies or marks.",
+      "cell": "C6",
+      "value": "Manuscript and TA requirements\nDone — Chapter 2 organization and tables: Foreign/local literature and studies, synthesis, research gap, and Tables 1–3 are present. This turn completed their visual formatting without adding studies or marks."
+    },
+    {
+      "category": "Manuscript and TA requirements",
+      "status": "Done",
+      "text": "Chapter 3 Materials and Method: Materials cover research gathering as well as development. The Method distinguishes developmental research, Evolutionary Prototyping, and Kanban, with one methodology figure.",
+      "original": "Done — Chapter 3 Materials and Method: Materials cover research gathering as well as development. The Method distinguishes developmental research, Evolutionary Prototyping, and Kanban, with one methodology figure.",
+      "cell": "C7",
+      "value": "Manuscript and TA requirements\nDone — Chapter 3 Materials and Method: Materials cover research gathering as well as development. The Method distinguishes developmental research, Evolutionary Prototyping, and Kanban, with one methodology figure."
+    },
+    {
+      "category": "Manuscript and TA requirements",
+      "status": "Done",
+      "text": "Participants and statistical treatment: Chapter 3 reports 40 purposively selected qualified respondents and uses the survey’s frequency, percentage, and applicable item-mean procedures. It does not present the needs survey as system evaluation.",
+      "original": "Done — Participants and statistical treatment: Chapter 3 reports 40 purposively selected qualified respondents and uses the survey’s frequency, percentage, and applicable item-mean procedures. It does not present the needs survey as system evaluation.",
+      "cell": "C8",
+      "value": "Manuscript and TA requirements\nDone — Participants and statistical treatment: Chapter 3 reports 40 purposively selected qualified respondents and uses the survey’s frequency, percentage, and applicable item-mean procedures. It does not present the needs survey as system evaluation."
+    },
+    {
+      "category": "Research evidence and data",
+      "status": "Done",
+      "text": "Initial needs assessment: The report analyzes 40 qualified respondents from 14 barangays and documents sampling and response-quality limitations. Its findings apply to that surveyed group, not all Bacoor residents.",
+      "original": "Done — Initial needs assessment: The report analyzes 40 qualified respondents from 14 barangays and documents sampling and response-quality limitations. Its findings apply to that surveyed group, not all Bacoor residents.",
+      "cell": "C9",
+      "value": "Research evidence and data\nDone — Initial needs assessment: The report analyzes 40 qualified respondents from 14 barangays and documents sampling and response-quality limitations. Its findings apply to that surveyed group, not all Bacoor residents."
+    },
+    {
+      "category": "System development",
+      "status": "Done as software functions",
+      "text": "Resident assessment flow: The October 11 audit found scenario confirmation, manual selection/map pin, optional foreground GPS, deterministic rule matching, susceptibility output, explanation, and map presentation integrated. This does not validate the local susceptibility facts.",
+      "original": "Done as software functions — Resident assessment flow: The October 11 audit found scenario confirmation, manual selection/map pin, optional foreground GPS, deterministic rule matching, susceptibility output, explanation, and map presentation integrated. This does not validate the local susceptibility facts.",
+      "cell": "C10",
+      "value": "System development\nDone as software functions — Resident assessment flow: The October 11 audit found scenario confirmation, manual selection/map pin, optional foreground GPS, deterministic rule matching, susceptibility output, explanation, and map presentation integrated. This does not validate the local susceptibility facts."
+    },
+    {
+      "category": "System development",
+      "status": "Done as software functions",
+      "text": "Access and administration: Resident authentication and account controls, custom Admin access, governed content workflows, and audit history are integrated. Ordinary Admin users are not given raw-rule editing.",
+      "original": "Done as software functions — Access and administration: Resident authentication and account controls, custom Admin access, governed content workflows, and audit history are integrated. Ordinary Admin users are not given raw-rule editing.",
+      "cell": "C11",
+      "value": "System development\nDone as software functions — Access and administration: Resident authentication and account controls, custom Admin access, governed content workflows, and audit history are integrated. Ordinary Admin users are not given raw-rule editing."
+    },
+    {
+      "category": "System development",
+      "status": "Done as software functions",
+      "text": "Preparedness and centers: Structured DSS guidance and resident nearest-center lookup are integrated; public usefulness still depends on approved, current guidance and center records.",
+      "original": "Done as software functions — Preparedness and centers: Structured DSS guidance and resident nearest-center lookup are integrated; public usefulness still depends on approved, current guidance and center records.",
+      "cell": "C12",
+      "value": "System development\nDone as software functions — Preparedness and centers: Structured DSS guidance and resident nearest-center lookup are integrated; public usefulness still depends on approved, current guidance and center records."
+    },
+    {
+      "category": "System development",
+      "status": "Done",
+      "text": "Center-record import: A staged evacuation-center CSV/XLSX workflow exists. It is distinct from Expert System parameter exchange.",
+      "original": "Done — Center-record import: A staged evacuation-center CSV/XLSX workflow exists. It is distinct from Expert System parameter exchange.",
+      "cell": "C13",
+      "value": "System development\nDone — Center-record import: A staged evacuation-center CSV/XLSX workflow exists. It is distinct from Expert System parameter exchange."
+    },
+    {
+      "category": "System development",
+      "status": "Not done by scope",
+      "text": "Live monitoring and automatic action: FloodSense does not claim real-time rainfall or water-level monitoring, official forecasting or warnings, autonomous alerts, safe-road routing, live center occupancy, background GPS tracking, or automatic evacuation orders.",
+      "original": "Not done by scope — Live monitoring and automatic action: FloodSense does not claim real-time rainfall or water-level monitoring, official forecasting or warnings, autonomous alerts, safe-road routing, live center occupancy, background GPS tracking, or automatic evacuation orders.",
+      "cell": "A15",
+      "value": "OUT OF SCOPE (not a pending task)\nSystem development\nNot done by scope — Live monitoring and automatic action: FloodSense does not claim real-time rainfall or water-level monitoring, official forecasting or warnings, autonomous alerts, safe-road routing, live center occupancy, background GPS tracking, or automatic evacuation orders."
+    }
+  ],
+  "maxCount": 12,
+  "noteRow": 15
+}
