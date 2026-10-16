@@ -1,0 +1,33 @@
+Act as my FloodSense Chapter 2 writing and structural-alignment assistant. Analyze SURECUT Chapter 2 and then revise **only Chapter 2** of the existing FloodSense Chapters 1–3 Working Revision manuscript. Confirm the exact `.docx` path first and edit that same file in place. Do not create a new or renamed manuscript.
+
+Read and visually inspect every page of SURECUT Chapter 2 and the complete current FloodSense Chapter 2 before editing. Use SURECUT only as a model for writing approach, organization, depth, transitions, citation presentation, and visual formatting. Do not copy its transportation content, sentences, studies, sources, claims, or findings.
+
+## Use of the system name
+
+Analyze how often and in what contexts SURECUT uses its system name. Identify where it instead uses terms such as “the system,” “the application,” or another clear description. Determine the writing principle behind those choices; do not perform a mechanical word replacement.
+
+Apply the same restraint to **FloodSense Chapter 2**. Keep “FloodSense” where the name is necessary for clarity, particularly at its first relevant mention or when distinguishing it from a reviewed system. Elsewhere, use a precise expression such as “the proposed system,” “the resident application,” or “the assessment approach” when the reference remains unmistakable. Do not use “the system” where readers might think it refers to the foreign or local system discussed in that paragraph. Do not alter exact study titles, quotations, citations, reference titles, table legends, or official names merely to reduce repetition.
+
+## Foreign and local literature structure
+
+Analyze SURECUT’s **Related Foreign Literature** and **Related Local Literature** completely. Report their heading pattern, topic order, approximate number and length of discussions, paragraph organization, treatment of individual sources, transitions between sources, use of Philippine context, citation style, and how each discussion connects to its own study. Distinguish its structural method from its research facts.
+
+Apply the useful structural approach to FloodSense’s foreign and local literature. Organize FloodSense’s verified concepts and sources into coherent, sufficiently developed discussions rather than disconnected summaries. Explain each source’s relevant idea, its limitations, and its specific connection to FloodSense’s research problem or design. Give appropriate depth to Philippine and Bacoor-relevant literature without claiming that findings from another place automatically apply to Bacoor City.
+
+Preserve the requirement for **five verified foreign-literature and five verified local-literature entries**. Do not invent a citation or keep an irrelevant source merely to satisfy the count. Do not move a source into Related Studies unless its original publication supports the required methodology and results. Do not reintroduce separate Synthesis or Research Gap sections that I previously instructed you to remove.
+
+Keep Chapter 2 factual boundaries intact: FloodSense is a user-requested, scenario-based, pre-event susceptibility-assessment and preparedness-support system, not an official forecasting, real-time monitoring, automatic-warning, or evacuation-order platform. Literature describing another system’s capabilities does not make them FloodSense capabilities.
+
+Limit edits to Chapter 2 and directly necessary reference entries. Do not modify Chapters 1 or 3, preliminary pages, appendices, diagrams, code, datasets, SURECUT, or the original Chapter 1 baseline. Preserve the verified studies and comparison-table facts; adjust table wording only if necessary to keep terminology consistent with the revised Chapter 2 prose.
+
+After editing, render and visually compare every affected FloodSense Chapter 2 page with SURECUT. Check headings, paragraph flow, name repetition, citations, spacing, indentation, page breaks, and table placement. Confirm that “the system” and similar references are never ambiguous.
+
+In your final report, provide:
+
+1. The exact existing manuscript edited and confirmation that no new manuscript was created.
+2. Your findings on how SURECUT uses its system name versus generic descriptions.
+3. Your findings on SURECUT’s foreign- and local-literature organization.
+4. The specific FloodSense Chapter 2 passages or sections changed.
+5. The verified sources retained, added, or excluded and why.
+6. Any terminology left unchanged for clarity.
+7. Confirmation that Chapters 1 and 3 and unrelated files were not modified.
