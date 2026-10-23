@@ -1,2 +1,12 @@
 # Installed Node.js dependencies
 node_modules/
+
+# Local working files and generated previews
+/tmp/
+__pycache__/
+*.py[cod]
+
+# Microsoft Office lock files and temporary files
+~$*
+~WRL*
+*.tmp
